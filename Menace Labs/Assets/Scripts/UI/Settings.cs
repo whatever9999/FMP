@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class Settings : MonoBehaviour
 {
     public AudioMixer audioMixer;
 
-    public void ToggleAudio(bool value)
+    public void ToggleAudio(Toggle toggle)
     {
-        if (value)
+        if (toggle.isOn)
         {
             audioMixer.SetFloat("MasterVolume", 0);
         }
@@ -24,7 +25,7 @@ public class Settings : MonoBehaviour
 
     public void SetAmbienceVolume(float volume)
     {
-        audioMixer.SetFloat("AmbiencerVolume", volume);
+        audioMixer.SetFloat("AmbienceVolume", volume);
     }
 
     public void SetMusicVolume(float volume)
