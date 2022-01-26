@@ -1,9 +1,13 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
+
+    [SerializeField] public PopUpManager PUM;
+    [SerializeField] public TimeManager TM;
 
     [SerializeField] private TextMeshProUGUI nameText;
 
@@ -18,13 +22,29 @@ public class UIManager : MonoBehaviour
         instance = this;
 
         SetCloneName();
+        SetGoal();
+        // TODO: Get max number of days from the AgeManager to use on start
+        SetAgeTooltip(6);
     }
 
+    #region Buttons
     public void QuitButton()
     {
         Application.Quit();
     }
 
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(1);
+    }
+    #endregion // Buttons
+
+    #region Setup
     private void SetCloneName()
     {
         nameText.text = "Clone #" + Random.Range(0, 9999).ToString();
@@ -39,8 +59,9 @@ public class UIManager : MonoBehaviour
     }
 
     // TODO: Get max number of days from the AgeManager
-    private void SetAgeTooltip(int age)
+    public void SetAgeTooltip(int age)
     {
         ageTooltipText.text = age.ToString() + "/6 days remaining";
     }
+    #endregion // Setup
 }
