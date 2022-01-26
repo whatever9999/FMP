@@ -1,9 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager instance;
+
     public enum SoundName
     {
         ARCADE_MACHINE,
@@ -63,6 +64,8 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
+        instance = this;
+
         // Populate sfx dictionary
         for (int i = 0; i < soundEffects.Length; i++)
         {
@@ -132,6 +135,13 @@ public class SoundManager : MonoBehaviour
             // Loop around to the first track once we've reached the end of the track list
             if (currentTrack == musicTrackList.Length) currentTrack = 0;
         }
+    }
+
+    AudioClip GetClip(SoundName sound)
+    {
+        AudioClip clip;
+        soundDictionary.TryGetValue(sound, out clip);
+        return clip;
     }
 }
 
