@@ -59,6 +59,7 @@ public class SoundManager : MonoBehaviour
 
     private Dictionary<SoundName, AudioClip> soundDictionary = new Dictionary<SoundName, AudioClip>();
     private Dictionary<AmbienceName, AudioClip> ambienceDictionary = new Dictionary<AmbienceName, AudioClip>();
+    private MusicTrack[] musicTrackList = new MusicTrack[4];
 
     private void Start()
     {
@@ -91,7 +92,6 @@ public class SoundManager : MonoBehaviour
         ChangeAmbienceTrack(AmbienceName.DAY);
 
         // Randomly order the music tracks
-        MusicTrack[] musicTrackList = new MusicTrack[4];
         for (int i = 0; i < musicTracks.Length; i++)
         {
             bool gotTrack = false;
@@ -120,6 +120,19 @@ public class SoundManager : MonoBehaviour
     }
 
     [SerializeField] private AudioSource musicSource;
+    private int currentTrack = 0;
+    private void Update()
+    {
+        // Start the next music track when the previous one is finished
+        if (!musicSource.isPlaying)
+        {
+            musicSource.clip = musicTrackList[currentTrack].clip;
+            musicSource.Play();
+            currentTrack++;
+            // Loop around to the first track once we've reached the end of the track list
+            if (currentTrack == musicTrackList.Length) currentTrack = 0;
+        }
+    }
 }
 
 [System.Serializable]
