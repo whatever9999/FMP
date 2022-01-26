@@ -39,13 +39,30 @@ public class SoundManager : MonoBehaviour
         THROWING_UP,
         TYPING,
     }
+    public enum AmbienceName
+    {
+        DAY,
+        NIGHT,
+    }
+    public enum MusicName
+    {
+        HESITATING,
+        ST_JAMES,
+        ST_LOUIS,
+        WORRIED_MAN,
+    }
 
+    #region Setup
     [SerializeField] private SoundEffect[] soundEffects;
+    [SerializeField] private AmbienceTrack[] ambienceTracks;
+    [SerializeField] private MusicTrack[] musicTracks;
 
     private Dictionary<SoundName, AudioClip> soundDictionary = new Dictionary<SoundName, AudioClip>();
+    private Dictionary<AmbienceName, AudioClip> ambienceDictionary = new Dictionary<AmbienceName, AudioClip>();
 
     private void Start()
     {
+        // Populate sfx dictionary
         for (int i = 0; i < soundEffects.Length; i++)
         {
             if (soundDictionary.ContainsKey(soundEffects[i].name))
@@ -57,12 +74,71 @@ public class SoundManager : MonoBehaviour
                 soundDictionary.Add(soundEffects[i].name, soundEffects[i].clip);
             }
         }
+
+        // Populate ambience track dictionary
+        for (int i = 0; i < ambienceTracks.Length; i++)
+        {
+            if (ambienceDictionary.ContainsKey(ambienceTracks[i].name))
+            {
+                Debug.LogError("Trying to add multiple ambience tracks of type " + soundEffects[i].name);
+            }
+            else
+            {
+                ambienceDictionary.Add(ambienceTracks[i].name, ambienceTracks[i].clip);
+            }
+        }
+        // Set the ambience
+        ChangeAmbienceTrack(AmbienceName.DAY);
+
+        // Randomly order the music tracks
+        MusicTrack[] musicTrackList = new MusicTrack[4];
+        for (int i = 0; i < musicTracks.Length; i++)
+        {
+            bool gotTrack = false;
+            while (!gotTrack)
+            {
+                int randomIndex = Random.Range(0, musicTracks.Length);
+                if (!musicTrackList[randomIndex].clip)
+                {
+                    musicTrackList[randomIndex] = musicTracks[i];
+                    gotTrack = true;
+                }
+            }
+        }
     }
+    #endregion // Setup
+
+    [SerializeField] private AudioSource ambienceSource;
+    public void ChangeAmbienceTrack(AmbienceName track)
+    {
+        AudioClip newClip;
+        ambienceDictionary.TryGetValue(track, out newClip);
+
+        ambienceSource.clip = newClip;
+        ambienceSource.time = Random.Range(0.0f, newClip.length);
+        ambienceSource.Play();
+    }
+
+    [SerializeField] private AudioSource musicSource;
 }
 
 [System.Serializable]
 public struct SoundEffect
 {
     public SoundManager.SoundName name;
+    public AudioClip clip;
+}
+
+[System.Serializable]
+public struct AmbienceTrack
+{
+    public SoundManager.AmbienceName name;
+    public AudioClip clip;
+}
+
+[System.Serializable]
+public struct MusicTrack
+{
+    public SoundManager.MusicName name;
     public AudioClip clip;
 }
