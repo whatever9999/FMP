@@ -851,6 +851,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 1ce5f9b9f4267274584af8273e739852, type: 2}
+  audioToggle: {fileID: 1331690114741631705}
+  SFXSlider: {fileID: 1331690114498362146}
+  ambienceSlider: {fileID: 1331690116131807266}
+  musicSlider: {fileID: 1331690114680877746}
 --- !u!1 &1331690115062115855
 GameObject:
   m_ObjectHideFlags: 0

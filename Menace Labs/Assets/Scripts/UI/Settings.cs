@@ -6,6 +6,27 @@ public class Settings : MonoBehaviour
 {
     public AudioMixer audioMixer;
 
+    [SerializeField] Toggle audioToggle;
+    [SerializeField] Slider SFXSlider;
+    [SerializeField] Slider ambienceSlider;
+    [SerializeField] Slider musicSlider;
+
+    // Ensure the UI matches the current settings
+    private void Start()
+    {
+        float masterVolume, sfxVolume, ambienceVolume, musicVolume;
+
+        audioMixer.GetFloat("MasterVolume", out masterVolume);
+        audioMixer.GetFloat("SFXVolume", out sfxVolume);
+        audioMixer.GetFloat("AmbienceVolume", out ambienceVolume);
+        audioMixer.GetFloat("MusicVolume", out musicVolume);
+
+        audioToggle.isOn = (masterVolume != -80);
+        SFXSlider.value = sfxVolume;
+        ambienceSlider.value = ambienceVolume;
+        musicSlider.value = musicVolume;
+    }
+
     public void ToggleAudio(Toggle toggle)
     {
         if (toggle.isOn)

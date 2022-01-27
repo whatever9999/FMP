@@ -16179,7 +16179,6 @@ GameObject:
   - component: {fileID: 1367011777}
   - component: {fileID: 1367011780}
   - component: {fileID: 1367011779}
-  - component: {fileID: 1367011778}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -16209,19 +16208,6 @@ RectTransform:
   m_AnchoredPosition: {x: -960, y: -37}
   m_SizeDelta: {x: 641.28613, y: 702.23096}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1367011778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1367011776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a004d7ff325a874e879789d725f5317, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 1ce5f9b9f4267274584af8273e739852, type: 2}
 --- !u!114 &1367011779
 MonoBehaviour:
   m_ObjectHideFlags: 0
