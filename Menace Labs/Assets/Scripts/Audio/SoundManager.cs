@@ -39,6 +39,7 @@ public class SoundManager : MonoBehaviour
         SUCCESS,
         THROWING_UP,
         TYPING,
+        NUM_SOUND_NAMES,
     }
     public enum AmbienceName
     {
@@ -137,7 +138,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    AudioClip GetClip(SoundName sound)
+    public AudioClip GetClip(SoundName sound)
     {
         AudioClip clip;
         soundDictionary.TryGetValue(sound, out clip);

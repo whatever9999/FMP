@@ -9,7 +9,7 @@ public class Camera : MonoBehaviour
     [SerializeField] private float edgeScrollSpeed = 1.0f;
     [SerializeField] private Vector3 moveBounds;
     [SerializeField] private float floorClamp = 1.0f;
-    [SerializeField] private float rightClickMoveSpeed = 8.0f;
+    [SerializeField] private float rightClickMoveSpeed = 1.0f;
 
     private static string mouseXString = "Mouse X";
     private static string mouseYString = "Mouse Y";
@@ -17,6 +17,11 @@ public class Camera : MonoBehaviour
     private static string horizontalString = "Horizontal";
 
     private float rotateX, rotateY, moveVertical, moveHorizontal, moveY;
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+    }
 
     private void CheckInput()
     {
