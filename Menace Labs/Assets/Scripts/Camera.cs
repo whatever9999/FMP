@@ -9,6 +9,7 @@ public class Camera : MonoBehaviour
     [SerializeField] private float edgeScrollSpeed = 1.0f;
     [SerializeField] private Vector3 moveBounds;
     [SerializeField] private float floorClamp = 1.0f;
+    [SerializeField] private float rightClickMoveSpeed = 8.0f;
 
     private static string mouseXString = "Mouse X";
     private static string mouseYString = "Mouse Y";
@@ -26,11 +27,17 @@ public class Camera : MonoBehaviour
         moveHorizontal = 0.0f;
         moveY = 0.0f;
 
-        // Move camera on middle mouse
+        // Rotate camera on middle mouse
         if (Input.GetMouseButton(2))
         {
             rotateX = Input.GetAxis(mouseXString) * lookSpeed;
             rotateY = Input.GetAxis(mouseYString) * lookSpeed;
+        }
+        // Move camera on right click
+        if (Input.GetMouseButton(1))
+        {
+            moveHorizontal = Input.GetAxis(mouseXString) * rightClickMoveSpeed;
+            moveY = Input.GetAxis(mouseYString) * rightClickMoveSpeed;
         }
 
         // Edge Scrolling
