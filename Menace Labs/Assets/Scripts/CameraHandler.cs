@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class CameraHandler : MonoBehaviour
 {
     [SerializeField] private float lookSpeed = 10.0f;
     [SerializeField] private float moveSpeed = 10.0f;
