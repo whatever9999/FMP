@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    public float lookSpeed = 10.0f;
-    public float moveSpeed = 10.0f;
-    public float zoomSpeed = 8.0f;
-    public float edgeScrollSize = 10.0f;
-    public float edgeScrollSpeed = 1.0f;
+    [SerializeField] private float lookSpeed = 10.0f;
+    [SerializeField] private float moveSpeed = 10.0f;
+    [SerializeField] private float zoomSpeed = 8.0f;
+    [SerializeField] private float edgeScrollSize = 10.0f;
+    [SerializeField] private float edgeScrollSpeed = 1.0f;
+    [SerializeField] private Vector3 moveBounds;
+    [SerializeField] private float floorClamp = 1.0f;
 
     private static string mouseXString = "Mouse X";
     private static string mouseYString = "Mouse Y";
@@ -15,7 +17,7 @@ public class Camera : MonoBehaviour
 
     private float rotateX, rotateY, moveVertical, moveHorizontal, moveY;
 
-    public void CheckInput()
+    private void CheckInput()
     {
         // Reset values
         rotateX = 0.0f;
@@ -83,6 +85,16 @@ public class Camera : MonoBehaviour
             transform.position += transform.forward * finalMoveSpeed * moveVertical;
             transform.position += transform.right * finalMoveSpeed * moveHorizontal;
             transform.position += transform.up * finalMoveSpeed * moveY;
+
+            Vector3 clampedPosition = transform.position;
+            if (clampedPosition.x > moveBounds.x) clampedPosition.x = moveBounds.x;
+            if (clampedPosition.x < -moveBounds.x) clampedPosition.x = -moveBounds.x;
+            if (clampedPosition.y > moveBounds.y) clampedPosition.y = moveBounds.y;
+            if (clampedPosition.y < floorClamp) clampedPosition.y = floorClamp;
+            if (clampedPosition.z > moveBounds.z) clampedPosition.z = moveBounds.z;
+            if (clampedPosition.z < -moveBounds.z) clampedPosition.z = -moveBounds.z;
+
+            transform.position = clampedPosition;
         }
     }
 }
