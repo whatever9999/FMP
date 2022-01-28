@@ -117,6 +117,7 @@ MonoBehaviour:
   endSound: 16
   actionIcon: {fileID: 21300000, guid: fd7e19d39650ca44587cc274fb861d9e, type: 3}
   tooltip: Dance
+  animationType: 2
 --- !u!1001 &991070217399948559
 PrefabInstance:
   m_ObjectHideFlags: 0

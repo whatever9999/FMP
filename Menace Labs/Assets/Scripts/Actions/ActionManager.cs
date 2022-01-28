@@ -20,6 +20,8 @@ public class ActionManager : MonoBehaviour
         NUM_ACTION_TYPES,
     }
 
+    [SerializeField] private AnimationManager cloneAnimationManager;
+
     [SerializeField] private int maxNumActions = 4;
 
     [SerializeField] private LayerMask clickableForMovement;
@@ -72,6 +74,10 @@ public class ActionManager : MonoBehaviour
                 {
                     CancelAction(currentActions[0]);
                     currentAction = null;
+                }
+                else
+                {
+                    cloneAnimationManager.SetAnimation(currentAction.GetAnimationType(), true);
                 }
             }
             // If the current action hasn't completed then continue it
@@ -151,7 +157,9 @@ public class ActionManager : MonoBehaviour
             {
                 // Create the action button as a child of the action bar
                 GameObject button = Instantiate(action, transform);
-                button.GetComponent<ConstantObjectUseAction>().SetObject(usedObject);
+                ConstantObjectUseAction useAction = button.GetComponent<ConstantObjectUseAction>();
+                useAction.SetObject(usedObject);
+                useAction.SetAnimationType(usedObject.GetAnimationType());
 
                 // Add the button to the action list
                 currentActions.Add(button);
@@ -176,7 +184,9 @@ public class ActionManager : MonoBehaviour
             {
                 // Create the action button as a child of the action bar
                 GameObject button = Instantiate(action, transform);
-                button.GetComponent<TimedObjectUseAction>().SetObject(usedObject);
+                TimedObjectUseAction useAction = button.GetComponent<TimedObjectUseAction>();
+                useAction.SetObject(usedObject);
+                useAction.SetAnimationType(usedObject.GetAnimationType());
 
 
                 // Add the button to the action list
@@ -194,18 +204,21 @@ public class ActionManager : MonoBehaviour
         if (currentActions.Contains(button))
         {
             // If the action before this is a MOVE_TO_USE action then cancel that too
-            int cancellingAction = currentActions.IndexOf(button);
-            if (cancellingAction > 0)
+            int cancellingActionIndex = currentActions.IndexOf(button);
+            if (cancellingActionIndex > 0)
             {
-                Action previousAction = currentActions[cancellingAction - 1].GetComponent<Action>();
+                Action previousAction = currentActions[cancellingActionIndex - 1].GetComponent<Action>();
                 if (previousAction.GetActionType() == ActionType.MOVE_TO_USE)
                 {
-                    CancelAction(currentActions[cancellingAction - 1]);
+                    CancelAction(currentActions[cancellingActionIndex - 1]);
                 }
             }
 
             // Cancel the action
-            button.GetComponent<Action>().CancelAction();
+            Action cancellingAction = button.GetComponent<Action>();
+            // If the cancelled action is the current one make sure to stop the animation
+            if (cancellingAction == currentAction) cloneAnimationManager.SetAnimation(cancellingAction.GetAnimationType(), false);
+            cancellingAction.CancelAction();
 
             // Remove it from the action list
             currentActions.Remove(button);
@@ -220,7 +233,9 @@ public class ActionManager : MonoBehaviour
         if (currentActions.Contains(button))
         {
             // End the action
-            button.GetComponent<Action>().EndAction();
+            Action endingAction = button.GetComponent<Action>();
+            cloneAnimationManager.SetAnimation(endingAction.GetAnimationType(), false);
+            endingAction.EndAction();
 
             // Remove it from the action list
             currentActions.Remove(button);

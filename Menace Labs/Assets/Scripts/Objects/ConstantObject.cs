@@ -16,6 +16,9 @@ public class ConstantObject : MonoBehaviour
     public Sprite GetActionIcon() { return actionIcon; }
     public string GetTooltip() { return tooltip; }
 
+    [SerializeField] protected AnimationManager.AnimationType animationType = AnimationManager.AnimationType.NUM_ANIMATION_TYPES;
+    public AnimationManager.AnimationType GetAnimationType() { return animationType; }
+
     protected Renderer materialRenderer;
     protected AudioSource audioSource;
     protected ParticleSystem particles;
