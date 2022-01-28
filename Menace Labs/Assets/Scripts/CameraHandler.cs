@@ -63,8 +63,9 @@ public class CameraHandler : MonoBehaviour
             moveY -= edgeScrollSpeed;
         }
 
-        // Middle mouse scroll also moves vertically
-        moveVertical += Input.GetAxis(verticalString) + (Input.mouseScrollDelta.y * zoomSpeed);
+        moveY += Input.GetAxis(verticalString);
+        // Middle mouse scroll moves vertically
+        moveVertical += (Input.mouseScrollDelta.y * zoomSpeed);
         moveHorizontal += Input.GetAxis(horizontalString);
     }
 
@@ -96,7 +97,9 @@ public class CameraHandler : MonoBehaviour
             float finalMoveSpeed = moveSpeed * Time.deltaTime;
             transform.position += transform.forward * finalMoveSpeed * moveVertical;
             transform.position += transform.right * finalMoveSpeed * moveHorizontal;
-            transform.position += transform.up * finalMoveSpeed * moveY;
+            Vector3 edgeScroll = transform.up;
+            edgeScroll.y = 0;
+            transform.position += edgeScroll * finalMoveSpeed * moveY;
 
             Vector3 clampedPosition = transform.position;
             if (clampedPosition.x > moveBounds.x) clampedPosition.x = moveBounds.x;
