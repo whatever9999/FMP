@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ConstantObject : InteractableObject
+public class ConstantObject : MonoBehaviour
 {
+    [SerializeField] private List<ObjectEffect> effects;
+
     [SerializeField] protected Color hoverColor = new Color(0.9f, 0.9f, 0.9f, 1);
 
     [SerializeField] protected SoundManager.SoundName startSound = SoundManager.SoundName.NUM_SOUND_NAMES;
@@ -84,10 +87,35 @@ public class ConstantObject : InteractableObject
     }
     private void OnMouseDown()
     {
-        // TODO: Tell action manager to start using object
-        if (beingUsed) CancelUsing();
-        else StartUsing();
+        ActionManager.instance.AddAction(this);
     }
 }
 
+[System.Serializable]
+public struct ObjectEffect
+{
+    public enum ObjectEffectType
+    {
+        HUNGER,
+        COMFORT,
+        BLADDER,
+        SLEEP,
+        FUN,
+        SOCIAL,
+        HYGIENE,
+        ENVIRONMENT,
+        CLEANING,
+        COOKING,
+        DANCING,
+        GAMING,
+        HANDINESS,
+        PHOTOGRAPHY,
+        PROGRAMMING,
+        SNOOKER,
+    }
 
+    [SerializeField] private ObjectEffectType type;
+    [SerializeField] private float value;
+    public ObjectEffectType GetEffectType() { return type; }
+    public float GetValue() { return value; }
+}

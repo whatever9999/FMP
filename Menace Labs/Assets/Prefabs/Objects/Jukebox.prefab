@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effects:
-  - type: 2
+  - type: 10
     value: 1
   hoverColor: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
   startSound: 16

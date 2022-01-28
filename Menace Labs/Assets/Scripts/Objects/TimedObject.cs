@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ImmediateObject : ConstantObject
+public class TimedObject : ConstantObject
 {
     [SerializeField] private float timeToUse;
     // TODO: Enable us to trigger actions or events at the end of using an object
@@ -8,6 +8,40 @@ public class ImmediateObject : ConstantObject
     [SerializeField] private EventManager.EventType triggerEvent = EventManager.EventType.NUM_EVENT_TYPES;
     [SerializeField] private bool despawnObject;
 
+    private float useTimer;
+    private bool finished;
+    public bool IsFinished() { return finished; }
+
+    private void Update()
+    {
+        if (beingUsed)
+        {
+            useTimer += Time.deltaTime;
+
+            if (useTimer > timeToUse)
+            {
+                useTimer = 0.0f;
+                finished = true;
+            }
+        }
+    }
+
+    public virtual bool StartUsing()
+    {
+        beingUsed = true;
+        finished = false;
+        useTimer = 0.0f;
+
+        if (audioSource && startSound != SoundManager.SoundName.NUM_SOUND_NAMES)
+        {
+            audioSource.clip = SoundManager.instance.GetClip(startSound);
+            audioSource.loop = false;
+            audioSource.Play();
+        }
+        if (particles) particles.Play();
+
+        return true;
+    }
     public override void FinishUsing()
     {
         if (audioSource)
@@ -29,5 +63,10 @@ public class ImmediateObject : ConstantObject
         if (despawnObject) Destroy(gameObject);
 
         beingUsed = false;
+    }
+
+    private void OnMouseDown()
+    {
+        ActionManager.instance.AddAction(this);
     }
 }

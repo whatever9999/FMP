@@ -122,13 +122,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effects:
-  - type: 0
+  - type: 6
     value: 1
   hoverColor: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
   startSound: 32
   useSound: 24
   endSound: 32
-  timeToUse: 10
+  timeToUse: 2
   triggerEvent: 3
   despawnObject: 0
 --- !u!1001 &891207558337033565
@@ -140,7 +140,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1919132250988464, guid: 205f6d1a21bf5de41ba7330db62f9b8c, type: 3}
       propertyPath: m_Name
-      value: SM_Prop_Shower_01
+      value: Shower
       objectReference: {fileID: 0}
     - target: {fileID: 4703430101756636, guid: 205f6d1a21bf5de41ba7330db62f9b8c, type: 3}
       propertyPath: m_RootOrder
