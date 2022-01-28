@@ -12,6 +12,7 @@ public class ActionManager : MonoBehaviour
         TIMED_OBJECT_USE,
         MOVEMENT,
         MOVE_TO_USE,
+        MOVE_TO_ENTRANCE,
         TEST,
         DIE,
         REACT,
@@ -26,6 +27,9 @@ public class ActionManager : MonoBehaviour
 
     [SerializeField] private LayerMask clickableForMovement;
     [SerializeField] private LayerMask objectLayer;
+
+    [SerializeField] private Transform entranceLocation;
+    public Vector3 GetEntranceLocation() { return entranceLocation.position; }
 
     [SerializeField] private GameObject constantObjectUseActionPrefab;
     [SerializeField] private GameObject timedObjectUseActionPrefab;
@@ -50,17 +54,20 @@ public class ActionManager : MonoBehaviour
         actions.Add(ActionType.TIMED_OBJECT_USE, timedObjectUseActionPrefab);
         actions.Add(ActionType.MOVEMENT, movementActionPrefab);
         actions.Add(ActionType.MOVE_TO_USE, movementActionPrefab);
+        actions.Add(ActionType.MOVE_TO_ENTRANCE, movementActionPrefab);
         actions.Add(ActionType.TEST, testActionPrefab);
         actions.Add(ActionType.DIE, dieActionPrefab);
         actions.Add(ActionType.REACT, reactActionPrefab);
         actions.Add(ActionType.REFUSE, refuseActionPrefab);
         actions.Add(ActionType.BOREDOM, boredomActionPrefab);
+
+        AddAction(ActionType.TEST, true);
     }
 
     private void Update()
     {
-        // If we cancelled/ended the last action and there's one in the queue get the new one
-        if (!currentAction && currentActions.Count > 0)
+        // If there's an action in the queue get the one at the front
+        if (currentActions.Count > 0)
         {
             currentAction = currentActions[0].GetComponent<Action>();
         }
@@ -99,7 +106,7 @@ public class ActionManager : MonoBehaviour
         }
     }
 
-    public void AddAction(ActionType type)
+    public void AddAction(ActionType type, bool toStart)
     {
         // Don't add an action if we're over the max actions unless it's a move before use action
         if (type == ActionType.MOVE_TO_USE || currentActions.Count < maxNumActions)
@@ -109,8 +116,17 @@ public class ActionManager : MonoBehaviour
             actions.TryGetValue(type, out action);
             if (action)
             {
-                // Create the action button as a child of the action bar 
-                GameObject button = Instantiate(action, transform);
+                // Create the action button as a child of the action bar (adding it to the front if needed)
+                GameObject button;
+                if (toStart)
+                {
+                    button = Instantiate(action, transform);
+                    button.transform.SetAsFirstSibling();
+                }
+                else
+                {
+                    button = Instantiate(action, transform);
+                }
 
                 // Ensure action data is set
                 switch (type)
@@ -120,6 +136,9 @@ public class ActionManager : MonoBehaviour
                         break;
                     case ActionType.MOVE_TO_USE:
                         addAction = CheckMoveBeforeObjectUseAction(button);
+                        break;
+                    case ActionType.MOVE_TO_ENTRANCE:
+                        addAction = MoveToEntranceAction(button);
                         break;
                     case ActionType.TEST:
                         break;
@@ -134,7 +153,8 @@ public class ActionManager : MonoBehaviour
                 }
 
                 // Add the button to the action list
-                if (addAction) currentActions.Add(button);
+                if (addAction && toStart) currentActions.Insert(0, button);
+                else if (addAction) currentActions.Add(button);
                 else Destroy(button);
             }
             else
@@ -149,7 +169,7 @@ public class ActionManager : MonoBehaviour
         if (currentActions.Count < maxNumActions)
         {
             // Move before carrying out the action
-            AddAction(ActionType.MOVE_TO_USE);
+            AddAction(ActionType.MOVE_TO_USE, false);
 
             GameObject action;
             actions.TryGetValue(ActionType.CONSTANT_OBJECT_USE, out action);
@@ -176,7 +196,7 @@ public class ActionManager : MonoBehaviour
         if (currentActions.Count < maxNumActions)
         {
             // Move before carrying out the action
-            AddAction(ActionType.MOVE_TO_USE);
+            AddAction(ActionType.MOVE_TO_USE, false);
 
             GameObject action;
             actions.TryGetValue(ActionType.TIMED_OBJECT_USE, out action);
@@ -297,6 +317,15 @@ public class ActionManager : MonoBehaviour
                 return false;
             }
         }
+
+        return true;
+    }
+    public bool MoveToEntranceAction(GameObject button)
+    {
+        MovementAction action = button.GetComponent<MovementAction>();
+        action.SetActionType(ActionType.MOVE_TO_ENTRANCE);
+        action.SetDestination(entranceLocation.position);
+        action.SetCancellable(false);
 
         return true;
     }

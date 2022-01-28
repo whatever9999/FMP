@@ -146,8 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2d3a12b6c14324ab39b12126fa2e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cancellable: 1
+  cancellable: 0
   actionType: 4
+  animationType: 3
+  timeToTest: 10
 --- !u!1001 &3807659797519048928
 PrefabInstance:
   m_ObjectHideFlags: 0

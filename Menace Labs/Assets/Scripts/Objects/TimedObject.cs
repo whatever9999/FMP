@@ -26,7 +26,7 @@ public class TimedObject : ConstantObject
         }
     }
 
-    public virtual bool StartUsing()
+    public override bool StartUsing()
     {
         beingUsed = true;
         finished = false;
@@ -68,7 +68,7 @@ public class TimedObject : ConstantObject
 
     private void OnMouseDown()
     {
-        ActionManager.instance.AddAction(ActionManager.ActionType.MOVEMENT);
+        ActionManager.instance.AddAction(ActionManager.ActionType.MOVEMENT, false);
         ActionManager.instance.AddAction(this);
     }
 }

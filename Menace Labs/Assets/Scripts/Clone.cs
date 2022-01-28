@@ -14,7 +14,20 @@ public class Clone : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            ActionManager.instance.AddAction(ActionManager.ActionType.MOVEMENT);
+            ActionManager.instance.AddAction(ActionManager.ActionType.MOVEMENT, false);
         }
+    }
+
+    public bool ReachedDestination()
+    {
+        // If the clone is within stopping distance then they've reached their destination
+        if (clone.transform.position.x > clone.destination.x - clone.stoppingDistance &&
+            clone.transform.position.x < clone.destination.x + clone.stoppingDistance &&
+            clone.transform.position.z > clone.destination.z - clone.stoppingDistance &&
+            clone.transform.position.z < clone.destination.z + clone.stoppingDistance)
+        {
+            return true;
+        }
+        return false;
     }
 }

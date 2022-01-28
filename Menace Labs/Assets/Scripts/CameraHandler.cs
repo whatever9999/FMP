@@ -16,7 +16,7 @@ public class CameraHandler : MonoBehaviour
     private static string verticalString = "Vertical";
     private static string horizontalString = "Horizontal";
 
-    private float rotateX, rotateY, moveVertical, moveHorizontal, moveY;
+    private float rotateX, rotateY, moveVertical, moveHorizontal, moveNoY;
 
     private void Start()
     {
@@ -30,7 +30,7 @@ public class CameraHandler : MonoBehaviour
         rotateY = 0.0f;
         moveVertical = 0.0f;
         moveHorizontal = 0.0f;
-        moveY = 0.0f;
+        moveNoY = 0.0f;
 
         // Rotate camera on middle mouse
         if (Input.GetMouseButton(2))
@@ -42,7 +42,7 @@ public class CameraHandler : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             moveHorizontal = Input.GetAxis(mouseXString) * rightClickMoveSpeed;
-            moveY = Input.GetAxis(mouseYString) * rightClickMoveSpeed;
+            moveNoY = Input.GetAxis(mouseYString) * rightClickMoveSpeed;
         }
 
         // Edge Scrolling
@@ -56,14 +56,14 @@ public class CameraHandler : MonoBehaviour
         }
         if (Input.mousePosition.y > Screen.height - edgeScrollSize)
         {
-            moveY += edgeScrollSpeed;
+            moveNoY += edgeScrollSpeed;
         }
         if (Input.mousePosition.y < edgeScrollSize)
         {
-            moveY -= edgeScrollSpeed;
+            moveNoY -= edgeScrollSpeed;
         }
 
-        moveY += Input.GetAxis(verticalString);
+        moveNoY += Input.GetAxis(verticalString);
         // Middle mouse scroll moves vertically
         moveVertical += (Input.mouseScrollDelta.y * zoomSpeed);
         moveHorizontal += Input.GetAxis(horizontalString);
@@ -73,7 +73,7 @@ public class CameraHandler : MonoBehaviour
     {
         CheckInput();
 
-        bool moved = (rotateX != 0.0f) || (rotateY != 0.0f) || (moveVertical != 0.0f) || (moveHorizontal != 0.0f) || (moveY != 0.0f);
+        bool moved = (rotateX != 0.0f) || (rotateY != 0.0f) || (moveVertical != 0.0f) || (moveHorizontal != 0.0f) || (moveNoY != 0.0f);
         if (moved)
         {
             // ROTATE
@@ -97,9 +97,10 @@ public class CameraHandler : MonoBehaviour
             float finalMoveSpeed = moveSpeed * Time.deltaTime;
             transform.position += transform.forward * finalMoveSpeed * moveVertical;
             transform.position += transform.right * finalMoveSpeed * moveHorizontal;
+            // Ensure that edge scroll and WS don't move the camera in the y axis
             Vector3 edgeScroll = transform.up;
             edgeScroll.y = 0;
-            transform.position += edgeScroll * finalMoveSpeed * moveY;
+            transform.position += edgeScroll * finalMoveSpeed * moveNoY;
 
             Vector3 clampedPosition = transform.position;
             if (clampedPosition.x > moveBounds.x) clampedPosition.x = moveBounds.x;
