@@ -5,6 +5,7 @@ public class TestAction : Action
     [SerializeField] private float timeToTest = 10.0f;
 
     private Clone clone;
+    private Renderer cloneRenderer;
 
     private float testTimer = 0.0f;
     private bool testing = false;
@@ -12,6 +13,7 @@ public class TestAction : Action
     private void Awake()
     {
         clone = FindObjectOfType<Clone>();
+        cloneRenderer = clone.GetComponentInChildren<Renderer>();
     }
 
     public override bool StartAction()
@@ -27,7 +29,7 @@ public class TestAction : Action
         // The testing timer runs while they're gone
         else if (testing)
         {
-            clone.gameObject.SetActive(false);
+            cloneRenderer.enabled = false;
             testTimer += Time.deltaTime;
             completed = testTimer > timeToTest;
         }
@@ -35,7 +37,7 @@ public class TestAction : Action
     }
     public override void EndAction()
     {
-        clone.gameObject.SetActive(true);
+        cloneRenderer.enabled = true;
     }
     public override void CancelAction()
     {
