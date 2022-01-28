@@ -1,7 +1,19 @@
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
 public class TimedObjectUseAction : Action
 {
+    [SerializeField] private Image actionImage;
+    [SerializeField] private TextMeshProUGUI tooltipText;
+
     private TimedObject usedObject;
-    public void SetObject(TimedObject setTo) { usedObject = setTo; }
+    public void SetObject(TimedObject setTo)
+    {
+        actionImage.sprite = setTo.GetActionIcon();
+        tooltipText.text = setTo.GetTooltip();
+        usedObject = setTo;
+    }
 
     public override bool StartAction()
     {
@@ -11,7 +23,7 @@ public class TimedObjectUseAction : Action
     public override bool ContinueAction()
     {
         completed = usedObject.IsFinished();
-        return usedObject.Use();
+        return completed ? true : usedObject.Use();
     }
     public override void EndAction()
     {

@@ -62,6 +62,7 @@ public class TimedObject : ConstantObject
         if (triggerEvent != EventManager.EventType.NUM_EVENT_TYPES) EventManager.instance.CheckEventTrigger(triggerEvent);
         if (despawnObject) Destroy(gameObject);
 
+        finished = true;
         beingUsed = false;
     }
 

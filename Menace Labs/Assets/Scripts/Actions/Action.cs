@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class Action : MonoBehaviour
 {
-    [SerializeField] private bool cancellable;
+    [SerializeField] protected bool cancellable = true;
 
     protected bool completed;
     protected bool started;
@@ -14,7 +14,7 @@ public abstract class Action : MonoBehaviour
     public abstract void EndAction();
     public abstract void CancelAction();
 
-    public void OnMouseUp()
+    public void OnClick()
     {
         if (cancellable)
         {

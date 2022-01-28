@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ReactAction : MonoBehaviour
+public class ReactAction : Action
 {
-    // Start is called before the first frame update
-    void Start()
+    public override bool StartAction()
     {
-        
+        return true;
     }
-
-    // Update is called once per frame
-    void Update()
+    public override bool ContinueAction()
     {
-        
+        return true;
+    }
+    public override void EndAction()
+    {
+
+    }
+    public override void CancelAction()
+    {
+
     }
 }

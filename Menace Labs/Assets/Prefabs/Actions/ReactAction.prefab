@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8dd6bc678b9e074aadd07ed320907f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cancellable: 1
 --- !u!1001 &1296350043534791093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -244,6 +245,34 @@ PrefabInstance:
     - target: {fileID: 4280800681193006088, guid: 3caf1d537ea731942931fc3438d23bc6, type: 3}
       propertyPath: m_Name
       value: ReactAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356073135957919619, guid: 3caf1d537ea731942931fc3438d23bc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356073135957919619, guid: 3caf1d537ea731942931fc3438d23bc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356073135957919619, guid: 3caf1d537ea731942931fc3438d23bc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 704239607297589668}
+    - target: {fileID: 5356073135957919619, guid: 3caf1d537ea731942931fc3438d23bc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356073135957919619, guid: 3caf1d537ea731942931fc3438d23bc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356073135957919619, guid: 3caf1d537ea731942931fc3438d23bc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Action, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356073135957919619, guid: 3caf1d537ea731942931fc3438d23bc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5822655619577591289, guid: 3caf1d537ea731942931fc3438d23bc6, type: 3}
       propertyPath: m_Sprite

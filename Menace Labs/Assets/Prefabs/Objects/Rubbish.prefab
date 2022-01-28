@@ -115,6 +115,8 @@ MonoBehaviour:
   startSound: 23
   useSound: 23
   endSound: 23
+  actionIcon: {fileID: 21300000, guid: eda27e68bfe6ba347a0cbd3535fa0c01, type: 3}
+  tooltip: Clean up
   timeToUse: 2
   triggerEvent: 6
   despawnObject: 1

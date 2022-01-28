@@ -11,6 +11,11 @@ public class ConstantObject : MonoBehaviour
     [SerializeField] protected SoundManager.SoundName useSound = SoundManager.SoundName.NUM_SOUND_NAMES;
     [SerializeField] protected SoundManager.SoundName endSound = SoundManager.SoundName.NUM_SOUND_NAMES;
 
+    [SerializeField] protected Sprite actionIcon;
+    [SerializeField] protected string tooltip;
+    public Sprite GetActionIcon() { return actionIcon; }
+    public string GetTooltip() { return tooltip; }
+
     protected Renderer materialRenderer;
     protected AudioSource audioSource;
     protected ParticleSystem particles;
