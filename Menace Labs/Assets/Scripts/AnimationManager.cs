@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationManager : MonoBehaviour
@@ -7,14 +8,27 @@ public class AnimationManager : MonoBehaviour
         IDLE,
         WALKING,
         DANCING,
+        DYING,
         NUM_ANIMATION_TYPES,
     }
 
+    [SerializeField] private AnimationClip idleAnimation;
+    [SerializeField] private AnimationClip walkingAnimation;
+    [SerializeField] private AnimationClip dancingAnimation;
+    [SerializeField] private AnimationClip dyingAnimation;
+
     private Animator animator;
+
+    private Dictionary<AnimationType, AnimationClip> animations = new Dictionary<AnimationType, AnimationClip>();
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+
+        animations.Add(AnimationType.IDLE, idleAnimation);
+        animations.Add(AnimationType.WALKING, walkingAnimation);
+        animations.Add(AnimationType.DANCING, dancingAnimation);
+        animations.Add(AnimationType.DYING, dyingAnimation);
     }
 
     public void SetAnimation(AnimationType type, bool enable)
@@ -38,5 +52,13 @@ public class AnimationManager : MonoBehaviour
                 animator.SetBool("Dancing", enable);
                 break;
         }
+    }
+
+    public float GetAnimationLength(AnimationType type)
+    {
+        AnimationClip animation;
+        animations.TryGetValue(type, out animation);
+        if (animation) return animation.length;
+        return 0.0f;
     }
 }

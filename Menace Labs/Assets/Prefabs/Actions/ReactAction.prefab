@@ -143,11 +143,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3068634659848353213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8dd6bc678b9e074aadd07ed320907f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a8c0b88dd30b7d4ca9d606a5e27c0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cancellable: 1
-  actionType: 6
+  actionType: 7
+  animationType: 2
 --- !u!1001 &1296350043534791093
 PrefabInstance:
   m_ObjectHideFlags: 0

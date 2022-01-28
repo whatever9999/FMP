@@ -44,6 +44,7 @@ public class ActionManager : MonoBehaviour
     private Dictionary<ActionType, GameObject> actions = new Dictionary<ActionType, GameObject>();
 
     private Action currentAction;
+    public Action GetCurrentAction() { return currentAction; }
 
     private void Start()
     {
@@ -61,7 +62,7 @@ public class ActionManager : MonoBehaviour
         actions.Add(ActionType.REFUSE, refuseActionPrefab);
         actions.Add(ActionType.BOREDOM, boredomActionPrefab);
 
-        AddAction(ActionType.TEST, true);
+        AddAction(ActionType.REFUSE, true);
     }
 
     private void Update()

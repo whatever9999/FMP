@@ -146,8 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8c0b88dd30b7d4ca9d606a5e27c0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cancellable: 1
-  actionType: 5
+  cancellable: 0
+  actionType: 6
+  animationType: 2
 --- !u!1001 &5385811765743165071
 PrefabInstance:
   m_ObjectHideFlags: 0
