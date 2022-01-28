@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cancellable: 1
+  actionType: 2
 --- !u!1 &5906614801338803605
 GameObject:
   m_ObjectHideFlags: 0

@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 417904801}
   - component: {fileID: 417904800}
   - component: {fileID: 417904799}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: EnvironmentCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8579,6 +8579,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e05dfaf7ce3c2549ae75f2b271ddc13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickableForMovement:
+    serializedVersion: 2
+    m_Bits: 64
+  objectLayer:
+    serializedVersion: 2
+    m_Bits: 1
   constantObjectUseActionPrefab: {fileID: 3334186565959401491, guid: 4703deeff2f4f3a4a866461de7bde9c2, type: 3}
   timedObjectUseActionPrefab: {fileID: 6554035383510537555, guid: 6ff9fad2f052b914dbd5c50d6bf1b1bf, type: 3}
   movementActionPrefab: {fileID: 4361751475704610498, guid: 994a3747ea8022a41812fee8ab96f82d, type: 3}
@@ -13100,9 +13106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b29d55e82a86243a1d666922d2b4b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickable:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!195 &1035716197
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -20317,8 +20320,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0825dc6b36b324c84cd25e55dc6446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PUM: {fileID: 0}
-  TM: {fileID: 0}
+  PUM: {fileID: 1144792726}
+  TM: {fileID: 1019965297}
   nameText: {fileID: 1581683917}
   goalNameText: {fileID: 1633179988}
   goalDescriptionText: {fileID: 1300514958}

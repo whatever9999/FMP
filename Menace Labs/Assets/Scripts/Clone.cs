@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Clone : MonoBehaviour
 {
-    [SerializeField] private LayerMask clickable;
-    
     private NavMeshAgent clone;
 
     private void Start()
@@ -18,13 +14,7 @@ public class Clone : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, 100, clickable))
-            {
-                clone.SetDestination(hit.point);
-            }
+            ActionManager.instance.AddAction(ActionManager.ActionType.MOVEMENT);
         }
     }
 }

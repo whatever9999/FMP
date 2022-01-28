@@ -68,6 +68,7 @@ public class TimedObject : ConstantObject
 
     private void OnMouseDown()
     {
+        ActionManager.instance.AddAction(ActionManager.ActionType.MOVEMENT);
         ActionManager.instance.AddAction(this);
     }
 }

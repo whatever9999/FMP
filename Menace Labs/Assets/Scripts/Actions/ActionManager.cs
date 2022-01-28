@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ActionManager : MonoBehaviour
 {
@@ -10,12 +11,19 @@ public class ActionManager : MonoBehaviour
         CONSTANT_OBJECT_USE,
         TIMED_OBJECT_USE,
         MOVEMENT,
+        MOVE_TO_USE,
         TEST,
         DIE,
         REACT,
         REFUSE,
         BOREDOM,
+        NUM_ACTION_TYPES,
     }
+
+    [SerializeField] private int maxNumActions = 4;
+
+    [SerializeField] private LayerMask clickableForMovement;
+    [SerializeField] private LayerMask objectLayer;
 
     [SerializeField] private GameObject constantObjectUseActionPrefab;
     [SerializeField] private GameObject timedObjectUseActionPrefab;
@@ -39,6 +47,7 @@ public class ActionManager : MonoBehaviour
         actions.Add(ActionType.CONSTANT_OBJECT_USE, constantObjectUseActionPrefab);
         actions.Add(ActionType.TIMED_OBJECT_USE, timedObjectUseActionPrefab);
         actions.Add(ActionType.MOVEMENT, movementActionPrefab);
+        actions.Add(ActionType.MOVE_TO_USE, movementActionPrefab);
         actions.Add(ActionType.TEST, testActionPrefab);
         actions.Add(ActionType.DIE, dieActionPrefab);
         actions.Add(ActionType.REACT, reactActionPrefab);
@@ -86,56 +95,97 @@ public class ActionManager : MonoBehaviour
 
     public void AddAction(ActionType type)
     {
-        GameObject action;
-        actions.TryGetValue(type, out action);
-        if (action)
+        // Don't add an action if we're over the max actions unless it's a move before use action
+        if (type == ActionType.MOVE_TO_USE || currentActions.Count < maxNumActions)
         {
-            // Create the action button as a child of the action bar 
-            GameObject button = Instantiate(action, transform);
+            bool addAction = true;
+            GameObject action;
+            actions.TryGetValue(type, out action);
+            if (action)
+            {
+                // Create the action button as a child of the action bar 
+                GameObject button = Instantiate(action, transform);
 
-            // Add the button to the action list
-            currentActions.Add(button);
-        }
-        else
-        {
-            Debug.LogError("Failed to get action of type " + type);
+                // Ensure action data is set
+                switch (type)
+                {
+                    case ActionType.MOVEMENT:
+                        addAction = CheckMoveAction(button);
+                        break;
+                    case ActionType.MOVE_TO_USE:
+                        addAction = CheckMoveBeforeObjectUseAction(button);
+                        break;
+                    case ActionType.TEST:
+                        break;
+                    case ActionType.DIE:
+                        break;
+                    case ActionType.REACT:
+                        break;
+                    case ActionType.REFUSE:
+                        break;
+                    case ActionType.BOREDOM:
+                        break;
+                }
+
+                // Add the button to the action list
+                if (addAction) currentActions.Add(button);
+                else Destroy(button);
+            }
+            else
+            {
+                Debug.LogError("Failed to get action of type " + type);
+            }
         }
     }
     public void AddAction(ConstantObject usedObject)
     {
-        GameObject action;
-        actions.TryGetValue(ActionType.CONSTANT_OBJECT_USE, out action);
-        if (action)
+        // Don't add an action if we're over the max actions
+        if (currentActions.Count < maxNumActions)
         {
-            // Create the action button as a child of the action bar
-            GameObject button = Instantiate(action, transform);
-            button.GetComponent<ConstantObjectUseAction>().SetObject(usedObject);
+            // Move before carrying out the action
+            AddAction(ActionType.MOVE_TO_USE);
 
-            // Add the button to the action list
-            currentActions.Add(button);
-        }
-        else
-        {
-            Debug.LogError("Failed to get action of type " + ActionType.CONSTANT_OBJECT_USE);
+            GameObject action;
+            actions.TryGetValue(ActionType.CONSTANT_OBJECT_USE, out action);
+            if (action)
+            {
+                // Create the action button as a child of the action bar
+                GameObject button = Instantiate(action, transform);
+                button.GetComponent<ConstantObjectUseAction>().SetObject(usedObject);
+
+                // Add the button to the action list
+                currentActions.Add(button);
+            }
+            else
+            {
+                Debug.LogError("Failed to get action of type " + ActionType.CONSTANT_OBJECT_USE);
+            }
         }
     }
     public void AddAction(TimedObject usedObject)
     {
-        GameObject action;
-        actions.TryGetValue(ActionType.TIMED_OBJECT_USE, out action);
-        if (action)
+        // Don't add an action if we're over the max actions
+        if (currentActions.Count < maxNumActions)
         {
-            // Create the action button as a child of the action bar
-            GameObject button = Instantiate(action, transform);
-            button.GetComponent<TimedObjectUseAction>().SetObject(usedObject);
+            // Move before carrying out the action
+            AddAction(ActionType.MOVE_TO_USE);
+
+            GameObject action;
+            actions.TryGetValue(ActionType.TIMED_OBJECT_USE, out action);
+            if (action)
+            {
+                // Create the action button as a child of the action bar
+                GameObject button = Instantiate(action, transform);
+                button.GetComponent<TimedObjectUseAction>().SetObject(usedObject);
 
 
-            // Add the button to the action list
-            currentActions.Add(button);
-        }
-        else
-        {
-            Debug.LogError("Failed to get action of type " + ActionType.TIMED_OBJECT_USE);
+                // Add the button to the action list
+                currentActions.Add(button);
+            }
+            else
+            {
+                Debug.LogError("Failed to get action of type " + ActionType.TIMED_OBJECT_USE);
+            }
         }
     }
 
@@ -143,6 +193,17 @@ public class ActionManager : MonoBehaviour
     {
         if (currentActions.Contains(button))
         {
+            // If the action before this is a MOVE_TO_USE action then cancel that too
+            int cancellingAction = currentActions.IndexOf(button);
+            if (cancellingAction > 0)
+            {
+                Action previousAction = currentActions[cancellingAction - 1].GetComponent<Action>();
+                if (previousAction.GetActionType() == ActionType.MOVE_TO_USE)
+                {
+                    CancelAction(currentActions[cancellingAction - 1]);
+                }
+            }
+
             // Cancel the action
             button.GetComponent<Action>().CancelAction();
 
@@ -167,5 +228,61 @@ public class ActionManager : MonoBehaviour
             // Destroy the button
             Destroy(button);
         }
+    }
+
+    public bool CheckMoveAction(GameObject button)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        // Don't add the action if we're clicking on the UI
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return false;
+        }
+        else
+        {
+            if (Physics.Raycast(ray, out hit, 100, clickableForMovement))
+            {
+                RaycastHit tempHit;
+                button.GetComponent<MovementAction>().SetDestination(hit.point);
+
+                // If we hit an object before hitting the destination then don't add the action
+                if (Physics.Raycast(ray, out tempHit, hit.distance, objectLayer)) { return false; }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+    public bool CheckMoveBeforeObjectUseAction(GameObject button)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        // Don't add the action if we're clicking on the UI
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return false;
+        }
+        else
+        {
+            if (Physics.Raycast(ray, out hit, 100, objectLayer))
+            {
+                MovementAction action = button.GetComponent<MovementAction>();
+                action.SetActionType(ActionType.MOVE_TO_USE);
+                action.SetDestination(hit.point);
+                action.SetCancellable(false);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
