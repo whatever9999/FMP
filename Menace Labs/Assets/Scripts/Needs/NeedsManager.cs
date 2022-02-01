@@ -16,6 +16,7 @@ public class NeedsManager : MonoBehaviour
         SOCIAL,
         HYGIENE,
         ENVIRONMENT,
+        NONE,
     }
     public enum NeedLevel
     {
@@ -25,8 +26,18 @@ public class NeedsManager : MonoBehaviour
     }
 
     [SerializeField] private Need[] needs;
+    [SerializeField] private int updateMultiplier = 1;
+    [SerializeField] private int fireMultiplier = 4;
+    [SerializeField] private int illMultiplier = 3;
     [SerializeField] private float timeToUpdateNeed = 1.0f;
+    [Tooltip("If the health metric is less than this value when the clone is electrocuted they have a chance of dying")]
+    [SerializeField] private float electrocutionDeathCheck = 0.4f;
+    [Tooltip("If fun or social are below this value the clone has a chance of going mad each update")]
+    [SerializeField] private int madnessDeathCheck = 20;
     private float updateNeedTimer;
+
+    private bool is_ill = false;
+    private bool on_fire = false;
 
     private void Start()
     {
@@ -42,14 +53,24 @@ public class NeedsManager : MonoBehaviour
         {
             for (int i = 0; i < needs.Length; i++)
             {
-                needs[i].UpdateNeed(1);
+                // If on fire all needs are decreased faster
+                if (on_fire) needs[i].UpdateNeed(fireMultiplier);
+                // If ill sleep, bladder and hygiene needs decrease faster
+                else if (is_ill && needs[i].GetNeedType() == NeedType.SLEEP || needs[i].GetNeedType() == NeedType.BLADDER || needs[i].GetNeedType() == NeedType.HYGIENE)
+                {
+                    needs[i].UpdateNeed(illMultiplier);
+                }
+                // Otherwise, needs decrease at a normal rate
+                else needs[i].UpdateNeed(updateMultiplier);
             }
 
             updateNeedTimer = 0;
         }
+
+        MadnessCheck();
     }
 
-    public void ModifyNeed(NeedType needType, int amount)
+    public void ModifyNeed(NeedType needType, float amount)
     {
         for (int i = 0; i < needs.Length; i++)
         {
@@ -83,6 +104,52 @@ public class NeedsManager : MonoBehaviour
         needColor += Color.green * (value / MAX_NEED_VALUE);
 
         return needColor;
+    }
+
+    // Normalised average value of needs
+    public float GetHealthMetric()
+    {
+        float health = 0;
+        for (int i = 0; i < needs.Length; i++)
+        {
+            health += needs[i].GetValue();
+        }
+        health /= (needs.Length * MAX_NEED_VALUE);
+
+        return health;
+    }
+
+    // If the clone has low fun or social check for a madness death on update
+    private void MadnessCheck()
+    {
+        bool low_fun_or_social = false;
+        for (int i = 0; i < needs.Length; i++)
+        {
+            NeedType needType = needs[i].GetNeedType();
+            if (needType == NeedType.FUN || needType == NeedType.SOCIAL)
+            {
+                if (needs[i].GetValue() < madnessDeathCheck)
+                {
+                    low_fun_or_social = true;
+                    break;
+                }
+            }
+        }
+
+        if (low_fun_or_social)
+        {
+            // TODO: Madness death trigger check
+            //EventManager.instance.CheckEventTrigger(EventManager.EventType.MADNESS);
+        }
+    }
+
+    // If health metric is low electrocution has a chance of causing death
+    public void Electrocute()
+    {
+        if (GetHealthMetric() < electrocutionDeathCheck)
+        {
+            EventManager.instance.CheckEventTrigger(EventManager.EventType.ELECTROCUTION);
+        }
     }
 }
 

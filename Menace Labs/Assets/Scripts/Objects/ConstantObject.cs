@@ -64,6 +64,20 @@ public class ConstantObject : MonoBehaviour
 
         if (particles && !particles.isPlaying) particles.Play();
 
+        for (int i = 0; i < effects.Count; i++)
+        {
+            // If the effect is on a need then modify the need
+            if (effects[i].GetNeedType() != NeedsManager.NeedType.NONE)
+            {
+                NeedsManager.instance.ModifyNeed(effects[i].GetNeedType(), effects[i].GetValue());
+            }
+            // If the effect is on a skill then progress the skill
+            if (effects[i].GetSkillType() != SkillManager.SkillType.NONE)
+            {
+                SkillManager.instance.ProgressSkill(effects[i].GetSkillType(), effects[i].GetValue());
+            }
+        }
+
         return true;
     }
     public virtual void FinishUsing()
@@ -102,28 +116,10 @@ public class ConstantObject : MonoBehaviour
 [System.Serializable]
 public struct ObjectEffect
 {
-    public enum ObjectEffectType
-    {
-        HUNGER,
-        COMFORT,
-        BLADDER,
-        SLEEP,
-        FUN,
-        SOCIAL,
-        HYGIENE,
-        ENVIRONMENT,
-        CLEANING,
-        COOKING,
-        DANCING,
-        GAMING,
-        HANDINESS,
-        PHOTOGRAPHY,
-        PROGRAMMING,
-        SNOOKER,
-    }
-
-    [SerializeField] private ObjectEffectType type;
+    [SerializeField] private NeedsManager.NeedType needType;
+    [SerializeField] private SkillManager.SkillType skillType;
     [SerializeField] private float value;
-    public ObjectEffectType GetEffectType() { return type; }
+    public NeedsManager.NeedType GetNeedType() { return needType; }
+    public SkillManager.SkillType GetSkillType() { return skillType; }
     public float GetValue() { return value; }
 }

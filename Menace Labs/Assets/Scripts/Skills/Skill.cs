@@ -18,7 +18,7 @@ public class Skill : MonoBehaviour
         skillSlider = GetComponent<Slider>();
     }
 
-    public void ProgressSkill(int amount)
+    public void ProgressSkill(float amount)
     {
         if (currentSkillLevel < SkillManager.MAX_SKILL_LEVEL)
         {

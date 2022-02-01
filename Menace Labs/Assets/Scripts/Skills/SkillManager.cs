@@ -16,6 +16,7 @@ public class SkillManager : MonoBehaviour
          PHOTOGRAPHY,
          PROGRAMMING,
          SNOOKER,
+         NONE,
     }
 
     [SerializeField] private int[] notchSizes;
@@ -41,7 +42,7 @@ public class SkillManager : MonoBehaviour
         ProgressSkill(SkillType.DANCING, 1);
     }
 
-    public void ProgressSkill(SkillType skillType, int amount)
+    public void ProgressSkill(SkillType skillType, float amount)
     {
         for (int i = 0; i < skills.Length; i++)
         {
