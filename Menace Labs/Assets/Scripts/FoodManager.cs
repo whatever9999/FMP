@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FoodManager : MonoBehaviour
 {
-    public int maxFoodAmount = 100;
+    [SerializeField] private int maxFoodAmount = 100;
 
     private int foodAmount;
 

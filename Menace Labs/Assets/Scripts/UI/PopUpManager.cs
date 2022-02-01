@@ -73,13 +73,9 @@ public class PopUpManager : MonoBehaviour
 
     #region Death
     public GameObject deathPanel;
-    public TextMeshProUGUI deathText;
 
-    // TODO: Take in death data and update accordingly
     public void ShowDeath()
     {
-        disasterText.text = "Explanation of the death";
-
         deathPanel.SetActive(true);
         ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
     }
