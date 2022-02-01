@@ -121,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7859319282911062128}
   - component: {fileID: 7859319282911062125}
+  - component: {fileID: 8198982833923142252}
   m_Layer: 5
   m_Name: Need
   m_TagString: Untagged
@@ -198,10 +199,25 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 58
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8198982833923142252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7859319282911062129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d491ca2972dced44a70ba260369a7d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needType: 0
+  needModifier: 0.5
+  needFill: {fileID: 7859319283575270962}
 --- !u!1 &7859319283278396416
 GameObject:
   m_ObjectHideFlags: 0

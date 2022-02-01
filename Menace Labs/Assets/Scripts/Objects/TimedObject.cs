@@ -7,10 +7,12 @@ public class TimedObject : ConstantObject
     //[SerializeField] private ActionType triggerAction;
     [SerializeField] private EventManager.EventType triggerEvent = EventManager.EventType.NUM_EVENT_TYPES;
     [SerializeField] private bool despawnObject;
+    [SerializeField] private bool affectsEnvironment = false;
 
     private float useTimer;
     private bool finished;
     public bool IsFinished() { return finished; }
+    public bool AffectsEnvironment() { return affectsEnvironment; }
 
     private void Update()
     {

@@ -117,9 +117,11 @@ MonoBehaviour:
   endSound: 23
   actionIcon: {fileID: 21300000, guid: eda27e68bfe6ba347a0cbd3535fa0c01, type: 3}
   tooltip: Clean up
+  animationType: 4
   timeToUse: 2
   triggerEvent: 6
   despawnObject: 1
+  affectsEnvironment: 1
 --- !u!1001 &7823814301085357076
 PrefabInstance:
   m_ObjectHideFlags: 0

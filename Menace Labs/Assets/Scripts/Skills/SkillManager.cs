@@ -4,6 +4,8 @@ public class SkillManager : MonoBehaviour
 {
     public static SkillManager instance;
 
+    public const int MAX_SKILL_LEVEL = 10;
+
     public enum SkillType
     {
          CLEANING,
@@ -13,7 +15,7 @@ public class SkillManager : MonoBehaviour
          HANDINESS,
          PHOTOGRAPHY,
          PROGRAMMING,
-         SNOOKER
+         SNOOKER,
     }
 
     [SerializeField] private int[] notchSizes;
@@ -36,7 +38,7 @@ public class SkillManager : MonoBehaviour
 
     private void Update()
     {
-        ProgressSkill(SkillType.CLEANING, 1);
+        ProgressSkill(SkillType.DANCING, 1);
     }
 
     public void ProgressSkill(SkillType skillType, int amount)
