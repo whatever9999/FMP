@@ -13,19 +13,21 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameText;
 
     [SerializeField] private TextMeshProUGUI goalNameText;
+    [SerializeField] private TextMeshProUGUI goalGoalText;
     [SerializeField] private TextMeshProUGUI goalDescriptionText;
     [SerializeField] private TextMeshProUGUI goalStoryText;
 
     [SerializeField] private TextMeshProUGUI ageTooltipText;
 
-    void Start()
+    private void Awake()
     {
         instance = this;
+    }
 
+    void Start()
+    {
         SetCloneName();
-        SetGoal();
-        // TODO: Get max number of days from the AgeManager to use on start
-        SetAgeTooltip(6);
+        SetAgeTooltip(AM.GetCloneAge());
     }
 
     #region Buttons
@@ -57,15 +59,15 @@ public class UIManager : MonoBehaviour
         nameText.text = "Clone #" + Random.Range(0, 9999).ToString();
     }
 
-    // TODO: Take in goal info to add to tooltip
-    private void SetGoal()
+    // Take in goal info to add to tooltip
+    public void SetGoal(string name, string goal, string description, string story)
     {
-        goalNameText.text = "Goal Name";
-        goalDescriptionText.text = "Goal Description";
-        goalStoryText.text = "Goal Story";
+        goalNameText.text = name;
+        goalGoalText.text = goal;
+        goalDescriptionText.text = description;
+        goalStoryText.text = story;
     }
 
-    // TODO: Get max number of days from the AgeManager
     public void SetAgeTooltip(int age)
     {
         ageTooltipText.text = age.ToString() + "/6 days remaining";
