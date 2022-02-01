@@ -56,7 +56,7 @@ public class NeedsManager : MonoBehaviour
                 // If on fire all needs are decreased faster
                 if (on_fire) needs[i].UpdateNeed(fireMultiplier);
                 // If ill sleep, bladder and hygiene needs decrease faster
-                else if (is_ill && needs[i].GetNeedType() == NeedType.SLEEP || needs[i].GetNeedType() == NeedType.BLADDER || needs[i].GetNeedType() == NeedType.HYGIENE)
+                else if (is_ill && (needs[i].GetNeedType() == NeedType.SLEEP || needs[i].GetNeedType() == NeedType.BLADDER || needs[i].GetNeedType() == NeedType.HYGIENE))
                 {
                     needs[i].UpdateNeed(illMultiplier);
                 }

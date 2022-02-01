@@ -743,7 +743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 10
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needTriggers.Array.size
@@ -9091,7 +9091,12 @@ MonoBehaviour:
   - {fileID: 564811578}
   - {fileID: 1493424776}
   - {fileID: 261351740}
+  updateMultiplier: 1
+  fireMultiplier: 4
+  illMultiplier: 3
   timeToUpdateNeed: 1
+  electrocutionDeathCheck: 0.4
+  madnessDeathCheck: 20
 --- !u!1001 &711314764
 PrefabInstance:
   m_ObjectHideFlags: 0
