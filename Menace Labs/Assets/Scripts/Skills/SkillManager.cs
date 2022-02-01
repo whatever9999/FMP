@@ -37,11 +37,6 @@ public class SkillManager : MonoBehaviour
         instance = this;
     }
 
-    private void Update()
-    {
-        ProgressSkill(SkillType.DANCING, 1);
-    }
-
     public void ProgressSkill(SkillType skillType, float amount)
     {
         for (int i = 0; i < skills.Length; i++)

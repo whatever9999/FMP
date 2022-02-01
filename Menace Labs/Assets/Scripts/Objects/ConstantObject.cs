@@ -25,6 +25,9 @@ public class ConstantObject : MonoBehaviour
 
     protected bool beingUsed;
 
+    private float timeToCheckEffects = 1.0f;
+    private float effectsTimer;
+
     private void Start()
     {
         materialRenderer = GetComponentInChildren<Renderer>();
@@ -64,18 +67,24 @@ public class ConstantObject : MonoBehaviour
 
         if (particles && !particles.isPlaying) particles.Play();
 
-        for (int i = 0; i < effects.Count; i++)
+        effectsTimer += Time.deltaTime;
+        if (effectsTimer >= timeToCheckEffects)
         {
-            // If the effect is on a need then modify the need
-            if (effects[i].GetNeedType() != NeedsManager.NeedType.NONE)
+            for (int i = 0; i < effects.Count; i++)
             {
-                NeedsManager.instance.ModifyNeed(effects[i].GetNeedType(), effects[i].GetValue());
+                // If the effect is on a need then modify the need
+                if (effects[i].GetNeedType() != NeedsManager.NeedType.NONE)
+                {
+                    NeedsManager.instance.ModifyNeed(effects[i].GetNeedType(), effects[i].GetValue());
+                }
+                // If the effect is on a skill then progress the skill
+                if (effects[i].GetSkillType() != SkillManager.SkillType.NONE)
+                {
+                    SkillManager.instance.ProgressSkill(effects[i].GetSkillType(), effects[i].GetValue());
+                }
             }
-            // If the effect is on a skill then progress the skill
-            if (effects[i].GetSkillType() != SkillManager.SkillType.NONE)
-            {
-                SkillManager.instance.ProgressSkill(effects[i].GetSkillType(), effects[i].GetValue());
-            }
+
+            effectsTimer = 0.0f;
         }
 
         return true;

@@ -61,8 +61,6 @@ public class ActionManager : MonoBehaviour
         actions.Add(ActionType.REACT, reactActionPrefab);
         actions.Add(ActionType.REFUSE, refuseActionPrefab);
         actions.Add(ActionType.BOREDOM, boredomActionPrefab);
-
-        AddAction(ActionType.REFUSE, true);
     }
 
     private void Update()

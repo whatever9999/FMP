@@ -13157,6 +13157,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1795099238c27f04887e40df6490b66f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeTriggers:
+  - time: 480
+    eventType: 6
+  - time: 480
+    eventType: 6
+  - time: 840
+    eventType: 6
+  - time: 1080
+    eventType: 6
 --- !u!1001 &1030816436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27887,6 +27896,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2117023175}
     m_Modifications:
+    - target: {fileID: 415733636, guid: 37c804c06cf460b49b5f404fdd75101d, type: 3}
+      propertyPath: effects.Array.data[0].needType
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 415733636, guid: 37c804c06cf460b49b5f404fdd75101d, type: 3}
+      propertyPath: effects.Array.data[0].skillType
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 886788236031205249, guid: 37c804c06cf460b49b5f404fdd75101d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -28311,12 +28328,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1175832378, guid: 988bb86c908cae44fb1b016aebb7922d, type: 3}
+      propertyPath: effects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175832378, guid: 988bb86c908cae44fb1b016aebb7922d, type: 3}
       propertyPath: effects.Array.data[1].type
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1175832378, guid: 988bb86c908cae44fb1b016aebb7922d, type: 3}
       propertyPath: effects.Array.data[1].value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175832378, guid: 988bb86c908cae44fb1b016aebb7922d, type: 3}
+      propertyPath: effects.Array.data[1].needType
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7819298166998790046, guid: 988bb86c908cae44fb1b016aebb7922d, type: 3}
       propertyPath: m_RootOrder
