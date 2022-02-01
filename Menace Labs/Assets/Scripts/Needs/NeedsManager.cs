@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class NeedsManager : MonoBehaviour
 {
-    public static NeedsManager instance;
-
     public const int MAX_NEED_VALUE = 100;
 
     public enum NeedType
@@ -38,11 +36,6 @@ public class NeedsManager : MonoBehaviour
 
     private bool is_ill = false;
     private bool on_fire = false;
-
-    private void Start()
-    {
-        instance = this;
-    }
 
     private void Update()
     {
@@ -148,7 +141,7 @@ public class NeedsManager : MonoBehaviour
     {
         if (GetHealthMetric() < electrocutionDeathCheck)
         {
-            EventManager.instance.CheckEventTrigger(EventManager.EventType.ELECTROCUTION);
+            ManagerHandler.instance.EventM.CheckEventTrigger(EventManager.EventType.ELECTROCUTION);
         }
     }
 }

@@ -27,7 +27,7 @@ public class PopUpManager : MonoBehaviour
         optionBButton.GetComponentInChildren<Text>().text = "Option B";
 
         chanceCardPanel.SetActive(true);
-        UIManager.instance.TM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
+        ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
     }
 
     public void OptionAButton()
@@ -53,7 +53,7 @@ public class PopUpManager : MonoBehaviour
     public void ShowWinGame()
     {
         winGamePanel.SetActive(true);
-        UIManager.instance.TM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
+        ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
     }
     #endregion // Chance Card
 
@@ -67,7 +67,7 @@ public class PopUpManager : MonoBehaviour
         disasterText.text = "Explanation of the disaster";
 
         disasterPanel.SetActive(true);
-        UIManager.instance.TM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
+        ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
     }
     #endregion // Chance Card
 
@@ -81,7 +81,7 @@ public class PopUpManager : MonoBehaviour
         disasterText.text = "Explanation of the death";
 
         deathPanel.SetActive(true);
-        UIManager.instance.TM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
+        ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
     }
     #endregion // Chance Card
 }

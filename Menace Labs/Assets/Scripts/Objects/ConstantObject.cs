@@ -75,12 +75,12 @@ public class ConstantObject : MonoBehaviour
                 // If the effect is on a need then modify the need
                 if (effects[i].GetNeedType() != NeedsManager.NeedType.NONE)
                 {
-                    NeedsManager.instance.ModifyNeed(effects[i].GetNeedType(), effects[i].GetValue());
+                    ManagerHandler.instance.NeedsM.ModifyNeed(effects[i].GetNeedType(), effects[i].GetValue());
                 }
                 // If the effect is on a skill then progress the skill
                 if (effects[i].GetSkillType() != SkillManager.SkillType.NONE)
                 {
-                    SkillManager.instance.ProgressSkill(effects[i].GetSkillType(), effects[i].GetValue());
+                    ManagerHandler.instance.SkillM.ProgressSkill(effects[i].GetSkillType(), effects[i].GetValue());
                 }
             }
 
@@ -118,7 +118,7 @@ public class ConstantObject : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        ActionManager.instance.AddAction(this);
+        ManagerHandler.instance.ActionM.AddAction(this);
     }
 }
 

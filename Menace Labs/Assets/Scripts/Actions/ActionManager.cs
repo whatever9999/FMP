@@ -4,8 +4,6 @@ using UnityEngine.EventSystems;
 
 public class ActionManager : MonoBehaviour
 {
-    public static ActionManager instance;
-
     public enum ActionType
     {
         CONSTANT_OBJECT_USE,
@@ -48,8 +46,6 @@ public class ActionManager : MonoBehaviour
 
     private void Start()
     {
-        instance = this;
-
         // Add actions to the dictionary
         actions.Add(ActionType.CONSTANT_OBJECT_USE, constantObjectUseActionPrefab);
         actions.Add(ActionType.TIMED_OBJECT_USE, timedObjectUseActionPrefab);

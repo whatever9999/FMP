@@ -18,7 +18,7 @@ public class TestAction : Action
 
     public override bool StartAction()
     {
-        ActionManager.instance.AddAction(ActionManager.ActionType.MOVE_TO_ENTRANCE, true);
+        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE_TO_ENTRANCE, true);
         started = true;
         return true;
     }

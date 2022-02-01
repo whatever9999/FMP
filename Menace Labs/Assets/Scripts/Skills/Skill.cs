@@ -23,10 +23,10 @@ public class Skill : MonoBehaviour
         if (currentSkillLevel < SkillManager.MAX_SKILL_LEVEL)
         {
             // The current notch increases by amount * skill level multiplier
-            currentNotchProgress += amount * SkillManager.instance.GetNotchMultiplier(currentSkillLevel);
+            currentNotchProgress += amount * ManagerHandler.instance.SkillM.GetNotchMultiplier(currentSkillLevel);
 
             // If we've gone above the size of the current level then go up a level and reduce our current progress
-            if (currentNotchProgress >= SkillManager.instance.GetNotchSize(currentSkillLevel))
+            if (currentNotchProgress >= ManagerHandler.instance.SkillM.GetNotchSize(currentSkillLevel))
             {
                 // If this is the last skill point we won't make any more progress on it so just increase the skill and update the UI
                 if (currentSkillLevel == SkillManager.MAX_SKILL_LEVEL - 1)
@@ -37,7 +37,7 @@ public class Skill : MonoBehaviour
                 }
                 else
                 {
-                    currentNotchProgress -= SkillManager.instance.GetNotchSize(++currentSkillLevel);
+                    currentNotchProgress -= ManagerHandler.instance.SkillM.GetNotchSize(++currentSkillLevel);
                     // Update the UI
                     skillSlider.value = currentSkillLevel;
                 }

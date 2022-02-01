@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class SkillManager : MonoBehaviour
 {
-    public static SkillManager instance;
-
     public const int MAX_SKILL_LEVEL = 10;
 
     public enum SkillType
@@ -31,11 +29,6 @@ public class SkillManager : MonoBehaviour
     }
 
     [SerializeField] private Skill[] skills;
-
-    private void Start()
-    {
-        instance = this;
-    }
 
     public void ProgressSkill(SkillType skillType, float amount)
     {

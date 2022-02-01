@@ -31,7 +31,7 @@ public class AnimationAction : Action
         switch (actionType)
         {
             case ActionManager.ActionType.DIE:
-                UIManager.instance.PUM.ShowDeath();
+                ManagerHandler.instance.PopupM.ShowDeath();
                 break;
         }
     }

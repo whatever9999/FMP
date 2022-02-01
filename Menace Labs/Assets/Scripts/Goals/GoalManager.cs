@@ -26,36 +26,14 @@ public class GoalManager : MonoBehaviour
 
         // Update UI
         goalIconImage.sprite = goal.goalIcon;
-        UIManager.instance.SetGoal(goal.name, goal.goal, goal.description, goal.story);
+        ManagerHandler.instance.UIM.SetGoal(goal.name, goal.goal, goal.description, goal.story);
     }
 
     private void Update()
     {
-        bool goalComplete = true;
-        switch (goal.goalType)
+        if (goal.IsGoalComplete())
         {
-            case GoalType.MEDIOCRE_MASTER:
-                // Check through all skills to see if they have been achieved
-                for (int i = 0; i < (int)SkillManager.SkillType.NONE; i++)
-                {
-                    if (SkillManager.instance.GetSkillLevel((SkillManager.SkillType)i) < 10) goalComplete = false;
-                }
-                break;
-            case GoalType.CONQUEROR_OF_CUISINE:
-                break;
-            case GoalType.FAMOUS_FIREFIGHTER:
-                break;
-            case GoalType.FOOTLOOSE_FIEND:
-                break;
-            case GoalType.DOMESTIC_DELIGHT:
-                break;
-            case GoalType.NUM_GOAL_TYPES:
-                break;
-        }
-
-        if (goalComplete)
-        {
-            UIManager.instance.PUM.ShowWinGame();
+            ManagerHandler.instance.PopupM.ShowWinGame();
         }
     }
 }

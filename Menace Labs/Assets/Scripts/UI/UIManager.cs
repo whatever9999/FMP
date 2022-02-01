@@ -4,12 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance;
-
-    [SerializeField] public PopUpManager PUM;
-    [SerializeField] public TimeManager TM;
-    [SerializeField] public AgeManager AM;
-
     [SerializeField] private TextMeshProUGUI nameText;
 
     [SerializeField] private TextMeshProUGUI goalNameText;
@@ -19,36 +13,31 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI ageTooltipText;
 
-    private void Awake()
-    {
-        instance = this;
-    }
-
     void Start()
     {
         SetCloneName();
-        SetAgeTooltip(AM.GetCloneAge());
+        SetAgeTooltip(ManagerHandler.instance.AgeM.GetCloneAge());
     }
 
     #region Buttons
     public void QuitButton()
     {
         // Reset the time speed so it's correct if we come back to the Game scene
-        TM.SetTimeSpeed(TimeManager.TimeSpeed.PLAY);
+        ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PLAY);
         Application.Quit();
     }
 
     public void ReturnToMenu()
     {
         // Reset the time speed so it's correct if we come back to the Game scene
-        TM.SetTimeSpeed(TimeManager.TimeSpeed.PLAY);
+        ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PLAY);
         SceneManager.LoadScene(0);
     }
 
     public void Restart()
     {
         // Reset the time speed so it's correct if we come back to the Game scene
-        TM.SetTimeSpeed(TimeManager.TimeSpeed.PLAY);
+        ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PLAY);
         SceneManager.LoadScene(1);
     }
     #endregion // Buttons

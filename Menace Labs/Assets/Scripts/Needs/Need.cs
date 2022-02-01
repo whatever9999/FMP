@@ -69,7 +69,7 @@ public class Need : MonoBehaviour
     private void UpdateUI()
     {
         needSlider.value = currentNeedValue;
-        needFill.color = NeedsManager.instance.GetNeedColor(currentNeedValue);
+        needFill.color = ManagerHandler.instance.NeedsM.GetNeedColor(currentNeedValue);
     }
 
     // If need goes below a need trigger value then trigger the event
@@ -80,7 +80,7 @@ public class Need : MonoBehaviour
             // If we weren't above the trigger value before but are now then call the trigger
             if (previousNeedValue > (float)needTriggers[i].needLevel && currentNeedValue <= (float)needTriggers[i].needLevel)
             {
-                EventManager.instance.CheckEventTrigger(needTriggers[i].eventType);
+                ManagerHandler.instance.EventM.CheckEventTrigger(needTriggers[i].eventType);
             }
         }
     }

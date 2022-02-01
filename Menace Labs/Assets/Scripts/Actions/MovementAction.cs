@@ -33,7 +33,7 @@ public class MovementAction : Action
     public override void CancelAction()
     {
         // Only change the destination if this is the current action
-        if (ActionManager.instance.GetCurrentAction() == this)
+        if (ManagerHandler.instance.ActionM.GetCurrentAction() == this)
         {
             cloneMovement.SetDestination(clone.transform.position);
         }

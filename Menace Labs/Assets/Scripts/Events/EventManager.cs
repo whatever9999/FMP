@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    public static EventManager instance;
-
     public enum EventType
     {
         FIRE,
@@ -27,8 +25,6 @@ public class EventManager : MonoBehaviour
 
     private void Start()
     {
-        instance = this;
-
         // Populate the events dictionary with the different event types
         events.Add(EventType.FIRE, fireEvent);
         events.Add(EventType.ELECTROCUTION, electrocutionEvent);

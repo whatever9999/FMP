@@ -61,7 +61,7 @@ public class TimedObject : ConstantObject
         }
         if (particles) particles.Stop();
 
-        if (triggerEvent != EventManager.EventType.NUM_EVENT_TYPES) EventManager.instance.CheckEventTrigger(triggerEvent);
+        if (triggerEvent != EventManager.EventType.NUM_EVENT_TYPES) ManagerHandler.instance.EventM.CheckEventTrigger(triggerEvent);
         if (despawnObject) Destroy(gameObject);
 
         finished = true;
@@ -70,7 +70,7 @@ public class TimedObject : ConstantObject
 
     private void OnMouseDown()
     {
-        ActionManager.instance.AddAction(ActionManager.ActionType.MOVEMENT, false);
-        ActionManager.instance.AddAction(this);
+        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVEMENT, false);
+        ManagerHandler.instance.ActionM.AddAction(this);
     }
 }

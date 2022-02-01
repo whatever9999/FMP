@@ -25,7 +25,7 @@ public abstract class Action : MonoBehaviour
     {
         if (cancellable)
         {
-            ActionManager.instance.CancelAction(gameObject);
+            ManagerHandler.instance.ActionM.CancelAction(gameObject);
         }
     }
 }

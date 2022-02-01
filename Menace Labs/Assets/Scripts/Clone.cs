@@ -14,7 +14,7 @@ public class Clone : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            ActionManager.instance.AddAction(ActionManager.ActionType.MOVEMENT, false);
+            ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVEMENT, false);
         }
     }
 

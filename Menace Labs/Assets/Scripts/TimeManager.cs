@@ -126,7 +126,7 @@ public class TimeManager : MonoBehaviour
         // Check the events we have a list of
         for (int i = 0; i < eventsToCheck.Count; i++)
         {
-            EventManager.instance.CheckEventTrigger(eventsToCheck[i]);
+            ManagerHandler.instance.EventM.CheckEventTrigger(eventsToCheck[i]);
         }
     }
 

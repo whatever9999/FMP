@@ -25,7 +25,7 @@ public class AgeManager : MonoBehaviour
         if (cloneAge > cloneStartAge) cloneAge = cloneStartAge;
 
         cloneAgeSlider.value = cloneAge;
-        UIManager.instance.SetAgeTooltip(cloneAge);
+        ManagerHandler.instance.UIM.SetAgeTooltip(cloneAge);
 
         CheckAgeTrigger();
     }
@@ -35,7 +35,7 @@ public class AgeManager : MonoBehaviour
     {
         if (cloneAge <= 0)
         {
-            EventManager.instance.CheckEventTrigger(EventManager.EventType.NUM_EVENT_TYPES);
+            ManagerHandler.instance.EventM.CheckEventTrigger(EventManager.EventType.NUM_EVENT_TYPES);
         }
     }
 }
