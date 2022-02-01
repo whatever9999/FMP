@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] public PopUpManager PUM;
     [SerializeField] public TimeManager TM;
+    [SerializeField] public AgeManager AM;
 
     [SerializeField] private TextMeshProUGUI nameText;
 
