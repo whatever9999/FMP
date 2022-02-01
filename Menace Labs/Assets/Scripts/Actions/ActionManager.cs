@@ -141,16 +141,6 @@ public class ActionManager : MonoBehaviour
                     case ActionType.MOVE_TO_ENTRANCE:
                         addAction = MoveToEntranceAction(button);
                         break;
-                    case ActionType.TEST:
-                        break;
-                    case ActionType.DIE:
-                        break;
-                    case ActionType.REACT:
-                        break;
-                    case ActionType.REFUSE:
-                        break;
-                    case ActionType.BOREDOM:
-                        break;
                 }
 
                 // Add the button to the action list
