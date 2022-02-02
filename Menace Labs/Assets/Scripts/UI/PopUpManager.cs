@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -76,6 +77,14 @@ public class PopUpManager : MonoBehaviour
 
     public void ShowDeath()
     {
+        // Show death card once animation completes
+        StartCoroutine(PopupTimer());
+    }
+
+    public IEnumerator PopupTimer()
+    {
+        // Cut off a little of the animation time so the clone is still on the floor when the popup shows
+        yield return new WaitForSeconds(ManagerHandler.instance.AnimationM.GetAnimationLength(AnimationManager.AnimationType.DIE) - 0.1f);
         deathPanel.SetActive(true);
         ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
     }

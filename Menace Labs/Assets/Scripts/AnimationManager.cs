@@ -57,7 +57,7 @@ public class AnimationManager : MonoBehaviour
 
     private Dictionary<AnimationType, AnimationClip[]> animations = new Dictionary<AnimationType, AnimationClip[]>();
 
-    private void Start()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
 

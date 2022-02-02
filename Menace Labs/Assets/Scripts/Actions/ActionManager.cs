@@ -135,6 +135,9 @@ public class ActionManager : MonoBehaviour
                     case ActionType.MOVE_TO_ENTRANCE:
                         addAction = MoveToEntranceAction(button);
                         break;
+                    case ActionType.DIE:
+                        ManagerHandler.instance.EventM.CheckEventTrigger(EventManager.EventType.DEATH);
+                        break;
                 }
 
                 // Add the button to the action list

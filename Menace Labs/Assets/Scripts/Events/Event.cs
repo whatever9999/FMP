@@ -139,3 +139,13 @@ public class DirtyingEvent : OccurenceEvent
     private GameObject dirtiableObject;
     public void SetDirtiableObject(GameObject gameObject) { dirtiableObject = gameObject; }
 }
+
+[System.Serializable]
+public class DeathEvent : HundredPercentEvent
+{
+    protected override void TriggerEvent()
+    {
+        ManagerHandler.instance.AnimationM.SetAnimation(AnimationManager.AnimationType.DIE, true);
+        ManagerHandler.instance.PopupM.ShowDeath();
+    }
+}

@@ -11,6 +11,7 @@ public class EventManager : MonoBehaviour
         PUDDLE,
         BREAKING,
         DIRTYING,
+        DEATH,
         NUM_EVENT_TYPES,
     }
 
@@ -20,10 +21,11 @@ public class EventManager : MonoBehaviour
     [SerializeField] private PuddleEvent puddleEvent;
     [SerializeField] private BreakingEvent breakingEvent;
     [SerializeField] private DirtyingEvent dirtyingEvent;
+    [SerializeField] private DeathEvent deathEvent;
 
     private Dictionary<EventType, Event> events = new Dictionary<EventType, Event>();
 
-    private void Start()
+    private void Awake()
     {
         // Populate the events dictionary with the different event types
         events.Add(EventType.FIRE, fireEvent);
@@ -32,6 +34,7 @@ public class EventManager : MonoBehaviour
         events.Add(EventType.PUDDLE, puddleEvent);
         events.Add(EventType.BREAKING, breakingEvent);
         events.Add(EventType.DIRTYING, dirtyingEvent);
+        events.Add(EventType.DEATH, deathEvent);
     }
 
     // Get the event requested and check its trigger
