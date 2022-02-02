@@ -38,12 +38,22 @@ public class EventManager : MonoBehaviour
     }
 
     // Get the event requested and check its trigger
-    public void CheckEventTrigger(EventType eventType)
+    public bool CheckEventTrigger(EventType eventType)
     {
         Event checkEvent;
         bool gotEvent = events.TryGetValue(eventType, out checkEvent);
 
-        if (gotEvent) checkEvent.CheckTrigger();
+        if (gotEvent) return checkEvent.CheckTrigger();
         else Debug.LogError("Failed to get event of type " + eventType);
+        return false;
+    }
+
+    public void SetDirtiableObject(ConstantObject dirtiableObject)
+    {
+        dirtyingEvent.SetDirtiableObject(dirtiableObject);
+    }
+    public void SetBreakableObject(ConstantObject breakableObject)
+    {
+        breakingEvent.SetBreakableObject(breakableObject);
     }
 }

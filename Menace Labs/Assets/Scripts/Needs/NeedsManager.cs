@@ -31,7 +31,7 @@ public class NeedsManager : MonoBehaviour
     [Tooltip("If the health metric is less than this value when the clone is electrocuted they have a chance of dying")]
     [SerializeField] private float electrocutionDeathCheck = 0.4f;
     [Tooltip("If fun or social are below this value the clone has a chance of going mad each update")]
-    [SerializeField] private int madnessDeathCheck = 20;
+    [SerializeField] private int madnessDeathCheck = 5;
     private float updateNeedTimer;
 
     private bool is_ill = false;
@@ -58,9 +58,9 @@ public class NeedsManager : MonoBehaviour
             }
 
             updateNeedTimer = 0;
-        }
 
-        MadnessCheck();
+            MadnessCheck();
+        }
     }
 
     public void ModifyNeed(NeedType needType, float amount)
@@ -131,17 +131,16 @@ public class NeedsManager : MonoBehaviour
 
         if (low_fun_or_social)
         {
-            // TODO: Madness death trigger check
-            //EventManager.instance.CheckEventTrigger(EventManager.EventType.MADNESS);
+            ManagerHandler.instance.EventM.CheckEventTrigger(EventManager.EventType.DEATH);
         }
     }
 
-    // If health metric is low electrocution has a chance of causing death
+    // If health metric is low electrocution will kill
     public void Electrocute()
     {
         if (GetHealthMetric() < electrocutionDeathCheck)
         {
-            ManagerHandler.instance.EventM.CheckEventTrigger(EventManager.EventType.ELECTROCUTION);
+            ManagerHandler.instance.EventM.CheckEventTrigger(EventManager.EventType.DEATH);
         }
     }
 }

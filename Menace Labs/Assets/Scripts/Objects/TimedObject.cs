@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class TimedObject : ConstantObject
 {
-    [SerializeField] private float timeToUse;
+    [SerializeField] private bool useAnimationSetForTimeToUse = true;
+    [Tooltip("If this is 0 the animation set time will be used")]
+    [SerializeField] private float timeToUse = 0.0f;
     // TODO: Enable us to trigger actions or events at the end of using an object
     //[SerializeField] private ActionType triggerAction;
     [SerializeField] private EventManager.EventType triggerEvent = EventManager.EventType.NUM_EVENT_TYPES;
@@ -25,6 +27,16 @@ public class TimedObject : ConstantObject
                 useTimer = 0.0f;
                 finished = true;
             }
+        }
+    }
+
+    private new void Start()
+    {
+        base.Start();
+
+        if (useAnimationSetForTimeToUse || timeToUse == 0.0f)
+        {
+            timeToUse = ManagerHandler.instance.AnimationM.GetAnimationLength(animationType);
         }
     }
 
@@ -60,6 +72,8 @@ public class TimedObject : ConstantObject
             }
         }
         if (particles) particles.Stop();
+
+        DirtyOrBrokenCheck();
 
         if (triggerEvent != EventManager.EventType.NUM_EVENT_TYPES) ManagerHandler.instance.EventM.CheckEventTrigger(triggerEvent);
         if (despawnObject) Destroy(gameObject);

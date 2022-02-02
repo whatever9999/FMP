@@ -19,6 +19,26 @@ public class ConstantObject : MonoBehaviour
     [SerializeField] protected AnimationManager.AnimationType animationType = AnimationManager.AnimationType.NUM_ANIMATION_TYPES;
     public AnimationManager.AnimationType GetAnimationType() { return animationType; }
 
+    public enum DirtType
+    {
+        ALWAYS_CLEAN,
+        DIRTIABLE,
+        DIRTY,
+    }
+    public enum BreakType
+    {
+        NOT_BREAKABLE,
+        WORKING,
+        BROKEN,
+    }
+
+    [SerializeField] BreakType breakType;
+    [SerializeField] DirtType dirtType;
+    [Tooltip("The dirty object should have the clean object and vice versa, always clean objects don't have an alternate")]
+    [SerializeField] GameObject alternateDirtVersion;
+    [Tooltip("The working object should have the broken object and vice versa, non-breakable objects don't have an alternate")]
+    [SerializeField] GameObject alternateBreakVersion;
+
     protected Renderer materialRenderer;
     protected AudioSource audioSource;
     protected ParticleSystem particles;
@@ -28,7 +48,7 @@ public class ConstantObject : MonoBehaviour
     private float timeToCheckEffects = 1.0f;
     private float effectsTimer;
 
-    private void Start()
+    protected void Start()
     {
         materialRenderer = GetComponentInChildren<Renderer>();
         audioSource = GetComponent<AudioSource>();
@@ -99,11 +119,57 @@ public class ConstantObject : MonoBehaviour
         }
         if (particles) particles.Stop();
 
+        DirtyOrBrokenCheck();
+
         beingUsed = false;
     }
     public virtual void CancelUsing()
     {
         FinishUsing();
+    }
+
+    protected void DirtyOrBrokenCheck()
+    {
+        // Don't break and dirty at the same time
+        bool dirtied = false;
+        switch (dirtType)
+        {
+            case DirtType.DIRTIABLE:
+                // Check if object becomes dirty
+                ManagerHandler.instance.EventM.SetDirtiableObject(this);
+                dirtied = ManagerHandler.instance.EventM.CheckEventTrigger(EventManager.EventType.DIRTYING);
+                break;
+            case DirtType.DIRTY:
+                // If finished using a dirty object then it is now clean
+                SetToDirtAlternate();
+                break;
+        }
+        if (!dirtied)
+        {
+            switch (breakType)
+            {
+                case BreakType.WORKING:
+                    // Check if object breaks
+                    ManagerHandler.instance.EventM.SetBreakableObject(this);
+                    ManagerHandler.instance.EventM.CheckEventTrigger(EventManager.EventType.BREAKING);
+                    break;
+                case BreakType.BROKEN:
+                    // If finished using a broken object then it is now working
+                    SetToElectricAlternate();
+                    break;
+            }
+        }
+    }
+
+    public void SetToDirtAlternate()
+    {
+        alternateDirtVersion.SetActive(true);
+        gameObject.SetActive(false);
+    }
+    public void SetToElectricAlternate()
+    {
+        alternateBreakVersion.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     private void OnMouseEnter()

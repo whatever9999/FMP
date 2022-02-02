@@ -14,8 +14,6 @@ public class AgeManager : MonoBehaviour
     {
         cloneAge = cloneStartAge;
         cloneAgeSlider = GetComponent<Slider>();
-
-        ModifyCloneAge(0);
     }
 
     public void ModifyCloneAge(int days)
@@ -35,7 +33,7 @@ public class AgeManager : MonoBehaviour
     // If the clone has no days left the old age death will occur
     private void CheckAgeTrigger()
     {
-        if (cloneAge <= 6)
+        if (cloneAge <= 0)
         {
             ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.DIE, true);
         }

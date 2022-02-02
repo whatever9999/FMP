@@ -4,19 +4,21 @@ using UnityEngine;
 public abstract class Event
 {
     protected abstract void TriggerEvent();
-    public abstract void CheckTrigger();
+    public abstract bool CheckTrigger();
 }
 // Check chance to trigger
 public abstract class ChanceEvent : Event
 {
-    public override void CheckTrigger()
+    public override bool CheckTrigger()
     {
         float rand = Random.Range(0.0f, 100.0f);
         // TODO: Multiply chanceDecrease by skill level
         if (rand < chance - (chanceDecrease))
         {
             TriggerEvent();
+            return true;
         }
+        return false;
     }
 
     [Tooltip("Multiplied by specified skill to decrease chance of event")]
@@ -27,14 +29,16 @@ public abstract class ChanceEvent : Event
 // Trigger after a number of times checked
 public abstract class OccurenceEvent : Event
 {
-    public override void CheckTrigger()
+    public override bool CheckTrigger()
     {
         // If this trigger has been hit an occurence number of times then trigger the event
         if (++timesTriggered == occurence)
         {
             timesTriggered = 0;
             TriggerEvent();
+            return true;
         }
+        return false;
     }
 
     [SerializeField] private int occurence;
@@ -43,9 +47,10 @@ public abstract class OccurenceEvent : Event
 // Always trigger
 public abstract class HundredPercentEvent : Event
 {
-    public override void CheckTrigger()
+    public override bool CheckTrigger()
     {
         TriggerEvent();
+        return true;
     }
 }
 #endregion // Abstract Classes
@@ -64,12 +69,10 @@ public class FireEvent : ChanceEvent
 [System.Serializable]
 public class ElectrocutionEvent : ChanceEvent
 {
-    // TODO: Electrocute clone
     protected override void TriggerEvent()
     {
+        ManagerHandler.instance.NeedsM.Electrocute();
     }
-
-    [SerializeField] private GameObject clone;
 }
 
 [System.Serializable]
@@ -97,12 +100,11 @@ public class PuddleEvent : HundredPercentEvent
 [System.Serializable]
 public class BreakingEvent : OccurenceEvent
 {
-    // TODO: Break the breakable object
     protected override void TriggerEvent()
     {
         if (breakableObject)
         {
-
+            breakableObject.SetToElectricAlternate();
         }
         else
         {
@@ -113,19 +115,18 @@ public class BreakingEvent : OccurenceEvent
         breakableObject = null;
     }
 
-    private GameObject breakableObject;
-    public void SetBreakableObject(GameObject gameObject) { breakableObject = gameObject; }
+    private ConstantObject breakableObject;
+    public void SetBreakableObject(ConstantObject newBreakable) { breakableObject = newBreakable; }
 }
 
 [System.Serializable]
 public class DirtyingEvent : OccurenceEvent
 {
-    // TODO: Dirty the dirtiable object
     protected override void TriggerEvent()
     {
         if (dirtiableObject)
         {
-
+            dirtiableObject.SetToDirtAlternate();
         }
         else
         {
@@ -136,8 +137,8 @@ public class DirtyingEvent : OccurenceEvent
         dirtiableObject = null;
     }
 
-    private GameObject dirtiableObject;
-    public void SetDirtiableObject(GameObject gameObject) { dirtiableObject = gameObject; }
+    private ConstantObject dirtiableObject;
+    public void SetDirtiableObject(ConstantObject newDirtiable) { dirtiableObject = newDirtiable; }
 }
 
 [System.Serializable]
