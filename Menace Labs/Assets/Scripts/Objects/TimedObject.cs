@@ -5,11 +5,11 @@ public class TimedObject : ConstantObject
     [SerializeField] private bool useAnimationSetForTimeToUse = true;
     [Tooltip("If this is 0 the animation set time will be used")]
     [SerializeField] private float timeToUse = 0.0f;
-    // TODO: Enable us to trigger actions or events at the end of using an object
-    //[SerializeField] private ActionType triggerAction;
     [SerializeField] private EventManager.EventType triggerEvent = EventManager.EventType.NUM_EVENT_TYPES;
     [SerializeField] private bool despawnObject;
+    [SerializeField] private GameObject spawnObject;
     [SerializeField] private bool affectsEnvironment = false;
+    [SerializeField] private int usesFood = 0;
 
     private float useTimer;
     private bool finished;
@@ -42,6 +42,17 @@ public class TimedObject : ConstantObject
 
     public override bool StartUsing()
     {
+        // If there isn't enough food for this object to be used cancel the action
+        if (usesFood > 0 && !ManagerHandler.instance.FoodM.GotEnoughFood(usesFood))
+        {
+            ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.REFUSE, false);
+            return false;
+        }
+        else if (usesFood > 0)
+        {
+            ManagerHandler.instance.FoodM.ModifyFoodAmount(-usesFood);
+        }
+
         beingUsed = true;
         finished = false;
         useTimer = 0.0f;
@@ -76,7 +87,33 @@ public class TimedObject : ConstantObject
         DirtyOrBrokenCheck();
 
         if (triggerEvent != EventManager.EventType.NUM_EVENT_TYPES) ManagerHandler.instance.EventM.CheckEventTrigger(triggerEvent);
+        if (spawnObject)
+        {
+            ManagerHandler.instance.clone.GiveObject(spawnObject);
+        }
         if (despawnObject) Destroy(gameObject);
+
+        finished = true;
+        beingUsed = false;
+    }
+    public override void CancelUsing()
+    {
+        if (audioSource)
+        {
+            audioSource.loop = false;
+            if (endSound != SoundManager.SoundName.NUM_SOUND_NAMES)
+            {
+                audioSource.clip = SoundManager.instance.GetClip(endSound);
+                audioSource.Play();
+            }
+            else
+            {
+                audioSource.Stop();
+            }
+        }
+        if (particles) particles.Stop();
+
+        DirtyOrBrokenCheck();
 
         finished = true;
         beingUsed = false;

@@ -1,10 +1,19 @@
 using UnityEngine;
+using TMPro;
 
 public class FoodManager : MonoBehaviour
 {
     [SerializeField] private int maxFoodAmount = 100;
 
+    [SerializeField] private TextMeshProUGUI foodText;
+
     private int foodAmount;
+
+    private void Start()
+    {
+        foodAmount = maxFoodAmount;
+        UpdateUI();
+    }
 
     public void ModifyFoodAmount(int amount) 
     {
@@ -18,11 +27,17 @@ public class FoodManager : MonoBehaviour
         {
             foodAmount = maxFoodAmount;
         }
+        UpdateUI();
     }
 
     public bool GotEnoughFood(int amountNeeded)
     {
         if (foodAmount >= amountNeeded) return true;
         return false;
+    }
+
+    private void UpdateUI()
+    {
+        foodText.text = foodAmount.ToString();
     }
 }

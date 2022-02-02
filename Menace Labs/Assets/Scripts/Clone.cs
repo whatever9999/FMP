@@ -3,6 +3,8 @@ using UnityEngine.AI;
 
 public class Clone : MonoBehaviour
 {
+    [SerializeField] Transform hand;
+
     private NavMeshAgent clone;
 
     private void Start()
@@ -29,5 +31,12 @@ public class Clone : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void GiveObject(GameObject gameObject)
+    {
+        GameObject instantiated = Instantiate(gameObject, hand);
+        TimedObject timedObject = instantiated.GetComponent<TimedObject>();
+        ManagerHandler.instance.ActionM.AddAction(timedObject);
     }
 }

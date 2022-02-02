@@ -119,10 +119,17 @@ MonoBehaviour:
   actionIcon: {fileID: 21300000, guid: eda27e68bfe6ba347a0cbd3535fa0c01, type: 3}
   tooltip: Clean up
   animationType: 4
+  breakType: 0
+  dirtType: 0
+  alternateDirtVersion: {fileID: 0}
+  alternateBreakVersion: {fileID: 0}
+  useAnimationSetForTimeToUse: 1
   timeToUse: 2
-  triggerEvent: 6
+  triggerEvent: 7
   despawnObject: 1
+  spawnObject: {fileID: 0}
   affectsEnvironment: 1
+  usesFood: 0
 --- !u!1001 &7823814301085357076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140,15 +147,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4644228265360266, guid: e90f3565c0687a74db2ed0504ebd6243, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.574607
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4644228265360266, guid: e90f3565c0687a74db2ed0504ebd6243, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4644228265360266, guid: e90f3565c0687a74db2ed0504ebd6243, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.782024
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4644228265360266, guid: e90f3565c0687a74db2ed0504ebd6243, type: 3}
       propertyPath: m_LocalRotation.w

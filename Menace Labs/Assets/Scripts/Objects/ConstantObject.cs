@@ -125,7 +125,17 @@ public class ConstantObject : MonoBehaviour
     }
     public virtual void CancelUsing()
     {
-        FinishUsing();
+        if (audioSource && endSound != SoundManager.SoundName.NUM_SOUND_NAMES)
+        {
+            audioSource.clip = SoundManager.instance.GetClip(endSound);
+            audioSource.loop = false;
+            audioSource.Play();
+        }
+        if (particles) particles.Stop();
+
+        DirtyOrBrokenCheck();
+
+        beingUsed = false;
     }
 
     protected void DirtyOrBrokenCheck()
