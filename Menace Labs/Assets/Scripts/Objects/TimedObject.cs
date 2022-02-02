@@ -7,7 +7,10 @@ public class TimedObject : ConstantObject
     [SerializeField] private float timeToUse = 0.0f;
     [SerializeField] private EventManager.EventType triggerEvent = EventManager.EventType.NUM_EVENT_TYPES;
     [SerializeField] private bool despawnObject;
+    [Tooltip("This object will be spawned at the feet of the clone")]
     [SerializeField] private GameObject spawnObject;
+    [Tooltip("This object will be spawned in the clone's hand and they will use it immediately")]
+    [SerializeField] private GameObject giveObject;
     [SerializeField] private bool affectsEnvironment = false;
     [SerializeField] private int usesFood = 0;
 
@@ -87,9 +90,13 @@ public class TimedObject : ConstantObject
         DirtyOrBrokenCheck();
 
         if (triggerEvent != EventManager.EventType.NUM_EVENT_TYPES) ManagerHandler.instance.EventM.CheckEventTrigger(triggerEvent);
+        if (giveObject)
+        {
+            ManagerHandler.instance.clone.GiveObject(giveObject);
+        }
         if (spawnObject)
         {
-            ManagerHandler.instance.clone.GiveObject(spawnObject);
+            ManagerHandler.instance.clone.SpawnObject(spawnObject);
         }
         if (despawnObject) Destroy(gameObject);
 

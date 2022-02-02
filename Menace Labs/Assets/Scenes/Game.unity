@@ -19150,7 +19150,8 @@ MonoBehaviour:
   timeToUse: 0
   triggerEvent: 7
   despawnObject: 0
-  spawnObject: {fileID: 3067536429515704535, guid: ecf46df5db73f9a47ba97118c9606d37, type: 3}
+  spawnObject: {fileID: 0}
+  giveObject: {fileID: 3067536429515704535, guid: ecf46df5db73f9a47ba97118c9606d37, type: 3}
   affectsEnvironment: 0
   usesFood: 5
 --- !u!1001 &1480953701

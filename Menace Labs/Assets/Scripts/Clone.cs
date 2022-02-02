@@ -33,10 +33,18 @@ public class Clone : MonoBehaviour
         return false;
     }
 
+    // Put an object in the clone's hand that they will use immediately
     public void GiveObject(GameObject gameObject)
     {
         GameObject instantiated = Instantiate(gameObject, hand);
         TimedObject timedObject = instantiated.GetComponent<TimedObject>();
         ManagerHandler.instance.ActionM.AddAction(timedObject);
+    }
+    // Spawn an object in front of the clone
+    public void SpawnObject(GameObject gameObject)
+    {
+        Vector3 spawnPos = transform.position + (transform.right);
+        GameObject instantiated = Instantiate(gameObject);
+        instantiated.transform.position = spawnPos;
     }
 }

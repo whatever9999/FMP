@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3067536429515704535}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2508497, y: 0.8528366, z: 4.146736}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -130,6 +130,7 @@ MonoBehaviour:
   triggerEvent: 7
   despawnObject: 1
   spawnObject: {fileID: 7824179415104108314, guid: 988bb86c908cae44fb1b016aebb7922d, type: 3}
+  giveObject: {fileID: 0}
   affectsEnvironment: 0
   usesFood: 0
 --- !u!82 &3068884363169000459

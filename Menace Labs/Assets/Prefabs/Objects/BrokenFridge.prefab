@@ -377,6 +377,7 @@ MonoBehaviour:
   triggerEvent: 1
   despawnObject: 0
   spawnObject: {fileID: 0}
+  giveObject: {fileID: 3067536429515704535, guid: ecf46df5db73f9a47ba97118c9606d37, type: 3}
   affectsEnvironment: 1
   usesFood: 0
 --- !u!82 &1619375494961289903
