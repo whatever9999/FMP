@@ -3,19 +3,24 @@ using UnityEngine;
 
 public class ConstantObject : MonoBehaviour
 {
+    [Header("Need and Skill Effects")]
     [SerializeField] private List<ObjectEffect> effects;
-
+    
+    [Header("Hover Colour")]
     [SerializeField] protected Color hoverColor = new Color(0.9f, 0.9f, 0.9f, 1);
-
+    
+    [Header("SFX")]
     [SerializeField] protected SoundManager.SoundName startSound = SoundManager.SoundName.NUM_SOUND_NAMES;
     [SerializeField] protected SoundManager.SoundName useSound = SoundManager.SoundName.NUM_SOUND_NAMES;
     [SerializeField] protected SoundManager.SoundName endSound = SoundManager.SoundName.NUM_SOUND_NAMES;
-
+    
+    [Header("Action Icon and Tooltip")]
     [SerializeField] protected Sprite actionIcon;
     [SerializeField] protected string tooltip;
     public Sprite GetActionIcon() { return actionIcon; }
     public string GetTooltip() { return tooltip; }
-
+    
+    [Header("Animation Set")]
     [SerializeField] protected AnimationManager.AnimationType animationType = AnimationManager.AnimationType.NUM_ANIMATION_TYPES;
     public AnimationManager.AnimationType GetAnimationType() { return animationType; }
 
@@ -31,7 +36,7 @@ public class ConstantObject : MonoBehaviour
         WORKING,
         BROKEN,
     }
-
+    [Header("Breakable or Dirtiable")]
     [SerializeField] BreakType breakType;
     [SerializeField] DirtType dirtType;
     [Tooltip("The dirty object should have the clean object and vice versa, always clean objects don't have an alternate")]

@@ -126,10 +126,10 @@ MonoBehaviour:
     skillType: 0
     value: 1
   hoverColor: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
-  startSound: 16
-  useSound: 16
-  endSound: 16
-  actionIcon: {fileID: 21300000, guid: 07d2a47d8c828594d9b0d4356530856d, type: 3}
+  startSound: 34
+  useSound: 33
+  endSound: 34
+  actionIcon: {fileID: 21300000, guid: b4a74f545d89892469b3a0e1fe78909f, type: 3}
   tooltip: Cleaning
   animationType: 5
   breakType: 0
@@ -140,7 +140,10 @@ MonoBehaviour:
   timeToUse: 0
   triggerEvent: 7
   despawnObject: 0
+  spawnObject: {fileID: 0}
+  giveObject: {fileID: 0}
   affectsEnvironment: 1
+  usesFood: 0
 --- !u!1001 &394863079321450443
 PrefabInstance:
   m_ObjectHideFlags: 0

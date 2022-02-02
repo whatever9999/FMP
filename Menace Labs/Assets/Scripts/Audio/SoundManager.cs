@@ -39,6 +39,8 @@ public class SoundManager : MonoBehaviour
         SUCCESS,
         THROWING_UP,
         TYPING,
+        FIXING,
+        CLEANING,
         NUM_SOUND_NAMES,
     }
     public enum AmbienceName

@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class TimedObject : ConstantObject
 {
+    
+    [Header("Timer")]
+    [Tooltip("The time to use this object will be determined by how long it takes for its animations to run through")]
     [SerializeField] private bool useAnimationSetForTimeToUse = true;
     [Tooltip("If this is 0 the animation set time will be used")]
     [SerializeField] private float timeToUse = 0.0f;
+    
+    [Header("Results")]
     [SerializeField] private EventManager.EventType triggerEvent = EventManager.EventType.NUM_EVENT_TYPES;
     [SerializeField] private bool despawnObject;
     [Tooltip("This object will be spawned at the feet of the clone")]
     [SerializeField] private GameObject spawnObject;
     [Tooltip("This object will be spawned in the clone's hand and they will use it immediately")]
     [SerializeField] private GameObject giveObject;
+    
+    [Header("Variables")]
     [SerializeField] private bool affectsEnvironment = false;
     [SerializeField] private int usesFood = 0;
 

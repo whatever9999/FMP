@@ -126,10 +126,10 @@ MonoBehaviour:
     skillType: 4
     value: 1
   hoverColor: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
-  startSound: 16
-  useSound: 16
-  endSound: 16
-  actionIcon: {fileID: 21300000, guid: 70046f8c522d33c43b4f2e35e2d6c496, type: 3}
+  startSound: 34
+  useSound: 32
+  endSound: 34
+  actionIcon: {fileID: 21300000, guid: d549030f5e0ec0c489aedcbad650c207, type: 3}
   tooltip: Fixing
   animationType: 9
   breakType: 2
@@ -140,7 +140,10 @@ MonoBehaviour:
   timeToUse: 0
   triggerEvent: 3
   despawnObject: 0
+  spawnObject: {fileID: 0}
+  giveObject: {fileID: 0}
   affectsEnvironment: 1
+  usesFood: 0
 --- !u!1001 &5782389905908837446
 PrefabInstance:
   m_ObjectHideFlags: 0
