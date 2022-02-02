@@ -126,6 +126,7 @@ MonoBehaviour:
   dirtType: 0
   alternateDirtVersion: {fileID: 0}
   alternateBreakVersion: {fileID: 0}
+  requiredLocation: {fileID: 995510554655303689}
 --- !u!1001 &991070217399948559
 PrefabInstance:
   m_ObjectHideFlags: 0

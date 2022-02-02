@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cancellable: 0
-  actionType: 8
-  animationType: 2
+  actionType: 7
+  animationType: 11
 --- !u!1001 &5720276876452306619
 PrefabInstance:
   m_ObjectHideFlags: 0

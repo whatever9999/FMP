@@ -135,7 +135,7 @@ public class TimedObject : ConstantObject
 
     private void OnMouseDown()
     {
-        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVEMENT, false);
-        ManagerHandler.instance.ActionM.AddAction(this);
+        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE, false);
+        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.TIMED_OBJECT_USE, false, gameObject);
     }
 }

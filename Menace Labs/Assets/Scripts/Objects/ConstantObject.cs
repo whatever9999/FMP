@@ -44,6 +44,11 @@ public class ConstantObject : MonoBehaviour
     [Tooltip("The working object should have the broken object and vice versa, non-breakable objects don't have an alternate")]
     [SerializeField] GameObject alternateBreakVersion;
 
+    [Header("Object Use")]
+    [Tooltip("Where should the clone be to use the object?")]
+    [SerializeField] protected Transform requiredLocation;
+    public Transform GetRequiredLocation() { return requiredLocation; }
+
     protected Renderer materialRenderer;
     protected AudioSource audioSource;
     protected ParticleSystem particles;
@@ -199,7 +204,7 @@ public class ConstantObject : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        ManagerHandler.instance.ActionM.AddAction(this);
+        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.CONSTANT_OBJECT_USE, false, gameObject);
     }
 }
 

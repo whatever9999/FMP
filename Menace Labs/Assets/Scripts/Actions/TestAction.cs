@@ -18,7 +18,6 @@ public class TestAction : Action
 
     public override bool StartAction()
     {
-        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE_TO_ENTRANCE, true);
         started = true;
         return true;
     }

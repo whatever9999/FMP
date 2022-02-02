@@ -136,6 +136,7 @@ MonoBehaviour:
   dirtType: 2
   alternateDirtVersion: {fileID: 0}
   alternateBreakVersion: {fileID: 0}
+  requiredLocation: {fileID: 390230275666205975}
   useAnimationSetForTimeToUse: 1
   timeToUse: 0
   triggerEvent: 7

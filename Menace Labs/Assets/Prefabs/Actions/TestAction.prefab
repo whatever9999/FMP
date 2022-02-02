@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cancellable: 0
   actionType: 4
-  animationType: 3
+  animationType: 0
   timeToTest: 10
 --- !u!1001 &3807659797519048928
 PrefabInstance:

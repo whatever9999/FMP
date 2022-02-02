@@ -8730,13 +8730,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloneAnimationManager: {fileID: 1035716198}
   maxNumActions: 4
-  clickableForMovement:
+  clickableLayer:
     serializedVersion: 2
     m_Bits: 64
   objectLayer:
     serializedVersion: 2
     m_Bits: 1
-  entranceLocation: {fileID: 1874185380}
   constantObjectUseActionPrefab: {fileID: 3334186565959401491, guid: 4703deeff2f4f3a4a866461de7bde9c2, type: 3}
   timedObjectUseActionPrefab: {fileID: 6554035383510537555, guid: 6ff9fad2f052b914dbd5c50d6bf1b1bf, type: 3}
   movementActionPrefab: {fileID: 4361751475704610498, guid: 994a3747ea8022a41812fee8ab96f82d, type: 3}
@@ -10501,6 +10500,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 3ee455ab3c95dec4fa0cb7f68272d6b1, type: 3}
   - name: 31
     clip: {fileID: 8300000, guid: 0904e34e8a8fb63409884aac93ff6cdc, type: 3}
+  - name: 32
+    clip: {fileID: 8300000, guid: 8c1c9b1b900473a4cb07975c083417c1, type: 3}
+  - name: 33
+    clip: {fileID: 8300000, guid: cebba591df952f04ea369165c7133257, type: 3}
   ambienceTracks:
   - name: 0
     clip: {fileID: 8300000, guid: f71c7abdad3308d4ab7845f045860605, type: 3}
@@ -18951,209 +18954,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4791239929664594, guid: fa16e8cc3b9cad148be6f38b28ed4b88, type: 3}
   m_PrefabInstance: {fileID: 1474018899}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1476297793
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2033962995}
-    m_Modifications:
-    - target: {fileID: 1079244487273070, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
-      propertyPath: m_Name
-      value: Fridge
-      objectReference: {fileID: 0}
-    - target: {fileID: 1079244487273070, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1079244487273070, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895295801196788, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895295801196788, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -17.079
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895295801196788, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 14.352879
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895295801196788, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.485
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895295801196788, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895295801196788, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895295801196788, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.70710677
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895295801196788, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895295801196788, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895295801196788, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895295801196788, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
---- !u!4 &1476297794 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4895295801196788, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
-  m_PrefabInstance: {fileID: 1476297793}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1476297795 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1079244487273070, guid: 294846ac9d8117143af186bb96c898b7, type: 3}
-  m_PrefabInstance: {fileID: 1476297793}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1476297796
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476297795}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &1476297797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476297795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96bcfb371a66a49458b36560cb1765fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effects: []
-  hoverColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
-  startSound: 15
-  useSound: 32
-  endSound: 15
-  actionIcon: {fileID: 21300000, guid: 5075a7c52f26e214082acefe38f45701, type: 3}
-  tooltip: Get Food
-  animationType: 6
-  breakType: 1
-  dirtType: 0
-  alternateDirtVersion: {fileID: 0}
-  alternateBreakVersion: {fileID: 7036125428944548983}
-  useAnimationSetForTimeToUse: 1
-  timeToUse: 0
-  triggerEvent: 7
-  despawnObject: 0
-  spawnObject: {fileID: 0}
-  giveObject: {fileID: 3067536429515704535, guid: ecf46df5db73f9a47ba97118c9606d37, type: 3}
-  affectsEnvironment: 0
-  usesFood: 5
 --- !u!1001 &1480953701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26579,7 +26379,7 @@ Transform:
   - {fileID: 736481434}
   - {fileID: 1917015779}
   - {fileID: 623779589}
-  - {fileID: 1476297794}
+  - {fileID: 4895294348297397}
   - {fileID: 7041350957427465965}
   - {fileID: 572389814}
   - {fileID: 2127108197}
@@ -28374,6 +28174,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4810675575205074, guid: fadfa369b5a64c34fac55d43f4467589, type: 3}
   m_PrefabInstance: {fileID: 2146507852}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1079245417000495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4042603058399292528, guid: dde6d47ffba2b48428403e56bde16fcd, type: 3}
+  m_PrefabInstance: {fileID: 4042512285753180767}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4895294348297397 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4037626324385990378, guid: dde6d47ffba2b48428403e56bde16fcd, type: 3}
+  m_PrefabInstance: {fileID: 4042512285753180767}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &891207557042114602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28888,7 +28698,7 @@ PrefabInstance:
     - target: {fileID: 2211065223672727418, guid: 40322bfa0155ba6449eb0e45d42de081, type: 3}
       propertyPath: alternateBreakVersion
       value: 
-      objectReference: {fileID: 1476297795}
+      objectReference: {fileID: 1079245417000495}
     - target: {fileID: 6011675192798787640, guid: 40322bfa0155ba6449eb0e45d42de081, type: 3}
       propertyPath: m_Name
       value: BrokenFridge
@@ -28943,6 +28753,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40322bfa0155ba6449eb0e45d42de081, type: 3}
+--- !u!1001 &4042512285753180767
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2033962995}
+    m_Modifications:
+    - target: {fileID: 4037626324385990378, guid: dde6d47ffba2b48428403e56bde16fcd, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037626324385990378, guid: dde6d47ffba2b48428403e56bde16fcd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.079
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037626324385990378, guid: dde6d47ffba2b48428403e56bde16fcd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14.352879
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037626324385990378, guid: dde6d47ffba2b48428403e56bde16fcd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.485
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037626324385990378, guid: dde6d47ffba2b48428403e56bde16fcd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037626324385990378, guid: dde6d47ffba2b48428403e56bde16fcd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037626324385990378, guid: dde6d47ffba2b48428403e56bde16fcd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037626324385990378, guid: dde6d47ffba2b48428403e56bde16fcd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037626324385990378, guid: dde6d47ffba2b48428403e56bde16fcd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037626324385990378, guid: dde6d47ffba2b48428403e56bde16fcd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037626324385990378, guid: dde6d47ffba2b48428403e56bde16fcd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042512284529329690, guid: dde6d47ffba2b48428403e56bde16fcd, type: 3}
+      propertyPath: alternateBreakVersion
+      value: 
+      objectReference: {fileID: 7036125428944548983}
+    - target: {fileID: 4042603058399292528, guid: dde6d47ffba2b48428403e56bde16fcd, type: 3}
+      propertyPath: m_Name
+      value: Fridge
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dde6d47ffba2b48428403e56bde16fcd, type: 3}
 --- !u!1001 &4997761665115551285
 PrefabInstance:
   m_ObjectHideFlags: 0

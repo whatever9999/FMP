@@ -8,9 +8,8 @@ public class ActionManager : MonoBehaviour
     {
         CONSTANT_OBJECT_USE,
         TIMED_OBJECT_USE,
-        MOVEMENT,
+        MOVE,
         MOVE_TO_USE,
-        MOVE_TO_ENTRANCE,
         TEST,
         DIE,
         REACT,
@@ -19,16 +18,17 @@ public class ActionManager : MonoBehaviour
         NUM_ACTION_TYPES,
     }
 
+    [Header("Clone Animations")]
     [SerializeField] private AnimationManager cloneAnimationManager;
 
+    [Header("Action Bar Limit")]
     [SerializeField] private int maxNumActions = 4;
 
-    [SerializeField] private LayerMask clickableForMovement;
+    [Header("Move Action Layers")]
+    [SerializeField] private LayerMask clickableLayer;
     [SerializeField] private LayerMask objectLayer;
 
-    [SerializeField] private Transform entranceLocation;
-    public Vector3 GetEntranceLocation() { return entranceLocation.position; }
-
+    [Header("Action Prefabs")]
     [SerializeField] private GameObject constantObjectUseActionPrefab;
     [SerializeField] private GameObject timedObjectUseActionPrefab;
     [SerializeField] private GameObject movementActionPrefab;
@@ -37,6 +37,9 @@ public class ActionManager : MonoBehaviour
     [SerializeField] private GameObject reactActionPrefab;
     [SerializeField] private GameObject refuseActionPrefab;
     [SerializeField] private GameObject boredomActionPrefab;
+
+    [Header("Special Action Required Locations")]
+    private GameObject testRequiredLocation;
 
     private List<GameObject> currentActions = new List<GameObject>();
     private Dictionary<ActionType, GameObject> actions = new Dictionary<ActionType, GameObject>();
@@ -49,9 +52,8 @@ public class ActionManager : MonoBehaviour
         // Add actions to the dictionary
         actions.Add(ActionType.CONSTANT_OBJECT_USE, constantObjectUseActionPrefab);
         actions.Add(ActionType.TIMED_OBJECT_USE, timedObjectUseActionPrefab);
-        actions.Add(ActionType.MOVEMENT, movementActionPrefab);
+        actions.Add(ActionType.MOVE, movementActionPrefab);
         actions.Add(ActionType.MOVE_TO_USE, movementActionPrefab);
-        actions.Add(ActionType.MOVE_TO_ENTRANCE, movementActionPrefab);
         actions.Add(ActionType.TEST, testActionPrefab);
         actions.Add(ActionType.DIE, dieActionPrefab);
         actions.Add(ActionType.REACT, reactActionPrefab);
@@ -101,7 +103,7 @@ public class ActionManager : MonoBehaviour
         }
     }
 
-    public void AddAction(ActionType type, bool toStart)
+    public void AddAction(ActionType type, bool toStart, GameObject usedObject = null)
     {
         // Don't add an action if we're over the max actions unless it's a move before use action
         if (type == ActionType.MOVE_TO_USE || currentActions.Count < maxNumActions)
@@ -126,17 +128,50 @@ public class ActionManager : MonoBehaviour
                 // Ensure action data is set
                 switch (type)
                 {
-                    case ActionType.MOVEMENT:
-                        addAction = CheckMoveAction(button);
+                    case ActionType.MOVE:
+                        addAction = CreateMoveAction(button);
                         break;
                     case ActionType.MOVE_TO_USE:
-                        addAction = CheckMoveBeforeObjectUseAction(button);
-                        break;
-                    case ActionType.MOVE_TO_ENTRANCE:
-                        addAction = MoveToEntranceAction(button);
+                        {
+                            ConstantObject constantObject;
+                            if (usedObject.TryGetComponent<ConstantObject>(out constantObject))
+                            {
+                                addAction = CreateMoveToUseAction(button, constantObject.GetRequiredLocation().position);
+                            }
+                            else
+                            {
+                                // Special Action Movement
+                                addAction = CreateMoveToUseAction(button, usedObject.transform.position);
+                            }
+                        }
                         break;
                     case ActionType.DIE:
                         ManagerHandler.instance.EventM.CheckEventTrigger(EventManager.EventType.DEATH);
+                        break;
+                    case ActionType.CONSTANT_OBJECT_USE:
+                        {
+                            // If we're using an object make sure we move to the required location first
+                            AddAction(ActionType.MOVE_TO_USE, true, usedObject);
+
+                            ConstantObjectUseAction useAction = button.GetComponent<ConstantObjectUseAction>();
+                            ConstantObject constantObject = usedObject.GetComponent<ConstantObject>();
+                            useAction.SetObject(constantObject);
+                            useAction.SetAnimationType(constantObject.GetAnimationType());
+                        }
+                        break;
+                    case ActionType.TIMED_OBJECT_USE:
+                        {
+                            // If we're using an object make sure we move to the required location first
+                            AddAction(ActionType.MOVE_TO_USE, true, usedObject);
+
+                            TimedObjectUseAction useAction = button.GetComponent<TimedObjectUseAction>();
+                            TimedObject timedObject = usedObject.GetComponent<TimedObject>();
+                            useAction.SetObject(timedObject);
+                            useAction.SetAnimationType(timedObject.GetAnimationType());
+                        }
+                        break;
+                    case ActionType.TEST:
+                        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE_TO_USE, true, testRequiredLocation);
                         break;
                 }
 
@@ -151,62 +186,8 @@ public class ActionManager : MonoBehaviour
             }
         }
     }
-    public void AddAction(ConstantObject usedObject)
-    {
-        // Don't add an action if we're over the max actions
-        if (currentActions.Count < maxNumActions)
-        {
-            // Move before carrying out the action
-            AddAction(ActionType.MOVE_TO_USE, false);
 
-            GameObject action;
-            actions.TryGetValue(ActionType.CONSTANT_OBJECT_USE, out action);
-            if (action)
-            {
-                // Create the action button as a child of the action bar
-                GameObject button = Instantiate(action, transform);
-                ConstantObjectUseAction useAction = button.GetComponent<ConstantObjectUseAction>();
-                useAction.SetObject(usedObject);
-                useAction.SetAnimationType(usedObject.GetAnimationType());
-
-                // Add the button to the action list
-                currentActions.Add(button);
-            }
-            else
-            {
-                Debug.LogError("Failed to get action of type " + ActionType.CONSTANT_OBJECT_USE);
-            }
-        }
-    }
-    public void AddAction(TimedObject usedObject)
-    {
-        // Don't add an action if we're over the max actions
-        if (currentActions.Count < maxNumActions)
-        {
-            // Move before carrying out the action
-            AddAction(ActionType.MOVE_TO_USE, false);
-
-            GameObject action;
-            actions.TryGetValue(ActionType.TIMED_OBJECT_USE, out action);
-            if (action)
-            {
-                // Create the action button as a child of the action bar
-                GameObject button = Instantiate(action, transform);
-                TimedObjectUseAction useAction = button.GetComponent<TimedObjectUseAction>();
-                useAction.SetObject(usedObject);
-                useAction.SetAnimationType(usedObject.GetAnimationType());
-
-
-                // Add the button to the action list
-                currentActions.Add(button);
-            }
-            else
-            {
-                Debug.LogError("Failed to get action of type " + ActionType.TIMED_OBJECT_USE);
-            }
-        }
-    }
-
+    #region Stopping Actions
     public void CancelAction(GameObject button)
     {
         if (currentActions.Contains(button))
@@ -235,7 +216,6 @@ public class ActionManager : MonoBehaviour
             Destroy(button);
         }
     }
-
     public void EndAction(GameObject button)
     {
         if (currentActions.Contains(button))
@@ -252,8 +232,10 @@ public class ActionManager : MonoBehaviour
             Destroy(button);
         }
     }
+    #endregion // Stopping Actions
 
-    public bool CheckMoveAction(GameObject button)
+    #region Move Actions
+    public bool CreateMoveAction(GameObject button)
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -265,7 +247,7 @@ public class ActionManager : MonoBehaviour
         }
         else
         {
-            if (Physics.Raycast(ray, out hit, 100, clickableForMovement))
+            if (Physics.Raycast(ray, out hit, 100, clickableLayer))
             {
                 RaycastHit tempHit;
                 button.GetComponent<MovementAction>().SetDestination(hit.point);
@@ -281,40 +263,14 @@ public class ActionManager : MonoBehaviour
 
         return true;
     }
-    public bool CheckMoveBeforeObjectUseAction(GameObject button)
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        // Don't add the action if we're clicking on the UI
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            return false;
-        }
-        else
-        {
-            if (Physics.Raycast(ray, out hit, 100, objectLayer))
-            {
-                MovementAction action = button.GetComponent<MovementAction>();
-                action.SetActionType(ActionType.MOVE_TO_USE);
-                action.SetDestination(hit.point);
-                action.SetCancellable(false);
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        return true;
-    }
-    public bool MoveToEntranceAction(GameObject button)
+    public bool CreateMoveToUseAction(GameObject button, Vector3 destination)
     {
         MovementAction action = button.GetComponent<MovementAction>();
-        action.SetActionType(ActionType.MOVE_TO_ENTRANCE);
-        action.SetDestination(entranceLocation.position);
+        action.SetActionType(ActionType.MOVE_TO_USE);
+        action.SetDestination(destination);
         action.SetCancellable(false);
 
         return true;
     }
+    #endregion // Move Actions
 }

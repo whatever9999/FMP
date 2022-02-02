@@ -123,11 +123,13 @@ MonoBehaviour:
   dirtType: 0
   alternateDirtVersion: {fileID: 0}
   alternateBreakVersion: {fileID: 0}
+  requiredLocation: {fileID: 7819298166998790046}
   useAnimationSetForTimeToUse: 1
   timeToUse: 2
   triggerEvent: 7
   despawnObject: 1
   spawnObject: {fileID: 0}
+  giveObject: {fileID: 0}
   affectsEnvironment: 1
   usesFood: 0
 --- !u!1001 &7823814301085357076
@@ -190,5 +192,10 @@ PrefabInstance:
 --- !u!1 &7824179415104108314 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1922078477673230, guid: e90f3565c0687a74db2ed0504ebd6243, type: 3}
+  m_PrefabInstance: {fileID: 7823814301085357076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7819298166998790046 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4644228265360266, guid: e90f3565c0687a74db2ed0504ebd6243, type: 3}
   m_PrefabInstance: {fileID: 7823814301085357076}
   m_PrefabAsset: {fileID: 0}
