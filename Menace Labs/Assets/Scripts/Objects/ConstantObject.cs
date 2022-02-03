@@ -62,8 +62,8 @@ public class ConstantObject : MonoBehaviour
     private void Awake()
     {
         // Prefabs that don't exist in the scene will need to collect references to required locations in Awake
-        if (name.Contains("Sandwich")) requiredLocation = GameObject.Find("ChairRL").transform;
-        if (name.Contains("Donut")) requiredLocation = GameObject.Find("ChairRL").transform;
+        if (name.Contains("Sandwich")) requiredLocation = GameObject.Find("DiningChairRL").transform;
+        if (name.Contains("Donut")) requiredLocation = GameObject.Find("DiningChairRL").transform;
     }
 
     protected void Start()

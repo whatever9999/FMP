@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1930683626374358
+--- !u!1 &4495477353414095181
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4220720351932038}
-  - component: {fileID: 33161387055214262}
-  - component: {fileID: 23687646940343682}
-  - component: {fileID: 8827270734712987329}
+  - component: {fileID: 4501315323732282931}
+  - component: {fileID: 4472192593169741059}
+  - component: {fileID: 4482942263017620777}
+  - component: {fileID: 1067525401974643423}
+  - component: {fileID: -2023854059457177628}
   m_Layer: 0
-  m_Name: SM_Prop_Dishes_02
+  m_Name: Computer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
---- !u!4 &4220720351932038
+--- !u!4 &4501315323732282931
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930683626374358}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_GameObject: {fileID: 4495477353414095181}
+  m_LocalRotation: {x: -0, y: -0.62140024, z: -0, w: 0.78349334}
+  m_LocalPosition: {x: 4.4259624, y: 0.25780424, z: -4.6794887}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &33161387055214262
+  m_LocalEulerAnglesHint: {x: 0, y: -76.837, z: 0}
+--- !u!33 &4472192593169741059
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930683626374358}
-  m_Mesh: {fileID: 4300000, guid: 73993de7d53f97b429c8cdc0f82e9dd2, type: 3}
---- !u!23 &23687646940343682
+  m_GameObject: {fileID: 4495477353414095181}
+  m_Mesh: {fileID: 4300000, guid: 69910884d1e1bd74eb00b107112aec75, type: 3}
+--- !u!23 &4482942263017620777
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930683626374358}
+  m_GameObject: {fileID: 4495477353414095181}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,6 +62,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 2f834016e53f12c42a12baecd4450e34, type: 2}
+  - {fileID: 2100000, guid: b2fc9034565b6084bb8519fb97146c01, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,16 +84,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8827270734712987329
+--- !u!65 &1067525401974643423
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930683626374358}
+  m_GameObject: {fileID: 4495477353414095181}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4354724, y: 0.033083342, z: 0.4354724}
-  m_Center: {x: 0, y: 0.016541671, z: 0}
+  m_Size: {x: 0.92139673, y: 0.6360694, z: 0.5639393}
+  m_Center: {x: -0.03613289, y: 0.3180347, z: 0.17679688}
+--- !u!114 &-2023854059457177628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4495477353414095181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c4a6007904b80418a3bd60fd5681d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effects:
+  - needType: 8
+    skillType: 6
+    value: 1
+  hoverColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+  startSound: 34
+  useSound: 31
+  endSound: 34
+  actionIcon: {fileID: 21300000, guid: eda4bee9195ac814cb8a843526c50ec0, type: 3}
+  tooltip: Program
+  animationType: 16
+  breakType: 1
+  dirtType: 0
+  alternateDirtVersion: {fileID: 0}
+  alternateBreakVersion: {fileID: 0}
+  requiredLocation: {fileID: 0}
+  faceTransformDirection: 1

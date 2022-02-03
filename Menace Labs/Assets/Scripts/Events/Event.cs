@@ -89,12 +89,12 @@ public class RubbishEvent : HundredPercentEvent
 [System.Serializable]
 public class PuddleEvent : HundredPercentEvent
 {
-    // TODO: Instantiate a puddle at the clone's position
     protected override void TriggerEvent()
     {
+        ManagerHandler.instance.clone.SpawnObject(puddlePrefab);
     }
 
-    [SerializeField] private GameObject clone;
+    [SerializeField] private GameObject puddlePrefab;
 }
 
 [System.Serializable]

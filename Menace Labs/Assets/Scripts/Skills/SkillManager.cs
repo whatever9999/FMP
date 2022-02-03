@@ -13,7 +13,7 @@ public class SkillManager : MonoBehaviour
          HANDINESS,
          PHOTOGRAPHY,
          PROGRAMMING,
-         SNOOKER,
+         DARTS,
          NONE,
     }
 
