@@ -56,6 +56,10 @@ public class Clone : MonoBehaviour
         AudioClip clip = SoundManager.instance.GetClip(name);
         audioSource.PlayOneShot(clip);
     }
+    public void SetSoundLooping(bool loop)
+    {
+        audioSource.loop = loop;
+    }
 
     public void Electrocute()
     {

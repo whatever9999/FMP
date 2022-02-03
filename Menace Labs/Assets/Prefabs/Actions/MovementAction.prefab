@@ -15,7 +15,8 @@ MonoBehaviour:
   cancellable: 1
   actionType: 2
   animationType: 1
-  stoppingDistance: 0.5
+  soundEffect: 28
+  loopSound: 1
 --- !u!1 &5906614801338803605
 GameObject:
   m_ObjectHideFlags: 0

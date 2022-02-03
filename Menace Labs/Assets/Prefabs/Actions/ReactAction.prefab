@@ -149,6 +149,7 @@ MonoBehaviour:
   cancellable: 1
   actionType: 6
   animationType: 13
+  soundEffect: 20
 --- !u!1001 &1296350043534791093
 PrefabInstance:
   m_ObjectHideFlags: 0

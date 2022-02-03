@@ -148,6 +148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cancellable: 1
   actionType: 0
+  animationType: 22
+  soundEffect: 34
   actionImage: {fileID: 5035911562254815714}
   tooltipText: {fileID: 1105485119}
 --- !u!1001 &1525907243921417243

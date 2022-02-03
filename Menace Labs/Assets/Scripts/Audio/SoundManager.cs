@@ -67,7 +67,7 @@ public class SoundManager : MonoBehaviour
 
     private AudioSource audioSource;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
 
@@ -154,9 +154,7 @@ public class SoundManager : MonoBehaviour
     // Play non-3D SFX clips on the SoundManager
     public void PlayClip(SoundName sound)
     {
-        AudioClip clip;
-        soundDictionary.TryGetValue(sound, out clip);
-        audioSource.PlayOneShot(clip);
+        audioSource.PlayOneShot(GetClip(sound));
     }
 }
 
