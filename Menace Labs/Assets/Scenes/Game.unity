@@ -15158,7 +15158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needTriggers.Array.data[0].eventType
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
@@ -29614,7 +29614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needTriggers.Array.data[0].eventType
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needTriggers.Array.data[0].needLevel
