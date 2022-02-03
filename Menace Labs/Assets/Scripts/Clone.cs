@@ -6,9 +6,11 @@ public class Clone : MonoBehaviour
     [SerializeField] Transform hand;
 
     private NavMeshAgent clone;
+    private AudioSource audioSource;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         clone = GetComponent<NavMeshAgent>();
     }
 
@@ -46,5 +48,19 @@ public class Clone : MonoBehaviour
         Vector3 spawnPos = transform.position + (transform.right);
         GameObject instantiated = Instantiate(gameObject);
         instantiated.transform.position = spawnPos;
+    }
+
+    // Play 3D SFX from the clone
+    public void PlaySound(SoundManager.SoundName name)
+    {
+        AudioClip clip = SoundManager.instance.GetClip(name);
+        audioSource.PlayOneShot(clip);
+    }
+
+    public void Electrocute()
+    {
+        PlaySound(SoundManager.SoundName.ELECTROCUTION);
+        ManagerHandler.instance.AnimationM.SetAnimation(AnimationManager.AnimationType.EATING, true);
+        ManagerHandler.instance.NeedsM.Electrocute();
     }
 }

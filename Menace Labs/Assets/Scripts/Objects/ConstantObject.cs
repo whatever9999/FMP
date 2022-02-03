@@ -188,7 +188,7 @@ public class ConstantObject : MonoBehaviour
                     break;
                 case BreakType.BROKEN:
                     // If finished using a broken object then it is now working
-                    SetToElectricAlternate();
+                    SetToBreakableAlternate();
                     break;
             }
         }
@@ -199,7 +199,7 @@ public class ConstantObject : MonoBehaviour
         alternateDirtVersion.SetActive(true);
         gameObject.SetActive(false);
     }
-    public void SetToElectricAlternate()
+    public void SetToBreakableAlternate()
     {
         alternateBreakVersion.SetActive(true);
         gameObject.SetActive(false);

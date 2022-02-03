@@ -71,19 +71,19 @@ public class ElectrocutionEvent : ChanceEvent
 {
     protected override void TriggerEvent()
     {
-        ManagerHandler.instance.NeedsM.Electrocute();
+        ManagerHandler.instance.clone.Electrocute();
     }
 }
 
 [System.Serializable]
 public class RubbishEvent : HundredPercentEvent
 {
-    // TODO: Put rubbish in front of the clone
     protected override void TriggerEvent()
     {
+        ManagerHandler.instance.clone.GiveObject(rubbishPrefab);
     }
 
-    [SerializeField] private GameObject clone;
+    [SerializeField] private GameObject rubbishPrefab;
 }
 
 [System.Serializable]
@@ -104,7 +104,8 @@ public class BreakingEvent : OccurenceEvent
     {
         if (breakableObject)
         {
-            breakableObject.SetToElectricAlternate();
+            ManagerHandler.instance.SoundM.PlayClip(SoundManager.SoundName.BROKEN_ITEM);
+            breakableObject.SetToBreakableAlternate();
         }
         else
         {
@@ -146,6 +147,7 @@ public class DeathEvent : HundredPercentEvent
 {
     protected override void TriggerEvent()
     {
+        ManagerHandler.instance.SoundM.PlayClip(SoundManager.SoundName.DEATH);
         ManagerHandler.instance.AnimationM.SetAnimation(AnimationManager.AnimationType.DIE, true);
         ManagerHandler.instance.PopupM.ShowDeath();
     }

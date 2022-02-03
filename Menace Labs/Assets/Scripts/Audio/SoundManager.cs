@@ -65,9 +65,13 @@ public class SoundManager : MonoBehaviour
     private Dictionary<AmbienceName, AudioClip> ambienceDictionary = new Dictionary<AmbienceName, AudioClip>();
     private MusicTrack[] musicTrackList = new MusicTrack[4];
 
+    private AudioSource audioSource;
+
     private void Start()
     {
         instance = this;
+
+        audioSource = GetComponent<AudioSource>();
 
         // Populate sfx dictionary
         for (int i = 0; i < soundEffects.Length; i++)
@@ -145,6 +149,14 @@ public class SoundManager : MonoBehaviour
         AudioClip clip;
         soundDictionary.TryGetValue(sound, out clip);
         return clip;
+    }
+
+    // Play non-3D SFX clips on the SoundManager
+    public void PlayClip(SoundName sound)
+    {
+        AudioClip clip;
+        soundDictionary.TryGetValue(sound, out clip);
+        audioSource.PlayOneShot(clip);
     }
 }
 
