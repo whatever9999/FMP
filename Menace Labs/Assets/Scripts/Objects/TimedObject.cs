@@ -55,7 +55,7 @@ public class TimedObject : ConstantObject
         // If there isn't enough food for this object to be used cancel the action
         if (usesFood > 0 && !ManagerHandler.instance.FoodM.GotEnoughFood(usesFood))
         {
-            ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.REFUSE, false);
+            ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.REFUSE, 0);
             return false;
         }
         else if (usesFood > 0)
@@ -135,7 +135,6 @@ public class TimedObject : ConstantObject
 
     private void OnMouseDown()
     {
-        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE, false);
-        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.TIMED_OBJECT_USE, false, gameObject);
+        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.TIMED_OBJECT_USE, -1, gameObject);
     }
 }

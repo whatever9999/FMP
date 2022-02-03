@@ -103,10 +103,11 @@ public class ActionManager : MonoBehaviour
         }
     }
 
-    public void AddAction(ActionType type, bool toStart, GameObject usedObject = null)
+    // If index is -1 the action is added to the end
+    public void AddAction(ActionType type, int index, GameObject usedObject = null)
     {
-        // Don't add an action if we're over the max actions unless it's a move before use action
-        if (type == ActionType.MOVE_TO_USE || currentActions.Count < maxNumActions)
+        // Don't add an action if we're over the max actions unless it's a move before use action or if it's already in the bar
+        if (type == ActionType.MOVE_TO_USE || (currentActions.Count < maxNumActions && !AlreadyGotAction(usedObject)))
         {
             bool addAction = true;
             GameObject action;
@@ -114,15 +115,15 @@ public class ActionManager : MonoBehaviour
             if (action)
             {
                 // Create the action button as a child of the action bar (adding it to the front if needed)
-                GameObject button;
-                if (toStart)
+                GameObject button = Instantiate(action, transform);
+                if (index == -1)
                 {
-                    button = Instantiate(action, transform);
-                    button.transform.SetAsFirstSibling();
+                    // Add to end if index is -1
+                    button.transform.SetAsLastSibling();
                 }
                 else
                 {
-                    button = Instantiate(action, transform);
+                    button.transform.SetSiblingIndex(index);
                 }
 
                 // Ensure action data is set
@@ -150,9 +151,6 @@ public class ActionManager : MonoBehaviour
                         break;
                     case ActionType.CONSTANT_OBJECT_USE:
                         {
-                            // If we're using an object make sure we move to the required location first
-                            AddAction(ActionType.MOVE_TO_USE, true, usedObject);
-
                             ConstantObjectUseAction useAction = button.GetComponent<ConstantObjectUseAction>();
                             ConstantObject constantObject = usedObject.GetComponent<ConstantObject>();
                             useAction.SetObject(constantObject);
@@ -161,9 +159,6 @@ public class ActionManager : MonoBehaviour
                         break;
                     case ActionType.TIMED_OBJECT_USE:
                         {
-                            // If we're using an object make sure we move to the required location first
-                            AddAction(ActionType.MOVE_TO_USE, true, usedObject);
-
                             TimedObjectUseAction useAction = button.GetComponent<TimedObjectUseAction>();
                             TimedObject timedObject = usedObject.GetComponent<TimedObject>();
                             useAction.SetObject(timedObject);
@@ -171,20 +166,57 @@ public class ActionManager : MonoBehaviour
                         }
                         break;
                     case ActionType.TEST:
-                        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE_TO_USE, true, testRequiredLocation);
+                        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE_TO_USE, 0, testRequiredLocation);
                         break;
                 }
 
                 // Add the button to the action list
-                if (addAction && toStart) currentActions.Insert(0, button);
+                if (addAction && index != -1) currentActions.Insert(index, button);
                 else if (addAction) currentActions.Add(button);
                 else Destroy(button);
+
+                // If we're using an object make sure we move to the required location first
+                if (type == ActionType.CONSTANT_OBJECT_USE || type == ActionType.TIMED_OBJECT_USE)
+                {
+                    currentAction = currentActions[0].GetComponent<Action>();
+
+                    int i = 0;
+                    for(; i < currentActions.Count; i++)
+                    {
+                        if (currentAction.gameObject == currentActions[i]) break;
+                    }
+
+                    // Add the move action to the spot before the just added action
+                    AddAction(ActionType.MOVE_TO_USE, i, usedObject);
+                }
             }
             else
             {
                 Debug.LogError("Failed to get action of type " + type);
             }
         }
+    }
+    // Only checking for object use since other actions aren't added by player
+    public bool AlreadyGotAction(GameObject usedObject)
+    {
+        // We've already got this action if we're trying to use an object we're already planning to use in our actions
+        if (usedObject)
+        {
+            for (int i = 0; i < currentActions.Count; i++)
+            {
+                ConstantObjectUseAction constantAction;
+                TimedObjectUseAction timedAction;
+                if (currentActions[i].TryGetComponent<ConstantObjectUseAction>(out constantAction))
+                {
+                    return (usedObject == constantAction.GetUsedObject().gameObject);
+                }
+                else if (currentActions[i].TryGetComponent<TimedObjectUseAction>(out timedAction))
+                {
+                    return (usedObject == timedAction.GetUsedObject().gameObject);
+                }
+            }
+        }
+        return false;
     }
 
     #region Stopping Actions

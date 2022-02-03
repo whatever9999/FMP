@@ -16,7 +16,7 @@ public class Clone : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE, false);
+            ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE, -1);
         }
     }
 
@@ -38,7 +38,7 @@ public class Clone : MonoBehaviour
     {
         GameObject instantiated = Instantiate(gameObject, hand);
         TimedObject timedObject = instantiated.GetComponent<TimedObject>();
-        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.TIMED_OBJECT_USE, true, timedObject.gameObject);
+        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.TIMED_OBJECT_USE, 0, timedObject.gameObject);
     }
     // Spawn an object in front of the clone
     public void SpawnObject(GameObject gameObject)

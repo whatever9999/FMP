@@ -136,11 +136,15 @@ MonoBehaviour:
   dirtType: 1
   alternateDirtVersion: {fileID: 0}
   alternateBreakVersion: {fileID: 0}
+  requiredLocation: {fileID: 886788236031205249}
   useAnimationSetForTimeToUse: 0
   timeToUse: 10
   triggerEvent: 3
   despawnObject: 0
+  spawnObject: {fileID: 0}
+  giveObject: {fileID: 0}
   affectsEnvironment: 0
+  usesFood: 0
 --- !u!1001 &891207558337033565
 PrefabInstance:
   m_ObjectHideFlags: 0

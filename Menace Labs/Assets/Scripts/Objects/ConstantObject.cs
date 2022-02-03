@@ -58,6 +58,12 @@ public class ConstantObject : MonoBehaviour
     private float timeToCheckEffects = 1.0f;
     private float effectsTimer;
 
+    private void Awake()
+    {
+        // Prefabs that don't exist in the scene will need to collect references to required locations in Awake
+        if (name.Contains("Sandwich")) requiredLocation = GameObject.Find("Chair").transform;
+    }
+
     protected void Start()
     {
         materialRenderer = GetComponentInChildren<Renderer>();
@@ -204,7 +210,7 @@ public class ConstantObject : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.CONSTANT_OBJECT_USE, false, gameObject);
+        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.CONSTANT_OBJECT_USE, -1, gameObject);
     }
 }
 

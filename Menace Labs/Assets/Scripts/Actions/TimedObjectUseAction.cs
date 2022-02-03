@@ -14,6 +14,7 @@ public class TimedObjectUseAction : Action
         tooltipText.text = setTo.GetTooltip();
         usedObject = setTo;
     }
+    public TimedObject GetUsedObject() { return usedObject; }
 
     public override bool StartAction()
     {

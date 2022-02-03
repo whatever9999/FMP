@@ -14,6 +14,7 @@ public class ConstantObjectUseAction : Action
         tooltipText.text = setTo.GetTooltip();
         usedObject = setTo; 
     }
+    public ConstantObject GetUsedObject() { return usedObject; }
 
     public override bool StartAction()
     {
