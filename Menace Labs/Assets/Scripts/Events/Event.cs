@@ -80,7 +80,7 @@ public class RubbishEvent : HundredPercentEvent
 {
     protected override void TriggerEvent()
     {
-        ManagerHandler.instance.clone.GiveObject(rubbishPrefab);
+        ManagerHandler.instance.clone.SpawnObject(rubbishPrefab);
     }
 
     [SerializeField] private GameObject rubbishPrefab;

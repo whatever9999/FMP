@@ -8362,6 +8362,7 @@ MonoBehaviour:
   reactActionPrefab: {fileID: 3068634659848353213, guid: 4033b6ac9159bf541b978572ffb566d8, type: 3}
   refuseActionPrefab: {fileID: 8361763985997986483, guid: 86a8c5bb8ede47741b2c4619cfb6a2b6, type: 3}
   boredomActionPrefab: {fileID: 5755995742608429846, guid: b31939879738f84479702952b10f41e1, type: 3}
+  testRequiredLocation: {fileID: 1874185379}
 --- !u!1001 &681229137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25761,7 +25762,7 @@ MonoBehaviour:
     chanceDecrease: 0.5
     chance: 10
   rubbishEvent:
-    rubbishPrefab: {fileID: 0}
+    rubbishPrefab: {fileID: 7824179415104108314, guid: 988bb86c908cae44fb1b016aebb7922d, type: 3}
   puddleEvent:
     puddlePrefab: {fileID: 8149075954431699148, guid: e036f5ca8bc8ec8458ab35de6d57a847, type: 3}
   breakingEvent:
@@ -27917,7 +27918,7 @@ PrefabInstance:
       objectReference: {fileID: 2023861923}
     - target: {fileID: 886788236031205249, guid: 37c804c06cf460b49b5f404fdd75101d, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 886788236031205249, guid: 37c804c06cf460b49b5f404fdd75101d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28461,7 +28462,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 390230275666205975, guid: 0212f2330c562874180797251c38089c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 390230275666205975, guid: 0212f2330c562874180797251c38089c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28975,7 +28976,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1847513510056674537, guid: 836ae57b6f7e0d247a2aee6f8025997b, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1847513510056674537, guid: 836ae57b6f7e0d247a2aee6f8025997b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29480,7 +29481,7 @@ PrefabInstance:
       objectReference: {fileID: 1925482254334340266}
     - target: {fileID: 6053147070256313295, guid: c357fff126480f949b2128750ef02431, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6053147070256313295, guid: c357fff126480f949b2128750ef02431, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29525,10 +29526,6 @@ PrefabInstance:
     - target: {fileID: 6058961658915920883, guid: c357fff126480f949b2128750ef02431, type: 3}
       propertyPath: m_Name
       value: Toilet
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121127577282149695, guid: c357fff126480f949b2128750ef02431, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c357fff126480f949b2128750ef02431, type: 3}
@@ -29689,7 +29686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8130669831342985452, guid: 62d997d9fe2d0854ea445f3649ad1d2c, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8130669831342985452, guid: 62d997d9fe2d0854ea445f3649ad1d2c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29931,7 +29928,7 @@ PrefabInstance:
       objectReference: {fileID: 812177372}
     - target: {fileID: 5778005368925073352, guid: 49b39f47534b73541a8c31728631c091, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5778005368925073352, guid: 49b39f47534b73541a8c31728631c091, type: 3}
       propertyPath: m_LocalPosition.x

@@ -39,7 +39,7 @@ public class ActionManager : MonoBehaviour
     [SerializeField] private GameObject boredomActionPrefab;
 
     [Header("Special Action Required Locations")]
-    private GameObject testRequiredLocation;
+    [SerializeField] private GameObject testRequiredLocation;
 
     private List<GameObject> currentActions = new List<GameObject>();
     private Dictionary<ActionType, GameObject> actions = new Dictionary<ActionType, GameObject>();
@@ -135,7 +135,7 @@ public class ActionManager : MonoBehaviour
                     case ActionType.MOVE_TO_USE:
                         {
                             ConstantObject constantObject;
-                            if (usedObject.TryGetComponent<ConstantObject>(out constantObject))
+                            if (usedObject.TryGetComponent<ConstantObject>(out constantObject) && constantObject.GetRequiredLocation())
                             {
                                 addAction = CreateMoveToUseAction(button, constantObject.GetRequiredLocation().position);
                             }
