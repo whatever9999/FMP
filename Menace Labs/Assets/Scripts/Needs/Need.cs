@@ -59,6 +59,17 @@ public class Need : MonoBehaviour
         CheckNeedTriggers();
         UpdateUI();
     }
+    public void SetNeed(float amount)
+    {
+        // Track what the original value was so we only trigger a NeedTrigger once
+        previousNeedValue = currentNeedValue;
+
+        currentNeedValue = amount;
+
+        ClampNeed();
+        CheckNeedTriggers();
+        UpdateUI();
+    }
 
     private void ClampNeed()
     {

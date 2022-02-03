@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ab7469ca3464b499fe105f44f692da, type: 3}
+  m_Name: DomesticDelight
+  m_EditorClassIdentifier: 
+  goalType: 4
+  goalName: Domestic Delight
+  goal: Max cleaning, cooking and handiness and clean 100 times
+  description: "The clone must get the required skills to level 10 and clean dirty
+    objects, pick up rubbish or mop 100 times.\r"
+  story: "No one likes menial chores. Monitoring the state of the clone as its every
+    day is focused on them will provide an opportunity to work out how to make them
+    more enjoyable.\r"
+  goalIcon: {fileID: 21300000, guid: a717bf757ee1a8042894043e9d9ce753, type: 3}

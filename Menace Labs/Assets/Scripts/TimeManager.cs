@@ -6,7 +6,7 @@ public class TimeManager : MonoBehaviour
 {
     private const float timerCheck = 1.0f;
     private float timerTimer;
-    private int currentTime = (int)Times.MORNING_START;
+    private int currentTime = (int)Times.DAY_START;
 
     private TextMeshProUGUI timeText;
 
@@ -20,9 +20,9 @@ public class TimeManager : MonoBehaviour
     }
     public enum Times
     {
-        MORNING_START = 480, // 8am
+        DAY_START = 480, // 8am
         MID_AFTERNOON = 840, // 2pm
-        EVENING_START = 1080, // 6pm
+        NIGHT_START = 1080, // 6pm
     }
 
     private TimeSpeed previousSpeed;
@@ -41,13 +41,13 @@ public class TimeManager : MonoBehaviour
         {
             switch (timeTriggers[i].time)
             {
-                case Times.MORNING_START:
+                case Times.DAY_START:
                     morningStartTriggers.Add(timeTriggers[i].eventType);
                     break;
                 case Times.MID_AFTERNOON:
                     midAfternoonTriggers.Add(timeTriggers[i].eventType);
                     break;
-                case Times.EVENING_START:
+                case Times.NIGHT_START:
                     eveningStartTriggers.Add(timeTriggers[i].eventType);
                     break;
             }
@@ -112,13 +112,13 @@ public class TimeManager : MonoBehaviour
         // If the current time aligns with any significant times then we'll be checking those events
         switch(currentTime)
         {
-            case (int)Times.MORNING_START:
+            case (int)Times.DAY_START:
                 eventsToCheck = morningStartTriggers;
                 break;
             case (int)Times.MID_AFTERNOON:
                 eventsToCheck = midAfternoonTriggers;
                 break;
-            case (int)Times.EVENING_START:
+            case (int)Times.NIGHT_START:
                 eventsToCheck = eveningStartTriggers;
                 break;
         }

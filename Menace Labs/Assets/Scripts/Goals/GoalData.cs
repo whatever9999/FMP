@@ -25,12 +25,26 @@ public class GoalData : ScriptableObject
                 }
                 break;
             case GoalManager.GoalType.CONQUEROR_OF_CUISINE:
+                // Made 100 meals
+                if (ManagerHandler.instance.GoalM.GetMealsMade() < 100) goalComplete = false;
                 break;
             case GoalManager.GoalType.FAMOUS_FIREFIGHTER:
+                // Survived 5 fires
+                if (ManagerHandler.instance.GoalM.GetFiresSurvived() < 5) goalComplete = false;
                 break;
             case GoalManager.GoalType.FOOTLOOSE_FIEND:
+                // Danced 100 hours
+                if (ManagerHandler.instance.GoalM.GetHoursDancing() < 100) goalComplete = false;
                 break;
             case GoalManager.GoalType.DOMESTIC_DELIGHT:
+                // Cleaning, cooking and handiness must be maxed and must have cleaned 100 times
+                if (ManagerHandler.instance.GoalM.GetTimesCleaned() < 100 ||
+                    ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.COOKING) < SkillManager.MAX_SKILL_LEVEL ||
+                    ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.CLEANING) < SkillManager.MAX_SKILL_LEVEL ||
+                    ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.HANDINESS) < SkillManager.MAX_SKILL_LEVEL  )
+                {
+                    goalComplete = false;
+                }
                 break;
         }
         return goalComplete;

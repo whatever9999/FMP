@@ -156,7 +156,7 @@ MonoBehaviour:
   faceTransformDirection: 1
   useAnimationSetForTimeToUse: 1
   timeToUse: 0
-  triggerEvent: 7
+  triggerEvent: 0
   despawnObject: 0
   spawnObject: {fileID: 0}
   giveObject: {fileID: 3001173445835099639, guid: 1d33df3dc41e46f40a92ad3faf7ebb77, type: 3}

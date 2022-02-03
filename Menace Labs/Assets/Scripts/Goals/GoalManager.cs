@@ -6,6 +6,24 @@ public class GoalManager : MonoBehaviour
     [SerializeField] private Image goalIconImage;
     [SerializeField] private GoalData[] goalDatas;
 
+    #region Goal Stats Tracking
+    private int mealsMade = 0;
+    public int GetMealsMade() { return mealsMade; }
+    public void ModifyMealsMade(int amount) { mealsMade += amount; }
+
+    private int firesSurvived = 0;
+    public int GetFiresSurvived() { return firesSurvived; }
+    public void ModifyFiresSurvived(int amount) { firesSurvived += amount; }
+
+    private float hoursDancing = 0;
+    public float GetHoursDancing() { return hoursDancing; }
+    public void ModifyHoursDancing(float amount) { hoursDancing += amount; }
+
+    private int timesCleaned = 0;
+    public int GetTimesCleaned() { return timesCleaned; }
+    public void ModifyTimesCleaned(int amount) { timesCleaned += amount; }
+    #endregion // Goal Stats Tracking
+
     public enum GoalType
     {
         MEDIOCRE_MASTER,

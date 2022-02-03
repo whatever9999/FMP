@@ -9,9 +9,14 @@ public class EventManager : MonoBehaviour
         ELECTROCUTION,
         RUBBISH,
         PUDDLE,
+        BLADDER_FAILURE,
         BREAKING,
         DIRTYING,
         DEATH,
+        PASS_OUT,
+        FOOD_DELIVERY,
+        DAY_START,
+        NIGHT_START,
         NUM_EVENT_TYPES,
     }
 
@@ -19,9 +24,14 @@ public class EventManager : MonoBehaviour
     [SerializeField] private ElectrocutionEvent electrocutionEvent;
     [SerializeField] private RubbishEvent rubbishEvent;
     [SerializeField] private PuddleEvent puddleEvent;
+    [SerializeField] private BladderFailureEvent bladderFailureEvent;
     [SerializeField] private BreakingEvent breakingEvent;
     [SerializeField] private DirtyingEvent dirtyingEvent;
     [SerializeField] private DeathEvent deathEvent;
+    [SerializeField] private PassOutEvent passOutEvent;
+    [SerializeField] private FoodDeliveryEvent foodDeliveryEvent;
+    [SerializeField] private DayStartEvent dayStartEvent;
+    [SerializeField] private NightStartEvent nightStartEvent;
 
     private Dictionary<EventType, Event> events = new Dictionary<EventType, Event>();
 

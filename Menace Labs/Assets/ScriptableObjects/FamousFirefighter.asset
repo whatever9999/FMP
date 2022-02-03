@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ab7469ca3464b499fe105f44f692da, type: 3}
+  m_Name: FamousFirefighter
+  m_EditorClassIdentifier: 
+  goalType: 2
+  goalName: Famous Firefighter
+  goal: Survive 5 Fires
+  description: "The clone must cause and put out 5 fires. They may catch on fire
+    and put it out in the shower but cannot die.\r"
+  story: "Testing the side effects of a fire on a clone's mind and body in a controlled
+    environment will provide useful information that could really help the world
+    someday.\r"
+  goalIcon: {fileID: 21300000, guid: 14dbc16e10b97a048b2367b7d00dc07a, type: 3}

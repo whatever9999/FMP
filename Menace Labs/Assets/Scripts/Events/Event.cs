@@ -58,12 +58,12 @@ public abstract class HundredPercentEvent : Event
 [System.Serializable]
 public class FireEvent : ChanceEvent
 {
-    // TODO: Instantiate a fire on top of the clone
     protected override void TriggerEvent()
     {
+        ManagerHandler.instance.clone.SpawnObject(firePrefab);
     }
 
-    [SerializeField] private GameObject clone;
+    [SerializeField] private GameObject firePrefab;
 }
 
 [System.Serializable]
@@ -92,6 +92,17 @@ public class PuddleEvent : HundredPercentEvent
     protected override void TriggerEvent()
     {
         ManagerHandler.instance.clone.SpawnObject(puddlePrefab);
+    }
+
+    [SerializeField] private GameObject puddlePrefab;
+}
+[System.Serializable]
+public class BladderFailureEvent : HundredPercentEvent
+{
+    protected override void TriggerEvent()
+    {
+        ManagerHandler.instance.clone.SpawnObject(puddlePrefab);
+        ManagerHandler.instance.NeedsM.SetNeed(NeedsManager.NeedType.BLADDER, NeedsManager.MAX_NEED_VALUE);
     }
 
     [SerializeField] private GameObject puddlePrefab;
@@ -150,5 +161,47 @@ public class DeathEvent : HundredPercentEvent
         ManagerHandler.instance.SoundM.PlayClip(SoundManager.SoundName.DEATH);
         ManagerHandler.instance.AnimationM.SetAnimation(AnimationManager.AnimationType.DIE, true);
         ManagerHandler.instance.PopupM.ShowDeath();
+    }
+}
+
+[System.Serializable]
+public class PassOutEvent : HundredPercentEvent
+{
+    protected override void TriggerEvent()
+    {
+        // TODO: Add "Pass Out" Action
+    }
+}
+
+
+[System.Serializable]
+public class FoodDeliveryEvent : HundredPercentEvent
+{
+    protected override void TriggerEvent()
+    {
+        ManagerHandler.instance.FoodM.ModifyFoodAmount(foodAmount);
+    }
+
+    [SerializeField] private int foodAmount;
+}
+
+[System.Serializable]
+public class DayStartEvent : HundredPercentEvent
+{
+    protected override void TriggerEvent()
+    {
+        // Age the clone
+        ManagerHandler.instance.AgeM.ModifyCloneAge(1);
+        // Set ambience
+        ManagerHandler.instance.SoundM.ChangeAmbienceTrack(SoundManager.AmbienceName.DAY);
+    }
+}
+[System.Serializable]
+public class NightStartEvent : HundredPercentEvent
+{
+    protected override void TriggerEvent()
+    {
+        // Set ambience
+        ManagerHandler.instance.SoundM.ChangeAmbienceTrack(SoundManager.AmbienceName.NIGHT);
     }
 }

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ab7469ca3464b499fe105f44f692da, type: 3}
+  m_Name: ConquerorOfCuisine
+  m_EditorClassIdentifier: 
+  goalType: 1
+  goalName: Conqueror of Cuisine
+  goal: Make 100 meals
+  description: "The clone must use the oven to successfully cook a meal 100 times.\r"
+  story: "Cuisine prowess is a valuable and interesting asset for society. The lab
+    wants to monitor your clone's ability to become a champion cook.\r"
+  goalIcon: {fileID: 21300000, guid: fc1ec0103a9051d4d8f305dbfe985b44, type: 3}

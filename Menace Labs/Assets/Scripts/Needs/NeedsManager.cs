@@ -34,8 +34,10 @@ public class NeedsManager : MonoBehaviour
     [SerializeField] private int madnessDeathCheck = 5;
     private float updateNeedTimer;
 
-    private bool is_ill = false;
-    private bool on_fire = false;
+    private bool isIll = false;
+    private bool onFire = false;
+    public void SetIll(bool setTo) { isIll = setTo; }
+    public void SetOnFire(bool setTo) { onFire = setTo; }
 
     private void Update()
     {
@@ -47,9 +49,9 @@ public class NeedsManager : MonoBehaviour
             for (int i = 0; i < needs.Length; i++)
             {
                 // If on fire all needs are decreased faster
-                if (on_fire) needs[i].UpdateNeed(fireMultiplier);
+                if (onFire) needs[i].UpdateNeed(fireMultiplier);
                 // If ill sleep, bladder and hygiene needs decrease faster
-                else if (is_ill && (needs[i].GetNeedType() == NeedType.SLEEP || needs[i].GetNeedType() == NeedType.BLADDER || needs[i].GetNeedType() == NeedType.HYGIENE))
+                else if (isIll && (needs[i].GetNeedType() == NeedType.SLEEP || needs[i].GetNeedType() == NeedType.BLADDER || needs[i].GetNeedType() == NeedType.HYGIENE))
                 {
                     needs[i].UpdateNeed(illMultiplier);
                 }
@@ -70,6 +72,16 @@ public class NeedsManager : MonoBehaviour
             if (needs[i].GetNeedType() == needType)
             {
                 needs[i].ModifyNeed(amount);
+            }
+        }
+    }
+    public void SetNeed(NeedType needType, float amount)
+    {
+        for (int i = 0; i < needs.Length; i++)
+        {
+            if (needs[i].GetNeedType() == needType)
+            {
+                needs[i].SetNeed(amount);
             }
         }
     }

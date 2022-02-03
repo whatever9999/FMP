@@ -4,6 +4,8 @@ using UnityEngine.AI;
 public class Clone : MonoBehaviour
 {
     [SerializeField] Transform hand;
+    [SerializeField] private ParticleSystem fireParticles;
+    [SerializeField] private ParticleSystem smellParticles;
 
     private NavMeshAgent clone;
     private AudioSource audioSource;
@@ -66,5 +68,32 @@ public class Clone : MonoBehaviour
         PlaySound(SoundManager.SoundName.ELECTROCUTION);
         ManagerHandler.instance.AnimationM.SetAnimation(AnimationManager.AnimationType.EATING, true);
         ManagerHandler.instance.NeedsM.Electrocute();
+    }
+    public void SetOnFire(bool onFire)
+    {
+        ManagerHandler.instance.NeedsM.SetOnFire(onFire);
+        if (onFire)
+        {
+            fireParticles.gameObject.SetActive(true);
+            fireParticles.Play();
+        }
+        else
+        {
+            fireParticles.gameObject.SetActive(false);
+            fireParticles.Stop();
+        }
+    }
+    public void SetSmelly(bool smelly)
+    {
+        if (smelly)
+        {
+            smellParticles.gameObject.SetActive(true);
+            smellParticles.Play();
+        }
+        else
+        {
+            smellParticles.gameObject.SetActive(false);
+            smellParticles.Stop();
+        }
     }
 }
