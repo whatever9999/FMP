@@ -238,7 +238,11 @@ public class ActionManager : MonoBehaviour
             // Cancel the action
             Action cancellingAction = button.GetComponent<Action>();
             // If the cancelled action is the current one make sure to stop the animation
-            if (cancellingAction == currentAction) cloneAnimationManager.SetAnimation(cancellingAction.GetAnimationType(), false);
+            if (cancellingAction == currentAction)
+            {
+                currentAction = null;
+                cloneAnimationManager.SetAnimation(cancellingAction.GetAnimationType(), false);
+            }
             cancellingAction.CancelAction();
 
             // Remove it from the action list

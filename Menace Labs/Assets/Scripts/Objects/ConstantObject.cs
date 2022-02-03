@@ -70,7 +70,9 @@ public class ConstantObject : MonoBehaviour
     protected void Start()
     {
         materialRenderer = GetComponentInChildren<Renderer>();
-        audioSource = GetComponent<AudioSource>();
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.loop = false;
+        audioSource.playOnAwake = false;
         particles = GetComponentInChildren<ParticleSystem>();
     }
     private void Update()
@@ -147,6 +149,11 @@ public class ConstantObject : MonoBehaviour
             audioSource.clip = SoundManager.instance.GetClip(endSound);
             audioSource.loop = false;
             audioSource.Play();
+        }
+        else if (audioSource)
+        {
+            audioSource.loop = false;
+            audioSource.Stop();
         }
         if (particles) particles.Stop();
 

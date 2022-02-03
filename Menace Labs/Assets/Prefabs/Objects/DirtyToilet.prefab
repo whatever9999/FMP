@@ -375,7 +375,7 @@ MonoBehaviour:
   faceTransformDirection: 1
   useAnimationSetForTimeToUse: 1
   timeToUse: 0
-  triggerEvent: 7
+  triggerEvent: 12
   despawnObject: 0
   spawnObject: {fileID: 0}
   giveObject: {fileID: 0}
