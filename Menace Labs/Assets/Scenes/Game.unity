@@ -20114,7 +20114,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1764144778791446, guid: 3250b357f6aee8949a2aaaf6c2e39648, type: 3}
       propertyPath: m_Name
-      value: SM_Prop_Chair_09
+      value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 1764144778791446, guid: 3250b357f6aee8949a2aaaf6c2e39648, type: 3}
       propertyPath: m_NavMeshLayer
