@@ -63,6 +63,12 @@ public class TimedObject : ConstantObject
             ManagerHandler.instance.FoodM.ModifyFoodAmount(-usesFood);
         }
 
+        // If the clone should face the same direction as the transform to use the object make sure they're rotated
+        if (faceTransformDirection)
+        {
+            ManagerHandler.instance.clone.transform.rotation = requiredLocation.rotation;
+        }
+
         beingUsed = true;
         finished = false;
         useTimer = 0.0f;
@@ -94,7 +100,7 @@ public class TimedObject : ConstantObject
         }
         if (particles) particles.Stop();
 
-        DirtyOrBrokenCheck();
+        if (beingUsed) DirtyOrBrokenCheck();
 
         if (triggerEvent != EventManager.EventType.NUM_EVENT_TYPES) ManagerHandler.instance.EventM.CheckEventTrigger(triggerEvent);
         if (giveObject)
@@ -127,7 +133,7 @@ public class TimedObject : ConstantObject
         }
         if (particles) particles.Stop();
 
-        DirtyOrBrokenCheck();
+        if (beingUsed) DirtyOrBrokenCheck();
 
         finished = true;
         beingUsed = false;

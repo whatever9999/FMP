@@ -48,6 +48,7 @@ public class ConstantObject : MonoBehaviour
     [Tooltip("Where should the clone be to use the object?")]
     [SerializeField] protected Transform requiredLocation;
     public Transform GetRequiredLocation() { return requiredLocation; }
+    [SerializeField] protected bool faceTransformDirection;
 
     protected Renderer materialRenderer;
     protected AudioSource audioSource;
@@ -61,7 +62,7 @@ public class ConstantObject : MonoBehaviour
     private void Awake()
     {
         // Prefabs that don't exist in the scene will need to collect references to required locations in Awake
-        if (name.Contains("Sandwich")) requiredLocation = GameObject.Find("Chair").transform;
+        if (name.Contains("Sandwich")) requiredLocation = GameObject.Find("ChairRL").transform;
     }
 
     protected void Start()
@@ -80,6 +81,12 @@ public class ConstantObject : MonoBehaviour
 
     public virtual bool StartUsing()
     {
+        // If the clone should face the same direction as the transform to use the object make sure they're rotated
+        if (faceTransformDirection)
+        {
+            ManagerHandler.instance.clone.transform.rotation = requiredLocation.rotation;
+        }
+
         beingUsed = true;
 
         if (audioSource && startSound != SoundManager.SoundName.NUM_SOUND_NAMES)
@@ -135,7 +142,7 @@ public class ConstantObject : MonoBehaviour
         }
         if (particles) particles.Stop();
 
-        DirtyOrBrokenCheck();
+        if (beingUsed) DirtyOrBrokenCheck();
 
         beingUsed = false;
     }
@@ -149,7 +156,7 @@ public class ConstantObject : MonoBehaviour
         }
         if (particles) particles.Stop();
 
-        DirtyOrBrokenCheck();
+        if (beingUsed) DirtyOrBrokenCheck();
 
         beingUsed = false;
     }

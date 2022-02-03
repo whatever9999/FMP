@@ -178,12 +178,12 @@ public class ActionManager : MonoBehaviour
                 // If we're using an object make sure we move to the required location first
                 if (type == ActionType.CONSTANT_OBJECT_USE || type == ActionType.TIMED_OBJECT_USE)
                 {
-                    currentAction = currentActions[0].GetComponent<Action>();
+                    Action addedAction = button.GetComponent<Action>();
 
                     int i = 0;
                     for(; i < currentActions.Count; i++)
                     {
-                        if (currentAction.gameObject == currentActions[i]) break;
+                        if (addedAction.gameObject == currentActions[i]) break;
                     }
 
                     // Add the move action to the spot before the just added action

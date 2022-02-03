@@ -125,6 +125,8 @@ MonoBehaviour:
   dirtType: 0
   alternateDirtVersion: {fileID: 0}
   alternateBreakVersion: {fileID: 0}
+  requiredLocation: {fileID: 0}
+  faceTransformDirection: 1
   useAnimationSetForTimeToUse: 0
   timeToUse: 5
   triggerEvent: 7
