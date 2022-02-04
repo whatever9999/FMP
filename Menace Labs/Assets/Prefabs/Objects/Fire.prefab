@@ -4622,7 +4622,7 @@ MonoBehaviour:
   endSound: 34
   actionIcon: {fileID: 21300000, guid: 14dbc16e10b97a048b2367b7d00dc07a, type: 3}
   tooltip: Put Out
-  animationType: 5
+  animationType: 23
   breakType: 0
   dirtType: 0
   alternateDirtVersion: {fileID: 0}

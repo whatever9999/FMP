@@ -28,6 +28,8 @@ public class AnimationManager : MonoBehaviour
         USE_PHONE,
         SIT,
         ON_FIRE,
+        PUT_OUT_FIRE,
+        ELECTROCUTION,
         NUM_ANIMATION_TYPES,
     }
 
@@ -53,6 +55,9 @@ public class AnimationManager : MonoBehaviour
     [SerializeField] private AnimationClip[] useCameraAnimationSet;
     [SerializeField] private AnimationClip[] usePhoneAnimationSet;
     [SerializeField] private AnimationClip[] sitAnimationSet;
+    [SerializeField] private AnimationClip[] onFireanimationSet;
+    [SerializeField] private AnimationClip[] putOutFireAnimationSet;
+    [SerializeField] private AnimationClip[] electrocutionAnimationSet;
 
     private Animator animator;
 
@@ -84,6 +89,9 @@ public class AnimationManager : MonoBehaviour
         animations.Add(AnimationType.USE_CAMERA, useCameraAnimationSet);
         animations.Add(AnimationType.USE_PHONE, usePhoneAnimationSet);
         animations.Add(AnimationType.SIT, sitAnimationSet);
+        animations.Add(AnimationType.ON_FIRE, onFireanimationSet);
+        animations.Add(AnimationType.PUT_OUT_FIRE, putOutFireAnimationSet);
+        animations.Add(AnimationType.ELECTROCUTION, electrocutionAnimationSet);
     }
 
     public void SetAnimation(AnimationType type, bool enable)
@@ -164,7 +172,13 @@ public class AnimationManager : MonoBehaviour
                 animator.SetBool("Sit", enable);
                 break;
             case AnimationType.ON_FIRE:
-                animator.SetBool("OnFire", enable);
+                animator.SetBool("On_Fire", enable);
+                break;
+            case AnimationType.PUT_OUT_FIRE:
+                animator.SetBool("Put_Out_Fire", enable);
+                break;
+            case AnimationType.ELECTROCUTION:
+                if (enable) animator.SetTrigger("Electrocution");
                 break;
         }
     }

@@ -73,7 +73,7 @@ public class Clone : MonoBehaviour
     public void Electrocute()
     {
         PlaySound(SoundManager.SoundName.ELECTROCUTION);
-        ManagerHandler.instance.AnimationM.SetAnimation(AnimationManager.AnimationType.EATING, true);
+        ManagerHandler.instance.AnimationM.SetAnimation(AnimationManager.AnimationType.ELECTROCUTION, true);
         ManagerHandler.instance.NeedsM.Electrocute();
     }
     public void SetOnFire(bool onFire)
