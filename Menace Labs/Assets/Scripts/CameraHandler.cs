@@ -74,7 +74,7 @@ public class CameraHandler : MonoBehaviour
         moveHorizontal += Input.GetAxis(horizontalString);
 
         // Jump to the clone if spacebar is pressed
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             jumpingToClone = true;
         }

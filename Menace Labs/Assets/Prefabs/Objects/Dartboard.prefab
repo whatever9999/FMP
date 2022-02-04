@@ -115,7 +115,10 @@ MonoBehaviour:
     value: 1
   - needType: 8
     skillType: 7
-    value: 0
+    value: 1
+  - needType: 1
+    skillType: 8
+    value: -1
   hoverColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
   startSound: 34
   useSound: 26
