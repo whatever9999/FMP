@@ -123,7 +123,7 @@ MonoBehaviour:
   startSound: 34
   useSound: 26
   endSound: 34
-  actionIcon: {fileID: 21300000, guid: 68f6ab5863c4f744f80efa870dcfa7c7, type: 3}
+  actionIcon: {fileID: 21300000, guid: d4b5d12a87dbcc947b01ebf6f117e6d2, type: 3}
   tooltip: Play Darts
   animationType: 17
   breakType: 0

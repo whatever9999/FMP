@@ -33,7 +33,7 @@ public class SoundManager : MonoBehaviour
         RUBBISH,
         SHOWER,
         SLEEP,
-        SNOOKER,
+        DARTS,
         SOFA,
         STEP,
         SUCCESS,

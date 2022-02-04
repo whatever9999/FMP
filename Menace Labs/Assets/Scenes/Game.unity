@@ -10363,7 +10363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3607896442935815729, guid: f7f804c2e85bd174c969cf6c9951b11b, type: 3}
       propertyPath: m_text
-      value: Snooker
+      value: Darts
       objectReference: {fileID: 0}
     - target: {fileID: 3607896442963957436, guid: f7f804c2e85bd174c969cf6c9951b11b, type: 3}
       propertyPath: m_FillAmount
@@ -10380,7 +10380,7 @@ PrefabInstance:
     - target: {fileID: 3607896442982939679, guid: f7f804c2e85bd174c969cf6c9951b11b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c5354a5c337feb7419b22279a8f674c4, type: 3}
+      objectReference: {fileID: 21300000, guid: 4a2b71b6779af864db380296a922b602, type: 3}
     - target: {fileID: 3607896443767178775, guid: f7f804c2e85bd174c969cf6c9951b11b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
