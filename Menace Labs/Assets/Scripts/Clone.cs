@@ -6,14 +6,21 @@ public class Clone : MonoBehaviour
     [SerializeField] Transform hand;
     [SerializeField] private ParticleSystem fireParticles;
     [SerializeField] private ParticleSystem smellParticles;
+    [SerializeField] private float runSpeed;
 
     private NavMeshAgent clone;
     private AudioSource audioSource;
+    private float walkSpeed;
+
+    public bool IsOnFire() { return ManagerHandler.instance.NeedsM.IsOnFire(); }
+    public bool IsIll() { return ManagerHandler.instance.NeedsM.IsIll(); }
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         clone = GetComponent<NavMeshAgent>();
+
+        walkSpeed = clone.speed;
     }
 
     private void Update()
@@ -72,15 +79,19 @@ public class Clone : MonoBehaviour
     public void SetOnFire(bool onFire)
     {
         ManagerHandler.instance.NeedsM.SetOnFire(onFire);
+        ManagerHandler.instance.AnimationM.SetAnimation(AnimationManager.AnimationType.ON_FIRE, onFire);
         if (onFire)
         {
+            ManagerHandler.instance.ActionM.CancelAllActions();
             fireParticles.gameObject.SetActive(true);
             fireParticles.Play();
+            clone.speed = runSpeed;
         }
         else
         {
             fireParticles.gameObject.SetActive(false);
             fireParticles.Stop();
+            clone.speed = walkSpeed;
         }
     }
     public void SetSmelly(bool smelly)

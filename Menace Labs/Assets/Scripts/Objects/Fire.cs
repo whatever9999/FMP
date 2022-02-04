@@ -8,7 +8,7 @@ public class Fire : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag.Equals("Clone"))
+        if (!ManagerHandler.instance.clone.IsOnFire() && other.tag.Equals("Clone"))
         {
             timeInFire += Time.deltaTime;
 

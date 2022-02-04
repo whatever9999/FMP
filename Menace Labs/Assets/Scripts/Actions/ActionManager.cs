@@ -126,6 +126,8 @@ public class ActionManager : MonoBehaviour
                     button.transform.SetSiblingIndex(index);
                 }
 
+                // When the clone is on fire they can't use anything but the shower!
+                bool cloneOnFire = ManagerHandler.instance.clone.IsOnFire();
                 // Ensure action data is set
                 switch (type)
                 {
@@ -151,18 +153,34 @@ public class ActionManager : MonoBehaviour
                         break;
                     case ActionType.CONSTANT_OBJECT_USE:
                         {
-                            ConstantObjectUseAction useAction = button.GetComponent<ConstantObjectUseAction>();
-                            ConstantObject constantObject = usedObject.GetComponent<ConstantObject>();
-                            useAction.SetObject(constantObject);
-                            useAction.SetAnimationType(constantObject.GetAnimationType());
+                            if (!cloneOnFire || (cloneOnFire && usedObject.name.Equals("Shower")))
+                            {
+                                ConstantObjectUseAction useAction = button.GetComponent<ConstantObjectUseAction>();
+                                ConstantObject constantObject = usedObject.GetComponent<ConstantObject>();
+                                useAction.SetObject(constantObject);
+                                useAction.SetAnimationType(constantObject.GetAnimationType());
+                            }
+                            else
+                            {
+                                SoundManager.instance.PlayClip(SoundManager.SoundName.FAILURE);
+                                addAction = false;
+                            }    
                         }
                         break;
                     case ActionType.TIMED_OBJECT_USE:
                         {
-                            TimedObjectUseAction useAction = button.GetComponent<TimedObjectUseAction>();
-                            TimedObject timedObject = usedObject.GetComponent<TimedObject>();
-                            useAction.SetObject(timedObject);
-                            useAction.SetAnimationType(timedObject.GetAnimationType());
+                            if (!cloneOnFire || (cloneOnFire && usedObject.name.Equals("Shower")))
+                            {
+                                TimedObjectUseAction useAction = button.GetComponent<TimedObjectUseAction>();
+                                TimedObject timedObject = usedObject.GetComponent<TimedObject>();
+                                useAction.SetObject(timedObject);
+                                useAction.SetAnimationType(timedObject.GetAnimationType());
+                            }
+                            else
+                            {
+                                SoundManager.instance.PlayClip(SoundManager.SoundName.FAILURE);
+                                addAction = false;
+                            }
                         }
                         break;
                     case ActionType.TEST:
@@ -176,7 +194,7 @@ public class ActionManager : MonoBehaviour
                 else Destroy(button);
 
                 // If we're using an object make sure we move to the required location first
-                if (type == ActionType.CONSTANT_OBJECT_USE || type == ActionType.TIMED_OBJECT_USE)
+                if (addAction && (type == ActionType.CONSTANT_OBJECT_USE || type == ActionType.TIMED_OBJECT_USE))
                 {
                     Action addedAction = button.GetComponent<Action>();
 
@@ -238,12 +256,12 @@ public class ActionManager : MonoBehaviour
             // Cancel the action
             Action cancellingAction = button.GetComponent<Action>();
             // If the cancelled action is the current one make sure to stop the animation
+            cancellingAction.CancelAction();
             if (cancellingAction == currentAction)
             {
                 currentAction = null;
                 cloneAnimationManager.SetAnimation(cancellingAction.GetAnimationType(), false);
             }
-            cancellingAction.CancelAction();
 
             // Remove it from the action list
             currentActions.Remove(button);
@@ -309,4 +327,13 @@ public class ActionManager : MonoBehaviour
         return true;
     }
     #endregion // Move Actions
+
+    // Cancel all actions from end to start
+    public void CancelAllActions()
+    {
+        while(currentActions.Count > 0)
+        {
+            CancelAction(currentActions[currentActions.Count - 1]);
+        }
+    }
 }

@@ -27,6 +27,7 @@ public class AnimationManager : MonoBehaviour
         USE_CAMERA,
         USE_PHONE,
         SIT,
+        ON_FIRE,
         NUM_ANIMATION_TYPES,
     }
 
@@ -106,7 +107,7 @@ public class AnimationManager : MonoBehaviour
                 animator.SetBool("Dancing", enable);
                 break;
             case AnimationType.BORED:
-                if (enable) animator.SetTrigger("Bored");
+                animator.SetBool("Bored", enable);
                 break;
             case AnimationType.CLEAN_PUDDLE:
                 animator.SetBool("Clean_Puddle", enable);
@@ -115,7 +116,7 @@ public class AnimationManager : MonoBehaviour
                 animator.SetBool("Clean_Object", enable);
                 break;
             case AnimationType.USE_FRIDGE:
-                if (enable) animator.SetTrigger("Use_Fridge");
+                animator.SetBool("Use_Fridge", enable);
                 break;
             case AnimationType.DIE:
                 if (enable) animator.SetTrigger("Die");
@@ -130,13 +131,13 @@ public class AnimationManager : MonoBehaviour
                 animator.SetBool("Use_Oven", enable);
                 break;
             case AnimationType.REFUSE:
-                if (enable) animator.SetTrigger("Refuse");
+                animator.SetBool("Refuse", enable);
                 break;
             case AnimationType.PLAY_GAMES:
                 animator.SetBool("Play_Games", enable);
                 break;
             case AnimationType.REACT:
-                if (enable) animator.SetTrigger("React");
+                animator.SetBool("React", enable);
                 break;
             case AnimationType.SHOWER:
                 animator.SetBool("Shower", enable);
@@ -151,7 +152,7 @@ public class AnimationManager : MonoBehaviour
                 animator.SetBool("Play_Darts", enable);
                 break;
             case AnimationType.TIDY_RUBBISH:
-                if (enable) animator.SetTrigger("Tidy_Rubbish");
+                animator.SetBool("Tidy_Rubbish", enable);
                 break;
             case AnimationType.USE_CAMERA:
                 animator.SetBool("Use_Camera", enable);
@@ -161,6 +162,9 @@ public class AnimationManager : MonoBehaviour
                 break;
             case AnimationType.SIT:
                 animator.SetBool("Sit", enable);
+                break;
+            case AnimationType.ON_FIRE:
+                animator.SetBool("OnFire", enable);
                 break;
         }
     }
