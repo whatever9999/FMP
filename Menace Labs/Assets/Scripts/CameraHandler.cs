@@ -10,6 +10,9 @@ public class CameraHandler : MonoBehaviour
     [SerializeField] private Vector3 moveBounds;
     [SerializeField] private float floorClamp = 1.0f;
     [SerializeField] private float rightClickMoveSpeed = 1.0f;
+    [SerializeField] private float jumpToCloneSpeed = 10.0f;
+    [SerializeField] private float jumpToCloneRotateSpeed = 2.0f;
+    [SerializeField] private float jumpToCloneYLimit = 3.0f;
 
     private static string mouseXString = "Mouse X";
     private static string mouseYString = "Mouse Y";
@@ -17,6 +20,8 @@ public class CameraHandler : MonoBehaviour
     private static string horizontalString = "Horizontal";
 
     private float rotateX, rotateY, moveVertical, moveHorizontal, moveNoY;
+
+    private bool jumpingToClone = false;
 
     private void Start()
     {
@@ -67,6 +72,12 @@ public class CameraHandler : MonoBehaviour
         // Middle mouse scroll moves vertically
         moveVertical += (Input.mouseScrollDelta.y * zoomSpeed);
         moveHorizontal += Input.GetAxis(horizontalString);
+
+        // Jump to the clone if spacebar is pressed
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jumpingToClone = true;
+        }
     }
 
     private void Update()
@@ -74,7 +85,34 @@ public class CameraHandler : MonoBehaviour
         CheckInput();
 
         bool moved = (rotateX != 0.0f) || (rotateY != 0.0f) || (moveVertical != 0.0f) || (moveHorizontal != 0.0f) || (moveNoY != 0.0f);
-        if (moved)
+        if (jumpingToClone)
+        {
+            jumpingToClone = false;
+
+            // Rotation
+            float step = jumpToCloneRotateSpeed * Time.deltaTime;
+            Vector3 targetDir = ManagerHandler.instance.clone.transform.position - transform.position;
+            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
+            Quaternion targetRotation = Quaternion.LookRotation(newDir);
+            if (Quaternion.Angle(transform.rotation, targetRotation) > 0.01f)
+            {
+                jumpingToClone = true;
+                transform.rotation = targetRotation;
+            }
+
+            // Position
+            if (Vector3.Distance(transform.position, ManagerHandler.instance.clone.transform.position) >= 5f)
+            {
+                jumpingToClone = true;
+
+                step = jumpToCloneSpeed * Time.deltaTime;
+                // Ensure the camera doesn't move too far in the y axis
+                Vector3 newPosition = Vector3.MoveTowards(transform.position, ManagerHandler.instance.clone.transform.position, step);
+                if (newPosition.y < jumpToCloneYLimit) newPosition.y = jumpToCloneYLimit;
+                transform.position = newPosition;
+            }
+        }
+        else if (moved)
         {
             // ROTATE
             float rotationX = transform.localEulerAngles.x;

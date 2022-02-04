@@ -21333,6 +21333,9 @@ MonoBehaviour:
   moveBounds: {x: 20, y: 20, z: 20}
   floorClamp: 1
   rightClickMoveSpeed: 1
+  jumpToCloneSpeed: 10
+  jumpToCloneRotateSpeed: 2
+  jumpToCloneYLimit: 3
 --- !u!20 &1687258584
 Camera:
   m_ObjectHideFlags: 0
