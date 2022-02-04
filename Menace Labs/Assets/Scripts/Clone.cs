@@ -12,6 +12,9 @@ public class Clone : MonoBehaviour
     private AudioSource audioSource;
     private float walkSpeed;
 
+    private bool isSmelly = false;
+
+    public bool IsSmelly() { return isSmelly; }
     public bool IsOnFire() { return ManagerHandler.instance.NeedsM.IsOnFire(); }
     public bool IsIll() { return ManagerHandler.instance.NeedsM.IsIll(); }
 
@@ -96,6 +99,7 @@ public class Clone : MonoBehaviour
     }
     public void SetSmelly(bool smelly)
     {
+        isSmelly = smelly;
         if (smelly)
         {
             smellParticles.gameObject.SetActive(true);

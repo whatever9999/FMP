@@ -21,6 +21,7 @@ public class NeedsManager : MonoBehaviour
         EXTREMELY_LOW = 0,
         VERY_LOW = 20,
         LOW = 40,
+        HIGH = 90,
     }
 
     [SerializeField] private Need[] needs;
@@ -64,6 +65,10 @@ public class NeedsManager : MonoBehaviour
             updateNeedTimer = 0;
 
             MadnessCheck();
+
+            if (isIll) IllnessCheck();
+
+            SmellyCheck();
         }
     }
 
@@ -155,6 +160,31 @@ public class NeedsManager : MonoBehaviour
         if (GetHealthMetric() < electrocutionDeathCheck)
         {
             ManagerHandler.instance.EventM.CheckEventTrigger(EventManager.EventType.DEATH);
+        }
+    }
+
+    // If the clone is ill and their sleep, comfort and hygiene are high, they will become better
+    private void IllnessCheck()
+    {
+        if (GetNeedValue(NeedType.SLEEP) >= (int)NeedLevel.HIGH     && 
+            GetNeedValue(NeedType.HYGIENE) >= (int)NeedLevel.HIGH   && 
+            GetNeedValue(NeedType.COMFORT) >= (int)NeedLevel.HIGH   )
+        {
+            SetIll(false);
+        }
+    }
+
+    // If the clone's hygiene is low then it will show with pfx
+    private void SmellyCheck()
+    {
+        bool is_smelly = ManagerHandler.instance.clone.IsSmelly();
+        if (!is_smelly && GetNeedValue(NeedType.HYGIENE) <= (int)NeedLevel.VERY_LOW)
+        {
+            ManagerHandler.instance.clone.SetSmelly(true);
+        }
+        else if (is_smelly)
+        {
+            ManagerHandler.instance.clone.SetSmelly(false);
         }
     }
 }
