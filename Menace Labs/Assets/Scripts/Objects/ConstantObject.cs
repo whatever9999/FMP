@@ -71,9 +71,14 @@ public class ConstantObject : MonoBehaviour
     protected void Start()
     {
         materialRenderer = GetComponentInChildren<Renderer>();
-        audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.loop = false;
-        audioSource.playOnAwake = false;
+        // If the object doesn't have an audio source add one (things like fires should loop and play on awake so they'll have a source already)
+        if (!TryGetComponent<AudioSource>(out audioSource))
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.outputAudioMixerGroup = ManagerHandler.instance.SoundM.GetSFXMixerGroup();
+            audioSource.loop = false;
+            audioSource.playOnAwake = false;
+        }
         particles = GetComponentInChildren<ParticleSystem>();
     }
     private void Update()

@@ -10146,6 +10146,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 30528d0092e9cd544a5473938622fc04, type: 3}
   - name: 3
     clip: {fileID: 8300000, guid: cdfe3fd058903c841801610ab65e2b57, type: 3}
+  SFXMixerGroup: {fileID: 0}
   ambienceSource: {fileID: 2025200503}
   musicSource: {fileID: 1687258587}
 --- !u!4 &796414903
@@ -29751,7 +29752,7 @@ PrefabInstance:
     - target: {fileID: 8792628829624405647, guid: faedd4ed504aacf409cefa0a82643f68, type: 3}
       propertyPath: disasterTest
       value: 
-      objectReference: {fileID: 11400000, guid: 87aec193b9ce1c04886183a7100ad60a, type: 2}
+      objectReference: {fileID: 11400000, guid: af9f779351799df4db4140690305252d, type: 2}
     - target: {fileID: 8794191130772992461, guid: faedd4ed504aacf409cefa0a82643f68, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
@@ -60,6 +61,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private SoundEffect[] soundEffects;
     [SerializeField] private AmbienceTrack[] ambienceTracks;
     [SerializeField] private MusicTrack[] musicTracks;
+
+    [SerializeField] private AudioMixerGroup SFXMixerGroup;
+    public AudioMixerGroup GetSFXMixerGroup() { return SFXMixerGroup; }
 
     private Dictionary<SoundName, AudioClip> soundDictionary = new Dictionary<SoundName, AudioClip>();
     private Dictionary<AmbienceName, AudioClip> ambienceDictionary = new Dictionary<AmbienceName, AudioClip>();
