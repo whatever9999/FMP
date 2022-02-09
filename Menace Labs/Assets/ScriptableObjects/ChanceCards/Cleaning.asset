@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ae2742537362a4d936cd96da1eb7e8, type: 3}
+  m_Name: Cleaning
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 0b96799b1f2ce4f47b57d936097e5a5a, type: 3}
+  title: Spring Cleaning
+  description: "Test chamber #34 is a mess. Your clone can't imagine the test that
+    was being run before this but it seems it involved treacle, a cow and several
+    feather pillows. Your clone is directed to clean. Where should it start?\r"
+  A_ButtonText: Cow
+  A_Chance: 10
+  A_SuccessModifier:
+    skillType: 8
+    needType: 5
+    checkValue: 80
+    checkIfLower: 0
+    modifyValue: 20
+  A_SuccessDescription: "Your clone approaches the cow slowly and steadily and soon
+    discovers that they have a natural affinity. The cow happily obeys the clone's
+    prompts to leave the chamber and the space is freed for easy cleaning of the
+    rest of the room. [+2 cleaning skill points]\r"
+  A_SuccessEffects:
+  - {fileID: 11400000, guid: 7c844106133480e44b53420589ab37d8, type: 2}
+  A_FailureDescription: "Your clone can't be blamed for not being the best equipped
+    to deal with a cow. After chasing it around the room for several hours the cow
+    finally leaves and after another couple of hours of cleaning the clone is in
+    a far worse state than when they arrived. [Reduced hygiene and energy]\r"
+  A_FailureEffects:
+  - {fileID: 11400000, guid: 9a8d3d3c47442a64aa8f44779df13c21, type: 2}
+  - {fileID: 11400000, guid: c612849ed2c305b4b8ef30d3d790212a, type: 2}
+  B_ButtonText: Feathers
+  B_Chance: 30
+  B_SuccessModifier:
+    skillType: 0
+    needType: 8
+    checkValue: 5
+    checkIfLower: 0
+    modifyValue: 20
+  B_SuccessDescription: "As the clone picks up the fruit the scary guard comes over
+    to help them. This slight bit of human interaction exhilerates the clone and
+    they enjoy the remaining time spent on the staring competition with their new
+    friend. [Social maxed out]\r"
+  B_SuccessEffects:
+  - {fileID: 11400000, guid: 7712e7205a2d0f74380f90e465520254, type: 2}
+  B_FailureDescription: "The fruit is rotten and more of it ends up on the clone
+    than on the floor but the scientists look pleased at this. [Reduced hygiene]\r"
+  B_FailureEffects:
+  - {fileID: 11400000, guid: c612849ed2c305b4b8ef30d3d790212a, type: 2}

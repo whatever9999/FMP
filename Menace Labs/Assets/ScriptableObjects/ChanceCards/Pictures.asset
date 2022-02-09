@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ae2742537362a4d936cd96da1eb7e8, type: 3}
+  m_Name: Pictures
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 070d3d8bca2a79a4baedea0cc4803f93, type: 3}
+  title: Profile Pictures
+  description: "The two scientists escorting the clone to test chamber #45 are abuzz
+    talking about the newest social media app. They inform the clone that it will
+    be taking photos of all employees of the company that they can use on the app.
+    The clone starts on its efforts. Employee #8638 takes a chair and can't decide
+    if he wants a whimsical or stern photo so he asks for the clone's opinion.\r"
+  A_ButtonText: Whimsical
+  A_Chance: 50
+  A_SuccessModifier:
+    skillType: 5
+    needType: 8
+    checkValue: 5
+    checkIfLower: 0
+    modifyValue: 20
+  A_SuccessDescription: "Once the photoshoot is over employee #8638 comes over to
+    personally thank the clone. Employee #9837 thought he was too boring so rejected
+    his advances but the new photo has reignited her interest in him! [+2 photography]\r"
+  A_SuccessEffects:
+  - {fileID: 11400000, guid: 2f0a17132b576d047830c2b470b9172b, type: 2}
+  A_FailureDescription: "Dressing employee #8638 in a clown outfit was probably not
+    the best way to make him appear whimsical. It is decided that the clone's photos
+    can't be trusted and they're all ripped up and thrown in the bin. [Reduced fun]\r"
+  A_FailureEffects:
+  - {fileID: 11400000, guid: 7ff9d51fc9e04eb4aa9e63a9c88c5cea, type: 2}
+  B_ButtonText: Stern
+  B_Chance: 50
+  B_SuccessModifier:
+    skillType: 5
+    needType: 8
+    checkValue: 2
+    checkIfLower: 0
+    modifyValue: 20
+  B_SuccessDescription: "The photo comes out stunningly and the clone is given many
+    pats on the back for its work. [+1 photography]\r"
+  B_SuccessEffects:
+  - {fileID: 11400000, guid: 58edb4fd69e1a7041829186684e02a75, type: 2}
+  B_FailureDescription: "Looking so smart employee #8638 got spotted by Menace Labs'
+    biggest rivals. [No effect]\r"
+  B_FailureEffects: []

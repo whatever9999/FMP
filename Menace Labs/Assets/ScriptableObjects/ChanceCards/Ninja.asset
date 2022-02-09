@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ae2742537362a4d936cd96da1eb7e8, type: 3}
+  m_Name: Ninja
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 7b7da46165c4e6a499bd241972a4b732, type: 3}
+  title: Total Ninja Castle
+  description: "Test chamber #12 has been converted into a giant assault course.
+    There are three stages. The first requires making it through a maze without being
+    pushed out by assailants, the second jumping across three giant wobbly balls
+    without falling and the third making it up a rope climb. This is all within a
+    time limit of course. What's the best way to tackle the course?\r"
+  A_ButtonText: Steady
+  A_Chance: 10
+  A_SuccessModifier:
+    skillType: 2
+    needType: 8
+    checkValue: 8
+    checkIfLower: 0
+    modifyValue: 40
+  A_SuccessDescription: "Your clone remains focused and finds the pattern of the
+    maze easily, it remains steady on its attempt to cross the balls and monitors
+    its breathing while making its way up the rope. It wasn't record time but the
+    scientists are impressed by the clone's technique. [No effect]\r"
+  A_SuccessEffects: []
+  A_FailureDescription: "Your clone successfully makes it through the maze but upon
+    reaching the big red balls it loses its stride and slips into the waters below
+    and twists its leg on the way down. [Decreased comfort]\r"
+  A_FailureEffects:
+  - {fileID: 11400000, guid: eec6015cdfff4bd49806018e9c521e06, type: 2}
+  B_ButtonText: Fast
+  B_Chance: 10
+  B_SuccessModifier:
+    skillType: 3
+    needType: 8
+    checkValue: 9
+    checkIfLower: 0
+    modifyValue: 40
+  B_SuccessDescription: "Your clone elegantly flows through the maze like the wind,
+    bounces off the balls like a gymnast and climbs up the rope in record time! It
+    is given a slice of cake from the celebration ceremony as a reward. [Increased
+    food] \r"
+  B_SuccessEffects:
+  - {fileID: 11400000, guid: 91a81a51b3901d94d8a49138d3a191d5, type: 2}
+  B_FailureDescription: "Your clone dashes into the maze and is immediately pushed
+    out into some chilly water. It sits on the sidelines waiting for several other
+    clones to attempt the course and catches a cold in the process. [Illness]\r"
+  B_FailureEffects:
+  - {fileID: 11400000, guid: a2581f822a6f4a34495a0fbc32dae350, type: 2}

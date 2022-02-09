@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ae2742537362a4d936cd96da1eb7e8, type: 3}
+  m_Name: Baking
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: b6364d3b1374edb4ab13cac98e4bc54c, type: 3}
+  title: Bake Sale
+  description: "As the clone is taken away from their chambers the guard escorting
+    them makes shifty eyes before bending down a different coridoor to usual. The
+    one towards chamber #1!!! Oh no!!!! The clone has tears in its eyes as it resigns
+    itself to its fate but thankfully the guard continues on past the door. The clone
+    gives it a wide berth and is taken to the staff kitchen. The guard informs it
+    that it needs to bake 24 cupcakes for his daughter's bake sale later today. The
+    clone gets started and as the guard is distracted it considers adding 400g of
+    sugar or 400g of salt.\r"
+  A_ButtonText: Sugar
+  A_Chance: 50
+  A_SuccessModifier:
+    skillType: 1
+    needType: 8
+    checkValue: 3
+    checkIfLower: 0
+    modifyValue: 20
+  A_SuccessDescription: "The cupcakes are a huge success. The guard tries one before
+    he leaves and gives the clone a pat on the head. [+1 cooking skill point]\r"
+  A_SuccessEffects:
+  - {fileID: 11400000, guid: d5e6011195e97d24a86016e285b02bea, type: 2}
+  A_FailureDescription: "An attempt to sabotage the cupcakes was not needed it seems
+    as they come out of the oven looking like charcol discs. The guard decides to
+    teach your clone a lesson. [Reduced comfort]\r"
+  A_FailureEffects:
+  - {fileID: 11400000, guid: eec6015cdfff4bd49806018e9c521e06, type: 2}
+  B_ButtonText: Salt
+  B_Chance: 10
+  B_SuccessModifier:
+    skillType: 1
+    needType: 8
+    checkValue: 10
+    checkIfLower: 0
+    modifyValue: -5
+  B_SuccessDescription: "Just as the clone ices the last cupcake a group of scientists
+    enter the room. The guard is taken away for questioning as it is spotted that
+    there is a clone in the staff kitchen. While sorting the issue the scientists
+    all try a cupcake and the clone is given the pleasure of seeing them all squirm.
+    [Increased fun]\r"
+  B_SuccessEffects:
+  - {fileID: 11400000, guid: a901f70436e6e1849befd34f82bd6a2a, type: 2}
+  B_FailureDescription: "The guard takes a bite of one of the salty cupcakes before
+    he leaves. Spitting it out onto the floor, he throws the tray at the clone in
+    a fit of rage and makes it redo them under constant supervision. [+2h to test
+    time]\r"
+  B_FailureEffects:
+  - {fileID: 11400000, guid: 77c5979f53173ae42a09acc8b84e6ca7, type: 2}

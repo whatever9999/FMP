@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ae2742537362a4d936cd96da1eb7e8, type: 3}
+  m_Name: Isolation
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: f567f133a36015148b72b7a59d67094d, type: 3}
+  title: Isolation
+  description: "Your clone is locked inside chamber #8. The walls and floors are
+    padded and there is a pineapple in the centre of the floor. Hours pass and the
+    clone could swear it hears a \"Hello?\".\r"
+  A_ButtonText: Respond
+  A_Chance: 70
+  A_SuccessModifier:
+    skillType: 8
+    needType: 5
+    checkValue: 20
+    checkIfLower: 1
+    modifyValue: -60
+  A_SuccessDescription: "Your clone responds to the noise but gets no response\u2026must
+    have been the wind? [No effect]\r"
+  A_SuccessEffects: []
+  A_FailureDescription: "Your clone responds and finds out that the noise came from
+    the pineapple! Its name is Quinton and it is the result of a failed experiment
+    the scientists were carrying out. As your clone talks further with the pineapple
+    some guards come in to drag it away to a different chamber. Quinton calls after
+    them vowing to escape one day and the guards shake their heads at your clone.
+    [Reduced fun and social]\r"
+  A_FailureEffects:
+  - {fileID: 11400000, guid: 7ff9d51fc9e04eb4aa9e63a9c88c5cea, type: 2}
+  - {fileID: 11400000, guid: c401d54dcedb6d84ea020d3c4ab699dd, type: 2}
+  B_ButtonText: Stay Quiet
+  B_Chance: 70
+  B_SuccessModifier:
+    skillType: 8
+    needType: 5
+    checkValue: 20
+    checkIfLower: 1
+    modifyValue: -60
+  B_SuccessDescription: "Your clone remains quiet and passes the time imagining how
+    best to frame and photograph the pineapple. [+1 photography point]\r"
+  B_SuccessEffects:
+  - {fileID: 11400000, guid: 58edb4fd69e1a7041829186684e02a75, type: 2}
+  B_FailureDescription: "The question came from the pineapple, who keeps attempting
+    to talk to your clone. The pineapple's words almost drive the clone to madness
+    and in a fit of panic it throws the pineapple against the door window. The guards
+    are shocked when they arrive to check on the clone, crouching in the furtherst
+    corner of the room in tears. [Reduced fun and social]\r"
+  B_FailureEffects:
+  - {fileID: 11400000, guid: 7ff9d51fc9e04eb4aa9e63a9c88c5cea, type: 2}
+  - {fileID: 11400000, guid: c401d54dcedb6d84ea020d3c4ab699dd, type: 2}
