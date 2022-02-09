@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ae2742537362a4d936cd96da1eb7e8, type: 3}
+  m_Name: Pill
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 1f73f4eedf5b51e4f957e4b4389e09ad, type: 3}
+  title: Which Pill?
+  description: 'While on its way to test chamber #56 your clone and their guards
+    are assailed by a group of three, dressed in long black coats and wearing sunglasses..
+    An epic fight ensues and your clone is astounded as the ninja-like warriors bend
+    and dodge like nothing its ever seen. Once the guards are down the clone accompanies
+    them to chamber #56 and the question is posed "red pill or blue?" '
+  A_ButtonText: Red
+  A_Chance: 20
+  A_SuccessModifier:
+    skillType: 2
+    needType: 8
+    checkValue: 5
+    checkIfLower: 0
+    modifyValue: -5
+  A_SuccessDescription: 'Your clone reaches for the red pill. Thankfully, several
+    guards race in and knock the pill out of its hand before it made a decision that
+    implied it thought it could be part of anything significant. [No effect] '
+  A_SuccessEffects: []
+  A_FailureDescription: "As your clone swallows the red pill it is disappointed to
+    see its new friends shake their head in disapproval. This was a test\u2026it
+    did not go well and as punishment the clone must clean the dreaded chamber #1
+    before heading back to its quarters. [+2h to test time] "
+  A_FailureEffects:
+  - {fileID: 11400000, guid: 77c5979f53173ae42a09acc8b84e6ca7, type: 2}
+  B_ButtonText: Blue
+  B_Chance: 80
+  B_SuccessModifier:
+    skillType: 8
+    needType: 8
+    checkValue: 0
+    checkIfLower: 0
+    modifyValue: 0
+  B_SuccessDescription: 'Your clone re-awakens in chamber #56 feeling content and
+    convinced that today''s testing went well. [Fun maxed out] '
+  B_SuccessEffects:
+  - {fileID: 11400000, guid: d6f69ebac4e2d6e4eaae2531216028e6, type: 2}
+  B_FailureDescription: 'Your clone takes the blue pill and nothing happens. "Oops
+    that must have been a dud.", one of the group''s members announces. The leader
+    and the burliest fighter glance at each other and your clone has no time to react
+    before receiving a blow on the head, finding itself alone upon waking. [Random
+    loss of 2 skill points] '
+  B_FailureEffects:
+  - {fileID: 11400000, guid: 0b6fe9901f15a9847a362208cd130076, type: 2}

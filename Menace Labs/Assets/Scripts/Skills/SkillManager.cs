@@ -40,6 +40,16 @@ public class SkillManager : MonoBehaviour
             }
         }
     }
+    public void ModifySkill(SkillType skillType, int notches)
+    {
+        for (int i = 0; i < skills.Length; i++)
+        {
+            if (skills[i].GetSkillType() == skillType)
+            {
+                skills[i].ModifySkill(notches);
+            }
+        }
+    }
 
     public int GetSkillLevel(SkillType skillType)
     {

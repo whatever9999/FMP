@@ -336,4 +336,31 @@ public class ActionManager : MonoBehaviour
             CancelAction(currentActions[currentActions.Count - 1]);
         }
     }
+
+    public void ModifyTestTime(float amount)
+    {
+        // Check if the current action is a TestAction (if not then something has gone wrong)
+        TestAction action = (TestAction)currentAction;
+        if (action)
+        {
+            action.ModifyTestTime(amount);
+        }
+        else
+        {
+            Debug.LogError("Trying to modify test time but the current action isn't a test!");
+        }
+    }
+    public void EndTest()
+    {
+        // Check if the current action is a TestAction (if not then something has gone wrong)
+        TestAction action = (TestAction)currentAction;
+        if (action)
+        {
+            action.EndTest();
+        }
+        else
+        {
+            Debug.LogError("Trying to end test but the current action isn't a test!");
+        }
+    }
 }

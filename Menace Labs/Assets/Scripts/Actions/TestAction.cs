@@ -3,6 +3,8 @@ using UnityEngine;
 public class TestAction : Action
 {
     [SerializeField] private float timeToTest = 10.0f;
+    public void ModifyTestTime(float amount) { timeToTest += amount; }
+    public void EndTest() { timeToTest = 0; }
 
     private Clone clone;
     private Renderer cloneRenderer;

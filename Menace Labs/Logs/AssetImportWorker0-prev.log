@@ -15,11 +15,11 @@ C:/Github/FMP/Menace Labs
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49820
+59921
 Successfully changed project path to: C:/Github/FMP/Menace Labs
 C:/Github/FMP/Menace Labs
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 92.12 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 81.41 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.9f1 (108be757e447)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -35,69 +35,1342 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56460
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56220
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004190 seconds.
+Registered in 0.002393 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 80.55 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 82.12 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.911 seconds
+- Completed reload, in  1.010 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003455 seconds.
+Registered in 0.001903 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 83.64 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 81.85 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.963 seconds
+- Completed reload, in  0.912 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.98 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2460 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 125.4 MB.
-System memory in use after: 122.6 MB.
+System memory in use before: 125.5 MB.
+System memory in use after: 122.7 MB.
 
 Unloading 46 unused Assets to reduce memory usage. Loaded Objects now: 2877.
-Total: 3.326400 ms (FindLiveObjects: 0.208200 ms CreateObjectMapping: 0.095300 ms MarkObjects: 1.816700 ms  DeleteObjects: 1.205100 ms)
+Total: 3.146300 ms (FindLiveObjects: 0.263500 ms CreateObjectMapping: 0.110000 ms MarkObjects: 1.454700 ms  DeleteObjects: 1.317100 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Prefabs/Clone.prefab
-  artifactKey: Guid(faedd4ed504aacf409cefa0a82643f68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Clone.prefab using Guid(faedd4ed504aacf409cefa0a82643f68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a38c9c46f8689b75623e9a790ca5c18c') in 0.455132 seconds
-  Import took 0.463860 seconds .
+  path: Assets/Scripts/ChanceCards
+  artifactKey: Guid(26f58c54d44cdd7449a519cf44623907) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards using Guid(26f58c54d44cdd7449a519cf44623907) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccea368617577536b6a607e675bed322') in 0.010025 seconds
+  Import took 0.016716 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000446 seconds.
-  path: Assets/Prefabs/UI/Need.prefab
-  artifactKey: Guid(1280c1c19d672dd47b5cc8d5fe872b29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/UI/Need.prefab using Guid(1280c1c19d672dd47b5cc8d5fe872b29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b38a846e123ce77121bbc9762e796b8') in 0.072094 seconds
-  Import took 0.077752 seconds .
+  Time since last request: 2.257617 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceEffect.cs
+  artifactKey: Guid(fbb99a58e06f84a409a0167d7279423e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceEffect.cs using Guid(fbb99a58e06f84a409a0167d7279423e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e0cb4874323bf46c2fe86b196f7b505') in 0.027891 seconds
+  Import took 0.034745 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003095 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 13.31 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.032 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2375 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 118.1 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2881.
+Total: 4.750200 ms (FindLiveObjects: 0.611600 ms CreateObjectMapping: 0.132500 ms MarkObjects: 2.470600 ms  DeleteObjects: 1.533700 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.501358 seconds.
-  path: Assets/Scripts/Actions/ActionManager.cs
-  artifactKey: Guid(1e05dfaf7ce3c2549ae75f2b271ddc13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Actions/ActionManager.cs using Guid(1e05dfaf7ce3c2549ae75f2b271ddc13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '822f24d0353d8e1aab696544dfc852da') in 0.009785 seconds
-  Import took 0.015756 seconds .
+  Time since last request: 172.421178 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceCardData.cs
+  artifactKey: Guid(f3ae2742537362a4d936cd96da1eb7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceCardData.cs using Guid(f3ae2742537362a4d936cd96da1eb7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ef3a4e2acc76631872033480788bf0b') in 0.012625 seconds
+  Import took 0.023274 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.023044 seconds.
-  path: Assets/Scripts/Actions/ActionManager.cs
-  artifactKey: Guid(1e05dfaf7ce3c2549ae75f2b271ddc13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Actions/ActionManager.cs using Guid(1e05dfaf7ce3c2549ae75f2b271ddc13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '822f24d0353d8e1aab696544dfc852da') in 0.003151 seconds
-  Import took 0.009355 seconds .
+  Time since last request: 0.002406 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceCardData.cs
+  artifactKey: Guid(f3ae2742537362a4d936cd96da1eb7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceCardData.cs using Guid(f3ae2742537362a4d936cd96da1eb7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ef3a4e2acc76631872033480788bf0b') in 0.003463 seconds
+  Import took 0.009780 seconds .
 
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001810 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.92 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.866 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.88 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2376 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 118.2 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2885.
+Total: 5.209500 ms (FindLiveObjects: 1.864100 ms CreateObjectMapping: 0.220200 ms MarkObjects: 1.712100 ms  DeleteObjects: 1.411800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001940 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.83 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.855 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.86 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2376 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 118.2 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2888.
+Total: 3.152100 ms (FindLiveObjects: 0.231900 ms CreateObjectMapping: 0.097400 ms MarkObjects: 1.564100 ms  DeleteObjects: 1.257900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 157.045676 seconds.
+  path: Assets/Prefabs/Actions/ConstantObjectUse.prefab
+  artifactKey: Guid(4703deeff2f4f3a4a866461de7bde9c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Actions/ConstantObjectUse.prefab using Guid(4703deeff2f4f3a4a866461de7bde9c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e4e4ef4d4acac4077f82b0168a20b86') in 0.206342 seconds
+  Import took 0.211907 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Prefabs/Actions/TimedObjectUse.prefab
+  artifactKey: Guid(6ff9fad2f052b914dbd5c50d6bf1b1bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Actions/TimedObjectUse.prefab using Guid(6ff9fad2f052b914dbd5c50d6bf1b1bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24c39a3ab1f6d208ed56fa04a0ea1217') in 0.027849 seconds
+  Import took 0.034612 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.144663 seconds.
+  path: Assets/Scripts/Objects/TimedObject.cs
+  artifactKey: Guid(96bcfb371a66a49458b36560cb1765fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Objects/TimedObject.cs using Guid(96bcfb371a66a49458b36560cb1765fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00d207d1afaa27cc964d9c485231dbb5') in 0.006738 seconds
+  Import took 0.012133 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.030454 seconds.
+  path: Assets/Scripts/Objects/TimedObject.cs
+  artifactKey: Guid(96bcfb371a66a49458b36560cb1765fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Objects/TimedObject.cs using Guid(96bcfb371a66a49458b36560cb1765fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00d207d1afaa27cc964d9c485231dbb5') in 0.004706 seconds
+  Import took 0.008807 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001779 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.83 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.771 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.91 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2376 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.0 MB.
+System memory in use after: 118.2 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2891.
+Total: 3.486600 ms (FindLiveObjects: 0.213300 ms CreateObjectMapping: 0.102400 ms MarkObjects: 1.834800 ms  DeleteObjects: 1.335200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 2032.989139 seconds.
+  path: Assets/Scripts/ChanceCards/ScriptableObjectScripts
+  artifactKey: Guid(a2d8b44e72acca945b33a2a4c19c8b8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ScriptableObjectScripts using Guid(a2d8b44e72acca945b33a2a4c19c8b8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e02176014d24ec86140bbef02e78d7f') in 0.010840 seconds
+  Import took 0.017184 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.190093 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceEffect.cs
+  artifactKey: Guid(fbb99a58e06f84a409a0167d7279423e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceEffect.cs using Guid(fbb99a58e06f84a409a0167d7279423e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e5b3c392fc5b213d6e4cf20f060481a') in 0.002459 seconds
+  Import took 0.010346 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.598850 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceCardData.cs
+  artifactKey: Guid(f3ae2742537362a4d936cd96da1eb7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceCardData.cs using Guid(f3ae2742537362a4d936cd96da1eb7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '673446f67716b1cc3cc4cff4d7e83fcd') in 0.003067 seconds
+  Import took 0.011232 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001926 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceCardData.cs
+  artifactKey: Guid(f3ae2742537362a4d936cd96da1eb7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceCardData.cs using Guid(f3ae2742537362a4d936cd96da1eb7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '673446f67716b1cc3cc4cff4d7e83fcd') in 0.002251 seconds
+  Import took 0.006698 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001751 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.858 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.86 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2376 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.0 MB.
+System memory in use after: 118.1 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2894.
+Total: 3.409600 ms (FindLiveObjects: 0.223600 ms CreateObjectMapping: 0.095300 ms MarkObjects: 1.615600 ms  DeleteObjects: 1.474100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001752 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.789 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.01 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2377 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.0 MB.
+System memory in use after: 118.3 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2898.
+Total: 3.552400 ms (FindLiveObjects: 0.290000 ms CreateObjectMapping: 0.118500 ms MarkObjects: 1.571800 ms  DeleteObjects: 1.570900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002484 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.03 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.774 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2376 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.1 MB.
+System memory in use after: 118.3 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 2900.
+Total: 3.215100 ms (FindLiveObjects: 0.220400 ms CreateObjectMapping: 0.099200 ms MarkObjects: 1.541700 ms  DeleteObjects: 1.352700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 43.755101 seconds.
+  path: Assets/Scripts/ChanceCards/ScriptableObjectScripts/AddTestTimeEffect.cs
+  artifactKey: Guid(47105a35756b3ad42882efe4eb762d11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ScriptableObjectScripts/AddTestTimeEffect.cs using Guid(47105a35756b3ad42882efe4eb762d11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b37bfa5ae611a8e6417508ea2f8522a6') in 0.010921 seconds
+  Import took 0.016610 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006554 seconds.
+  path: Assets/Scripts/ChanceCards/ScriptableObjectScripts/AddTestTimeEffect.cs
+  artifactKey: Guid(47105a35756b3ad42882efe4eb762d11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ScriptableObjectScripts/AddTestTimeEffect.cs using Guid(47105a35756b3ad42882efe4eb762d11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b37bfa5ae611a8e6417508ea2f8522a6') in 0.005504 seconds
+  Import took 0.009689 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001913 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.786 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.03 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2377 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.0 MB.
+System memory in use after: 118.3 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2904.
+Total: 3.474500 ms (FindLiveObjects: 0.208200 ms CreateObjectMapping: 0.089500 ms MarkObjects: 1.541000 ms  DeleteObjects: 1.635000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001796 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.91 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.776 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2377 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.0 MB.
+System memory in use after: 118.3 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2907.
+Total: 3.621300 ms (FindLiveObjects: 0.217900 ms CreateObjectMapping: 0.096500 ms MarkObjects: 1.797600 ms  DeleteObjects: 1.508300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 115.769237 seconds.
+  path: Assets/Scripts/ChanceCards/ScriptableObjectScripts/AddTestTimeEffect.cs
+  artifactKey: Guid(47105a35756b3ad42882efe4eb762d11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ScriptableObjectScripts/AddTestTimeEffect.cs using Guid(47105a35756b3ad42882efe4eb762d11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '858a96e493e8077270634e0339c6b3f4') in 0.004914 seconds
+  Import took 0.012351 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.122578 seconds.
+  path: Assets/Scripts/Actions/TestAction.cs
+  artifactKey: Guid(fa2d3a12b6c14324ab39b12126fa2e72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Actions/TestAction.cs using Guid(fa2d3a12b6c14324ab39b12126fa2e72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0fc4f3854f0e8c971dae39c172ed9e1') in 0.010712 seconds
+  Import took 0.015719 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001790 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.92 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.755 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2377 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.0 MB.
+System memory in use after: 118.2 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2910.
+Total: 3.285500 ms (FindLiveObjects: 0.224900 ms CreateObjectMapping: 0.090700 ms MarkObjects: 1.559300 ms  DeleteObjects: 1.409800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001779 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.02 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.738 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2377 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.0 MB.
+System memory in use after: 118.3 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2913.
+Total: 4.012100 ms (FindLiveObjects: 0.206100 ms CreateObjectMapping: 0.095900 ms MarkObjects: 1.796100 ms  DeleteObjects: 1.913100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001772 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.96 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.754 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.95 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2377 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.1 MB.
+System memory in use after: 118.3 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2916.
+Total: 3.410100 ms (FindLiveObjects: 0.268300 ms CreateObjectMapping: 0.105500 ms MarkObjects: 1.631100 ms  DeleteObjects: 1.404200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 471.491342 seconds.
+  path: Assets/ScriptableObjects/Goals
+  artifactKey: Guid(360c6ab530d63ac40a59858ece05d008) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/Goals using Guid(360c6ab530d63ac40a59858ece05d008) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6f4983bc07dcdfce3af5cd78324312e') in 0.009533 seconds
+  Import took 0.018424 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.474655 seconds.
+  path: Assets/ScriptableObjects/ChanceCardEffects
+  artifactKey: Guid(01796002a79b0984fb8ada7bda7474f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCardEffects using Guid(01796002a79b0984fb8ada7bda7474f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f310d89e5765b0642a9605cb5cc74437') in 0.007741 seconds
+  Import took 0.013217 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.023274 seconds.
+  path: Assets/ScriptableObjects/ChanceCards
+  artifactKey: Guid(cc5963811b7549b4da248dbb87951ab1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards using Guid(cc5963811b7549b4da248dbb87951ab1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbfbcdedde33d70dd33eab113d273d35') in 0.006341 seconds
+  Import took 0.012046 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.158524 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddAMinute.asset
+  artifactKey: Guid(77c5979f53173ae42a09acc8b84e6ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddAMinute.asset using Guid(77c5979f53173ae42a09acc8b84e6ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f318da8ce917ea907bf9bd4e810c0fa') in 0.348689 seconds
+  Import took 0.353552 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.660255 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/New Chance Card Data.asset
+  artifactKey: Guid(038367ea98a684a46afc1c16553857e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/New Chance Card Data.asset using Guid(038367ea98a684a46afc1c16553857e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bb270e304368698133727ab3d318d5d') in 0.020686 seconds
+  Import took 0.031054 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003642 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/New Chance Card Data.asset
+  artifactKey: Guid(038367ea98a684a46afc1c16553857e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/New Chance Card Data.asset using Guid(038367ea98a684a46afc1c16553857e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bb270e304368698133727ab3d318d5d') in 0.007735 seconds
+  Import took 0.016742 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.509930 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/Pill.asset
+  artifactKey: Guid(f5b23a0bbbb2b284995fc258e6d2f3d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/Pill.asset using Guid(f5b23a0bbbb2b284995fc258e6d2f3d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '933d79e7da249971be211ae140728cac') in 0.011874 seconds
+  Import took 0.017164 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 97.637415 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddTwoHours.asset
+  artifactKey: Guid(77c5979f53173ae42a09acc8b84e6ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddTwoHours.asset using Guid(77c5979f53173ae42a09acc8b84e6ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a8d45a03f973cd3ff19e33b51119c55') in 0.006276 seconds
+  Import took 0.011517 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 60.645238 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/Pill.asset
+  artifactKey: Guid(f5b23a0bbbb2b284995fc258e6d2f3d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/Pill.asset using Guid(f5b23a0bbbb2b284995fc258e6d2f3d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7661b6b02e511145b2abe009ce65fc73') in 0.006485 seconds
+  Import took 0.011298 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003054 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.86 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.757 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.01 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2377 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.1 MB.
+System memory in use after: 118.3 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2919.
+Total: 3.290700 ms (FindLiveObjects: 0.208500 ms CreateObjectMapping: 0.090100 ms MarkObjects: 1.617700 ms  DeleteObjects: 1.373400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 75.910981 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddTwoHours.asset
+  artifactKey: Guid(77c5979f53173ae42a09acc8b84e6ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddTwoHours.asset using Guid(77c5979f53173ae42a09acc8b84e6ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '712da0674a8accdf5bb85b7bb0108f3a') in 0.040492 seconds
+  Import took 0.044883 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 252.939466 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddFourHours.asset
+  artifactKey: Guid(2aded1f1d1d149147b803dcd94f2d62a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddFourHours.asset using Guid(2aded1f1d1d149147b803dcd94f2d62a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ea20c751fd7e8f9663c605993daba31') in 0.006675 seconds
+  Import took 0.012244 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.063597 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddTestTime
+  artifactKey: Guid(b9dba5b1571aea545aa80f27b4b899c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddTestTime using Guid(b9dba5b1571aea545aa80f27b4b899c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51734ca0c5abfa0b4254266ef903e4c8') in 0.007048 seconds
+  Import took 0.011745 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.823941 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/New Folder
+  artifactKey: Guid(a834a8af1e2d81c47a87a2ffcb4363ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/New Folder using Guid(a834a8af1e2d81c47a87a2ffcb4363ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1ed13d097c1f1e1eecf185cdcf6d407') in 0.006553 seconds
+  Import took 0.018005 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.387503 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed
+  artifactKey: Guid(a834a8af1e2d81c47a87a2ffcb4363ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed using Guid(a834a8af1e2d81c47a87a2ffcb4363ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97311dc3135192da1c1c540785b3bba1') in 0.006481 seconds
+  Import took 0.011007 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.202853 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/LoseRandomSkill
+  artifactKey: Guid(2f59baf0d14bdc24ea08e96953c3d7e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/LoseRandomSkill using Guid(2f59baf0d14bdc24ea08e96953c3d7e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cee4f68627e571a6e811b6c7a0ea8a27') in 0.006463 seconds
+  Import took 0.010979 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.548390 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/EndTest
+  artifactKey: Guid(e03cf1b2c1861be40b46b46e70a82c56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/EndTest using Guid(e03cf1b2c1861be40b46b46e70a82c56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e588c628f54f3f0912a44d9fe4ab298') in 0.007287 seconds
+  Import took 0.011989 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.493986 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ReduceNeed
+  artifactKey: Guid(99c2735dda13d4f4c9cc388cea39e669) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ReduceNeed using Guid(99c2735dda13d4f4c9cc388cea39e669) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c764b2e7d65619e4cade1c12f645f780') in 0.006063 seconds
+  Import took 0.011663 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.312258 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/GainSkill
+  artifactKey: Guid(c64847f96706fe64db6e9deb4baea713) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/GainSkill using Guid(c64847f96706fe64db6e9deb4baea713) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc628c775fd866673a91801a0ffcaa2d') in 0.008013 seconds
+  Import took 0.012923 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.899269 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/LoseSkill
+  artifactKey: Guid(23b37a73583af8d409648afd3e2e7e7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/LoseSkill using Guid(23b37a73583af8d409648afd3e2e7e7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73749255a844c4be26895a210063be61') in 0.006327 seconds
+  Import took 0.011207 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.742237 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/IncreaseNeed
+  artifactKey: Guid(39cf8b1b21814334da1919e2900b1c68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/IncreaseNeed using Guid(39cf8b1b21814334da1919e2900b1c68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1994fceb9e885c15dec75181bc32344a') in 0.005823 seconds
+  Import took 0.010992 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.533179 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/Illness
+  artifactKey: Guid(2a71920fa7b685643880cb6cfe6a9b22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/Illness using Guid(2a71920fa7b685643880cb6cfe6a9b22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45670fd56d1c6ef10b38008e5274cea0') in 0.006403 seconds
+  Import took 0.011452 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001777 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.746 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2377 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.1 MB.
+System memory in use after: 118.4 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2922.
+Total: 3.341800 ms (FindLiveObjects: 0.205700 ms CreateObjectMapping: 0.091600 ms MarkObjects: 1.581700 ms  DeleteObjects: 1.462000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002178 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.83 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.740 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2377 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.0 MB.
+System memory in use after: 118.2 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2925.
+Total: 3.210400 ms (FindLiveObjects: 0.215300 ms CreateObjectMapping: 0.098700 ms MarkObjects: 1.552300 ms  DeleteObjects: 1.343500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001827 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.89 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.750 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2377 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.1 MB.
+System memory in use after: 118.3 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2928.
+Total: 3.476200 ms (FindLiveObjects: 0.210700 ms CreateObjectMapping: 0.092500 ms MarkObjects: 1.760000 ms  DeleteObjects: 1.412200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002035 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.752 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.90 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2377 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.2 MB.
+System memory in use after: 118.3 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2931.
+Total: 3.598100 ms (FindLiveObjects: 0.248000 ms CreateObjectMapping: 0.176300 ms MarkObjects: 1.691900 ms  DeleteObjects: 1.480900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001833 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.792 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2376 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.1 MB.
+System memory in use after: 118.3 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 2933.
+Total: 4.443700 ms (FindLiveObjects: 0.322700 ms CreateObjectMapping: 0.162200 ms MarkObjects: 2.301700 ms  DeleteObjects: 1.655600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 222.141825 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceEffect.cs
+  artifactKey: Guid(fbb99a58e06f84a409a0167d7279423e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceEffect.cs using Guid(fbb99a58e06f84a409a0167d7279423e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '148bec8d6055f6c0030381641f5d4af0') in 0.005615 seconds
+  Import took 0.014798 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 193.134883 seconds.
+  path: Assets/Scripts/Skills/Skill.cs
+  artifactKey: Guid(87adfbfcbd27e8f43ade607e456e4599) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Skills/Skill.cs using Guid(87adfbfcbd27e8f43ade607e456e4599) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bce46b10690bb2202e5306d82b0834ea') in 0.009129 seconds
+  Import took 0.014301 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002170 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.88 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.763 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.97 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2376 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.1 MB.
+System memory in use after: 118.3 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2936.
+Total: 3.579900 ms (FindLiveObjects: 0.214200 ms CreateObjectMapping: 0.102000 ms MarkObjects: 1.852300 ms  DeleteObjects: 1.410400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 363.602824 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/EndTest/New End Test Effect.asset
+  artifactKey: Guid(370095c820907674b85720ce336bd8e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/EndTest/New End Test Effect.asset using Guid(370095c820907674b85720ce336bd8e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd6a6310a562b22adc2386a89c64bad5') in 0.198271 seconds
+  Import took 0.203303 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.862900 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/EndTest/EndTest.asset
+  artifactKey: Guid(79d6b02b1cd555f4584ed731bb10f47d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/EndTest/EndTest.asset using Guid(79d6b02b1cd555f4584ed731bb10f47d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab20493d6c35eb2085ddcbab9daf1ba3') in 0.003242 seconds
+  Import took 0.008623 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.188796 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddTestTime/AddTwoHours.asset
+  artifactKey: Guid(77c5979f53173ae42a09acc8b84e6ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddTestTime/AddTwoHours.asset using Guid(77c5979f53173ae42a09acc8b84e6ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ced934070b5dc76264d78df5b91024f5') in 0.002870 seconds
+  Import took 0.007041 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.480066 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddTestTime/AddFourHours.asset
+  artifactKey: Guid(2aded1f1d1d149147b803dcd94f2d62a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddTestTime/AddFourHours.asset using Guid(2aded1f1d1d149147b803dcd94f2d62a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1eeae2f2fa56ba8c4db11e7921790486') in 0.003479 seconds
+  Import took 0.008539 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 54.899410 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifyNeed
+  artifactKey: Guid(857dac4f607f71e4198c7039955dc68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifyNeed using Guid(857dac4f607f71e4198c7039955dc68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '871e879849e6549a91006e9e0fee8dde') in 0.007472 seconds
+  Import took 0.011610 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.090007 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill
+  artifactKey: Guid(24263134440f89c46be9be1b2af85093) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill using Guid(24263134440f89c46be9be1b2af85093) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33ba7b984c8654a8e1a8e8196e0c87c3') in 0.006130 seconds
+  Import took 0.011405 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.783737 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxFun.asset
+  artifactKey: Guid(d6f69ebac4e2d6e4eaae2531216028e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxFun.asset using Guid(d6f69ebac4e2d6e4eaae2531216028e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c5285d96f1bed653bd3cd882fbc3f86') in 0.006398 seconds
+  Import took 0.011452 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001474 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxFun.asset
+  artifactKey: Guid(d6f69ebac4e2d6e4eaae2531216028e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxFun.asset using Guid(d6f69ebac4e2d6e4eaae2531216028e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c5285d96f1bed653bd3cd882fbc3f86') in 0.002703 seconds
+  Import took 0.006793 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.647776 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxSocial.asset
+  artifactKey: Guid(7712e7205a2d0f74380f90e465520254) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxSocial.asset using Guid(7712e7205a2d0f74380f90e465520254) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c39fb7e3d5c5b09eacabb2d872c4ac3') in 0.006099 seconds
+  Import took 0.010640 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001813 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.97 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.767 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.94 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2376 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.0 MB.
+System memory in use after: 118.3 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2939.
+Total: 3.326000 ms (FindLiveObjects: 0.255800 ms CreateObjectMapping: 0.103400 ms MarkObjects: 1.584400 ms  DeleteObjects: 1.380900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002232 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.783 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2376 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.2 MB.
+System memory in use after: 118.4 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2942.
+Total: 3.319900 ms (FindLiveObjects: 0.218700 ms CreateObjectMapping: 0.093300 ms MarkObjects: 1.669300 ms  DeleteObjects: 1.337600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 57.537456 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxHunger.asset
+  artifactKey: Guid(2ccea11feb5210c498ec672a4f103ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxHunger.asset using Guid(2ccea11feb5210c498ec672a4f103ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adb98081fd50d7cab03e71d50fed3b13') in 0.064168 seconds
+  Import took 0.071858 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.625052 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxSleep.asset
+  artifactKey: Guid(5630cc649102a924583c9bb55efe3e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxSleep.asset using Guid(5630cc649102a924583c9bb55efe3e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5751ecc06ac8c19801200ed0b3b5e38') in 0.006323 seconds
+  Import took 0.011953 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001285 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxSleep.asset
+  artifactKey: Guid(5630cc649102a924583c9bb55efe3e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxSleep.asset using Guid(5630cc649102a924583c9bb55efe3e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5751ecc06ac8c19801200ed0b3b5e38') in 0.003163 seconds
+  Import took 0.007003 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.640482 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxFun.asset
+  artifactKey: Guid(d6f69ebac4e2d6e4eaae2531216028e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxFun.asset using Guid(d6f69ebac4e2d6e4eaae2531216028e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14b8eda8d958532eefa7c778843a8f58') in 0.003558 seconds
+  Import took 0.008595 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxSleep.asset
+  artifactKey: Guid(5630cc649102a924583c9bb55efe3e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxSleep.asset using Guid(5630cc649102a924583c9bb55efe3e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1006bb256f058ef015b6f6104731e42') in 0.002748 seconds
+  Import took 0.007182 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxSocial.asset
+  artifactKey: Guid(7712e7205a2d0f74380f90e465520254) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxSocial.asset using Guid(7712e7205a2d0f74380f90e465520254) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ff0f20da559ad2dc7b139e287b322b5') in 0.002613 seconds
+  Import took 0.006915 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxHunger.asset
+  artifactKey: Guid(2ccea11feb5210c498ec672a4f103ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/MaxNeed/MaxHunger.asset using Guid(2ccea11feb5210c498ec672a4f103ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05380d8779079c02b03d9b8d18cc2fb1') in 0.002690 seconds
+  Import took 0.006758 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 30.837236 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/LoseRandomSkill/LoseTwoPoints.asset
+  artifactKey: Guid(0b6fe9901f15a9847a362208cd130076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/LoseRandomSkill/LoseTwoPoints.asset using Guid(0b6fe9901f15a9847a362208cd130076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f032d9ef60113763d133f0498ab8829') in 0.016808 seconds
+  Import took 0.021512 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.598157 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/LoseRandomSkill/LoseOnePoint.asset
+  artifactKey: Guid(c766e5fb614b20a43ba701bddd9ee9a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/LoseRandomSkill/LoseOnePoint.asset using Guid(c766e5fb614b20a43ba701bddd9ee9a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6253dea721d5eb3392a6d1c3369aa0c3') in 0.006676 seconds
+  Import took 0.012284 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000728 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/LoseRandomSkill/LoseOnePoint.asset
+  artifactKey: Guid(c766e5fb614b20a43ba701bddd9ee9a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/LoseRandomSkill/LoseOnePoint.asset using Guid(c766e5fb614b20a43ba701bddd9ee9a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6253dea721d5eb3392a6d1c3369aa0c3') in 0.003646 seconds
+  Import took 0.008066 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.173478 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/EndTest/EndTest.asset
+  artifactKey: Guid(79d6b02b1cd555f4584ed731bb10f47d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/EndTest/EndTest.asset using Guid(79d6b02b1cd555f4584ed731bb10f47d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86694637852a972141f94298a195d6ad') in 0.020532 seconds
+  Import took 0.028165 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.510199 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/Illness/New Illness Effect.asset
+  artifactKey: Guid(a2581f822a6f4a34495a0fbc32dae350) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/Illness/New Illness Effect.asset using Guid(a2581f822a6f4a34495a0fbc32dae350) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db11d1c009eaaa9c1f429e35deb5e67f') in 0.007486 seconds
+  Import took 0.012656 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008352 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/Illness/New Illness Effect.asset
+  artifactKey: Guid(a2581f822a6f4a34495a0fbc32dae350) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/Illness/New Illness Effect.asset using Guid(a2581f822a6f4a34495a0fbc32dae350) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db11d1c009eaaa9c1f429e35deb5e67f') in 0.002517 seconds
+  Import took 0.006896 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.603829 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/Illness/MakeIll.asset
+  artifactKey: Guid(a2581f822a6f4a34495a0fbc32dae350) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/Illness/MakeIll.asset using Guid(a2581f822a6f4a34495a0fbc32dae350) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e813a7627ad8c7adae82dce17d3b06a3') in 0.006875 seconds
+  Import took 0.011788 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.007021 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/Illness/MakeIll.asset
+  artifactKey: Guid(a2581f822a6f4a34495a0fbc32dae350) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/Illness/MakeIll.asset using Guid(a2581f822a6f4a34495a0fbc32dae350) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93d35cf5a1ecea369704804dcee4f88e') in 0.003119 seconds
+  Import took 0.009095 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.352611 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/LoseRandomSkill/LoseOnePoint.asset
+  artifactKey: Guid(c766e5fb614b20a43ba701bddd9ee9a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/LoseRandomSkill/LoseOnePoint.asset using Guid(c766e5fb614b20a43ba701bddd9ee9a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ed6b1a8c47778dddea9e5638a9e07fb') in 0.002865 seconds
+  Import took 0.010914 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/LoseRandomSkill/LoseTwoPoints.asset
+  artifactKey: Guid(0b6fe9901f15a9847a362208cd130076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/LoseRandomSkill/LoseTwoPoints.asset using Guid(0b6fe9901f15a9847a362208cd130076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85f16b2b949445850a9f943de38b15ba') in 0.002707 seconds
+  Import took 0.006921 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001788 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.759 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.87 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2376 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.2 MB.
+System memory in use after: 118.4 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2945.
+Total: 3.849500 ms (FindLiveObjects: 0.361900 ms CreateObjectMapping: 0.123600 ms MarkObjects: 1.871400 ms  DeleteObjects: 1.491500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 61.909197 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/IncreaseFood
+  artifactKey: Guid(d6224bc0d11b13e42be76e968a5dc98d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/IncreaseFood using Guid(d6224bc0d11b13e42be76e968a5dc98d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20de187ebbfdd4454a458d169c01f406') in 0.009662 seconds
+  Import took 0.017630 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.527393 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/IncreaseFood/AddTenFood.asset
+  artifactKey: Guid(91a81a51b3901d94d8a49138d3a191d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/IncreaseFood/AddTenFood.asset using Guid(91a81a51b3901d94d8a49138d3a191d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dad536d0d290625879880507fc6d66c1') in 0.033282 seconds
+  Import took 0.038754 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 45.447203 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/LoseTwoCleaning.asset
+  artifactKey: Guid(7c844106133480e44b53420589ab37d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/LoseTwoCleaning.asset using Guid(7c844106133480e44b53420589ab37d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42a2bf8835519e31f80c16a24b769f39') in 0.005610 seconds
+  Import took 0.014359 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.465646 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/New Modify Skill Effect.asset
+  artifactKey: Guid(d5e6011195e97d24a86016e285b02bea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/New Modify Skill Effect.asset using Guid(d5e6011195e97d24a86016e285b02bea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd93689c57c0763214e4d510c6a4799c4') in 0.006324 seconds
+  Import took 0.011231 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.722027 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/GainTwoCleaning.asset
+  artifactKey: Guid(7c844106133480e44b53420589ab37d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/GainTwoCleaning.asset using Guid(7c844106133480e44b53420589ab37d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd54bf153188cc857a2475d5d1b1e2bbc') in 0.006213 seconds
+  Import took 0.011134 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.444230 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/GainOneCooking.asset
+  artifactKey: Guid(d5e6011195e97d24a86016e285b02bea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/GainOneCooking.asset using Guid(d5e6011195e97d24a86016e285b02bea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01e055181f2bca255727ac1d61c1d755') in 0.006280 seconds
+  Import took 0.012422 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.987911 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/GainTwoPhotography.asset
+  artifactKey: Guid(2f0a17132b576d047830c2b470b9172b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/GainTwoPhotography.asset using Guid(2f0a17132b576d047830c2b470b9172b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de0db9c331f7fa5533679938fca7c392') in 0.006327 seconds
+  Import took 0.012181 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001154 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/GainTwoPhotography.asset
+  artifactKey: Guid(2f0a17132b576d047830c2b470b9172b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/GainTwoPhotography.asset using Guid(2f0a17132b576d047830c2b470b9172b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de0db9c331f7fa5533679938fca7c392') in 0.003064 seconds
+  Import took 0.007011 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.908233 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/GainOnePhotography.asset
+  artifactKey: Guid(58edb4fd69e1a7041829186684e02a75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/GainOnePhotography.asset using Guid(58edb4fd69e1a7041829186684e02a75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b303e843a71d76891e663a23b49a75c6') in 0.006107 seconds
+  Import took 0.011087 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.897815 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/GainOneProgramming.asset
+  artifactKey: Guid(c40fccc40f938374cb90774a572e23b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/GainOneProgramming.asset using Guid(c40fccc40f938374cb90774a572e23b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e54b2f226c31f5cf184e446b5f04d59') in 0.007076 seconds
+  Import took 0.012313 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000777 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/GainOneProgramming.asset
+  artifactKey: Guid(c40fccc40f938374cb90774a572e23b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/GainOneProgramming.asset using Guid(c40fccc40f938374cb90774a572e23b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e54b2f226c31f5cf184e446b5f04d59') in 0.003121 seconds
+  Import took 0.007255 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.239026 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/LoseOneProgramming.asset
+  artifactKey: Guid(07fe8e072a8d2014fbdcc3e7d33c3adc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/LoseOneProgramming.asset using Guid(07fe8e072a8d2014fbdcc3e7d33c3adc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e911fc60efbbf686b9367f938e81232e') in 0.006147 seconds
+  Import took 0.011645 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000862 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/LoseOneProgramming.asset
+  artifactKey: Guid(07fe8e072a8d2014fbdcc3e7d33c3adc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifySkill/LoseOneProgramming.asset using Guid(07fe8e072a8d2014fbdcc3e7d33c3adc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e911fc60efbbf686b9367f938e81232e') in 0.003118 seconds
+  Import took 0.007647 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 113.151225 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifyNeed/ReduceHygiene.asset
+  artifactKey: Guid(c612849ed2c305b4b8ef30d3d790212a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifyNeed/ReduceHygiene.asset using Guid(c612849ed2c305b4b8ef30d3d790212a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8c94d35af32ffc677c7248fecaab613') in 0.007418 seconds
+  Import took 0.012457 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.037382 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifyNeed/ReduceEnergy.asset
+  artifactKey: Guid(9a8d3d3c47442a64aa8f44779df13c21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifyNeed/ReduceEnergy.asset using Guid(9a8d3d3c47442a64aa8f44779df13c21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bcc05e498773b1e219fd10ce2da27db') in 0.006681 seconds
+  Import took 0.011503 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.375086 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifyNeed/ReduceComfort.asset
+  artifactKey: Guid(eec6015cdfff4bd49806018e9c521e06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifyNeed/ReduceComfort.asset using Guid(eec6015cdfff4bd49806018e9c521e06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8ccf7529e2418e464e64cee27cfa3d2') in 0.005910 seconds
+  Import took 0.010497 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.871796 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifyNeed/IncreaseFun.asset
+  artifactKey: Guid(a901f70436e6e1849befd34f82bd6a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifyNeed/IncreaseFun.asset using Guid(a901f70436e6e1849befd34f82bd6a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46caae9a478925b0ea0cb00598890b39') in 0.006715 seconds
+  Import took 0.011890 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.059846 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifyNeed/ReduceFun.asset
+  artifactKey: Guid(7ff9d51fc9e04eb4aa9e63a9c88c5cea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifyNeed/ReduceFun.asset using Guid(7ff9d51fc9e04eb4aa9e63a9c88c5cea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c61966959fc607c69bcc46e11b4d3a60') in 0.006301 seconds
+  Import took 0.011243 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.888779 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifyNeed/ReduceSocial.asset
+  artifactKey: Guid(c401d54dcedb6d84ea020d3c4ab699dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/ModifyNeed/ReduceSocial.asset using Guid(c401d54dcedb6d84ea020d3c4ab699dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a41f7876582a3dcd0423c4624d8d5c6') in 0.005933 seconds
+  Import took 0.011081 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 40.880768 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/Pill.asset
+  artifactKey: Guid(f5b23a0bbbb2b284995fc258e6d2f3d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/Pill.asset using Guid(f5b23a0bbbb2b284995fc258e6d2f3d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ba72980ec55feec660a44b188058f03') in 0.011783 seconds
+  Import took 0.019306 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 46.890902 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceEffects
+  artifactKey: Guid(d1417bfc5b44c2440a0c4a8eaa890a07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceEffects using Guid(d1417bfc5b44c2440a0c4a8eaa890a07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abc1a69d9456fad0eeaee73347dc5779') in 0.005501 seconds
+  Import took 0.010384 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.218648 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceEffect.cs
+  artifactKey: Guid(fbb99a58e06f84a409a0167d7279423e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceEffect.cs using Guid(fbb99a58e06f84a409a0167d7279423e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00a4695768caa1792f613ea6801b1d6d') in 0.002652 seconds
+  Import took 0.009891 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001846 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceEffect.cs
+  artifactKey: Guid(fbb99a58e06f84a409a0167d7279423e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceEffect.cs using Guid(fbb99a58e06f84a409a0167d7279423e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00a4695768caa1792f613ea6801b1d6d') in 0.003491 seconds
+  Import took 0.007580 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.372169 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceEffects/AddTestTimeEffect.cs
+  artifactKey: Guid(365f3e542c8348c439b1e304f3310ebd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceEffects/AddTestTimeEffect.cs using Guid(365f3e542c8348c439b1e304f3310ebd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebdadaed3c893e422b5421d4e34f86c3') in 0.006928 seconds
+  Import took 0.011113 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.422426 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceEffects/MaxNeedEffect.cs
+  artifactKey: Guid(45b318fe5278ec74ab6eee6139594abf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceEffects/MaxNeedEffect.cs using Guid(45b318fe5278ec74ab6eee6139594abf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3603ebb2aabb85c42a78e94174646391') in 0.023726 seconds
+  Import took 0.030311 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.646515 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceEffects/LoseRandomSkillEffect.cs
+  artifactKey: Guid(441e7b0d8dde57e478b5379806ee1769) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceEffects/LoseRandomSkillEffect.cs using Guid(441e7b0d8dde57e478b5379806ee1769) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ee8364418afb6577fda62cc62ef9b48') in 0.007200 seconds
+  Import took 0.011554 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.997458 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceEffects/EndTestEffect.cs
+  artifactKey: Guid(5318c78498d666942a8054426ddf9244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceEffects/EndTestEffect.cs using Guid(5318c78498d666942a8054426ddf9244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b2aa63248dad401c54c1548d36cb912') in 0.012685 seconds
+  Import took 0.018307 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.367549 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceEffects/ModifyNeedEffect.cs
+  artifactKey: Guid(78ba4e463e2b3864881778c1e554d50e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceEffects/ModifyNeedEffect.cs using Guid(78ba4e463e2b3864881778c1e554d50e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ce0f7b55d0db5f382d6af8fde8c0450') in 0.006831 seconds
+  Import took 0.013253 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.247286 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceEffects/ModifySkillEffect.cs
+  artifactKey: Guid(c12425a732857da4ab654bde28b05b43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceEffects/ModifySkillEffect.cs using Guid(c12425a732857da4ab654bde28b05b43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '582f8efc161a872fad1ac5ad6bf8f48d') in 0.007234 seconds
+  Import took 0.015308 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.164712 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceEffects/IllnessEffect.cs
+  artifactKey: Guid(471854ba3a15f03458fa6cdc26d631c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceEffects/IllnessEffect.cs using Guid(471854ba3a15f03458fa6cdc26d631c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed247690968a93e2ef1e513b86df3ad6') in 0.006111 seconds
+  Import took 0.102877 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.326061 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceEffects/IncreaseFoodEffect.cs
+  artifactKey: Guid(0be1995719519f24ba7f683806d17a4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceEffects/IncreaseFoodEffect.cs using Guid(0be1995719519f24ba7f683806d17a4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '847ac82cd3779a838dff4ec7e95f4976') in 0.012752 seconds
+  Import took 0.017541 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002874 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceEffects/IncreaseFoodEffect.cs
+  artifactKey: Guid(0be1995719519f24ba7f683806d17a4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceEffects/IncreaseFoodEffect.cs using Guid(0be1995719519f24ba7f683806d17a4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '847ac82cd3779a838dff4ec7e95f4976') in 0.003496 seconds
+  Import took 0.007448 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.593827 seconds.
+  path: Assets/Scripts/ChanceCards/ChanceEffects/AddTestTimeEffect.cs
+  artifactKey: Guid(365f3e542c8348c439b1e304f3310ebd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChanceCards/ChanceEffects/AddTestTimeEffect.cs using Guid(365f3e542c8348c439b1e304f3310ebd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1292f03a423b8270d8569284965ecb2a') in 0.003726 seconds
+  Import took 0.009764 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001817 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.776 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.83 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2384 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.3 MB.
+System memory in use after: 118.6 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2956.
+Total: 3.455800 ms (FindLiveObjects: 0.222500 ms CreateObjectMapping: 0.100700 ms MarkObjects: 1.743800 ms  DeleteObjects: 1.387900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 99.983253 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddTestTime/AddTwoHours.asset
+  artifactKey: Guid(77c5979f53173ae42a09acc8b84e6ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddTestTime/AddTwoHours.asset using Guid(77c5979f53173ae42a09acc8b84e6ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fe44b2307547307956062e74a8be01c') in 0.031485 seconds
+  Import took 0.039145 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddTestTime/AddFourHours.asset
+  artifactKey: Guid(2aded1f1d1d149147b803dcd94f2d62a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ScriptableObjects/ChanceCards/ChanceCardEffects/AddTestTime/AddFourHours.asset using Guid(2aded1f1d1d149147b803dcd94f2d62a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afeea2bc1873c67364142c1ebd4a2d7d') in 0.002879 seconds
+  Import took 0.006471 seconds .
+
