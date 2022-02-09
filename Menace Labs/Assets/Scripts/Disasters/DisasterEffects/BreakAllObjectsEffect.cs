@@ -5,6 +5,13 @@ public class BreakAllObjectsEffect : DisasterEffect
 {
     public override void TriggerEffect()
     {
-        // Break all objects on map
+        ConstantObject[] objects = FindObjectsOfType<ConstantObject>();
+        for (int i = 0; i < objects.Length; i++)
+        {
+            if (objects[i].GetBreakType() == ConstantObject.BreakType.WORKING)
+            {
+                objects[i].SetToBreakableAlternate();
+            }
+        }
     }
 }

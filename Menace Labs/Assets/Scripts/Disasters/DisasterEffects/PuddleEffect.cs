@@ -1,12 +1,23 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/DisasterEffects/Puddle")]
 public class PuddleEffect : DisasterEffect
 {
     public int number;
+    public GameObject puddlePrefab;
+
+    const int RANGE = 10;
 
     public override void TriggerEffect()
     {
-        // Spawn number puddles randomly around map
+        for (int i = 0; i < number; i++)
+        {
+            // Get a random position on the navmesh to spawn a puddle
+            NavMeshHit hit;
+            NavMesh.SamplePosition(Vector3.zero + (Random.insideUnitSphere * RANGE), out hit, RANGE, NavMesh.AllAreas);
+
+            Instantiate(puddlePrefab, hit.position, Quaternion.identity);
+        }
     }
 }

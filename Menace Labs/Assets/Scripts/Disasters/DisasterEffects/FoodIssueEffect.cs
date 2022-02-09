@@ -7,6 +7,6 @@ public class FoodIssueEffect : DisasterEffect
 
     public override void TriggerEffect()
     {
-        // Tell the food manager to stop food from being used for issueTimer seconds
+        ManagerHandler.instance.FoodM.SetSupplyIssueTimer(issueTimer);
     }
 }

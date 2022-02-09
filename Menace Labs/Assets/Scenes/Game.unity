@@ -4776,7 +4776,7 @@ GameObject:
   m_Name: EnvironmentCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &417904799
@@ -29748,6 +29748,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clone
       objectReference: {fileID: 0}
+    - target: {fileID: 8792628829624405647, guid: faedd4ed504aacf409cefa0a82643f68, type: 3}
+      propertyPath: disasterTest
+      value: 
+      objectReference: {fileID: 11400000, guid: 87aec193b9ce1c04886183a7100ad60a, type: 2}
     - target: {fileID: 8794191130772992461, guid: faedd4ed504aacf409cefa0a82643f68, type: 3}
       propertyPath: m_RootOrder
       value: 1

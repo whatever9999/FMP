@@ -43,6 +43,7 @@ public class ConstantObject : MonoBehaviour
     [SerializeField] GameObject alternateDirtVersion;
     [Tooltip("The working object should have the broken object and vice versa, non-breakable objects don't have an alternate")]
     [SerializeField] GameObject alternateBreakVersion;
+    public BreakType GetBreakType() { return breakType; }
 
     [Header("Object Use")]
     [Tooltip("Where should the clone be to use the object?")]

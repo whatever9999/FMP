@@ -9,10 +9,23 @@ public class FoodManager : MonoBehaviour
 
     private int foodAmount;
 
+    private float supplyIssueTimer;
+    public void SetSupplyIssueTimer(float length) { supplyIssue = true;  supplyIssueTimer = length; }
+    bool supplyIssue = false;
+
     private void Start()
     {
         foodAmount = maxFoodAmount;
         UpdateUI();
+    }
+
+    private void Update()
+    {
+        supplyIssueTimer -= Time.deltaTime;
+        if (supplyIssue && supplyIssueTimer <= 0)
+        {
+            supplyIssue = false;
+        }
     }
 
     public void ModifyFoodAmount(int amount) 
@@ -30,9 +43,10 @@ public class FoodManager : MonoBehaviour
         UpdateUI();
     }
 
+    // If there's a supply issue we can't use food
     public bool GotEnoughFood(int amountNeeded)
     {
-        if (foodAmount >= amountNeeded) return true;
+        if (!supplyIssue && foodAmount >= amountNeeded) return true;
         return false;
     }
 
