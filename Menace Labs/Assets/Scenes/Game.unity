@@ -17998,6 +17998,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4417062377456714, guid: 37bfca13e732b6e438dc06fa9278a4c9, type: 3}
   m_PrefabInstance: {fileID: 1451809930}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1451886735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1451886737}
+  - component: {fileID: 1451886736}
+  - component: {fileID: 1451886738}
+  m_Layer: 0
+  m_Name: Director
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1451886736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451886735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79c4b7f5afe5514d95b070a1d4f9873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menaceWeightings:
+  - 0.4
+  - 0.3
+  - 0.05
+  - 0.1
+  - 0.05
+  - 0.1
+  maxTimeSinceEvent: 60
+  maxTimeSinceDisaster: 600
+  maxTimeSinceChanceCardSuccess: 600
+  maxTimeSinceChanceCardFailure: 600
+--- !u!4 &1451886737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451886735}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.5028281, y: 1.7219362, z: -1.305675}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1451886738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451886735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b77ee41f51e00ee4f8e66da0bb87a363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  performanceWeightings:
+  - 0.1
+  - 0.05
+  - 0.2
+  - 0.05
+  - 0.35
+  - 0.25
+  maxSpeedChangesPerMinute: 10
+  maxActionsTriggeredPerMinute: 10
 --- !u!1001 &1456329542
 PrefabInstance:
   m_ObjectHideFlags: 0

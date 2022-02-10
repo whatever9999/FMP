@@ -17,6 +17,7 @@ public class TimeManager : MonoBehaviour
         PAUSE,
         PLAY,
         FAST_FORWARD,
+        NUM_TIME_SPEEDS,
     }
     public enum Times
     {
@@ -27,6 +28,7 @@ public class TimeManager : MonoBehaviour
 
     private TimeSpeed previousSpeed;
     private TimeSpeed currentSpeed = TimeSpeed.PLAY;
+    public TimeSpeed GetSpeed() { return currentSpeed; }
 
     private List<EventManager.EventType> morningStartTriggers = new List<EventManager.EventType>();
     private List<EventManager.EventType> midAfternoonTriggers = new List<EventManager.EventType>();

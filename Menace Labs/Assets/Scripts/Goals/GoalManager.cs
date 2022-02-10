@@ -54,4 +54,9 @@ public class GoalManager : MonoBehaviour
             ManagerHandler.instance.PopupM.ShowWinGame();
         }
     }
+
+    public float GetGoalMetric()
+    {
+        return goal.GetGoalMetric();
+    }
 }

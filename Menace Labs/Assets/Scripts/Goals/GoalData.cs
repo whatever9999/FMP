@@ -65,12 +65,23 @@ public class GoalData : ScriptableObject
                 goalMetric /= (int)SkillManager.SkillType.NONE * SkillManager.MAX_SKILL_LEVEL;
                 break;
             case GoalManager.GoalType.CONQUEROR_OF_CUISINE:
+                goalMetric = ManagerHandler.instance.GoalM.GetMealsMade() / (float)100;
                 break;
             case GoalManager.GoalType.FAMOUS_FIREFIGHTER:
+                goalMetric = ManagerHandler.instance.GoalM.GetFiresSurvived() / (float)5;
                 break;
             case GoalManager.GoalType.FOOTLOOSE_FIEND:
+                goalMetric = ManagerHandler.instance.GoalM.GetHoursDancing() / (float)100;
                 break;
             case GoalManager.GoalType.DOMESTIC_DELIGHT:
+                // Add normalised skills
+                goalMetric += ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.COOKING) / (float)SkillManager.MAX_SKILL_LEVEL;
+                goalMetric += ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.CLEANING) / (float)SkillManager.MAX_SKILL_LEVEL;
+                goalMetric += ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.HANDINESS) / (float)SkillManager.MAX_SKILL_LEVEL;
+                // Add nromalised times cleaned
+                goalMetric = ManagerHandler.instance.GoalM.GetTimesCleaned() / (float)100;
+                // Each element has a weighting of 1/4
+                goalMetric /= 4;
                 break;
         }
         return goalMetric;
