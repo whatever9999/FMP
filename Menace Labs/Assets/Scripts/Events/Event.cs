@@ -29,7 +29,7 @@ public abstract class ChanceEvent : Event
     [SerializeField] protected float chance;
 }
 // Trigger after a number of times checked
-public abstract class OccurenceEvent : Event
+public abstract class OccurrenceEvent : Event
 {
     public override bool CheckTrigger()
     {
@@ -113,7 +113,7 @@ public class BladderFailureEvent : HundredPercentEvent
 }
 
 [System.Serializable]
-public class BreakingEvent : OccurenceEvent
+public class BreakingEvent : OccurrenceEvent
 {
     protected override void TriggerEvent()
     {
@@ -136,7 +136,7 @@ public class BreakingEvent : OccurenceEvent
 }
 
 [System.Serializable]
-public class DirtyingEvent : OccurenceEvent
+public class DirtyingEvent : OccurrenceEvent
 {
     protected override void TriggerEvent()
     {
