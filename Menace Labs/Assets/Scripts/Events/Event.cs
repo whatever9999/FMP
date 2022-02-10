@@ -21,6 +21,8 @@ public abstract class ChanceEvent : Event
         return false;
     }
 
+    public void SetChance(float newChance) { chance = newChance; }
+
     [Tooltip("Multiplied by specified skill to decrease chance of event")]
     [SerializeField] private float chanceDecrease;
     // [SerializeField] private SkillType skill;
@@ -40,6 +42,8 @@ public abstract class OccurenceEvent : Event
         }
         return false;
     }
+
+    public void SetOccurrence(int newOccurrence) { occurence = newOccurrence; }
 
     [SerializeField] private int occurence;
     private int timesTriggered = 0;

@@ -66,4 +66,35 @@ public class EventManager : MonoBehaviour
     {
         breakingEvent.SetBreakableObject(breakableObject);
     }
+
+    public void ModifyEventChance(EventType eventType, float newChance)
+    {
+        switch (eventType)
+        {
+            case EventType.FIRE:
+                fireEvent.SetChance(newChance);
+                break;
+            case EventType.ELECTROCUTION:
+                electrocutionEvent.SetChance(newChance);
+                break;
+            default:
+                Debug.LogError("Trying to modify the event chance for an event without chance");
+                break;
+        }
+    }
+    public void ModifyEventOccurrence(EventType eventType, int newOccurrence)
+    {
+        switch (eventType)
+        {
+            case EventType.BREAKING:
+                breakingEvent.SetOccurrence(newOccurrence);
+                break;
+            case EventType.DIRTYING:
+                dirtyingEvent.SetOccurrence(newOccurrence);
+                break;
+            default:
+                Debug.LogError("Trying to modify the event occurrence for an event without occurrence");
+                break;
+        }
+    }
 }
