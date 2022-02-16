@@ -56,12 +56,12 @@ public class Director : MonoBehaviour
         // We only update the menace timer if we're in the correct menace range
         if (currentMenace >= currentDifficulty.menaceBounds[0] && currentMenace <= currentDifficulty.menaceBounds[1])
         {
-            menaceTimer += Time.deltaTime;
+            currentMenaceTimer += Time.deltaTime;
         }
         // If we're not in the correct menace range the timer should be at 0
         else
         {
-            menaceTimer = 0;
+            currentMenaceTimer = 0;
         }
 
         // If it's time for the director to carry our an action they should do so
@@ -71,6 +71,7 @@ public class Director : MonoBehaviour
             if (currentMenaceTimer >= menaceTimer)
             {
                 ChangeDifficulty();
+                currentMenaceTimer = 0;
             }
             else
             {
@@ -79,6 +80,7 @@ public class Director : MonoBehaviour
             
             // The director uses utility AI to determine what action it wants to take
             ChooseAction();
+            currentDirectorTimer = 0;
         }
     }
 

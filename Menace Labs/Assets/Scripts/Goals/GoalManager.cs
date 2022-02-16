@@ -36,7 +36,7 @@ public class GoalManager : MonoBehaviour
 
     private GoalData goal;
 
-    private void Start()
+    private void Awake()
     {
         int rand = Random.Range(0, goalDatas.Length);
 

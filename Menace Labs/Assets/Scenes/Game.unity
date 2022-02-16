@@ -17828,8 +17828,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   director: {fileID: 1451886739}
-  MenaceMetric: {fileID: 0}
-  PerformanceMetric: {fileID: 0}
+  MenaceMetric: {fileID: 1451886736}
+  PerformanceMetric: {fileID: 1451886738}
   clone: {fileID: 1035716196}
   ActionM: {fileID: 680843355}
   AgeM: {fileID: 720143643}

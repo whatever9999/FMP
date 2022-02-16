@@ -13,6 +13,8 @@ public class TestAction : Action
     private float testTimer = 0.0f;
     private bool testing = false;
 
+    private bool popupTriggered = false;
+
     private void Awake()
     {
         clone = FindObjectOfType<Clone>();
@@ -35,9 +37,10 @@ public class TestAction : Action
             testTimer += Time.deltaTime;
 
             // After a moment of the clone being gone we trigger the test
-            if (testTimer >= timeToTriggerChanceCard)
+            if (testTimer >= timeToTriggerChanceCard && !popupTriggered)
             {
                 ManagerHandler.instance.PopupM.ShowChanceCard();
+                popupTriggered = true;
             }
 
             completed = testTimer > timeToTest;

@@ -25,8 +25,8 @@ public class PopUpManager : MonoBehaviour
         // Update info shown
         chanceImage.sprite = chanceCard.image;
         chanceText.text = chanceCard.description;
-        optionAButton.GetComponentInChildren<Text>().text = chanceCard.A_ButtonText;
-        optionBButton.GetComponentInChildren<Text>().text = chanceCard.B_ButtonText;
+        optionAButton.GetComponentInChildren<TextMeshProUGUI>().text = chanceCard.A_ButtonText;
+        optionBButton.GetComponentInChildren<TextMeshProUGUI>().text = chanceCard.B_ButtonText;
 
         chanceCardPanel.SetActive(true);
         ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
