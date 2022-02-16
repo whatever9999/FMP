@@ -22,12 +22,12 @@ MonoBehaviour:
   - type: 1
     baseValue: 20
     increaseValue: 1
-  - type: 3
+  - type: 2
     baseValue: 0
     increaseValue: 0
   - type: 3
     baseValue: 0
-    increaseValue: 0
+    increaseValue: 1
   - type: 4
     baseValue: 0
     increaseValue: 0

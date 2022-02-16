@@ -16,6 +16,6 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  - 0
-  - 0
+  - 1
+  - 1
   disaster: {fileID: 11400000, guid: 6ffd5172e65266246a4c49f737ac4176, type: 2}

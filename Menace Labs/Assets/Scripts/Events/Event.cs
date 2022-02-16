@@ -12,8 +12,9 @@ public abstract class ChanceEvent : Event
     public override bool CheckTrigger()
     {
         float rand = Random.Range(0.0f, 100.0f);
-        // TODO: Multiply chanceDecrease by skill level
-        if (rand < chance - (chanceDecrease))
+        // The higher the skill passed in the less likely the event will occur
+        int skillLevel = ManagerHandler.instance.SkillM.GetSkillLevel(skill);
+        if (rand < chance - (chanceDecrease * skillLevel))
         {
             TriggerEvent();
             return true;
@@ -25,7 +26,7 @@ public abstract class ChanceEvent : Event
 
     [Tooltip("Multiplied by specified skill to decrease chance of event")]
     [SerializeField] private float chanceDecrease;
-    // [SerializeField] private SkillType skill;
+    [SerializeField] private SkillManager.SkillType skill;
     [SerializeField] protected float chance;
 }
 // Trigger after a number of times checked

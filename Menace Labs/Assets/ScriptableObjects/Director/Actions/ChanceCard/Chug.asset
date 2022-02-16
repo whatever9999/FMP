@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Chug
   m_EditorClassIdentifier: 
   insistencyChanges:
+  - 3
+  - 0.5
+  - 3
   - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 3
   chanceCard: {fileID: 11400000, guid: c4f1e2b0f43601643a21850fd13af390, type: 2}

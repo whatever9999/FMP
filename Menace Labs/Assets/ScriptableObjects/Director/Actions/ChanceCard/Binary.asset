@@ -15,7 +15,7 @@ MonoBehaviour:
   insistencyChanges:
   - 0
   - 0
-  - 0
-  - 0
+  - 0.5
+  - 0.5
   - 0
   chanceCard: {fileID: 11400000, guid: 6a31c05e4561e5b4da882ba33baa3b90, type: 2}

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: FoodContamination
   m_EditorClassIdentifier: 
   insistencyChanges:
+  - 1
   - 0
-  - 0
-  - 0
+  - 0.5
   - 0
   - 0
   disaster: {fileID: 11400000, guid: 989495db57abe0d4c802da52864000fc, type: 2}

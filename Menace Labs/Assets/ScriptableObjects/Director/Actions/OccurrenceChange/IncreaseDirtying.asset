@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: IncreaseDirtying
   m_EditorClassIdentifier: 
   insistencyChanges:
+  - 0.5
   - 0
   - 0
-  - 0
-  - 0
-  - 0
+  - 1.5
+  - 1.5
   eventType: 6
-  newValue: 0
+  newValue: 2

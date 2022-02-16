@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Animal
   m_EditorClassIdentifier: 
   insistencyChanges:
-  - 0
-  - 0
+  - 0.5
+  - 1
   - 0
   - 0
   - 0

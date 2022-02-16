@@ -18,7 +18,7 @@ public class Director : MonoBehaviour
     [SerializeField] private DifficultyData highDifficultyData;
 
     [Tooltip("If a goal's insistency is at this level then the AI really needs to work on it, if it's at -ve this then there's no concern about it at all")]
-    [SerializeField] private float maxGoalInsistency = 10;
+    [SerializeField] private float maxGoalInsistency = 100;
 
     [Tooltip("How often the director checks for an action")]
     [SerializeField] private float directorTimer = 10;

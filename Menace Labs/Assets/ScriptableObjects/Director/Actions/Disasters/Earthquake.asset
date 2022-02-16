@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Earthquake
   m_EditorClassIdentifier: 
   insistencyChanges:
+  - 1
   - 0
   - 0
-  - 0
-  - 0
-  - 0
+  - 2
+  - 2
   disaster: {fileID: 11400000, guid: 445fcdc8e333a3642a0d86aa467333e5, type: 2}

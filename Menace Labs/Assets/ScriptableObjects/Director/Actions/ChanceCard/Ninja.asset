@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Ninja
   m_EditorClassIdentifier: 
   insistencyChanges:
-  - 0
-  - 0
+  - 2
+  - 0.5
   - 0
   - 0
   - 0

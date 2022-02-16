@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   insistencyChanges:
   - 0
-  - 0
+  - 2
   - 0
   - 0
   - 0
   eventType: 1
-  newValue: 0
+  newValue: 20

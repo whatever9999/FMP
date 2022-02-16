@@ -17828,6 +17828,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   director: {fileID: 1451886739}
+  MenaceMetric: {fileID: 0}
+  PerformanceMetric: {fileID: 0}
   clone: {fileID: 1035716196}
   ActionM: {fileID: 680843355}
   AgeM: {fileID: 720143643}
@@ -18128,7 +18130,7 @@ MonoBehaviour:
   lowDifficultyData: {fileID: 11400000, guid: f25ddab81afb2844baf06c3fdfac822f, type: 2}
   mediumDifficultyData: {fileID: 11400000, guid: 987bb6c19fc4ffe4b849b2b91bee6c91, type: 2}
   highDifficultyData: {fileID: 11400000, guid: 1f6af1fc9b6755c4495243b07664c096, type: 2}
-  maxGoalInsistency: 10
+  maxGoalInsistency: 100
   directorTimer: 10
 --- !u!1001 &1456329542
 PrefabInstance:
@@ -25687,11 +25689,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireEvent:
     chanceDecrease: 0.5
-    chance: 100
+    skill: 1
+    chance: 30
     firePrefab: {fileID: 9163544962705911990, guid: fcd987be413e37140bfbf734b2d5aa54, type: 3}
   electrocutionEvent:
     chanceDecrease: 0.5
-    chance: 5
+    skill: 4
+    chance: 20
   rubbishEvent:
     rubbishPrefab: {fileID: 7824179415104108314, guid: 988bb86c908cae44fb1b016aebb7922d, type: 3}
   puddleEvent:

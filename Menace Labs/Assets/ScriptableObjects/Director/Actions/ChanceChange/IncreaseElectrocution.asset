@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: IncreaseElectrocution
   m_EditorClassIdentifier: 
   insistencyChanges:
-  - 0
+  - 5
   - 0
   - 0
   - 0
   - 0
   eventType: 1
-  newValue: 0
+  newValue: 40

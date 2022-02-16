@@ -46,6 +46,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7712e7205a2d0f74380f90e465520254, type: 2}
   B_FailureDescription: "Turns out this clone is allergic to puppies. Within a few
     minutes the clone is a sputtering mess. It is covered in puppy hair and struggling
-    to breathe once the test comes to a close. [Reduced hygeine]\r"
+    to breathe once the test comes to a close. [Reduced hygiene]\r"
   B_FailureEffects:
   - {fileID: 11400000, guid: c612849ed2c305b4b8ef30d3d790212a, type: 2}
