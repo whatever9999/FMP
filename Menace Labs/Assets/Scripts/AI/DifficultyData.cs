@@ -36,10 +36,3 @@ public struct DirectorGoal
     public float baseValue;
     public float increaseValue;
 }
-
-[System.Serializable]
-public struct GoalInsistency
-{
-    public DirectorGoal.GoalType goalType;
-    public float value;
-}

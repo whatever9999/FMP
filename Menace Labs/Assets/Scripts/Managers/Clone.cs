@@ -8,8 +8,6 @@ public class Clone : MonoBehaviour
     [SerializeField] private ParticleSystem smellParticles;
     [SerializeField] private float runSpeed;
 
-    public DisasterEffect disasterTest;
-
     private NavMeshAgent clone;
     private AudioSource audioSource;
     private float walkSpeed;
@@ -26,8 +24,6 @@ public class Clone : MonoBehaviour
         clone = GetComponent<NavMeshAgent>();
 
         walkSpeed = clone.speed;
-
-        disasterTest.TriggerEffect();
     }
 
     private void Update()

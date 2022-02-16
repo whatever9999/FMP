@@ -4,7 +4,10 @@ public class ManagerHandler : MonoBehaviour
 {
     public static ManagerHandler instance;
 
+    public Director director;
+
     public Clone clone;
+
     public ActionManager ActionM;
     public AgeManager AgeM;
     public AnimationManager AnimationM;

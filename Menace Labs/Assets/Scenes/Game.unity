@@ -17815,6 +17815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e41e5a2ca4ce604fb56f3d4a0cf3603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  director: {fileID: 1451886739}
   clone: {fileID: 1035716196}
   ActionM: {fileID: 680843355}
   AgeM: {fileID: 720143643}
@@ -18009,6 +18010,7 @@ GameObject:
   - component: {fileID: 1451886737}
   - component: {fileID: 1451886736}
   - component: {fileID: 1451886738}
+  - component: {fileID: 1451886739}
   m_Layer: 0
   m_Name: Director
   m_TagString: Untagged
@@ -18074,6 +18076,22 @@ MonoBehaviour:
   - 0.25
   maxSpeedChangesPerMinute: 10
   maxActionsTriggeredPerMinute: 10
+--- !u!114 &1451886739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451886735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a367b67b6841dc4892b89fccea6268f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowDifficultyData: {fileID: 11400000, guid: f25ddab81afb2844baf06c3fdfac822f, type: 2}
+  mediumDifficultyData: {fileID: 11400000, guid: 987bb6c19fc4ffe4b849b2b91bee6c91, type: 2}
+  highDifficultyData: {fileID: 11400000, guid: 1f6af1fc9b6755c4495243b07664c096, type: 2}
+  directorTimer: 10
 --- !u!1001 &1456329542
 PrefabInstance:
   m_ObjectHideFlags: 0
