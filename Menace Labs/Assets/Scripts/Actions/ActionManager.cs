@@ -207,6 +207,11 @@ public class ActionManager : MonoBehaviour
                     // Add the move action to the spot before the just added action
                     AddAction(ActionType.MOVE_TO_USE, i, usedObject);
                 }
+
+                if (addAction)
+                {
+                    ManagerHandler.instance.PerformanceMetric.IncrementPerformanceAttribute(PerformanceMetric.PerformanceData.ACTIONS_TRIGGERED);
+                }
             }
             else
             {

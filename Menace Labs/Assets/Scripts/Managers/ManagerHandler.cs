@@ -5,6 +5,8 @@ public class ManagerHandler : MonoBehaviour
     public static ManagerHandler instance;
 
     public Director director;
+    public MenaceMetric MenaceMetric;
+    public PerformanceMetric PerformanceMetric;
 
     public Clone clone;
 

@@ -60,7 +60,12 @@ public class ChanceCardData : ScriptableObject
         }
 
         // Return if the choice succeeded or failed
-        if (rand < chance) return true;
+        if (rand < chance)
+        {
+            ManagerHandler.instance.MenaceMetric.ResetTimer(MenaceMetric.MenaceData.TIME_SINCE_CHANCE_CARD_SUCCESS);
+            return true;
+        }
+        ManagerHandler.instance.MenaceMetric.ResetTimer(MenaceMetric.MenaceData.TIME_SINCE_CHANCE_CARD_FAILURE);
         return false;
     }
 

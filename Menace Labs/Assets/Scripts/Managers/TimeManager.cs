@@ -163,6 +163,8 @@ public class TimeManager : MonoBehaviour
             }
 
             currentSpeed = speed;
+
+            ManagerHandler.instance.PerformanceMetric.IncrementPerformanceAttribute(PerformanceMetric.PerformanceData.SPEED_CHANGES);
         }
     }
 

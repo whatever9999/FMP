@@ -53,7 +53,12 @@ public class EventManager : MonoBehaviour
         Event checkEvent;
         bool gotEvent = events.TryGetValue(eventType, out checkEvent);
 
-        if (gotEvent) return checkEvent.CheckTrigger();
+        if (gotEvent)
+        {
+            bool eventSucceeded = checkEvent.CheckTrigger();
+            ManagerHandler.instance.MenaceMetric.ResetTimer(MenaceMetric.MenaceData.TIME_SINCE_EVENT);
+            return eventSucceeded;
+        }
         else Debug.LogError("Failed to get event of type " + eventType);
         return false;
     }
