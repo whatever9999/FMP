@@ -13,35 +13,77 @@ public class PopUpManager : MonoBehaviour
     public Button optionBButton;
     public Button chanceCloseButton;
 
-    // TODO: Take in chance card data and update info accordingly
     public void ShowChanceCard()
     {
+        ChanceCardData chanceCard = ManagerHandler.instance.director.GetChanceCard();
+
         // Ensure correct buttons are active
         optionAButton.gameObject.SetActive(true);
         optionBButton.gameObject.SetActive(true);
         chanceCloseButton.gameObject.SetActive(false);
 
         // Update info shown
-        chanceImage.sprite = chanceImage.sprite;
-        chanceText.text = "Text to explain options";
-        optionAButton.GetComponentInChildren<Text>().text = "Option A";
-        optionBButton.GetComponentInChildren<Text>().text = "Option B";
+        chanceImage.sprite = chanceCard.image;
+        chanceText.text = chanceCard.description;
+        optionAButton.GetComponentInChildren<Text>().text = chanceCard.A_ButtonText;
+        optionBButton.GetComponentInChildren<Text>().text = chanceCard.B_ButtonText;
 
         chanceCardPanel.SetActive(true);
         ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
     }
 
-    public void OptionAButton()
+    // A = 0, B = 1
+    public void ChanceCardButton(int optionChoice)
     {
-        // TODO: Carry out results of selecting A
+        if (optionChoice != 0 && optionChoice != 1) Debug.LogError("Must pass 0(Option A) or 1(Option B) to ChanceCardButton function for PopUpManager");
 
-        optionAButton.gameObject.SetActive(false);
-        optionBButton.gameObject.SetActive(false);
-        chanceCloseButton.gameObject.SetActive(true);
-    }
-    public void OptionBButton()
-    {
-        // TODO: Carry out results of selecting B
+        ChanceCardData.OptionChoice choice = (ChanceCardData.OptionChoice)optionChoice;
+        ChanceCardData chanceCard = ManagerHandler.instance.director.GetChanceCard();
+        bool succeeded = chanceCard.MakeChoice(choice);
+
+        switch (choice)
+        {
+            case ChanceCardData.OptionChoice.OPTION_A:
+                {
+                    if (succeeded)
+                    {
+                        chanceText.text = chanceCard.A_SuccessDescription;
+                        for (int i = 0; i < chanceCard.A_SuccessEffects.Length; i++)
+                        {
+                            chanceCard.A_SuccessEffects[i].TriggerEffect();
+                        }
+                    }
+                    else
+                    {
+                        chanceText.text = chanceCard.A_FailureDescription;
+                        for (int i = 0; i < chanceCard.A_SuccessEffects.Length; i++)
+                        {
+                            chanceCard.A_FailureEffects[i].TriggerEffect();
+                        }
+                    }
+                }
+                break;
+            case ChanceCardData.OptionChoice.OPTION_B:
+                {
+                    if (succeeded)
+                    {
+                        chanceText.text = chanceCard.B_SuccessDescription;
+                        for (int i = 0; i < chanceCard.B_SuccessEffects.Length; i++)
+                        {
+                            chanceCard.B_SuccessEffects[i].TriggerEffect();
+                        }
+                    }
+                    else
+                    {
+                        chanceText.text = chanceCard.B_FailureDescription;
+                        for (int i = 0; i < chanceCard.B_SuccessEffects.Length; i++)
+                        {
+                            chanceCard.B_FailureEffects[i].TriggerEffect();
+                        }
+                    }
+                }
+                break;
+        }
 
         optionAButton.gameObject.SetActive(false);
         optionBButton.gameObject.SetActive(false);
@@ -63,9 +105,9 @@ public class PopUpManager : MonoBehaviour
     public TextMeshProUGUI disasterText;
 
     // TODO: Take in disaster data and update accordingly
-    public void ShowDisaster()
+    public void ShowDisaster(DisasterData disaster)
     {
-        disasterText.text = "Explanation of the disaster";
+        disasterText.text = disaster.description;
 
         disasterPanel.SetActive(true);
         ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);

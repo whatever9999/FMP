@@ -14707,6 +14707,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1144792726}
+        m_TargetAssemblyTypeName: PopUpManager, Assembly-CSharp
+        m_MethodName: ChanceCardButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1177028265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18088,9 +18100,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a367b67b6841dc4892b89fccea6268f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: f1b68641592276f4b8a72609f746437b, type: 2}
+  - {fileID: 11400000, guid: cbc07d4cf20b8d448b4bc45c4ff52a79, type: 2}
+  - {fileID: 11400000, guid: 19bb77318e19c9740acad21f3e6fb40c, type: 2}
+  - {fileID: 11400000, guid: dc9d32f1d23da0d47b92858dbcb484fe, type: 2}
+  - {fileID: 11400000, guid: da015d3ca14ce9349a552a963bb28b86, type: 2}
+  - {fileID: 11400000, guid: 56ee8e9b59fc8b54db3e14ceb199c1ec, type: 2}
+  - {fileID: 11400000, guid: cd505c732b54bad468b7fc061d8aa6f8, type: 2}
+  - {fileID: 11400000, guid: 310856aae50f9d34aab8cd3034393e2e, type: 2}
+  - {fileID: 11400000, guid: 9ce8c7037e9a0e04da940a42dfdeb28f, type: 2}
+  - {fileID: 11400000, guid: 32721d3a9a46e054ca3055fed3bf02c3, type: 2}
+  - {fileID: 11400000, guid: 5d9c13e6350ef1f4ebbbbcb1ab9c67db, type: 2}
+  - {fileID: 11400000, guid: 03186e1ff9541f149aae065edb602da6, type: 2}
+  - {fileID: 11400000, guid: 705ad4a27e7f312408900d14ce61ef79, type: 2}
+  - {fileID: 11400000, guid: da761e837d9fa0048a2d9b9affd9b8ed, type: 2}
+  - {fileID: 11400000, guid: c9a894ec06f962343b3cae0e7818de2b, type: 2}
+  - {fileID: 11400000, guid: 2b992962c278bd746a326c52897bdcb8, type: 2}
+  - {fileID: 11400000, guid: e5d2f77107481644ba1fd74fe0f9c0cc, type: 2}
+  - {fileID: 11400000, guid: 3c40cb633d1729d43946d6b3d013cf99, type: 2}
+  - {fileID: 11400000, guid: dedd55a04afb26d4aa1e0fd128e289f7, type: 2}
+  - {fileID: 11400000, guid: 3fa1503f35c3a0b438a2c21db92e5934, type: 2}
+  - {fileID: 11400000, guid: 708db65f2a8daf94ba99f6afcbcd637a, type: 2}
+  - {fileID: 11400000, guid: 28835f9270e672348af6fac8ee4696cc, type: 2}
+  - {fileID: 11400000, guid: af2861c383a629e48afd15f3d317635f, type: 2}
+  - {fileID: 11400000, guid: 61bbff4e4ee1e034b9ec2dac278bddb2, type: 2}
   lowDifficultyData: {fileID: 11400000, guid: f25ddab81afb2844baf06c3fdfac822f, type: 2}
   mediumDifficultyData: {fileID: 11400000, guid: 987bb6c19fc4ffe4b849b2b91bee6c91, type: 2}
   highDifficultyData: {fileID: 11400000, guid: 1f6af1fc9b6755c4495243b07664c096, type: 2}
+  maxGoalInsistency: 10
   directorTimer: 10
 --- !u!1001 &1456329542
 PrefabInstance:
@@ -25050,6 +25088,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1144792726}
+        m_TargetAssemblyTypeName: PopUpManager, Assembly-CSharp
+        m_MethodName: ChanceCardButton
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

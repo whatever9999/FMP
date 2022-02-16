@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class TestAction : Action
 {
-    [SerializeField] private float timeToTest = 10.0f;
+    [SerializeField] private float timeToTest = 30.0f;
+    [SerializeField] private float timeToTriggerChanceCard = 5.0f;
     public void ModifyTestTime(float amount) { timeToTest += amount; }
     public void EndTest() { timeToTest = 0; }
 
@@ -32,6 +33,13 @@ public class TestAction : Action
         {
             cloneRenderer.enabled = false;
             testTimer += Time.deltaTime;
+
+            // After a moment of the clone being gone we trigger the test
+            if (testTimer >= timeToTriggerChanceCard)
+            {
+                ManagerHandler.instance.PopupM.ShowChanceCard();
+            }
+
             completed = testTimer > timeToTest;
         }
         return true;

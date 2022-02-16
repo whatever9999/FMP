@@ -8,6 +8,6 @@ public class DisasterActionData : DirectorActionData
     public override void TriggerAction()
     {
         disaster.disasterEffect.TriggerEffect();
-        ManagerHandler.instance.PopupM.ShowDisaster();
+        ManagerHandler.instance.PopupM.ShowDisaster(disaster);
     }
 }
