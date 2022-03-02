@@ -5,6 +5,30 @@ using UnityEngine;
 
 public class Director : MonoBehaviour
 {
+    public enum DirectorGoalType
+    {
+        DECREASE_NEED_HUNGER,
+        DECREASE_NEED_FUN,
+        DECREASE_NEED_COMFORT,
+        DECREASE_NEED_SOCIAL,
+        DECREASE_NEED_BLADDER,
+        DECREASE_NEED_HYGIENE,
+        DECREASE_NEED_SLEEP,
+        DECREASE_NEED_ENVIRONMENT,
+
+        DECREASE_SKILL_CLEANING,
+        DECREASE_SKILL_HANDINESS,
+        DECREASE_SKILL_COOKING,
+        DECREASE_SKILL_PHOTOGRAPHY,
+        DECREASE_SKILL_DANCING,
+        DECREASE_SKILL_PROGRAMMING,
+        DECREASE_SKILL_GAMING,
+        DECREASE_SKILL_DARTS,
+
+        INCREASE_MADNESS_CHANCE,
+        NUM_GOAL_TYPES,
+    }
+
     private enum Bounds
     {
         LOWER,
@@ -16,8 +40,7 @@ public class Director : MonoBehaviour
     [SerializeField] private DifficultyData relaxDifficultyData;
     [SerializeField] private DifficultyData buildUpDifficultyData;
 
-    [Tooltip("If a goal's insistency is at this level then the AI really needs to work on it, if it's at -ve this then there's no concern about it at all")]
-    [SerializeField] private float maxGoalInsistency = 100;
+    private float maxGoalInsistency = 100;
 
     [Tooltip("How often the director checks for an action")]
     [SerializeField] private float directorTimer = 60;
@@ -26,8 +49,6 @@ public class Director : MonoBehaviour
     private float currentMenaceTimer;
 
     private DifficultyData currentDifficulty;
-
-    private float[] currentGoalInsistencies;
 
     private PerformanceMetric PerformanceM;
     private MenaceMetric MenaceM;
@@ -41,8 +62,6 @@ public class Director : MonoBehaviour
     {
         PerformanceM = FindObjectOfType<PerformanceMetric>();
         MenaceM = FindObjectOfType<MenaceMetric>();
-
-        currentGoalInsistencies = new float[relaxDifficultyData.goalInsistencies.Length];
         ChangeDifficulty();
     }
 
@@ -79,10 +98,6 @@ public class Director : MonoBehaviour
                 ChangeDifficulty();
                 currentMenaceTimer = 0;
             }
-            else
-            {
-                IncreaseInsistencies();
-            }
         }
     }
 
@@ -90,9 +105,9 @@ public class Director : MonoBehaviour
     private void ChooseAction()
     {
 #if DEBUG_UTILITY_AI
-        for (int i = 0; i < currentGoalInsistencies.Length; i++)
+        for (DirectorGoalType i = 0; i < DirectorGoalType.NUM_GOAL_TYPES; i++)
         {
-            Debug.Log("Insistency " + (DirectorGoal.GoalType)i + ": " + currentGoalInsistencies[i]);
+            Debug.Log("Insistency " + i + ": " + GetGoalInsistency(i));
         }
 #endif // DEBUG_UTILITY_AI
         DirectorActionData bestAction = actions[0];
@@ -102,6 +117,7 @@ public class Director : MonoBehaviour
         {
             float thisValue = CalculateDiscontentment(actions[i]);
 
+            // We want the action that yields the lowest amount of discontentment
             if (thisValue < bestValue)
             {
 #if DEBUG_UTILITY_AI
@@ -125,13 +141,18 @@ public class Director : MonoBehaviour
 
         float discontentment = 0;
 
-        for(int i = 0; i < currentGoalInsistencies.Length; i++)
+        for(DirectorGoalType i = 0; i < DirectorGoalType.NUM_GOAL_TYPES; i++)
         {
-            float newValue = currentGoalInsistencies[i] + action.insistencyChanges[i];
+            // We subtract as we want to lower insistency
+            // E.g. decrease hunger insistency = 80, a chance card increases hunger need (-5) so 80 -- 5 = 85
+            // Or card decreases hunger need (5) so 80 - 5 = 75
+            float newValue = GetGoalInsistency(i) - action.insistencyChanges[(int)i];
+            // E.g. 85/100 = 8.5 (high discontentment)
+            // Or 75/100 = 7.5 (lower discontentment)
             float thisDiscontentment = GetDiscontentment(newValue);
             discontentment += thisDiscontentment;
 #if DEBUG_UTILITY_AI
-            Debug.Log("Discontentment of " + (DirectorGoal.GoalType)i + " = " + thisDiscontentment);
+            Debug.Log("Discontentment of " + i + " = " + thisDiscontentment);
 #endif // DEBUG_UTILITY_AI
         }
 
@@ -140,19 +161,10 @@ public class Director : MonoBehaviour
 #endif // DEBUG_UTILITY_AI
         return discontentment;
     }
-    // E.g. 0/10 = 0, 5/10 = 0.5, 100/10 = 10 so there is more discontentment the higher the insistency value is
+    // E.g. 0/10 = 0, 5/10 = 0.5, -5/10 = -0.5 so there is more discontentment the higher the insistency value is
     private float GetDiscontentment(float newInsistencyValue)
     {
         return newInsistencyValue / maxGoalInsistency;
-    }
-
-    // Insistencies need to increase by DirectorGoal.increaseValue for each director tick
-    private void IncreaseInsistencies()
-    {
-        for (int i = 0; i < currentDifficulty.goalInsistencies.Length; i++)
-        {
-            currentGoalInsistencies[i] += currentDifficulty.goalInsistencies[i].increaseValue;
-        }
     }
 
     // If we're relaxing then change to build up, if we're building up reset values and try to relax
@@ -169,17 +181,8 @@ public class Director : MonoBehaviour
             currentDifficulty = relaxDifficultyData;
         }
 
-        SetInsistencies();
-
         float performanceMetric = PerformanceM.GetPerformanceMetric();
         SetMenaceTimer(performanceMetric);
-    }
-    private void SetInsistencies()
-    {
-        for (int i = 0; i < currentDifficulty.goalInsistencies.Length; i++)
-        {
-            currentGoalInsistencies[i] = currentDifficulty.goalInsistencies[i].baseValue;
-        }
     }
     // The higher the performance, the shorter the time we'll spend relaxing and the more time we'll spend building up
     private void SetMenaceTimer(float performanceMetric)
@@ -199,5 +202,54 @@ public class Director : MonoBehaviour
         ManagerHandler.instance.EventM.ModifyEventOccurrence(EventManager.EventType.DIRTYING, 3);
         ManagerHandler.instance.EventM.ModifyEventChance(EventManager.EventType.ELECTROCUTION, 20);
         ManagerHandler.instance.EventM.ModifyEventChance(EventManager.EventType.FIRE, 30);
+    }
+
+    // Insistency values (All between 0 and 100)
+    private float GetGoalInsistency(DirectorGoalType type)
+    {
+        switch (type)
+        {
+            case DirectorGoalType.DECREASE_NEED_HUNGER:
+                return ManagerHandler.instance.NeedsM.GetNeedValue(NeedsManager.NeedType.HUNGER);
+            case DirectorGoalType.DECREASE_NEED_FUN:
+                return ManagerHandler.instance.NeedsM.GetNeedValue(NeedsManager.NeedType.FUN);
+            case DirectorGoalType.DECREASE_NEED_COMFORT:
+                return ManagerHandler.instance.NeedsM.GetNeedValue(NeedsManager.NeedType.COMFORT);
+            case DirectorGoalType.DECREASE_NEED_SOCIAL:
+                return ManagerHandler.instance.NeedsM.GetNeedValue(NeedsManager.NeedType.SOCIAL);
+            case DirectorGoalType.DECREASE_NEED_BLADDER:
+                return ManagerHandler.instance.NeedsM.GetNeedValue(NeedsManager.NeedType.BLADDER);
+            case DirectorGoalType.DECREASE_NEED_HYGIENE:
+                return ManagerHandler.instance.NeedsM.GetNeedValue(NeedsManager.NeedType.HYGIENE);
+            case DirectorGoalType.DECREASE_NEED_SLEEP:
+                return ManagerHandler.instance.NeedsM.GetNeedValue(NeedsManager.NeedType.SLEEP);
+            case DirectorGoalType.DECREASE_NEED_ENVIRONMENT:
+                return ManagerHandler.instance.NeedsM.GetNeedValue(NeedsManager.NeedType.ENVIRONMENT);
+
+            case DirectorGoalType.DECREASE_SKILL_CLEANING:
+                return ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.CLEANING) * 10;
+            case DirectorGoalType.DECREASE_SKILL_HANDINESS:
+                return ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.HANDINESS) * 10;
+            case DirectorGoalType.DECREASE_SKILL_COOKING:
+                return ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.COOKING) * 10;
+            case DirectorGoalType.DECREASE_SKILL_PHOTOGRAPHY:
+                return ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.PHOTOGRAPHY) * 10;
+            case DirectorGoalType.DECREASE_SKILL_DANCING:
+                return ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.DANCING) * 10;
+            case DirectorGoalType.DECREASE_SKILL_PROGRAMMING:
+                return ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.PROGRAMMING) * 10;
+            case DirectorGoalType.DECREASE_SKILL_GAMING:
+                return ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.GAMING) * 10;
+            case DirectorGoalType.DECREASE_SKILL_DARTS:
+                return ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.DARTS) * 10;
+
+            case DirectorGoalType.INCREASE_MADNESS_CHANCE:
+                float madnessChance = 0;
+                madnessChance += ManagerHandler.instance.NeedsM.GetNeedValue(NeedsManager.NeedType.SOCIAL);
+                madnessChance += ManagerHandler.instance.NeedsM.GetNeedValue(NeedsManager.NeedType.FUN);
+                madnessChance += ManagerHandler.instance.NeedsM.GetNeedValue(NeedsManager.NeedType.ENVIRONMENT);
+                return madnessChance / 3;
+        }
+        return 0;
     }
 }

@@ -13,7 +13,21 @@ MonoBehaviour:
   m_Name: Epidemic
   m_EditorClassIdentifier: 
   insistencyChanges:
-  - 2
+  - 10
+  - 0
+  - 0
+  - 0
+  - 10
+  - 0
+  - 10
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   - 0
   - 0
   disaster: {fileID: 11400000, guid: b5dc3b5595e345f4c9736c7fbe00396a, type: 2}

@@ -13,7 +13,21 @@ MonoBehaviour:
   m_Name: Isolation
   m_EditorClassIdentifier: 
   insistencyChanges:
-  - 1
+  - 0
+  - 10
+  - 0
+  - 10
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - -5
+  - 0
+  - 0
+  - 0
   - 0
   - 0
   chanceCard: {fileID: 11400000, guid: 4e075bde38e08eb4c97e38b8632b82de, type: 2}

@@ -13,7 +13,21 @@ MonoBehaviour:
   m_Name: Stare
   m_EditorClassIdentifier: 
   insistencyChanges:
-  - 0.5
-  - 1
+  - 5
+  - 5
+  - 5
   - 0
+  - 5
+  - 10
+  - 5
+  - 5
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 5
   chanceCard: {fileID: 11400000, guid: daf18bc08b9ee93428259c1975825a38, type: 2}

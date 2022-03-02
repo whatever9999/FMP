@@ -13,7 +13,21 @@ MonoBehaviour:
   m_Name: Animal
   m_EditorClassIdentifier: 
   insistencyChanges:
-  - 0.5
+  - 0
+  - 0
+  - 0
+  - -10
+  - 0
+  - 5
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   - 0
   - 0
   chanceCard: {fileID: 11400000, guid: 98f9a93cb318a36468790a7024ed3ba8, type: 2}

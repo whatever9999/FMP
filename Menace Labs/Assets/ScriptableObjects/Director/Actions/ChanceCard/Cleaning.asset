@@ -13,7 +13,21 @@ MonoBehaviour:
   m_Name: Cleaning
   m_EditorClassIdentifier: 
   insistencyChanges:
-  - 2
+  - 0
+  - 0
+  - 0
+  - -5
+  - 0
+  - 10
+  - 10
+  - 0
+  - -10
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   - 0
   - 0
   chanceCard: {fileID: 11400000, guid: ab156b96554af2845ac64537605dd1a7, type: 2}

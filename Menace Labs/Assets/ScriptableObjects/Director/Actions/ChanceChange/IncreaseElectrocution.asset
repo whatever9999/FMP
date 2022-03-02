@@ -13,8 +13,22 @@ MonoBehaviour:
   m_Name: IncreaseElectrocution
   m_EditorClassIdentifier: 
   insistencyChanges:
+  - 20
+  - 20
+  - 20
+  - 20
+  - 20
+  - 20
+  - 20
+  - 5
+  - 0
   - 5
   - 0
   - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 5
   eventType: 1
   newValue: 40

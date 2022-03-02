@@ -13,7 +13,21 @@ MonoBehaviour:
   m_Name: SolarStorm
   m_EditorClassIdentifier: 
   insistencyChanges:
-  - 2
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
   - 0
-  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 10
   disaster: {fileID: 11400000, guid: 0c13925f369d6ae40a306b0fc0c54547, type: 2}
