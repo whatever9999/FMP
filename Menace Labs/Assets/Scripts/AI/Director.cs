@@ -51,36 +51,42 @@ public class Director : MonoBehaviour
     private void Update()
     {
         // Update timers
-        currentDirectorTimer += Time.deltaTime;
-        float currentMenace = MenaceM.GetMenaceMetric();
-        // We only update the menace timer if we're in the correct menace range
-        if (currentMenace >= currentDifficulty.menaceBounds[0] && currentMenace <= currentDifficulty.menaceBounds[1])
+        // Only do so if the clone isn't away testing
+        Action currentAction = ManagerHandler.instance.ActionM.GetCurrentAction();
+        bool isTesting = currentAction && ManagerHandler.instance.ActionM.GetCurrentAction().GetActionType() == ActionManager.ActionType.TEST;
+        if (!isTesting)
         {
-            currentMenaceTimer += Time.deltaTime;
-        }
-        // If we're not in the correct menace range the timer should be at 0
-        else
-        {
-            currentMenaceTimer = 0;
-        }
-
-        // If it's time for the director to carry our an action they should do so
-        if (currentDirectorTimer >= directorTimer)
-        {
-            // Once we've been at this menace level long enough we should move to the next one
-            if (currentMenaceTimer >= menaceTimer)
+            // We only update the menace timer if we're in the correct menace range
+            currentDirectorTimer += Time.deltaTime;
+            float currentMenace = MenaceM.GetMenaceMetric();
+            if (currentMenace >= currentDifficulty.menaceBounds[0] && currentMenace <= currentDifficulty.menaceBounds[1])
             {
-                ChangeDifficulty();
-                currentMenaceTimer = 0;
+                currentMenaceTimer += Time.deltaTime;
             }
+            // If we're not in the correct menace range the timer should be at 0
             else
             {
-                IncreaseInsistencies();
+                currentMenaceTimer = 0;
             }
-            
-            // The director uses utility AI to determine what action it wants to take
-            ChooseAction();
-            currentDirectorTimer = 0;
+
+            // If it's time for the director to carry our an action they should do so
+            if (currentDirectorTimer >= directorTimer)
+            {
+                // Once we've been at this menace level long enough we should move to the next one
+                if (currentMenaceTimer >= menaceTimer)
+                {
+                    ChangeDifficulty();
+                    currentMenaceTimer = 0;
+                }
+                else
+                {
+                    IncreaseInsistencies();
+                }
+
+                // The director uses utility AI to determine what action it wants to take
+                ChooseAction();
+                currentDirectorTimer = 0;
+            }
         }
     }
 
