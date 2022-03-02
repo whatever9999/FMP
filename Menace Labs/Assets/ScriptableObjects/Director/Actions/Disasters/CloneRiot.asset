@@ -15,7 +15,5 @@ MonoBehaviour:
   insistencyChanges:
   - 0.5
   - 0
-  - 0
-  - 1
   - 1
   disaster: {fileID: 11400000, guid: c6a8ed34246196e438192688c8dbce72, type: 2}

@@ -5,9 +5,8 @@ public class DifficultyData : ScriptableObject
 {
     public enum DifficultyType
     {
-        LOW,
-        MEDIUM,
-        HIGH,
+        RELAX,
+        BUILD_UP
     }
 
     public DifficultyType difficultyType;
@@ -25,9 +24,7 @@ public struct DirectorGoal
     public enum GoalType
     {
         LOWER_HEALTH_METRIC,
-        INCREASE_HEALTH_METRIC,
         LOWER_SKILLS,
-        INCREASE_SKILLS,
         INCREASE_MADNESS_CHANCE,
         NUM_GOAL_TYPES,
     }

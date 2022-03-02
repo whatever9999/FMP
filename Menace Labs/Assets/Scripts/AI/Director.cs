@@ -13,21 +13,19 @@ public class Director : MonoBehaviour
 
     [SerializeField] private DirectorActionData[] actions;
 
-    [SerializeField] private DifficultyData lowDifficultyData;
-    [SerializeField] private DifficultyData mediumDifficultyData;
-    [SerializeField] private DifficultyData highDifficultyData;
+    [SerializeField] private DifficultyData relaxDifficultyData;
+    [SerializeField] private DifficultyData buildUpDifficultyData;
 
     [Tooltip("If a goal's insistency is at this level then the AI really needs to work on it, if it's at -ve this then there's no concern about it at all")]
     [SerializeField] private float maxGoalInsistency = 100;
 
     [Tooltip("How often the director checks for an action")]
-    [SerializeField] private float directorTimer = 10;
+    [SerializeField] private float directorTimer = 60;
     private float currentDirectorTimer;
     private float menaceTimer;
     private float currentMenaceTimer;
 
     private DifficultyData currentDifficulty;
-    bool increasingDifficulty = true;
 
     private float[] currentGoalInsistencies;
 
@@ -44,7 +42,7 @@ public class Director : MonoBehaviour
         PerformanceM = FindObjectOfType<PerformanceMetric>();
         MenaceM = FindObjectOfType<MenaceMetric>();
 
-        currentGoalInsistencies = new float[lowDifficultyData.goalInsistencies.Length];
+        currentGoalInsistencies = new float[relaxDifficultyData.goalInsistencies.Length];
         ChangeDifficulty();
     }
 
@@ -67,23 +65,23 @@ public class Director : MonoBehaviour
                 currentMenaceTimer = 0;
             }
 
-            // If it's time for the director to carry our an action they should do so
-            if (currentDirectorTimer >= directorTimer)
+            // If it's time for the director to carry our an action they should do so (unless we're relaxing)
+            if (currentDirectorTimer >= directorTimer && currentDifficulty != relaxDifficultyData)
             {
-                // Once we've been at this menace level long enough we should move to the next one
-                if (currentMenaceTimer >= menaceTimer)
-                {
-                    ChangeDifficulty();
-                    currentMenaceTimer = 0;
-                }
-                else
-                {
-                    IncreaseInsistencies();
-                }
-
                 // The director uses utility AI to determine what action it wants to take
                 ChooseAction();
                 currentDirectorTimer = 0;
+            }
+
+            // Once we've been at this menace level long enough we should move to the next one
+            if (currentMenaceTimer >= menaceTimer)
+            {
+                ChangeDifficulty();
+                currentMenaceTimer = 0;
+            }
+            else
+            {
+                IncreaseInsistencies();
             }
         }
     }
@@ -91,6 +89,12 @@ public class Director : MonoBehaviour
     // Utility AI
     private void ChooseAction()
     {
+#if DEBUG_UTILITY_AI
+        for (int i = 0; i < currentGoalInsistencies.Length; i++)
+        {
+            Debug.Log("Insistency " + (DirectorGoal.GoalType)i + ": " + currentGoalInsistencies[i]);
+        }
+#endif // DEBUG_UTILITY_AI
         DirectorActionData bestAction = actions[0];
         float bestValue = CalculateDiscontentment(actions[0]);
 
@@ -151,26 +155,18 @@ public class Director : MonoBehaviour
         }
     }
 
-    // When the difficulty is changed the insistencies and menace timer need to be set according to the difficulty level and performance metric
+    // If we're relaxing then change to build up, if we're building up reset values and try to relax
     private void ChangeDifficulty()
     {
-        if (!currentDifficulty || currentDifficulty.difficultyType == DifficultyData.DifficultyType.LOW)
+        if (!currentDifficulty || currentDifficulty.difficultyType == DifficultyData.DifficultyType.RELAX)
         {
-            increasingDifficulty = true;
-            currentDifficulty = mediumDifficultyData;
+            currentDifficulty = buildUpDifficultyData;
         }
-        else if (currentDifficulty.difficultyType == DifficultyData.DifficultyType.MEDIUM && increasingDifficulty)
+        else if (currentDifficulty.difficultyType == DifficultyData.DifficultyType.BUILD_UP)
         {
-            currentDifficulty = highDifficultyData;
-        }
-        else if (currentDifficulty.difficultyType == DifficultyData.DifficultyType.MEDIUM && !increasingDifficulty)
-        {
-            currentDifficulty = lowDifficultyData;
-        }
-        else if (currentDifficulty.difficultyType == DifficultyData.DifficultyType.HIGH)
-        {
-            increasingDifficulty = false;
-            currentDifficulty = mediumDifficultyData;
+            // Reset any values the director may have changed (e.g. occurrence chances) so the player can take a breather in low difficulty
+            ResetValues();
+            currentDifficulty = relaxDifficultyData;
         }
 
         SetInsistencies();
@@ -185,15 +181,23 @@ public class Director : MonoBehaviour
             currentGoalInsistencies[i] = currentDifficulty.goalInsistencies[i].baseValue;
         }
     }
-    // The higher the performance, the shorter the time we'll spend at low/medium difficulty and the higher at high difficulty
+    // The higher the performance, the shorter the time we'll spend relaxing and the more time we'll spend building up
     private void SetMenaceTimer(float performanceMetric)
     {
         float performanceEffect = 1 - performanceMetric;
-        if (currentDifficulty.difficultyType == DifficultyData.DifficultyType.HIGH)
+        if (currentDifficulty.difficultyType == DifficultyData.DifficultyType.BUILD_UP)
         {
             performanceEffect = performanceMetric;
         }
 
         menaceTimer = ((currentDifficulty.timeBounds[(int)Bounds.UPPER] - currentDifficulty.timeBounds[(int)Bounds.LOWER]) * performanceEffect) + currentDifficulty.timeBounds[(int)Bounds.LOWER];
+    }
+
+    private void ResetValues()
+    {
+        ManagerHandler.instance.EventM.ModifyEventOccurrence(EventManager.EventType.BREAKING, 3);
+        ManagerHandler.instance.EventM.ModifyEventOccurrence(EventManager.EventType.DIRTYING, 3);
+        ManagerHandler.instance.EventM.ModifyEventChance(EventManager.EventType.ELECTROCUTION, 20);
+        ManagerHandler.instance.EventM.ModifyEventChance(EventManager.EventType.FIRE, 30);
     }
 }

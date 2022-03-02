@@ -15,8 +15,6 @@ MonoBehaviour:
   insistencyChanges:
   - 2
   - 0
-  - 0
-  - 0
   - 0.5
   eventType: 0
   newValue: 60

@@ -10,24 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99b32ceb99378ec4298ba7f60eac9846, type: 3}
-  m_Name: Medium
+  m_Name: BuildUp
   m_EditorClassIdentifier: 
   difficultyType: 1
-  menaceBounds: {x: 0.4, y: 0.8}
-  timeBounds: {x: 120, y: 240}
+  menaceBounds: {x: 0.6, y: 1}
+  timeBounds: {x: 0.1, y: 0.1}
   goalInsistencies:
   - type: 0
-    baseValue: 20
-    increaseValue: 1
+    baseValue: 40
+    increaseValue: 0.002
   - type: 1
-    baseValue: 0
-    increaseValue: 0
+    baseValue: 20
+    increaseValue: 0.001
   - type: 2
-    baseValue: 0
-    increaseValue: 0
-  - type: 3
-    baseValue: 0
-    increaseValue: 0
-  - type: 4
-    baseValue: 0
-    increaseValue: 0
+    baseValue: 20
+    increaseValue: 0.001

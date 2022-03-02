@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   insistencyChanges:
   - 2
-  - 0.5
-  - 1
   - 1
   - 1
   chanceCard: {fileID: 11400000, guid: e8bd3769cd596144bb617130622ff018, type: 2}
