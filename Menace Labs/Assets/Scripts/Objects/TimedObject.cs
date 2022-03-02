@@ -140,9 +140,13 @@ public class TimedObject : ConstantObject
                 audioSource.Stop();
             }
         }
-        if (particles) particles.Stop();
+        // If we cancelled fixing or cleaning don't tidy particles or change to fixed/clean object
+        if (breakType != BreakType.BROKEN && dirtType != DirtType.DIRTY)
+        {
+            if (particles) particles.Stop();
 
-        if (beingUsed) DirtyOrBrokenCheck();
+            if (beingUsed) DirtyOrBrokenCheck();
+        }
 
         finished = true;
         beingUsed = false;

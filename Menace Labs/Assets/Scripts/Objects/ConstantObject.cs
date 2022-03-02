@@ -37,12 +37,12 @@ public class ConstantObject : MonoBehaviour
         BROKEN,
     }
     [Header("Breakable or Dirtiable")]
-    [SerializeField] BreakType breakType;
-    [SerializeField] DirtType dirtType;
+    [SerializeField] protected BreakType breakType;
+    [SerializeField] protected DirtType dirtType;
     [Tooltip("The dirty object should have the clean object and vice versa, always clean objects don't have an alternate")]
-    [SerializeField] GameObject alternateDirtVersion;
+    [SerializeField] private GameObject alternateDirtVersion;
     [Tooltip("The working object should have the broken object and vice versa, non-breakable objects don't have an alternate")]
-    [SerializeField] GameObject alternateBreakVersion;
+    [SerializeField] private GameObject alternateBreakVersion;
     public BreakType GetBreakType() { return breakType; }
 
     [Header("Object Use")]
@@ -161,9 +161,13 @@ public class ConstantObject : MonoBehaviour
             audioSource.loop = false;
             audioSource.Stop();
         }
-        if (particles) particles.Stop();
+        // If we cancelled fixing or cleaning don't tidy particles or change to fixed/clean object
+        if (breakType != BreakType.BROKEN && dirtType != DirtType.DIRTY)
+        {
+            if (particles) particles.Stop();
 
-        if (beingUsed) DirtyOrBrokenCheck();
+            if (beingUsed) DirtyOrBrokenCheck();
+        }
 
         // Update Goal Stats
         if (name.Equals("Jukebox")) ManagerHandler.instance.GoalM.ModifyHoursDancing(useTimer/60);
