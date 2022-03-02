@@ -78,6 +78,7 @@ public class ConstantObject : MonoBehaviour
             audioSource.outputAudioMixerGroup = ManagerHandler.instance.SoundM.GetSFXMixerGroup();
             audioSource.loop = false;
             audioSource.playOnAwake = false;
+            audioSource.spatialBlend = 1;
         }
         particles = GetComponentInChildren<ParticleSystem>();
     }
