@@ -20299,6 +20299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0825dc6b36b324c84cd25e55dc6446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1367011776}
+  settingsMenu: {fileID: 291646116}
   nameText: {fileID: 1581683917}
   goalNameText: {fileID: 1633179988}
   goalGoalText: {fileID: 1907794588}

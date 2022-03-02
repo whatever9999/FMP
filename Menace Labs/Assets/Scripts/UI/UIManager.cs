@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject settingsMenu;
+
     [SerializeField] private TextMeshProUGUI nameText;
 
     [SerializeField] private TextMeshProUGUI goalNameText;
@@ -17,6 +20,32 @@ public class UIManager : MonoBehaviour
     {
         SetCloneName();
         SetAgeTooltip(ManagerHandler.instance.AgeM.GetCloneAge());
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Handle the settings menu before the pause menu
+            if (settingsMenu.activeSelf)
+            {
+                settingsMenu.SetActive(false);
+            }
+            else
+            {
+                // If the pause menu is active then we're currently paused so unpause
+                if (pauseMenu.activeSelf)
+                {
+                    ManagerHandler.instance.TimeM.SetSpeedToPrevious();
+                    pauseMenu.SetActive(false);
+                }
+                else
+                {
+                    ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
+                    pauseMenu.SetActive(true);
+                }
+            }
+        }
     }
 
     #region Buttons
