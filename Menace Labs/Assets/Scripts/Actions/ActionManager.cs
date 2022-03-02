@@ -40,6 +40,8 @@ public class ActionManager : MonoBehaviour
 
     [Header("Special Action Required Locations")]
     [SerializeField] private GameObject testRequiredLocation;
+    private bool cloneTesting = false;
+    public bool IsCloneTesting() { return cloneTesting; }
 
     private List<GameObject> currentActions = new List<GameObject>();
     private Dictionary<ActionType, GameObject> actions = new Dictionary<ActionType, GameObject>();
@@ -184,6 +186,7 @@ public class ActionManager : MonoBehaviour
                         }
                         break;
                     case ActionType.TEST:
+                        CancelAllActions();
                         ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE_TO_USE, 0, testRequiredLocation);
                         break;
                 }
@@ -210,6 +213,8 @@ public class ActionManager : MonoBehaviour
 
                 if (addAction)
                 {
+                    // Track if the clone is testing or not
+                    UpdateCloneTesting();
                     ManagerHandler.instance.PerformanceMetric.IncrementPerformanceAttribute(PerformanceMetric.PerformanceData.ACTIONS_TRIGGERED);
                 }
             }
@@ -273,6 +278,9 @@ public class ActionManager : MonoBehaviour
 
             // Destroy the button
             Destroy(button);
+
+            // Track if the clone is testing or not
+            UpdateCloneTesting();
         }
     }
     public void EndAction(GameObject button)
@@ -289,6 +297,9 @@ public class ActionManager : MonoBehaviour
 
             // Destroy the button
             Destroy(button);
+
+            // Track if the clone is testing or not
+            UpdateCloneTesting();
         }
     }
     #endregion // Stopping Actions
@@ -366,6 +377,21 @@ public class ActionManager : MonoBehaviour
         else
         {
             Debug.LogError("Trying to end test but the current action isn't a test!");
+        }
+    }
+
+    // The clone is testing if they're doing a test or on their way to do one
+    public void UpdateCloneTesting()
+    {
+        cloneTesting = false;
+        for (int i = 0; i < currentActions.Count; i++)
+        {
+            Action checkingAction = currentActions[i].GetComponent<Action>();
+            if (checkingAction.GetActionType() == ActionType.TEST)
+            {
+                cloneTesting = true;
+                break;
+            }
         }
     }
 }

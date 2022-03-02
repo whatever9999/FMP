@@ -52,9 +52,7 @@ public class Director : MonoBehaviour
     {
         // Update timers
         // Only do so if the clone isn't away testing
-        Action currentAction = ManagerHandler.instance.ActionM.GetCurrentAction();
-        bool isTesting = currentAction && ManagerHandler.instance.ActionM.GetCurrentAction().GetActionType() == ActionManager.ActionType.TEST;
-        if (!isTesting)
+        if (!ManagerHandler.instance.ActionM.IsCloneTesting())
         {
             // We only update the menace timer if we're in the correct menace range
             currentDirectorTimer += Time.deltaTime;

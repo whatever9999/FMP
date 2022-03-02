@@ -7,7 +7,8 @@ public class CardActionData : DirectorActionData
 
     public override void TriggerAction()
     {
-        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.TEST, 0);
+        // Adding a test action cancels all other actions so it should just be added to the end of the list (or it will get confused with its move to use)
+        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.TEST, -1);
         ManagerHandler.instance.director.SetChanceCard(chanceCard);
     }
 }
