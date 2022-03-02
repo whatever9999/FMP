@@ -43,11 +43,30 @@ public class CameraHandler : MonoBehaviour
             rotateX = Input.GetAxis(mouseXString) * lookSpeed;
             rotateY = Input.GetAxis(mouseYString) * lookSpeed;
         }
+        // Don't move cursor until middle click is released
+        if (Input.GetMouseButtonDown(2))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else if (Input.GetMouseButtonUp(2))
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+
         // Move camera on right click
         if (Input.GetMouseButton(1))
         {
             moveHorizontal = Input.GetAxis(mouseXString) * rightClickMoveSpeed;
             moveNoY = Input.GetAxis(mouseYString) * rightClickMoveSpeed;
+        }
+        // Don't move cursor until right click is released
+        if (Input.GetMouseButtonDown(1))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            Cursor.lockState = CursorLockMode.Confined;
         }
 
         // Edge Scrolling
