@@ -75,10 +75,11 @@ public class ActionManager : MonoBehaviour
             // If the current action hasn't started then start it
             if (!currentAction.HasStarted())
             {
-                // If starting the action fails then cancel it
+                // If starting the action fails then cancel it and the clone will refuse
                 if (!currentAction.StartAction())
                 {
                     CancelAction(currentActions[0]);
+                    ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.REFUSE, 0);
                     currentAction = null;
                 }
                 else

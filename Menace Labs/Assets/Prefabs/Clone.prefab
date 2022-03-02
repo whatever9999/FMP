@@ -1111,7 +1111,7 @@ MonoBehaviour:
   - {fileID: -203655887218126122, guid: 8126036689de21c4698d374d11773e9c, type: 3}
   - {fileID: -203655887218126122, guid: d38cd8be48086374181a6d3612fe992c, type: 3}
   refuseAnimationSet:
-  - {fileID: -203655887218126122, guid: 35313e7986134124da477fa3cb7c0dfd, type: 3}
+  - {fileID: -203655887218126122, guid: 13401df45f2fc944da228da4065d3728, type: 3}
   playGamesAnimationSet:
   - {fileID: -203655887218126122, guid: ac9144fee06141e4fa28c5c448facca0, type: 3}
   reactAnimationSet:
@@ -1142,6 +1142,9 @@ MonoBehaviour:
   - {fileID: -203655887218126122, guid: 26027cc1e6e8f654a8cd9a32df43e1d3, type: 3}
   - {fileID: -203655887218126122, guid: f16e51074f8f4d94799e3ab3c235feb6, type: 3}
   - {fileID: -203655887218126122, guid: 9a93db91f8e15294a84ed306d97ff351, type: 3}
+  onFireanimationSet: []
+  putOutFireAnimationSet: []
+  electrocutionAnimationSet: []
 --- !u!54 &1659823606104550412
 Rigidbody:
   m_ObjectHideFlags: 0
