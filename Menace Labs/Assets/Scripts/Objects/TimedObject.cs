@@ -103,6 +103,14 @@ public class TimedObject : ConstantObject
 
         if (beingUsed) DirtyOrBrokenCheck();
 
+        // Update Goal Stats
+        if (name.Equals("Fridge")) ManagerHandler.instance.GoalM.ModifyMealsMade(1);
+        else if (name.Equals("Oven")) ManagerHandler.instance.GoalM.ModifyMealsMade(1);
+        else if (name.Contains("Dirty")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);
+        else if (name.Contains("Rubbish")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);
+        else if (name.Contains("Puddle")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);
+        else if (name.Equals("Fire")) ManagerHandler.instance.GoalM.ModifyFiresSurvived(1);
+
         if (triggerEvent != EventManager.EventType.NUM_EVENT_TYPES) ManagerHandler.instance.EventM.CheckEventTrigger(triggerEvent);
         if (giveObject)
         {
@@ -113,14 +121,6 @@ public class TimedObject : ConstantObject
             ManagerHandler.instance.clone.SpawnObject(spawnObject);
         }
         if (despawnObject) Destroy(gameObject);
-
-        // Update Goal Stats
-        if (name.Equals("Fridge")) ManagerHandler.instance.GoalM.ModifyMealsMade(1);
-        else if (name.Equals("Oven")) ManagerHandler.instance.GoalM.ModifyMealsMade(1);
-        else if (name.Contains("Dirty")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);
-        else if (name.Contains("Rubbish")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);
-        else if (name.Contains("Puddle")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);
-        else if (name.Equals("Fire")) ManagerHandler.instance.GoalM.ModifyFiresSurvived(1);
 
         finished = true;
         beingUsed = false;
