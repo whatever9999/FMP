@@ -747,7 +747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needTriggers.Array.size
@@ -7159,7 +7159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 0.05
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
@@ -8736,7 +8736,7 @@ MonoBehaviour:
   - {fileID: 1493424776}
   - {fileID: 261351740}
   updateMultiplier: 1
-  fireMultiplier: 4
+  fireMultiplier: 10
   illMultiplier: 3
   timeToUpdateNeed: 1
   electrocutionDeathCheck: 0.4
@@ -15180,7 +15180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 0.025
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needTriggers.Array.size
@@ -18963,7 +18963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 0.02
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
@@ -25340,7 +25340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 0.05
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}

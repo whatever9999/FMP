@@ -26,7 +26,7 @@ public class NeedsManager : MonoBehaviour
 
     [SerializeField] private Need[] needs;
     [SerializeField] private int updateMultiplier = 1;
-    [SerializeField] private int fireMultiplier = 4;
+    [SerializeField] private int fireMultiplier = 10;
     [SerializeField] private int illMultiplier = 3;
     [SerializeField] private float timeToUpdateNeed = 1.0f;
     [Tooltip("If the health metric is less than this value when the clone is electrocuted they have a chance of dying")]
