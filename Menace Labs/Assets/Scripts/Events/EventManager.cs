@@ -42,9 +42,14 @@ public class EventManager : MonoBehaviour
         events.Add(EventType.ELECTROCUTION, electrocutionEvent);
         events.Add(EventType.RUBBISH, rubbishEvent);
         events.Add(EventType.PUDDLE, puddleEvent);
+        events.Add(EventType.BLADDER_FAILURE, bladderFailureEvent);
         events.Add(EventType.BREAKING, breakingEvent);
         events.Add(EventType.DIRTYING, dirtyingEvent);
         events.Add(EventType.DEATH, deathEvent);
+        events.Add(EventType.PASS_OUT, passOutEvent);
+        events.Add(EventType.FOOD_DELIVERY, foodDeliveryEvent);
+        events.Add(EventType.DAY_START, dayStartEvent);
+        events.Add(EventType.NIGHT_START, nightStartEvent);
     }
 
     // Get the event requested and check its trigger

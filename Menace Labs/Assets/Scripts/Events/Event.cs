@@ -106,8 +106,10 @@ public class BladderFailureEvent : HundredPercentEvent
 {
     protected override void TriggerEvent()
     {
+        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.REACT, 0);
         ManagerHandler.instance.clone.SpawnObject(puddlePrefab);
         ManagerHandler.instance.NeedsM.SetNeed(NeedsManager.NeedType.BLADDER, NeedsManager.MAX_NEED_VALUE);
+        ManagerHandler.instance.NeedsM.SetNeed(NeedsManager.NeedType.HYGIENE, 0);
     }
 
     [SerializeField] private GameObject puddlePrefab;

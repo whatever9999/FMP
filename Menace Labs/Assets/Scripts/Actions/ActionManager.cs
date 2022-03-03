@@ -190,6 +190,9 @@ public class ActionManager : MonoBehaviour
                         CancelAllActions();
                         ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE_TO_USE, 0, testRequiredLocation);
                         break;
+                    case ActionType.REACT:
+                        CancelAllActions();
+                        break;
                 }
 
                 // Add the button to the action list
