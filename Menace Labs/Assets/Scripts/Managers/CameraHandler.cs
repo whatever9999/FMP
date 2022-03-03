@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class CameraHandler : MonoBehaviour
 {
+    [SerializeField] private Transform jumpToClonePos;
+
     [SerializeField] private float lookSpeed = 10.0f;
     [SerializeField] private float moveSpeed = 10.0f;
     [SerializeField] private float zoomSpeed = 8.0f;
@@ -12,7 +14,6 @@ public class CameraHandler : MonoBehaviour
     [SerializeField] private float rightClickMoveSpeed = 1.0f;
     [SerializeField] private float jumpToCloneSpeed = 10.0f;
     [SerializeField] private float jumpToCloneRotateSpeed = 2.0f;
-    [SerializeField] private float jumpToCloneYLimit = 3.0f;
 
     private static string mouseXString = "Mouse X";
     private static string mouseYString = "Mouse Y";
@@ -118,16 +119,13 @@ public class CameraHandler : MonoBehaviour
                 jumpingToClone = true;
                 transform.rotation = targetRotation;
             }
-
             // Position
-            if (Vector3.Distance(transform.position, ManagerHandler.instance.clone.transform.position) >= 5f)
+            if (Vector3.Distance(transform.position, jumpToClonePos.position) >= 5f)
             {
                 jumpingToClone = true;
 
                 step = jumpToCloneSpeed * Time.deltaTime;
-                // Ensure the camera doesn't move too far in the y axis
-                Vector3 newPosition = Vector3.MoveTowards(transform.position, ManagerHandler.instance.clone.transform.position, step);
-                if (newPosition.y < jumpToCloneYLimit) newPosition.y = jumpToCloneYLimit;
+                Vector3 newPosition = Vector3.Lerp(transform.position, jumpToClonePos.position, step);
                 transform.position = newPosition;
             }
         }
