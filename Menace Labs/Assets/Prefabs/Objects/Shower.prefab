@@ -30,9 +30,9 @@ MonoBehaviour:
     skillType: 8
     value: 1
   hoverColor: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
-  startSound: 32
+  startSound: 34
   useSound: 24
-  endSound: 32
+  endSound: 34
   actionIcon: {fileID: 21300000, guid: 63f1d003fac351e488c1b1c9739511ec, type: 3}
   tooltip: Shower
   animationType: 22

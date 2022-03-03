@@ -78,7 +78,7 @@ public class ConstantObject : MonoBehaviour
             audioSource.outputAudioMixerGroup = ManagerHandler.instance.SoundM.GetSFXMixerGroup();
             audioSource.loop = false;
             audioSource.playOnAwake = false;
-            audioSource.spatialBlend = 1;
+            audioSource.spatialBlend = 0.8f;
         }
         particles = GetComponentInChildren<ParticleSystem>();
     }
@@ -151,7 +151,8 @@ public class ConstantObject : MonoBehaviour
     }
     public virtual void CancelUsing()
     {
-        if (audioSource && endSound != SoundManager.SoundName.NUM_SOUND_NAMES)
+        // Only play the end use sound if the object use gets cancelled while it's being used
+        if (beingUsed && audioSource && endSound != SoundManager.SoundName.NUM_SOUND_NAMES)
         {
             audioSource.clip = SoundManager.instance.GetClip(endSound);
             audioSource.loop = false;

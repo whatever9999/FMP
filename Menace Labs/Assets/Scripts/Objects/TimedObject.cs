@@ -130,7 +130,8 @@ public class TimedObject : ConstantObject
         if (audioSource)
         {
             audioSource.loop = false;
-            if (endSound != SoundManager.SoundName.NUM_SOUND_NAMES)
+            // Only play the end use sound if the object use gets cancelled while it's being used
+            if (beingUsed && endSound != SoundManager.SoundName.NUM_SOUND_NAMES)
             {
                 audioSource.clip = SoundManager.instance.GetClip(endSound);
                 audioSource.Play();
