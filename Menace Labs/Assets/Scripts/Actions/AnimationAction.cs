@@ -14,7 +14,7 @@ public class AnimationAction : Action
 
     public override bool StartAction()
     {
-        started = true;
+        actionStatus = Action_Status.STARTED;
 
         if (soundEffect != SoundManager.SoundName.NUM_SOUND_NAMES)
         {
@@ -29,13 +29,14 @@ public class AnimationAction : Action
         actionTimer += Time.deltaTime;
         if (actionTimer > timeForAction)
         {
-            completed = true;
+            actionStatus = Action_Status.COMPLETED;
         }
         return true;
     }
     public override void EndAction()
     {
-        if(loopSound) ManagerHandler.instance.clone.SetSoundLooping(false);
+        base.EndAction();
+        if (loopSound) ManagerHandler.instance.clone.SetSoundLooping(false);
 
         switch (actionType)
         {
@@ -46,6 +47,7 @@ public class AnimationAction : Action
     }
     public override void CancelAction()
     {
+        base.CancelAction();
         if (loopSound) ManagerHandler.instance.clone.SetSoundLooping(false);
     }
 }

@@ -52,7 +52,7 @@ public class Clone : MonoBehaviour
     {
         GameObject instantiated = Instantiate(gameObject, hand);
         TimedObject timedObject = instantiated.GetComponent<TimedObject>();
-        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.TIMED_OBJECT_USE, 0, timedObject.gameObject);
+        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.TIMED_OBJECT_USE, 1, timedObject.gameObject);
     }
     // Spawn an object in front of the clone
     public void SpawnObject(GameObject gameObject)

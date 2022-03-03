@@ -15,15 +15,17 @@ public class TestAction : Action
 
     private bool popupTriggered = false;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         clone = FindObjectOfType<Clone>();
         cloneRenderer = clone.GetComponentInChildren<Renderer>();
     }
 
     public override bool StartAction()
     {
-        started = true;
+        actionStatus = Action_Status.STARTED;
         return true;
     }
     public override bool ContinueAction()
@@ -43,16 +45,17 @@ public class TestAction : Action
                 popupTriggered = true;
             }
 
-            completed = testTimer > timeToTest;
+            if (testTimer > timeToTest) actionStatus = Action_Status.COMPLETED;
         }
         return true;
     }
     public override void EndAction()
     {
+        base.EndAction();
         cloneRenderer.enabled = true;
     }
     public override void CancelAction()
     {
-
+        base.CancelAction();
     }
 }

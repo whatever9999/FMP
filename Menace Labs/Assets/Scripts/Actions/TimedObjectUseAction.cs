@@ -18,20 +18,22 @@ public class TimedObjectUseAction : Action
 
     public override bool StartAction()
     {
-        started = true;
+        actionStatus = Action_Status.STARTED;
         return usedObject.StartUsing();
     }
     public override bool ContinueAction()
     {
-        completed = usedObject.IsFinished();
-        return completed ? true : usedObject.Use();
+        if (usedObject.IsFinished()) actionStatus = Action_Status.COMPLETED;
+        return actionStatus == Action_Status.COMPLETED ? true : usedObject.Use();
     }
     public override void EndAction()
     {
+        base.EndAction();
         usedObject.FinishUsing();
     }
     public override void CancelAction()
     {
+        base.CancelAction();
         usedObject.CancelUsing();
     }
 }

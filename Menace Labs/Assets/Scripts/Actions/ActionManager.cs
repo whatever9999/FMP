@@ -79,8 +79,7 @@ public class ActionManager : MonoBehaviour
                 if (!currentAction.StartAction())
                 {
                     CancelAction(currentActions[0]);
-                    ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.REFUSE, 0);
-                    currentAction = null;
+                    ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.REFUSE, 1);
                 }
                 else
                 {
@@ -94,13 +93,16 @@ public class ActionManager : MonoBehaviour
                 if (!currentAction.ContinueAction())
                 {
                     CancelAction(currentActions[0]);
-                    currentAction = null;
                 }
             }
             // End the action if it's completed
-            else
+            else if (!currentAction.IsFinalising())
             {
                 EndAction(currentActions[0]);
+            }
+            else if (currentAction.HasFinalised())
+            {
+                RemoveAction(currentActions[0]);
                 currentAction = null;
             }
         }
@@ -188,7 +190,7 @@ public class ActionManager : MonoBehaviour
                         break;
                     case ActionType.TEST:
                         CancelAllActions();
-                        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE_TO_USE, 0, testRequiredLocation);
+                        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE_TO_USE, 1, testRequiredLocation);
                         break;
                     case ActionType.REACT:
                         CancelAllActions();
@@ -269,22 +271,20 @@ public class ActionManager : MonoBehaviour
 
             // Cancel the action
             Action cancellingAction = button.GetComponent<Action>();
+
             // If the cancelled action is the current one make sure to stop the animation
-            cancellingAction.CancelAction();
             if (cancellingAction == currentAction)
             {
-                currentAction = null;
                 cloneAnimationManager.SetAnimation(cancellingAction.GetAnimationType(), false);
             }
 
-            // Remove it from the action list
-            currentActions.Remove(button);
+            cancellingAction.CancelAction();
 
-            // Destroy the button
-            Destroy(button);
-
-            // Track if the clone is testing or not
-            UpdateCloneTesting();
+            // If the cancelled action isn't the current action remove it from the action list
+            if (cancellingAction != currentAction)
+            {
+                RemoveAction(button);
+            }
         }
     }
     public void EndAction(GameObject button)
@@ -293,18 +293,24 @@ public class ActionManager : MonoBehaviour
         {
             // End the action
             Action endingAction = button.GetComponent<Action>();
+
+            // Ensure the animation stops
             cloneAnimationManager.SetAnimation(endingAction.GetAnimationType(), false);
+
             endingAction.EndAction();
-
-            // Remove it from the action list
-            currentActions.Remove(button);
-
-            // Destroy the button
-            Destroy(button);
-
-            // Track if the clone is testing or not
-            UpdateCloneTesting();
         }
+    }
+    // When the animation for the current action ends it will be marked as finalised and removed from the list
+    public void RemoveAction(GameObject button)
+    {
+        // Remove it from the action list
+        currentActions.Remove(button);
+
+        // Destroy the button
+        Destroy(button);
+
+        // Track if the clone is testing or not
+        UpdateCloneTesting();
     }
     #endregion // Stopping Actions
 
@@ -351,9 +357,9 @@ public class ActionManager : MonoBehaviour
     // Cancel all actions from end to start
     public void CancelAllActions()
     {
-        while(currentActions.Count > 0)
+        for (int i = currentActions.Count - 1; i >= 0; i--)
         {
-            CancelAction(currentActions[currentActions.Count - 1]);
+            CancelAction(currentActions[i]);
         }
     }
 

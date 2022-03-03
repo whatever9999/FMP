@@ -18,7 +18,7 @@ public class ConstantObjectUseAction : Action
 
     public override bool StartAction()
     {
-        started = true;
+        actionStatus = Action_Status.STARTED;
         return usedObject.StartUsing();
     }
     public override bool ContinueAction()
@@ -27,10 +27,12 @@ public class ConstantObjectUseAction : Action
     }
     public override void EndAction()
     {
+        base.EndAction();
         usedObject.FinishUsing();
     }
     public override void CancelAction()
     {
+        base.CancelAction();
         usedObject.CancelUsing();
     }
 }

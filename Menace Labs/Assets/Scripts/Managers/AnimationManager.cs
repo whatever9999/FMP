@@ -94,6 +94,11 @@ public class AnimationManager : MonoBehaviour
         animations.Add(AnimationType.ELECTROCUTION, electrocutionAnimationSet);
     }
 
+    public bool IsIdle()
+    {
+        return animator.GetCurrentAnimatorClipInfo(0)[0].clip == idleAnimationSet[0];
+    }
+
     public void SetAnimation(AnimationType type, bool enable)
     {
         switch (type)

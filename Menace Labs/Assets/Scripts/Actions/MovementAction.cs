@@ -9,8 +9,10 @@ public class MovementAction : Action
     private Vector3 destination;
     public void SetDestination(Vector3 newDestination) { destination = newDestination; }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         clone = FindObjectOfType<Clone>();
         cloneMovement = clone.GetComponent<NavMeshAgent>();
     }
@@ -18,20 +20,22 @@ public class MovementAction : Action
     public override bool StartAction()
     {
         cloneMovement.SetDestination(destination);
-        started = true;
+        actionStatus = Action_Status.STARTED;
         return true;
     }
     public override bool ContinueAction()
     {
-        completed = clone.ReachedDestination();
+        if (clone.ReachedDestination()) actionStatus = Action_Status.COMPLETED;
         return true;
     }
     public override void EndAction()
     {
+        base.EndAction();
         cloneMovement.SetDestination(clone.transform.position);
     }
     public override void CancelAction()
     {
+        base.CancelAction();
         // Only change the destination if this is the current action
         if (ManagerHandler.instance.ActionM.GetCurrentAction() == this)
         {

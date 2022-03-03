@@ -35,7 +35,7 @@ public class AgeManager : MonoBehaviour
     {
         if (cloneAge <= 0)
         {
-            ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.DIE, 0);
+            ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.DIE, 1);
         }
     }
 }
