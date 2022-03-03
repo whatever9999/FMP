@@ -35,7 +35,7 @@ MonoBehaviour:
   endSound: 34
   actionIcon: {fileID: 21300000, guid: 63f1d003fac351e488c1b1c9739511ec, type: 3}
   tooltip: Shower
-  animationType: 22
+  animationType: 14
   breakType: 1
   dirtType: 1
   alternateDirtVersion: {fileID: 0}
