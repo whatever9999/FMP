@@ -19674,7 +19674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4832846531654218, guid: 3250b357f6aee8949a2aaaf6c2e39648, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.218
+      value: -22.41
       objectReference: {fileID: 0}
     - target: {fileID: 4832846531654218, guid: 3250b357f6aee8949a2aaaf6c2e39648, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19682,7 +19682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4832846531654218, guid: 3250b357f6aee8949a2aaaf6c2e39648, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.521
+      value: -3.354
       objectReference: {fileID: 0}
     - target: {fileID: 4832846531654218, guid: 3250b357f6aee8949a2aaaf6c2e39648, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21488,6 +21488,7 @@ MonoBehaviour:
   rightClickMoveSpeed: 1
   jumpToCloneSpeed: 3
   jumpToCloneRotateSpeed: 2
+  rotateSpeedHotkeys: 0.5
 --- !u!20 &1687258584
 Camera:
   m_ObjectHideFlags: 0

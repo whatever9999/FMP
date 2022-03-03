@@ -14,6 +14,7 @@ public class CameraHandler : MonoBehaviour
     [SerializeField] private float rightClickMoveSpeed = 1.0f;
     [SerializeField] private float jumpToCloneSpeed = 10.0f;
     [SerializeField] private float jumpToCloneRotateSpeed = 2.0f;
+    [SerializeField] private float rotateSpeedHotkeys = 0.5f;
 
     private static string mouseXString = "Mouse X";
     private static string mouseYString = "Mouse Y";
@@ -92,6 +93,16 @@ public class CameraHandler : MonoBehaviour
         // Middle mouse scroll moves vertically
         moveVertical += (Input.mouseScrollDelta.y * zoomSpeed);
         moveHorizontal += Input.GetAxis(horizontalString);
+
+        // Q and E rotate the camera
+        if (Input.GetKey(KeyCode.Q))
+        {
+            rotateX -= rotateSpeedHotkeys;
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            rotateX += rotateSpeedHotkeys;
+        }
 
         // Jump to the clone if spacebar is pressed
         if (Input.GetKey(KeyCode.Space))
