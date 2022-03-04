@@ -91,4 +91,6 @@ public class UIManager : MonoBehaviour
         ageTooltipText.text = age.ToString() + "/6 days remaining";
     }
     #endregion // Setup
+
+    public bool PauseMenuOpen() { return pauseMenu.activeInHierarchy; }
 }

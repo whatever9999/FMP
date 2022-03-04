@@ -21483,16 +21483,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpToClonePos: {fileID: 2106180787}
   lookSpeed: 10
-  moveSpeed: 10
-  zoomSpeed: 8
+  zoomSpeed: 20
+  moveSpeed: 12
+  rotateSpeed: 0.5
   edgeScrollSize: 10
-  edgeScrollSpeed: 1
-  moveBounds: {x: 20, y: 20, z: 20}
-  floorClamp: 1
-  rightClickMoveSpeed: 1
   jumpToCloneSpeed: 3
   jumpToCloneRotateSpeed: 2
-  rotateSpeedHotkeys: 0.5
+  moveClamp: {x: 20, y: 20, z: 20}
+  floorClamp: 1
 --- !u!20 &1687258584
 Camera:
   m_ObjectHideFlags: 0
