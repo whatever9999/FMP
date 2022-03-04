@@ -10,7 +10,7 @@ public class TestAction : Action
     private Clone clone;
     private Renderer cloneRenderer;
 
-    private float testTimer = 0.0f;
+    private int startTestTime;
     private bool testing = false;
 
     private bool popupTriggered = false;
@@ -31,21 +31,26 @@ public class TestAction : Action
     public override bool ContinueAction()
     {
         // When the clone reaches the entrance they start testing
-        if (!testing && clone.ReachedDestination()) testing = true;
+        if (!testing && clone.ReachedDestination())
+        {
+            testing = true;
+            // Store the time the test started so we can identify when to stop the test
+            startTestTime = ManagerHandler.instance.TimeM.GetCurrentTime();
+        }
         // The testing timer runs while they're gone
         else if (testing)
         {
             cloneRenderer.enabled = false;
-            testTimer += Time.deltaTime;
+            int timeInTest = ManagerHandler.instance.TimeM.TimeSince(startTestTime);
 
             // After a moment of the clone being gone we trigger the test
-            if (testTimer >= timeToTriggerChanceCard && !popupTriggered)
+            if (timeInTest >= timeToTriggerChanceCard && !popupTriggered)
             {
                 ManagerHandler.instance.PopupM.ShowChanceCard();
                 popupTriggered = true;
             }
 
-            if (testTimer > timeToTest) actionStatus = Action_Status.COMPLETED;
+            if (timeInTest > timeToTest) actionStatus = Action_Status.COMPLETED;
         }
         return true;
     }

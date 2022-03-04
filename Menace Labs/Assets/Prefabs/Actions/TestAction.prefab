@@ -150,7 +150,9 @@ MonoBehaviour:
   actionType: 4
   animationType: 0
   soundEffect: 34
-  timeToTest: 10
+  loopSound: 0
+  timeToTest: 30
+  timeToTriggerChanceCard: 5
 --- !u!1001 &3807659797519048928
 PrefabInstance:
   m_ObjectHideFlags: 0

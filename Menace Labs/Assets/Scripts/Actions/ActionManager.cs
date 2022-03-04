@@ -190,7 +190,7 @@ public class ActionManager : MonoBehaviour
                         break;
                     case ActionType.TEST:
                         CancelAllActions();
-                        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE_TO_USE, 1, testRequiredLocation);
+                        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE_TO_USE, 0, testRequiredLocation);
                         break;
                     case ActionType.REACT:
                         CancelAllActions();

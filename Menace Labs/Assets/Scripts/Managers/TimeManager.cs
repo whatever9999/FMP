@@ -7,6 +7,10 @@ public class TimeManager : MonoBehaviour
     private const float timerCheck = 1.0f;
     private float timerTimer;
     private int currentTime = (int)Times.DAY_START;
+    public int GetCurrentTime() { return currentTime; }
+    // Return the time in seconds between the current time and the time passed in
+    // If time has lapsed we need to return time to mightnight plus the current time (will only account for a single lapse)
+    public int TimeSince(int time) { return currentTime >= time ? currentTime - time : (currentTime + (int)Times.MIDNIGHT - time); }
 
     private TextMeshProUGUI timeText;
 
@@ -24,6 +28,7 @@ public class TimeManager : MonoBehaviour
         DAY_START = 480, // 8am
         MID_AFTERNOON = 840, // 2pm
         NIGHT_START = 1080, // 6pm
+        MIDNIGHT = 1640,
     }
 
     private TimeSpeed previousSpeed;
@@ -54,6 +59,9 @@ public class TimeManager : MonoBehaviour
                     break;
             }
         }
+
+        // Ensure the clock is correct on start
+        UpdateUI();
     }
 
     private void Update()
@@ -70,6 +78,12 @@ public class TimeManager : MonoBehaviour
             CheckTriggers();
 
             timerTimer = 0.0f;
+        }
+
+        // Reset current time once 24h is reached
+        if (currentTime > (int)Times.MIDNIGHT)
+        {
+            timerTimer = 0;
         }
     }
 
