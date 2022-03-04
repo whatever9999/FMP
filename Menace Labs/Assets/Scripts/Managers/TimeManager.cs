@@ -4,6 +4,9 @@ using TMPro;
 
 public class TimeManager : MonoBehaviour
 {
+    [SerializeField] private float speedySoundPitch = 1.5f;
+    public float GetSpeedySoundPitch() { return speedySoundPitch; }
+
     private const float timerCheck = 1.0f;
     private float timerTimer;
     private int currentTime = (int)Times.DAY_START;

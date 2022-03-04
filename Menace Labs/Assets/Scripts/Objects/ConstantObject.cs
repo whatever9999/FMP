@@ -86,7 +86,18 @@ public class ConstantObject : MonoBehaviour
     protected virtual void Update()
     {
         // Adjust pitch according to timescale so tempo changes accordingly
-        audioSource.pitch = Time.timeScale;
+        if (audioSource.isPlaying && Time.timeScale == 0)
+        {
+            audioSource.Pause();
+        }
+        else if (Time.timeScale > 1)
+        {
+            audioSource.pitch = ManagerHandler.instance.TimeM.GetSpeedySoundPitch();
+        }
+        else
+        {
+            audioSource.pitch = Time.timeScale;
+        }
     }
 
     public virtual bool StartUsing()
