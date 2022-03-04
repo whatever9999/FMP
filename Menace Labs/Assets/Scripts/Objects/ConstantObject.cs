@@ -55,7 +55,7 @@ public class ConstantObject : MonoBehaviour
     protected AudioSource audioSource;
     protected ParticleSystem particles;
 
-    protected float useTimer;
+    protected int startedUsingTime;
     protected bool beingUsed;
 
     private float timeToCheckEffects = 1.0f;
@@ -82,15 +82,6 @@ public class ConstantObject : MonoBehaviour
         }
         particles = GetComponentInChildren<ParticleSystem>();
     }
-    private void Update()
-    {
-        if (beingUsed)
-        {
-            useTimer += Time.deltaTime;
-
-            Use();
-        }
-    }
 
     public virtual bool StartUsing()
     {
@@ -101,6 +92,7 @@ public class ConstantObject : MonoBehaviour
         }
 
         beingUsed = true;
+        startedUsingTime = ManagerHandler.instance.TimeM.GetCurrentTime();
 
         if (audioSource && startSound != SoundManager.SoundName.NUM_SOUND_NAMES)
         {
@@ -172,9 +164,8 @@ public class ConstantObject : MonoBehaviour
         }
 
         // Update Goal Stats
-        if (name.Equals("Jukebox")) ManagerHandler.instance.GoalM.ModifyHoursDancing(useTimer/60);
+        if (name.Equals("Jukebox")) ManagerHandler.instance.GoalM.ModifyHoursDancing(ManagerHandler.instance.TimeM.TimeSince(startedUsingTime)/60);
 
-        useTimer = 0.0f;
         beingUsed = false;
     }
 

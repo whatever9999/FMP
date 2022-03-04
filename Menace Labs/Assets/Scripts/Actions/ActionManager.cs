@@ -63,7 +63,8 @@ public class ActionManager : MonoBehaviour
         actions.Add(ActionType.BOREDOM, boredomActionPrefab);
     }
 
-    private void Update()
+    // Done in fixed update so affected by timescale
+    private void FixedUpdate()
     {
         // If there's an action in the queue get the one at the front
         if (currentActions.Count > 0)

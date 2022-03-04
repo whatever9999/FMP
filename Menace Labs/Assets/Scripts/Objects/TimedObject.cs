@@ -29,11 +29,10 @@ public class TimedObject : ConstantObject
     {
         if (beingUsed)
         {
-            useTimer += Time.deltaTime;
+            int timeBeingUsed = ManagerHandler.instance.TimeM.TimeSince(startedUsingTime);
 
-            if (useTimer > timeToUse)
+            if (timeBeingUsed > timeToUse)
             {
-                useTimer = 0.0f;
                 finished = true;
             }
         }
@@ -69,7 +68,7 @@ public class TimedObject : ConstantObject
 
         beingUsed = true;
         finished = false;
-        useTimer = 0.0f;
+        startedUsingTime = ManagerHandler.instance.TimeM.GetCurrentTime();
 
         if (audioSource && startSound != SoundManager.SoundName.NUM_SOUND_NAMES)
         {
