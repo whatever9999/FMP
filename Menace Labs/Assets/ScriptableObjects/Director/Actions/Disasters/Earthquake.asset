@@ -12,22 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16fd4ceaeaf62d245a9d2a8e8e953235, type: 3}
   m_Name: Earthquake
   m_EditorClassIdentifier: 
+  insistencyChangesInfo: "Corresponds to DirectorActionType enum: \n0\tDECREASE_NEED_HUNGER,
+    \n1\tDECREASE_NEED_FUN, \n2\tDECREASE_NEED_COMFORT, \n3\tDECREASE_NEED_SOCIAL,
+    \n4\tDECREASE_NEED_BLADDER,\n5\tDECREASE_NEED_HYGIENE,  \n6\tDECREASE_NEED_SLEEP,
+    \n7\tDECREASE_NEED_ENVIRONMENT, \n8\tDECREASE_SKILL_CLEANING, \n9\tDECREASE_SKILL_HANDINESS,
+    \n10\tDECREASE_SKILL_COOKING,\n11\tDECREASE_SKILL_PHOTOGRAPHY, \n12\tDECREASE_SKILL_DANCING,
+    \n13\tDECREASE_SKILL_PROGRAMMING, \n14\tDECREASE_SKILL_GAMING, \n15\tDECREASE_SKILL_DARTS,
+    \n16\tINCREASE_MADNESS_CHANCE"
   insistencyChanges:
-  - 5
+  - 1
+  - 1
+  - 0
+  - 1
+  - 1
+  - 1
+  - 0
+  - 1
+  - 0
+  - -1
   - 0
   - 0
   - 0
-  - 5
-  - 5
-  - 0
-  - 20
-  - 0
-  - -15
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  - 0
-  - 20
+  - 1
   disaster: {fileID: 11400000, guid: 445fcdc8e333a3642a0d86aa467333e5, type: 2}

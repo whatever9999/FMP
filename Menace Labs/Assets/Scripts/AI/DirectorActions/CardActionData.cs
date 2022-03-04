@@ -3,6 +3,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Scriptable Objects/Director/Actions/Card")]
 public class CardActionData : DirectorActionData
 {
+    [Tooltip("If a chance card succeeds then it will have a positive impact on the player")]
+    [Range(-1, 1)]
+    public float[] cardSuccessInsistencyChanges;
+
     public ChanceCardData chanceCard;
 
     public override void TriggerAction()

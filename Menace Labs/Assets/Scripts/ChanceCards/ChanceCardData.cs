@@ -48,16 +48,7 @@ public class ChanceCardData : ScriptableObject
         float rand = Random.Range(0.0f, 100.0f);
 
         // Get chance according to choice made and if there are any modifiers
-        float chance = 0;
-        switch (choice)
-        {
-            case OptionChoice.OPTION_A:
-                chance = A_Chance + A_SuccessModifier.CheckModifier();
-                break;
-            case OptionChoice.OPTION_B:
-                chance = B_Chance + B_SuccessModifier.CheckModifier();
-                break;
-        }
+        float chance = GetChance(choice);
 
         // Return if the choice succeeded or failed
         if (rand < chance)
@@ -69,7 +60,20 @@ public class ChanceCardData : ScriptableObject
         return false;
     }
 
-    
+    public float GetChance(OptionChoice choice)
+    {
+        float chance = 0;
+        switch (choice)
+        {
+            case OptionChoice.OPTION_A:
+                chance = A_Chance + A_SuccessModifier.CheckModifier();
+                break;
+            case OptionChoice.OPTION_B:
+                chance = B_Chance + B_SuccessModifier.CheckModifier();
+                break;
+        }
+        return chance;
+    }
 }
 
 [System.Serializable]
