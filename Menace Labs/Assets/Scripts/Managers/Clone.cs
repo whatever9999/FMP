@@ -28,6 +28,9 @@ public class Clone : MonoBehaviour
 
     private void Update()
     {
+        // Adjust pitch according to timescale so tempo changes accordingly
+        audioSource.pitch = Time.timeScale;
+
         if (Input.GetMouseButtonDown(0))
         {
             ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE, -1);

@@ -25,8 +25,10 @@ public class TimedObject : ConstantObject
     public bool IsFinished() { return finished; }
     public bool AffectsEnvironment() { return affectsEnvironment; }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+
         if (beingUsed)
         {
             int timeBeingUsed = ManagerHandler.instance.TimeM.TimeSince(startedUsingTime);

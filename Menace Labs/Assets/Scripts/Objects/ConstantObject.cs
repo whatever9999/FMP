@@ -83,6 +83,12 @@ public class ConstantObject : MonoBehaviour
         particles = GetComponentInChildren<ParticleSystem>();
     }
 
+    protected virtual void Update()
+    {
+        // Adjust pitch according to timescale so tempo changes accordingly
+        audioSource.pitch = Time.timeScale;
+    }
+
     public virtual bool StartUsing()
     {
         // If the clone should face the same direction as the transform to use the object make sure they're rotated
