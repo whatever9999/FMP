@@ -43,6 +43,9 @@ public class ActionManager : MonoBehaviour
     private bool cloneTesting = false;
     public bool IsCloneTesting() { return cloneTesting; }
 
+    private bool cloneDying = false;
+    public bool IsCloneDying() { return cloneDying; }
+
     private List<GameObject> currentActions = new List<GameObject>();
     private Dictionary<ActionType, GameObject> actions = new Dictionary<ActionType, GameObject>();
 
@@ -221,7 +224,7 @@ public class ActionManager : MonoBehaviour
                 if (addAction)
                 {
                     // Track if the clone is testing or not
-                    UpdateCloneTesting();
+                    UpdateCloneActionStates();
                     ManagerHandler.instance.PerformanceMetric.IncrementPerformanceAttribute(PerformanceMetric.PerformanceData.ACTIONS_TRIGGERED);
                 }
             }
@@ -311,7 +314,7 @@ public class ActionManager : MonoBehaviour
         Destroy(button);
 
         // Track if the clone is testing or not
-        UpdateCloneTesting();
+        UpdateCloneActionStates();
     }
     #endregion // Stopping Actions
 
@@ -392,16 +395,20 @@ public class ActionManager : MonoBehaviour
     }
 
     // The clone is testing if they're doing a test or on their way to do one
-    public void UpdateCloneTesting()
+    public void UpdateCloneActionStates()
     {
         cloneTesting = false;
+        cloneDying = false;
         for (int i = 0; i < currentActions.Count; i++)
         {
             Action checkingAction = currentActions[i].GetComponent<Action>();
             if (checkingAction.GetActionType() == ActionType.TEST)
             {
                 cloneTesting = true;
-                break;
+            }
+            if (checkingAction.GetActionType() == ActionType.DIE)
+            {
+                cloneDying = true;
             }
         }
     }
