@@ -156,9 +156,9 @@ public class TimeManager : MonoBehaviour
         SetTimeSpeed(newSpeed);
     }
 
-    public void SetTimeSpeed(TimeSpeed speed)
+    public void SetTimeSpeed(TimeSpeed speed, bool openingPauseMenu = false)
     {
-        if (currentSpeed != speed)
+        if (openingPauseMenu || currentSpeed != speed)
         {
             // Track the previous time for when we unpause
             previousSpeed = currentSpeed;

@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour
                 }
                 else
                 {
-                    ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
+                    ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE, true);
                     pauseMenu.SetActive(true);
                 }
             }
