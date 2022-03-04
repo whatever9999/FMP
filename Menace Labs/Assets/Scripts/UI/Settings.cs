@@ -41,16 +41,40 @@ public class Settings : MonoBehaviour
 
     public void SetSFXVolume(float volume)
     {
-        audioMixer.SetFloat("SFXVolume", volume);
+        // The min value is about -40 since we want the slider to have a better range - once it reaches this we need to mute it though
+        if (volume == SFXSlider.minValue)
+        {
+            audioMixer.SetFloat("SFXVolume", -80);
+        }
+        else
+        {
+            audioMixer.SetFloat("SFXVolume", volume);
+        }
     }
 
     public void SetAmbienceVolume(float volume)
     {
-        audioMixer.SetFloat("AmbienceVolume", volume);
+        // The min value is about -40 since we want the slider to have a better range - once it reaches this we need to mute it though
+        if (volume == ambienceSlider.minValue)
+        {
+            audioMixer.SetFloat("AmbienceVolume", -80);
+        }
+        else
+        {
+            audioMixer.SetFloat("AmbienceVolume", volume);
+        }
     }
 
     public void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("MusicVolume", volume);
+        // The min value is about -40 since we want the slider to have a better range - once it reaches this we need to mute it though
+        if (volume == musicSlider.minValue)
+        {
+            audioMixer.SetFloat("MusicVolume", -80);
+        }
+        else
+        {
+            audioMixer.SetFloat("MusicVolume", volume);
+        }
     }
 }
