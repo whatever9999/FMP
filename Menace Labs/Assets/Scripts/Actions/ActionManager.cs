@@ -158,6 +158,7 @@ public class ActionManager : MonoBehaviour
                         }
                         break;
                     case ActionType.DIE:
+                         CancelAllActions();
                         ManagerHandler.instance.EventM.CheckEventTrigger(EventManager.EventType.DEATH);
                         break;
                     case ActionType.CONSTANT_OBJECT_USE:
