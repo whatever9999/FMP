@@ -172,7 +172,7 @@ public class TimeManager : MonoBehaviour
                     Time.timeScale = 1.0f;
                     break;
                 case TimeSpeed.FAST_FORWARD:
-                    Time.timeScale = 2.0f;
+                    Time.timeScale = 3.0f;
                     break;
             }
 
