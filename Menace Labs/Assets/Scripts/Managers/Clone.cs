@@ -3,7 +3,17 @@ using UnityEngine.AI;
 
 public class Clone : MonoBehaviour
 {
-    [SerializeField] Transform hand;
+    public enum CensorTypes
+    {
+        NONE,
+        FULL_BODY,
+        LOWER_BODY,
+    }
+
+    [SerializeField] private GameObject fullBodyCensor;
+    [SerializeField] private GameObject lowerBodyCensor;
+
+    [SerializeField] private Transform hand;
     [SerializeField] private ParticleSystem fireParticles;
     [SerializeField] private ParticleSystem smellParticles;
     [SerializeField] private float runSpeed;
@@ -123,6 +133,19 @@ public class Clone : MonoBehaviour
         {
             smellParticles.gameObject.SetActive(false);
             smellParticles.Stop();
+        }
+    }
+
+    public void ToggleCensor(CensorTypes censor, bool enable)
+    {
+        switch (censor)
+        {
+            case CensorTypes.FULL_BODY:
+                fullBodyCensor.SetActive(enable);
+                break;
+            case CensorTypes.LOWER_BODY:
+                lowerBodyCensor.SetActive(enable);
+                break;
         }
     }
 }

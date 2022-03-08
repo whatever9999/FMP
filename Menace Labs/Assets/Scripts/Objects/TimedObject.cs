@@ -83,6 +83,8 @@ public class TimedObject : ConstantObject
         // If the clone is on fire and this is the shower put them out
         if (name.Equals("Shower")) ManagerHandler.instance.clone.SetOnFire(false);
 
+        ManagerHandler.instance.clone.ToggleCensor(censorType, true);
+
         return true;
     }
     public override void FinishUsing()
@@ -103,6 +105,8 @@ public class TimedObject : ConstantObject
         if (particles) particles.Stop();
 
         if (beingUsed) DirtyOrBrokenCheck();
+
+        ManagerHandler.instance.clone.ToggleCensor(censorType, false);
 
         // Update Goal Stats
         if (name.Equals("Fridge")) ManagerHandler.instance.GoalM.ModifyMealsMade(1);
@@ -149,6 +153,8 @@ public class TimedObject : ConstantObject
 
             if (beingUsed) DirtyOrBrokenCheck();
         }
+
+        ManagerHandler.instance.clone.ToggleCensor(censorType, false);
 
         finished = true;
         beingUsed = false;

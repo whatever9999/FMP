@@ -315,6 +315,7 @@ MonoBehaviour:
   actionIcon: {fileID: 21300000, guid: 6b447f47e5960d348bd5fbf3bd9f75d3, type: 3}
   tooltip: Use Toilet
   animationType: 21
+  censorType: 2
   breakType: 1
   dirtType: 1
   alternateDirtVersion: {fileID: 0}

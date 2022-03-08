@@ -12225,11 +12225,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4021019344556236, guid: ef77e445ce815974a8181a957ad0a70a, type: 3}
   m_PrefabInstance: {fileID: 985111615}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &992747915 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8794191130772992461, guid: faedd4ed504aacf409cefa0a82643f68, type: 3}
-  m_PrefabInstance: {fileID: 8792628830203594987}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &993334563
 GameObject:
   m_ObjectHideFlags: 0
@@ -13008,6 +13003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1795099238c27f04887e40df6490b66f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedySoundPitch: 1.5
   timeTriggers:
   - time: 480
     eventType: 10
@@ -26820,36 +26816,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097098964}
   m_CullTransparentMesh: 1
---- !u!1 &2106180786
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2106180787}
-  m_Layer: 0
-  m_Name: JumpToClonePos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2106180787
+--- !u!4 &2106180787 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6942368206912607130, guid: faedd4ed504aacf409cefa0a82643f68, type: 3}
+  m_PrefabInstance: {fileID: 8792628830203594987}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106180786}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.92, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 992747915}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2111658701 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1414158957578110, guid: 9c67015386b833c43bdda806f86b16c6, type: 3}

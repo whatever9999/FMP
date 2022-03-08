@@ -24,6 +24,9 @@ public class ConstantObject : MonoBehaviour
     [SerializeField] protected AnimationManager.AnimationType animationType = AnimationManager.AnimationType.NUM_ANIMATION_TYPES;
     public AnimationManager.AnimationType GetAnimationType() { return animationType; }
 
+    [Header("Censor")]
+    [SerializeField] protected Clone.CensorTypes censorType;
+
     public enum DirtType
     {
         ALWAYS_CLEAN,
@@ -119,6 +122,8 @@ public class ConstantObject : MonoBehaviour
         }
         if (particles) particles.Play();
 
+        ManagerHandler.instance.clone.ToggleCensor(censorType, true);
+
         return true;
     }
     public virtual bool Use()
@@ -179,6 +184,8 @@ public class ConstantObject : MonoBehaviour
 
             if (beingUsed) DirtyOrBrokenCheck();
         }
+
+        ManagerHandler.instance.clone.ToggleCensor(censorType, false);
 
         // Update Goal Stats
         if (name.Equals("Jukebox")) ManagerHandler.instance.GoalM.ModifyHoursDancing(ManagerHandler.instance.TimeM.TimeSince(startedUsingTime)/60);
