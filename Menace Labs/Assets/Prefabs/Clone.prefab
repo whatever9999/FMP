@@ -1339,9 +1339,12 @@ MonoBehaviour:
   - {fileID: -203655887218126122, guid: 26027cc1e6e8f654a8cd9a32df43e1d3, type: 3}
   - {fileID: -203655887218126122, guid: f16e51074f8f4d94799e3ab3c235feb6, type: 3}
   - {fileID: -203655887218126122, guid: 9a93db91f8e15294a84ed306d97ff351, type: 3}
-  onFireanimationSet: []
-  putOutFireAnimationSet: []
-  electrocutionAnimationSet: []
+  onFireanimationSet:
+  - {fileID: -203655887218126122, guid: 0f0a1465b6b547d479c5faa8f9611376, type: 3}
+  putOutFireAnimationSet:
+  - {fileID: -203655887218126122, guid: dffa25b4383361043bc9e69a14366f2a, type: 3}
+  electrocutionAnimationSet:
+  - {fileID: -203655887218126122, guid: 378b091b38e630542aebb8c1d90b168f, type: 3}
 --- !u!54 &1659823606104550412
 Rigidbody:
   m_ObjectHideFlags: 0

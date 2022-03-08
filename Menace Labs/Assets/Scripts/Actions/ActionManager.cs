@@ -52,6 +52,10 @@ public class ActionManager : MonoBehaviour
     private Action currentAction;
     public Action GetCurrentAction() { return currentAction; }
 
+    [Header("Boredom Action Timer")]
+    [SerializeField] private int boredomActionTime = 60;
+    private int actionTriggeredTime;
+
     private void Start()
     {
         // Add actions to the dictionary
@@ -64,6 +68,16 @@ public class ActionManager : MonoBehaviour
         actions.Add(ActionType.REACT, reactActionPrefab);
         actions.Add(ActionType.REFUSE, refuseActionPrefab);
         actions.Add(ActionType.BOREDOM, boredomActionPrefab);
+
+        actionTriggeredTime = ManagerHandler.instance.TimeM.GetCurrentTime();
+    }
+
+    private void Update()
+    {
+        if (ManagerHandler.instance.TimeM.TimeSince(actionTriggeredTime) >= boredomActionTime)
+        {
+            AddAction(ActionType.BOREDOM, -1);
+        }
     }
 
     // Done in fixed update so affected by timescale
@@ -227,6 +241,9 @@ public class ActionManager : MonoBehaviour
                     // Track if the clone is testing or not
                     UpdateCloneActionStates();
                     ManagerHandler.instance.PerformanceMetric.IncrementPerformanceAttribute(PerformanceMetric.PerformanceData.ACTIONS_TRIGGERED);
+
+                    // Update the boredom timer
+                    actionTriggeredTime = ManagerHandler.instance.TimeM.GetCurrentTime();
                 }
             }
             else

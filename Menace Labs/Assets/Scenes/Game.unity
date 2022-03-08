@@ -8375,6 +8375,7 @@ MonoBehaviour:
   refuseActionPrefab: {fileID: 8361763985997986483, guid: 86a8c5bb8ede47741b2c4619cfb6a2b6, type: 3}
   boredomActionPrefab: {fileID: 5755995742608429846, guid: b31939879738f84479702952b10f41e1, type: 3}
   testRequiredLocation: {fileID: 1874185379}
+  boredomActionTime: 60
 --- !u!1001 &681229137
 PrefabInstance:
   m_ObjectHideFlags: 0
