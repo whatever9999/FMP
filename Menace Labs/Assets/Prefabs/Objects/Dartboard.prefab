@@ -126,6 +126,14 @@ MonoBehaviour:
   actionIcon: {fileID: 21300000, guid: d4b5d12a87dbcc947b01ebf6f117e6d2, type: 3}
   tooltip: Play Darts
   animationType: 17
+  censorType: 0
+  requiredNeeds:
+  - need: 1
+    requiredLevel: 20
+  - need: 0
+    requiredLevel: 20
+  - need: 3
+    requiredLevel: 20
   breakType: 0
   dirtType: 0
   alternateDirtVersion: {fileID: 0}

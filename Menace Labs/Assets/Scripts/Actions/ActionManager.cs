@@ -111,6 +111,7 @@ public class ActionManager : MonoBehaviour
                 if (!currentAction.ContinueAction())
                 {
                     CancelAction(currentActions[0]);
+                    ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.REFUSE, 1);
                 }
             }
             // End the action if it's completed

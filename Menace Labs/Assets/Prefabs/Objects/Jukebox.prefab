@@ -29,6 +29,16 @@ MonoBehaviour:
   actionIcon: {fileID: 21300000, guid: fd7e19d39650ca44587cc274fb861d9e, type: 3}
   tooltip: Dance
   animationType: 2
+  censorType: 0
+  requiredNeeds:
+  - need: 0
+    requiredLevel: 20
+  - need: 1
+    requiredLevel: 20
+  - need: 3
+    requiredLevel: 20
+  - need: 6
+    requiredLevel: 0
   breakType: 1
   dirtType: 0
   alternateDirtVersion: {fileID: 0}

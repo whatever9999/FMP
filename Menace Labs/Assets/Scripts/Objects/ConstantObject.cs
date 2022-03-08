@@ -27,6 +27,9 @@ public class ConstantObject : MonoBehaviour
     [Header("Censor")]
     [SerializeField] protected Clone.CensorTypes censorType;
 
+    [Header("Need Levels to Use")]
+    [SerializeField] protected RequiredNeed[] requiredNeeds;
+
     public enum DirtType
     {
         ALWAYS_CLEAN,
@@ -105,6 +108,12 @@ public class ConstantObject : MonoBehaviour
 
     public virtual bool StartUsing()
     {
+        // Ensure the clone's needs are good enough to use the object
+        for (int i = 0; i < requiredNeeds.Length; i++)
+        {
+            if (!requiredNeeds[i].AtRequiredLevel()) return false;
+        }
+
         // If the clone should face the same direction as the transform to use the object make sure they're rotated
         if (faceTransformDirection)
         {
@@ -128,6 +137,12 @@ public class ConstantObject : MonoBehaviour
     }
     public virtual bool Use()
     {
+        // Ensure the clone's needs are good enough to use the object
+        for (int i = 0; i < requiredNeeds.Length; i++)
+        {
+            if (!requiredNeeds[i].AtRequiredLevel()) return false;
+        }
+
         if (audioSource && useSound != SoundManager.SoundName.NUM_SOUND_NAMES && !audioSource.isPlaying)
         {
             audioSource.clip = SoundManager.instance.GetClip(useSound);
@@ -262,4 +277,16 @@ public struct ObjectEffect
     public NeedsManager.NeedType GetNeedType() { return needType; }
     public SkillManager.SkillType GetSkillType() { return skillType; }
     public float GetValue() { return value; }
+}
+
+[System.Serializable]
+public struct RequiredNeed
+{
+    [SerializeField] private NeedsManager.NeedType need;
+    [SerializeField] private NeedsManager.NeedLevel requiredLevel;
+
+    public bool AtRequiredLevel()
+    {
+        return ManagerHandler.instance.NeedsM.GetNeedValue(need) >= (float)requiredLevel;
+    }
 }

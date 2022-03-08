@@ -124,6 +124,14 @@ MonoBehaviour:
   actionIcon: {fileID: 21300000, guid: 7514ed53e50dc5349b2ca3031486fd66, type: 3}
   tooltip: Take Photos
   animationType: 19
+  censorType: 0
+  requiredNeeds:
+  - need: 1
+    requiredLevel: 20
+  - need: 4
+    requiredLevel: 20
+  - need: 0
+    requiredLevel: 20
   breakType: 1
   dirtType: 0
   alternateDirtVersion: {fileID: 0}

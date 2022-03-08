@@ -52,6 +52,12 @@ public class TimedObject : ConstantObject
 
     public override bool StartUsing()
     {
+        // Ensure the clone's needs are good enough to use the object
+        for (int i = 0; i < requiredNeeds.Length; i++)
+        {
+            if (!requiredNeeds[i].AtRequiredLevel()) return false;
+        }
+
         // If there isn't enough food for this object to be used cancel the action
         if (usesFood > 0 && !ManagerHandler.instance.FoodM.GotEnoughFood(usesFood))
         {

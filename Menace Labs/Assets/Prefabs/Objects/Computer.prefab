@@ -123,6 +123,14 @@ MonoBehaviour:
   actionIcon: {fileID: 21300000, guid: eda4bee9195ac814cb8a843526c50ec0, type: 3}
   tooltip: Program
   animationType: 16
+  censorType: 0
+  requiredNeeds:
+  - need: 1
+    requiredLevel: 20
+  - need: 4
+    requiredLevel: 20
+  - need: 0
+    requiredLevel: 20
   breakType: 1
   dirtType: 0
   alternateDirtVersion: {fileID: 0}

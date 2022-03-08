@@ -160,6 +160,14 @@ MonoBehaviour:
   actionIcon: {fileID: 21300000, guid: 65e20615aea39b047a5fded81848c38f, type: 3}
   tooltip: Play Games
   animationType: 12
+  censorType: 0
+  requiredNeeds:
+  - need: 0
+    requiredLevel: 20
+  - need: 1
+    requiredLevel: 20
+  - need: 3
+    requiredLevel: 20
   breakType: 1
   dirtType: 0
   alternateDirtVersion: {fileID: 0}

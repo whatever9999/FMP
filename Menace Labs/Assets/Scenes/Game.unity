@@ -27938,6 +27938,14 @@ PrefabInstance:
       propertyPath: alternateElectricVersion
       value: 
       objectReference: {fileID: 4997761665115551287}
+    - target: {fileID: 2087054132, guid: dfd4cb57c9cab28478cf62cd3fe87230, type: 3}
+      propertyPath: requiredNeeds.Array.data[3].need
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087054132, guid: dfd4cb57c9cab28478cf62cd3fe87230, type: 3}
+      propertyPath: requiredNeeds.Array.data[3].requiredLevel
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 992576962337702883, guid: dfd4cb57c9cab28478cf62cd3fe87230, type: 3}
       propertyPath: m_Name
       value: Jukebox

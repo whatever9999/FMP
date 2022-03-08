@@ -123,6 +123,14 @@ MonoBehaviour:
   actionIcon: {fileID: 21300000, guid: c238d2b8bbad9e74a815e51a57b7ba31, type: 3}
   tooltip: Cleaning
   animationType: 4
+  censorType: 0
+  requiredNeeds:
+  - need: 1
+    requiredLevel: 20
+  - need: 3
+    requiredLevel: 20
+  - need: 4
+    requiredLevel: 20
   breakType: 0
   dirtType: 0
   alternateDirtVersion: {fileID: 0}

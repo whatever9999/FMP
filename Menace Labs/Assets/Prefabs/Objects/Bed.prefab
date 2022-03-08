@@ -123,6 +123,8 @@ MonoBehaviour:
   actionIcon: {fileID: 21300000, guid: e02eef47f43f70d4e835c0098562f3d0, type: 3}
   tooltip: Sleep
   animationType: 15
+  censorType: 0
+  requiredNeeds: []
   breakType: 0
   dirtType: 0
   alternateDirtVersion: {fileID: 0}

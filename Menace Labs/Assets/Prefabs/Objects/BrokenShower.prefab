@@ -39,6 +39,14 @@ MonoBehaviour:
   actionIcon: {fileID: 21300000, guid: d549030f5e0ec0c489aedcbad650c207, type: 3}
   tooltip: Fixing
   animationType: 9
+  censorType: 0
+  requiredNeeds:
+  - need: 1
+    requiredLevel: 20
+  - need: 3
+    requiredLevel: 20
+  - need: 4
+    requiredLevel: 20
   breakType: 2
   dirtType: 0
   alternateDirtVersion: {fileID: 0}
