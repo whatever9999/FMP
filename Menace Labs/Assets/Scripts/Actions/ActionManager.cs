@@ -6,8 +6,7 @@ public class ActionManager : MonoBehaviour
 {
     public enum ActionType
     {
-        CONSTANT_OBJECT_USE,
-        TIMED_OBJECT_USE,
+        OBJECT_USE,
         MOVE,
         MOVE_TO_USE,
         TEST,
@@ -30,8 +29,7 @@ public class ActionManager : MonoBehaviour
     [SerializeField] private LayerMask objectLayer;
 
     [Header("Action Prefabs")]
-    [SerializeField] private GameObject constantObjectUseActionPrefab;
-    [SerializeField] private GameObject timedObjectUseActionPrefab;
+    [SerializeField] private GameObject objectUseActionPrefab;
     [SerializeField] private GameObject movementActionPrefab;
     [SerializeField] private GameObject testActionPrefab;
     [SerializeField] private GameObject dieActionPrefab;
@@ -61,8 +59,7 @@ public class ActionManager : MonoBehaviour
     private void Start()
     {
         // Add actions to the dictionary
-        actions.Add(ActionType.CONSTANT_OBJECT_USE, constantObjectUseActionPrefab);
-        actions.Add(ActionType.TIMED_OBJECT_USE, timedObjectUseActionPrefab);
+        actions.Add(ActionType.OBJECT_USE, objectUseActionPrefab);
         actions.Add(ActionType.MOVE, movementActionPrefab);
         actions.Add(ActionType.MOVE_TO_USE, movementActionPrefab);
         actions.Add(ActionType.TEST, testActionPrefab);
@@ -199,11 +196,11 @@ public class ActionManager : MonoBehaviour
                             ManagerHandler.instance.EventM.CheckEventTrigger(EventManager.EventType.DEATH);
                         }
                         break;
-                    case ActionType.CONSTANT_OBJECT_USE:
+                    case ActionType.OBJECT_USE:
                         {
                             if (!cloneOnFire || (cloneOnFire && usedObject.name.Equals("Shower")))
                             {
-                                ConstantObjectUseAction useAction = button.GetComponent<ConstantObjectUseAction>();
+                                ObjectUseAction useAction = button.GetComponent<ObjectUseAction>();
                                 ConstantObject constantObject = usedObject.GetComponent<ConstantObject>();
                                 useAction.SetObject(constantObject);
                                 useAction.SetAnimationType(constantObject.GetAnimationType());
@@ -213,22 +210,6 @@ public class ActionManager : MonoBehaviour
                                 SoundManager.instance.PlayClip(SoundManager.SoundName.FAILURE);
                                 addAction = false;
                             }    
-                        }
-                        break;
-                    case ActionType.TIMED_OBJECT_USE:
-                        {
-                            if (!cloneOnFire || (cloneOnFire && usedObject.name.Equals("Shower")))
-                            {
-                                TimedObjectUseAction useAction = button.GetComponent<TimedObjectUseAction>();
-                                TimedObject timedObject = usedObject.GetComponent<TimedObject>();
-                                useAction.SetObject(timedObject);
-                                useAction.SetAnimationType(timedObject.GetAnimationType());
-                            }
-                            else
-                            {
-                                SoundManager.instance.PlayClip(SoundManager.SoundName.FAILURE);
-                                addAction = false;
-                            }
                         }
                         break;
                     case ActionType.TEST:
@@ -259,7 +240,7 @@ public class ActionManager : MonoBehaviour
                 else Destroy(button);
 
                 // If we're using an object make sure we move to the required location first
-                if (addAction && (type == ActionType.CONSTANT_OBJECT_USE || type == ActionType.TIMED_OBJECT_USE))
+                if (addAction && type == ActionType.OBJECT_USE)
                 {
                     Action addedAction = button.GetComponent<Action>();
 
@@ -294,15 +275,10 @@ public class ActionManager : MonoBehaviour
         {
             for (int i = 0; i < currentActions.Count; i++)
             {
-                ConstantObjectUseAction constantAction;
-                TimedObjectUseAction timedAction;
-                if (currentActions[i].TryGetComponent<ConstantObjectUseAction>(out constantAction))
+                ObjectUseAction action;
+                if (currentActions[i].TryGetComponent<ObjectUseAction>(out action))
                 {
-                    return (usedObject == constantAction.GetUsedObject().gameObject);
-                }
-                else if (currentActions[i].TryGetComponent<TimedObjectUseAction>(out timedAction))
-                {
-                    return (usedObject == timedAction.GetUsedObject().gameObject);
+                    return (usedObject == action.GetUsedObject().gameObject);
                 }
             }
         }

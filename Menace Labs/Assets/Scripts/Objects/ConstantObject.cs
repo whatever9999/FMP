@@ -3,6 +3,19 @@ using UnityEngine;
 
 public class ConstantObject : MonoBehaviour
 {
+    public enum DirtType
+    {
+        ALWAYS_CLEAN,
+        DIRTIABLE,
+        DIRTY,
+    }
+    public enum BreakType
+    {
+        NOT_BREAKABLE,
+        WORKING,
+        BROKEN,
+    }
+
     [Header("Need and Skill Effects")]
     [SerializeField] private List<ObjectEffect> effects;
     
@@ -30,18 +43,18 @@ public class ConstantObject : MonoBehaviour
     [Header("Need Levels to Use")]
     [SerializeField] protected RequiredNeed[] requiredNeeds;
 
-    public enum DirtType
-    {
-        ALWAYS_CLEAN,
-        DIRTIABLE,
-        DIRTY,
-    }
-    public enum BreakType
-    {
-        NOT_BREAKABLE,
-        WORKING,
-        BROKEN,
-    }
+    [Header("Results")]
+    [SerializeField] protected EventManager.EventType triggerEvent = EventManager.EventType.NUM_EVENT_TYPES;
+    [SerializeField] protected bool despawnObject = false;
+    [Tooltip("This object will be spawned at the feet of the clone")]
+    [SerializeField] protected GameObject spawnObject;
+    [Tooltip("This object will be spawned in the clone's hand and they will use it immediately")]
+    [SerializeField] protected GameObject giveObject;
+
+    [Header("Variables")]
+    [SerializeField] protected bool affectsEnvironment = false;
+    [SerializeField] protected int usesFood = 0;
+
     [Header("Breakable or Dirtiable")]
     [SerializeField] protected BreakType breakType;
     [SerializeField] protected DirtType dirtType;
@@ -56,6 +69,10 @@ public class ConstantObject : MonoBehaviour
     [SerializeField] protected Transform requiredLocation;
     public Transform GetRequiredLocation() { return requiredLocation; }
     [SerializeField] protected bool faceTransformDirection;
+
+    protected bool finished;
+    public bool IsFinished() { return finished; }
+    public bool AffectsEnvironment() { return affectsEnvironment; }
 
     protected Renderer materialRenderer;
     protected AudioSource audioSource;
@@ -133,6 +150,9 @@ public class ConstantObject : MonoBehaviour
 
         ManagerHandler.instance.clone.ToggleCensor(censorType, true);
 
+        // If the clone is on fire and this is the shower put them out
+        if (name.Equals("Shower")) ManagerHandler.instance.clone.SetOnFire(false);
+
         return true;
     }
     public virtual bool Use()
@@ -174,23 +194,65 @@ public class ConstantObject : MonoBehaviour
 
         return true;
     }
-    // Never finish using constant objects
+    // We don't finish using ConstantObject but TimedObject and MaxNeedObject will use this function
     public virtual void FinishUsing()
     {
+        if (audioSource)
+        {
+            audioSource.loop = false;
+            if (endSound != SoundManager.SoundName.NUM_SOUND_NAMES)
+            {
+                audioSource.clip = SoundManager.instance.GetClip(endSound);
+                audioSource.Play();
+            }
+            else
+            {
+                audioSource.Stop();
+            }
+        }
+        if (particles) particles.Stop();
+
+        if (beingUsed) DirtyOrBrokenCheck();
+
+        ManagerHandler.instance.clone.ToggleCensor(censorType, false);
+
+        // Update Goal Stats
+        if (name.Equals("Fridge")) ManagerHandler.instance.GoalM.ModifyMealsMade(1);
+        else if (name.Equals("Oven")) ManagerHandler.instance.GoalM.ModifyMealsMade(1);
+        else if (name.Contains("Dirty")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);
+        else if (name.Contains("Rubbish")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);
+        else if (name.Contains("Puddle")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);
+        else if (name.Equals("Fire")) ManagerHandler.instance.GoalM.ModifyFiresSurvived(1);
+
+        if (triggerEvent != EventManager.EventType.NUM_EVENT_TYPES) ManagerHandler.instance.EventM.CheckEventTrigger(triggerEvent);
+        if (giveObject)
+        {
+            ManagerHandler.instance.clone.GiveObject(giveObject);
+        }
+        if (spawnObject)
+        {
+            ManagerHandler.instance.clone.SpawnObject(spawnObject);
+        }
+        if (despawnObject) Destroy(gameObject);
+
+        finished = true;
+        beingUsed = false;
     }
     public virtual void CancelUsing()
     {
-        // Only play the end use sound if the object use gets cancelled while it's being used
-        if (beingUsed && audioSource && endSound != SoundManager.SoundName.NUM_SOUND_NAMES)
-        {
-            audioSource.clip = SoundManager.instance.GetClip(endSound);
-            audioSource.loop = false;
-            audioSource.Play();
-        }
-        else if (audioSource)
+        if (audioSource)
         {
             audioSource.loop = false;
-            audioSource.Stop();
+            // Only play the end use sound if the object use gets cancelled while it's being used
+            if (beingUsed && endSound != SoundManager.SoundName.NUM_SOUND_NAMES)
+            {
+                audioSource.clip = SoundManager.instance.GetClip(endSound);
+                audioSource.Play();
+            }
+            else
+            {
+                audioSource.Stop();
+            }
         }
         // If we cancelled fixing or cleaning don't tidy particles or change to fixed/clean object
         if (breakType != BreakType.BROKEN && dirtType != DirtType.DIRTY)
@@ -206,6 +268,7 @@ public class ConstantObject : MonoBehaviour
         if (name.Equals("Jukebox")) ManagerHandler.instance.GoalM.ModifyHoursDancing(ManagerHandler.instance.TimeM.TimeSince(startedUsingTime)/60);
 
         beingUsed = false;
+        finished = true;
     }
 
     protected void DirtyOrBrokenCheck()
@@ -264,7 +327,7 @@ public class ConstantObject : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.CONSTANT_OBJECT_USE, -1, gameObject);
+        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.OBJECT_USE, -1, gameObject);
     }
 }
 

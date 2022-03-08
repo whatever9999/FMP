@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 6081189504075306611}
   - component: {fileID: 6072434507127576647}
   - component: {fileID: 5780297546258816683}
-  - component: {fileID: -5198380065390086900}
+  - component: {fileID: 1101635434289251352}
   m_Layer: 0
   m_Name: Toilet
   m_TagString: Untagged
@@ -292,7 +292,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.43610895, y: 0.5166347, z: 0.7158284}
   m_Center: {x: -0.0075247884, y: 0.25831735, z: 0.354491}
---- !u!114 &-5198380065390086900
+--- !u!114 &1101635434289251352
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6058961658915920883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96bcfb371a66a49458b36560cb1765fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 96fb438930c4c674bbfe03831325a291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   effects:
@@ -316,20 +316,20 @@ MonoBehaviour:
   tooltip: Use Toilet
   animationType: 21
   censorType: 2
-  breakType: 1
-  dirtType: 1
-  alternateDirtVersion: {fileID: 0}
-  alternateBreakVersion: {fileID: 0}
-  requiredLocation: {fileID: 9121127577282149695}
-  faceTransformDirection: 1
-  useAnimationSetForTimeToUse: 1
-  timeToUse: 0
+  requiredNeeds: []
   triggerEvent: 12
   despawnObject: 0
   spawnObject: {fileID: 0}
   giveObject: {fileID: 0}
   affectsEnvironment: 0
   usesFood: 0
+  breakType: 1
+  dirtType: 1
+  alternateDirtVersion: {fileID: 0}
+  alternateBreakVersion: {fileID: 0}
+  requiredLocation: {fileID: 9121127577282149695}
+  faceTransformDirection: 1
+  needs: 02000000
 --- !u!1 &6059362676139099855
 GameObject:
   m_ObjectHideFlags: 0

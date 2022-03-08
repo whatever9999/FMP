@@ -8366,8 +8366,7 @@ MonoBehaviour:
   objectLayer:
     serializedVersion: 2
     m_Bits: 1
-  constantObjectUseActionPrefab: {fileID: 3334186565959401491, guid: 4703deeff2f4f3a4a866461de7bde9c2, type: 3}
-  timedObjectUseActionPrefab: {fileID: 6554035383510537555, guid: 6ff9fad2f052b914dbd5c50d6bf1b1bf, type: 3}
+  objectUseActionPrefab: {fileID: 9185259456257235667, guid: 1333227e88a834a4ca39a00e11e3ff59, type: 3}
   movementActionPrefab: {fileID: 4361751475704610498, guid: 994a3747ea8022a41812fee8ab96f82d, type: 3}
   testActionPrefab: {fileID: 1134893776874685672, guid: 6842d4bc536e1d54baa085a339ef69e7, type: 3}
   dieActionPrefab: {fileID: 8202826019673995911, guid: dd335a45081296a48bf1fd3c4ecf65b5, type: 3}
@@ -15189,7 +15188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needTriggers.Array.size
@@ -15201,7 +15200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needTriggers.Array.data[0].needLevel
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
@@ -27865,18 +27864,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2117023175}
     m_Modifications:
-    - target: {fileID: 415733636, guid: 37c804c06cf460b49b5f404fdd75101d, type: 3}
-      propertyPath: alternateDirtVersion
-      value: 
-      objectReference: {fileID: 682372396}
-    - target: {fileID: 415733636, guid: 37c804c06cf460b49b5f404fdd75101d, type: 3}
-      propertyPath: alternateBreakVersion
-      value: 
-      objectReference: {fileID: 2023861923}
-    - target: {fileID: 415733636, guid: 37c804c06cf460b49b5f404fdd75101d, type: 3}
-      propertyPath: effects.Array.data[0].value
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 886788236031205249, guid: 37c804c06cf460b49b5f404fdd75101d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -27933,6 +27920,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3993412579969302534, guid: 37c804c06cf460b49b5f404fdd75101d, type: 3}
+      propertyPath: alternateDirtVersion
+      value: 
+      objectReference: {fileID: 682372396}
+    - target: {fileID: 3993412579969302534, guid: 37c804c06cf460b49b5f404fdd75101d, type: 3}
+      propertyPath: alternateBreakVersion
+      value: 
+      objectReference: {fileID: 2023861923}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37c804c06cf460b49b5f404fdd75101d, type: 3}
 --- !u!1001 &991070217457771758
@@ -29456,6 +29451,14 @@ PrefabInstance:
       propertyPath: effects.Array.data[0].value
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1101635434289251352, guid: c357fff126480f949b2128750ef02431, type: 3}
+      propertyPath: alternateDirtVersion
+      value: 
+      objectReference: {fileID: 2779754558204238426}
+    - target: {fileID: 1101635434289251352, guid: c357fff126480f949b2128750ef02431, type: 3}
+      propertyPath: alternateBreakVersion
+      value: 
+      objectReference: {fileID: 1925482254334340266}
     - target: {fileID: 6053147070256313295, guid: c357fff126480f949b2128750ef02431, type: 3}
       propertyPath: m_RootOrder
       value: 3

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1449335022187121045}
   - component: {fileID: 1458131333771821685}
   - component: {fileID: 8814167887179750757}
-  - component: {fileID: -919113196423340302}
+  - component: {fileID: -3193071267853404678}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -97,7 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.1657495, y: 0.62588793, z: 2.8488927}
   m_Center: {x: 0, y: 0.31294397, z: -0.00000059604645}
---- !u!114 &-919113196423340302
+--- !u!114 &-3193071267853404678
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1472484978973580233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4c4a6007904b80418a3bd60fd5681d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 96fb438930c4c674bbfe03831325a291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   effects:
@@ -125,12 +125,19 @@ MonoBehaviour:
   animationType: 15
   censorType: 0
   requiredNeeds: []
+  triggerEvent: 12
+  despawnObject: 0
+  spawnObject: {fileID: 0}
+  giveObject: {fileID: 0}
+  affectsEnvironment: 0
+  usesFood: 0
   breakType: 0
   dirtType: 0
   alternateDirtVersion: {fileID: 0}
   alternateBreakVersion: {fileID: 0}
   requiredLocation: {fileID: 5298204959985931385}
   faceTransformDirection: 1
+  needs: 03000000
 --- !u!1 &4153388846257973595
 GameObject:
   m_ObjectHideFlags: 0

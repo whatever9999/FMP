@@ -22,6 +22,7 @@ public class NeedsManager : MonoBehaviour
         VERY_LOW = 20,
         LOW = 40,
         HIGH = 90,
+        MAX = 100,
     }
 
     [SerializeField] private Need[] needs;

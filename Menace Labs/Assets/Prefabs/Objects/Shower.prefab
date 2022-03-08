@@ -13,7 +13,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1489477, y: 2.3703303, z: 1.1682987}
   m_Center: {x: -0.00027269125, y: 1.0298686, z: 0.009948224}
---- !u!114 &415733636
+--- !u!114 &3993412579969302534
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -22,14 +22,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 889713803943127789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96bcfb371a66a49458b36560cb1765fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 96fb438930c4c674bbfe03831325a291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   effects:
   - needType: 6
     skillType: 8
     value: 1
-  hoverColor: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
+  hoverColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
   startSound: 34
   useSound: 24
   endSound: 34
@@ -37,20 +37,20 @@ MonoBehaviour:
   tooltip: Shower
   animationType: 14
   censorType: 1
-  breakType: 1
-  dirtType: 1
-  alternateDirtVersion: {fileID: 0}
-  alternateBreakVersion: {fileID: 0}
-  requiredLocation: {fileID: 886788236031205249}
-  faceTransformDirection: 0
-  useAnimationSetForTimeToUse: 0
-  timeToUse: 10
+  requiredNeeds: []
   triggerEvent: 3
   despawnObject: 0
   spawnObject: {fileID: 0}
   giveObject: {fileID: 0}
   affectsEnvironment: 0
   usesFood: 0
+  breakType: 1
+  dirtType: 0
+  alternateDirtVersion: {fileID: 0}
+  alternateBreakVersion: {fileID: 0}
+  requiredLocation: {fileID: 886788236031205249}
+  faceTransformDirection: 0
+  needs: 06000000
 --- !u!1001 &891207558337033565
 PrefabInstance:
   m_ObjectHideFlags: 0
