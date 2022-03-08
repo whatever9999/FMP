@@ -22,6 +22,7 @@ public class ManagerHandler : MonoBehaviour
     public SoundManager SoundM;
     public TimeManager TimeM;
     public UIManager UIM;
+    public NotificationManager NotificationM;
 
     private void Awake()
     {

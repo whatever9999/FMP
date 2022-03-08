@@ -214,7 +214,10 @@ public class ActionManager : MonoBehaviour
                         break;
                     case ActionType.TEST:
                         CancelAllActions();
-                        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE_TO_USE, 1, testRequiredLocation);
+                        // If the current action is still cancelling the move to needs to be added at index 1
+                        int addMoveIndex = 0;
+                        if (currentAction) addMoveIndex = 1;
+                        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE_TO_USE, addMoveIndex, testRequiredLocation);
                         break;
                     case ActionType.REACT:
                         CancelAllActions();

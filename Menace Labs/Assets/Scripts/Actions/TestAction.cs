@@ -21,6 +21,8 @@ public class TestAction : Action
 
         clone = FindObjectOfType<Clone>();
         cloneRenderer = clone.GetComponentInChildren<Renderer>();
+
+        ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.TEST);
     }
 
     public override bool StartAction()
