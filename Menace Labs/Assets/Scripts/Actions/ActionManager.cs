@@ -15,6 +15,7 @@ public class ActionManager : MonoBehaviour
         REACT,
         REFUSE,
         BOREDOM,
+        PASS_OUT,
         NUM_ACTION_TYPES,
     }
 
@@ -37,6 +38,7 @@ public class ActionManager : MonoBehaviour
     [SerializeField] private GameObject reactActionPrefab;
     [SerializeField] private GameObject refuseActionPrefab;
     [SerializeField] private GameObject boredomActionPrefab;
+    [SerializeField] private GameObject passOutActionPrefab;
 
     [Header("Special Action Required Locations")]
     [SerializeField] private GameObject testRequiredLocation;
@@ -68,6 +70,7 @@ public class ActionManager : MonoBehaviour
         actions.Add(ActionType.REACT, reactActionPrefab);
         actions.Add(ActionType.REFUSE, refuseActionPrefab);
         actions.Add(ActionType.BOREDOM, boredomActionPrefab);
+        actions.Add(ActionType.PASS_OUT, passOutActionPrefab);
 
         boredomTimer = ManagerHandler.instance.TimeM.GetCurrentTime();
     }
@@ -235,6 +238,19 @@ public class ActionManager : MonoBehaviour
                     case ActionType.REACT:
                         CancelAllActions();
                         break;
+                    case ActionType.PASS_OUT:
+                        // Make sure we're not already passed out
+                        for (int i = 0; i < currentActions.Count; i++)
+                        {
+                            Action checkAction = currentActions[i].GetComponent<Action>();
+                            if (checkAction.GetActionType() == ActionType.PASS_OUT)
+                            {
+                                addAction = false;
+                            }
+                        }
+
+                        if (addAction) CancelAllActions();
+                        break;
                 }
 
                 // Add the button to the action list
@@ -397,10 +413,13 @@ public class ActionManager : MonoBehaviour
     // Cancel all actions from end to start
     public void CancelAllActions()
     {
-        for (int i = currentActions.Count - 1; i >= 0; i--)
+        // Cancel all actions that haven't started yet
+        while (currentActions.Count > 1)
         {
-            CancelAction(currentActions[i]);
+            CancelAction(currentActions[currentActions.Count - 1]);
         }
+        // Cancel the current action
+        if (currentAction) CancelAction(currentAction.gameObject);
     }
 
     public void ModifyTestTime(float amount)

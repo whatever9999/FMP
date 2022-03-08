@@ -179,7 +179,7 @@ public class PassOutEvent : HundredPercentEvent
 {
     protected override void TriggerEvent()
     {
-        // TODO: Add "Pass Out" Action
+        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.PASS_OUT, -1);
     }
 }
 

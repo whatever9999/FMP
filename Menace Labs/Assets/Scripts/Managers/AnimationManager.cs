@@ -30,6 +30,7 @@ public class AnimationManager : MonoBehaviour
         ON_FIRE,
         PUT_OUT_FIRE,
         ELECTROCUTION,
+        PASS_OUT,
         NUM_ANIMATION_TYPES,
     }
 
@@ -58,6 +59,7 @@ public class AnimationManager : MonoBehaviour
     [SerializeField] private AnimationClip[] onFireanimationSet;
     [SerializeField] private AnimationClip[] putOutFireAnimationSet;
     [SerializeField] private AnimationClip[] electrocutionAnimationSet;
+    [SerializeField] private AnimationClip[] passOutAnimationSet;
 
     private Animator animator;
 
@@ -92,6 +94,7 @@ public class AnimationManager : MonoBehaviour
         animations.Add(AnimationType.ON_FIRE, onFireanimationSet);
         animations.Add(AnimationType.PUT_OUT_FIRE, putOutFireAnimationSet);
         animations.Add(AnimationType.ELECTROCUTION, electrocutionAnimationSet);
+        animations.Add(AnimationType.PASS_OUT, passOutAnimationSet);
     }
 
     public bool IsIdle()
@@ -184,6 +187,9 @@ public class AnimationManager : MonoBehaviour
                 break;
             case AnimationType.ELECTROCUTION:
                 if (enable) animator.SetTrigger("Electrocution");
+                break;
+            case AnimationType.PASS_OUT:
+                animator.SetBool("Pass_Out", enable);
                 break;
         }
     }

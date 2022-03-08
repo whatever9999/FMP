@@ -1345,6 +1345,8 @@ MonoBehaviour:
   - {fileID: -203655887218126122, guid: dffa25b4383361043bc9e69a14366f2a, type: 3}
   electrocutionAnimationSet:
   - {fileID: -203655887218126122, guid: 378b091b38e630542aebb8c1d90b168f, type: 3}
+  passOutAnimationSet:
+  - {fileID: -203655887218126122, guid: 335fd89d12e9c41449346605204d77b4, type: 3}
 --- !u!54 &1659823606104550412
 Rigidbody:
   m_ObjectHideFlags: 0
