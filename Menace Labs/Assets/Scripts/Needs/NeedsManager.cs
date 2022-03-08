@@ -150,7 +150,8 @@ public class NeedsManager : MonoBehaviour
 
         if (low_fun_or_social)
         {
-            ManagerHandler.instance.EventM.CheckEventTrigger(EventManager.EventType.DEATH);
+            ManagerHandler.instance.EventM.SetDeathEventType(DeathData.DeathTypes.MADNESS);
+            ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.DIE, -1);
         }
     }
 
@@ -159,7 +160,8 @@ public class NeedsManager : MonoBehaviour
     {
         if (GetHealthMetric() < electrocutionDeathCheck)
         {
-            ManagerHandler.instance.EventM.CheckEventTrigger(EventManager.EventType.DEATH);
+            ManagerHandler.instance.EventM.SetDeathEventType(DeathData.DeathTypes.ELECTROCUTION);
+            ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.DIE, -1);
         }
     }
 

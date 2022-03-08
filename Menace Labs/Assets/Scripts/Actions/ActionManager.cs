@@ -53,8 +53,8 @@ public class ActionManager : MonoBehaviour
     public Action GetCurrentAction() { return currentAction; }
 
     [Header("Boredom Action Timer")]
-    [SerializeField] private int boredomActionTime = 60;
-    private int actionTriggeredTime;
+    [SerializeField] private int timeToTriggerBoredom = 60;
+    private int boredomTimer;
 
     private void Start()
     {
@@ -69,12 +69,19 @@ public class ActionManager : MonoBehaviour
         actions.Add(ActionType.REFUSE, refuseActionPrefab);
         actions.Add(ActionType.BOREDOM, boredomActionPrefab);
 
-        actionTriggeredTime = ManagerHandler.instance.TimeM.GetCurrentTime();
+        boredomTimer = ManagerHandler.instance.TimeM.GetCurrentTime();
     }
 
     private void Update()
     {
-        if (ManagerHandler.instance.TimeM.TimeSince(actionTriggeredTime) >= boredomActionTime)
+        // Update the boredom timer
+        if (currentActions.Count > 0)
+        {
+            // Update the boredom timer
+            boredomTimer = ManagerHandler.instance.TimeM.GetCurrentTime();
+        }
+
+        if (ManagerHandler.instance.TimeM.TimeSince(boredomTimer) >= timeToTriggerBoredom)
         {
             AddAction(ActionType.BOREDOM, -1);
         }
@@ -173,8 +180,21 @@ public class ActionManager : MonoBehaviour
                         }
                         break;
                     case ActionType.DIE:
-                         CancelAllActions();
-                        ManagerHandler.instance.EventM.CheckEventTrigger(EventManager.EventType.DEATH);
+                        // Make sure we're not already dying
+                        for (int i = 0; i < currentActions.Count; i++)
+                        {
+                            Action checkAction = currentActions[i].GetComponent<Action>();
+                            if (checkAction.GetActionType() == ActionType.DIE)
+                            {
+                                addAction = false;
+                            }
+                        }
+                        
+                        if (addAction)
+                        {
+                            CancelAllActions();
+                            ManagerHandler.instance.EventM.CheckEventTrigger(EventManager.EventType.DEATH);
+                        }
                         break;
                     case ActionType.CONSTANT_OBJECT_USE:
                         {
@@ -242,9 +262,6 @@ public class ActionManager : MonoBehaviour
                     // Track if the clone is testing or not
                     UpdateCloneActionStates();
                     ManagerHandler.instance.PerformanceMetric.IncrementPerformanceAttribute(PerformanceMetric.PerformanceData.ACTIONS_TRIGGERED);
-
-                    // Update the boredom timer
-                    actionTriggeredTime = ManagerHandler.instance.TimeM.GetCurrentTime();
                 }
             }
             else

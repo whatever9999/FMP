@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class PopUpManager : MonoBehaviour
 {
@@ -56,7 +57,7 @@ public class PopUpManager : MonoBehaviour
                     else
                     {
                         chanceText.text = chanceCard.A_FailureDescription;
-                        for (int i = 0; i < chanceCard.A_SuccessEffects.Length; i++)
+                        for (int i = 0; i < chanceCard.A_FailureEffects.Length; i++)
                         {
                             chanceCard.A_FailureEffects[i].TriggerEffect();
                         }
@@ -76,7 +77,7 @@ public class PopUpManager : MonoBehaviour
                     else
                     {
                         chanceText.text = chanceCard.B_FailureDescription;
-                        for (int i = 0; i < chanceCard.B_SuccessEffects.Length; i++)
+                        for (int i = 0; i < chanceCard.B_FailureEffects.Length; i++)
                         {
                             chanceCard.B_FailureEffects[i].TriggerEffect();
                         }
@@ -104,7 +105,6 @@ public class PopUpManager : MonoBehaviour
     public GameObject disasterPanel;
     public TextMeshProUGUI disasterText;
 
-    // TODO: Take in disaster data and update accordingly
     public void ShowDisaster(DisasterData disaster)
     {
         disasterText.text = disaster.description;
@@ -116,11 +116,32 @@ public class PopUpManager : MonoBehaviour
 
     #region Death
     public GameObject deathPanel;
+    [SerializeField] private TextMeshProUGUI deathDescriptionText;
+    [SerializeField] private DeathData[] deathDatas;
 
-    public void ShowDeath()
+    public void ShowDeath(DeathData.DeathTypes death)
     {
-        // Show death card once animation completes
-        StartCoroutine(PopupTimer());
+        DeathData thisDeath = null;
+        for (int i = 0; i < deathDatas.Length; i++)
+        {
+            if (deathDatas[i].type == death)
+            {
+                thisDeath = deathDatas[i];
+            }
+        }
+
+        if (thisDeath)
+        {
+            // Set panel details
+            deathDescriptionText.text = thisDeath.description;
+
+            // Show death card once animation completes
+            StartCoroutine(PopupTimer());
+        }
+        else
+        {
+            Debug.LogError("Failed to find death of type: " + death);
+        }
     }
 
     public IEnumerator PopupTimer()

@@ -37,13 +37,6 @@ public class AnimationAction : Action
     {
         base.EndAction();
         if (loopSound) ManagerHandler.instance.clone.SetSoundLooping(false);
-
-        switch (actionType)
-        {
-            case ActionManager.ActionType.DIE:
-                ManagerHandler.instance.PopupM.ShowDeath();
-                break;
-        }
     }
     public override void CancelAction()
     {

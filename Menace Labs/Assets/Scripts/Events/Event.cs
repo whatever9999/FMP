@@ -163,11 +163,14 @@ public class DirtyingEvent : OccurrenceEvent
 [System.Serializable]
 public class DeathEvent : HundredPercentEvent
 {
+    private DeathData.DeathTypes deathType;
+    public void SetDeathType(DeathData.DeathTypes type) { deathType = type; }
+
     protected override void TriggerEvent()
     {
         ManagerHandler.instance.SoundM.PlayClip(SoundManager.SoundName.DEATH);
         ManagerHandler.instance.AnimationM.SetAnimation(AnimationManager.AnimationType.DIE, true);
-        ManagerHandler.instance.PopupM.ShowDeath();
+        ManagerHandler.instance.PopupM.ShowDeath(deathType);
     }
 }
 

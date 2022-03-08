@@ -107,4 +107,9 @@ public class EventManager : MonoBehaviour
                 break;
         }
     }
+
+    public void SetDeathEventType(DeathData.DeathTypes type)
+    {
+        deathEvent.SetDeathType(type);
+    }
 }

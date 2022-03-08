@@ -14408,6 +14408,13 @@ MonoBehaviour:
   disasterPanel: {fileID: 1733703470}
   disasterText: {fileID: 993334565}
   deathPanel: {fileID: 1964908582}
+  deathDescriptionText: {fileID: 1491908945}
+  deathDatas:
+  - {fileID: 11400000, guid: a50154e849c7d6a45a755b8bd3df6d3b, type: 2}
+  - {fileID: 11400000, guid: a4a79e5f3a592e0469131e65ff53a7c2, type: 2}
+  - {fileID: 11400000, guid: 0dd23c0734d466046b9e51530db8a133, type: 2}
+  - {fileID: 11400000, guid: d7edd34356cc25644aa9f62298fdb1ef, type: 2}
+  - {fileID: 11400000, guid: 87811782659dfe2428304205a303d0f0, type: 2}
 --- !u!1001 &1154187348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27938,6 +27945,10 @@ PrefabInstance:
       propertyPath: alternateElectricVersion
       value: 
       objectReference: {fileID: 4997761665115551287}
+    - target: {fileID: 2087054132, guid: dfd4cb57c9cab28478cf62cd3fe87230, type: 3}
+      propertyPath: requiredNeeds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2087054132, guid: dfd4cb57c9cab28478cf62cd3fe87230, type: 3}
       propertyPath: requiredNeeds.Array.data[3].need
       value: 6
