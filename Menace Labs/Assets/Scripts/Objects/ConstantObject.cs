@@ -138,6 +138,7 @@ public class ConstantObject : MonoBehaviour
         }
 
         beingUsed = true;
+        finished = false;
         startedUsingTime = ManagerHandler.instance.TimeM.GetCurrentTime();
 
         if (audioSource && startSound != SoundManager.SoundName.NUM_SOUND_NAMES)
