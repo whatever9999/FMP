@@ -18,6 +18,7 @@ public class ConstantObject : MonoBehaviour
 
     [Header("Need and Skill Effects")]
     [SerializeField] private List<ObjectEffect> effects;
+    public List<ObjectEffect> GetObjectEffects() { return effects; }
     
     [Header("Hover Colour")]
     [SerializeField] protected Color hoverColor = new Color(0.9f, 0.9f, 0.9f, 1);

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class NeedsManager : MonoBehaviour
 {
@@ -51,20 +52,36 @@ public class NeedsManager : MonoBehaviour
     {
         updateNeedTimer += Time.deltaTime;
 
+        // If we're currently using an object don't touch needs that it affects
+        List<NeedType> needsAffectedByObject = new List<NeedType>();
+        if (ManagerHandler.instance.ActionM.GetCurrentAction() && ManagerHandler.instance.ActionM.GetCurrentAction().GetActionType() == ActionManager.ActionType.OBJECT_USE)
+        {
+            // Extract the needs affected by this object
+            List<ObjectEffect> effects = (ManagerHandler.instance.ActionM.GetCurrentAction() as ObjectUseAction).GetUsedObject().GetObjectEffects();
+            for (int i = 0; i < effects.Count; i++)
+            {
+                needsAffectedByObject.Add(effects[i].GetNeedType());
+            }
+        }
+
         // Update needs every timeToUpdateNeed seconds
         if (updateNeedTimer > timeToUpdateNeed)
         {
             for (int i = 0; i < needs.Length; i++)
             {
-                // If on fire all needs are decreased faster
-                if (onFire) needs[i].UpdateNeed(fireMultiplier);
-                // If ill sleep, bladder and hygiene needs decrease faster
-                else if (isIll && (needs[i].GetNeedType() == NeedType.SLEEP || needs[i].GetNeedType() == NeedType.BLADDER || needs[i].GetNeedType() == NeedType.HYGIENE))
+                // Only update the need if the current object in use doesn't affect it
+                if (!needsAffectedByObject.Contains(needs[i].GetNeedType()))
                 {
-                    needs[i].UpdateNeed(illMultiplier);
+                    // If on fire all needs are decreased faster
+                    if (onFire) needs[i].UpdateNeed(fireMultiplier);
+                    // If ill sleep, bladder and hygiene needs decrease faster
+                    else if (isIll && (needs[i].GetNeedType() == NeedType.SLEEP || needs[i].GetNeedType() == NeedType.BLADDER || needs[i].GetNeedType() == NeedType.HYGIENE))
+                    {
+                        needs[i].UpdateNeed(illMultiplier);
+                    }
+                    // Otherwise, needs decrease at a normal rate
+                    else needs[i].UpdateNeed(updateMultiplier);
                 }
-                // Otherwise, needs decrease at a normal rate
-                else needs[i].UpdateNeed(updateMultiplier);
             }
 
             updateNeedTimer = 0;
