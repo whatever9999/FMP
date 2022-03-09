@@ -126,6 +126,9 @@ public class ConstantObject : MonoBehaviour
 
     public virtual bool StartUsing()
     {
+        // If the game object is disabled but we're trying to use it then it's likely that it's broken so cancel the action
+        if (!gameObject.activeInHierarchy) return false;
+
         // Ensure the clone's needs are good enough to use the object
         for (int i = 0; i < requiredNeeds.Length; i++)
         {
@@ -159,6 +162,9 @@ public class ConstantObject : MonoBehaviour
     }
     public virtual bool Use()
     {
+        // If the game object is disabled but we're trying to use it then it's likely that it's broken so cancel the action
+        if (!gameObject.activeInHierarchy) return false;
+
         // Ensure the clone's needs are good enough to use the object
         for (int i = 0; i < requiredNeeds.Length; i++)
         {
