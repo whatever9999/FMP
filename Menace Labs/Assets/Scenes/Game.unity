@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.3
+    agentRadius: 0.25
     agentHeight: 1.3
-    agentSlope: 45
-    agentClimb: 1
+    agentSlope: 30
+    agentClimb: 0.7
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
-    minRegionArea: 0.01
+    minRegionArea: 1
     manualCellSize: 0
-    cellSize: 0.1
+    cellSize: 0.083333336
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -5569,15 +5569,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4804318186954430, guid: 3cf868f02889f53478266ac9f169f38b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.74
+      value: 7.266
       objectReference: {fileID: 0}
     - target: {fileID: 4804318186954430, guid: 3cf868f02889f53478266ac9f169f38b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.18
+      value: -3.227
       objectReference: {fileID: 0}
     - target: {fileID: 4804318186954430, guid: 3cf868f02889f53478266ac9f169f38b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.13
+      value: -5.258
       objectReference: {fileID: 0}
     - target: {fileID: 4804318186954430, guid: 3cf868f02889f53478266ac9f169f38b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22425,7 +22425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773702837}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.654512, y: 0.43, z: 6.261911}
+  m_LocalPosition: {x: -11.654512, y: 0.62, z: 6.261911}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1887593267}
@@ -28000,7 +28000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 886788236031205249, guid: 37c804c06cf460b49b5f404fdd75101d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.98218
+      value: 14.85
       objectReference: {fileID: 0}
     - target: {fileID: 886788236031205249, guid: 37c804c06cf460b49b5f404fdd75101d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28564,7 +28564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 390230275666205975, guid: 0212f2330c562874180797251c38089c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.98218
+      value: 14.85
       objectReference: {fileID: 0}
     - target: {fileID: 390230275666205975, guid: 0212f2330c562874180797251c38089c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -30127,7 +30127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5778005368925073352, guid: 49b39f47534b73541a8c31728631c091, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.98218
+      value: 14.85
       objectReference: {fileID: 0}
     - target: {fileID: 5778005368925073352, guid: 49b39f47534b73541a8c31728631c091, type: 3}
       propertyPath: m_LocalPosition.z
