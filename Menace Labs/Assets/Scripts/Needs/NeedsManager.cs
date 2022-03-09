@@ -156,32 +156,39 @@ public class NeedsManager : MonoBehaviour
     // If the clone has low fun or social check for a madness death on update
     private void MadnessCheck()
     {
-        bool low_fun_or_social = false;
+        bool low_fun_social_and_environment = true;
         for (int i = 0; i < needs.Length; i++)
         {
             NeedType needType = needs[i].GetNeedType();
-            if (needType == NeedType.FUN || needType == NeedType.SOCIAL)
+            if (needType == NeedType.FUN || needType == NeedType.SOCIAL || needType == NeedType.ENVIRONMENT)
             {
-                if (needs[i].GetValue() < madnessDeathCheck)
+                if (needs[i].GetValue() > madnessDeathCheck)
                 {
-                    low_fun_or_social = true;
+                    low_fun_social_and_environment = false;
                     break;
                 }
             }
         }
 
-        if (low_fun_or_social)
+        if (low_fun_social_and_environment)
         {
-            // If the clone is on fire then they'll die a fire death
-            if (onFire)
+            // Chance increases the worse the values are
+            float total = GetNeedValue(NeedType.FUN) + GetNeedValue(NeedType.SOCIAL) + GetNeedValue(NeedType.ENVIRONMENT);
+            float rand = Random.Range(0.0f, 300.0f);
+
+            if (rand >= total)
             {
-                ManagerHandler.instance.EventM.SetDeathEventType(DeathData.DeathTypes.FIRE);
+                // If the clone is on fire then they'll die a fire death
+                if (onFire)
+                {
+                    ManagerHandler.instance.EventM.SetDeathEventType(DeathData.DeathTypes.FIRE);
+                }
+                else
+                {
+                    ManagerHandler.instance.EventM.SetDeathEventType(DeathData.DeathTypes.MADNESS);
+                }
+                ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.DIE, -1);
             }
-            else
-            {
-                ManagerHandler.instance.EventM.SetDeathEventType(DeathData.DeathTypes.MADNESS);
-            }
-            ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.DIE, -1);
         }
     }
 

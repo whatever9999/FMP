@@ -152,14 +152,14 @@ public class ActionManager : MonoBehaviour
                     // Add to end if index is -1
                     button.transform.SetAsLastSibling();
                 }
-                // If the current action is still cancelling actions have to be added to index 1 but if there isn't a current action it can go to 0
-                else if (index == 1)
-                {
-                    if (!currentAction) index = 0;
-
-                }
                 else
                 {
+                    // If the current action is still cancelling actions have to be added to index 1 but if there isn't a current action it can go to 0
+                    if (!currentAction && index == 1)
+                    {
+                        index = 0;
+                    }
+
                     button.transform.SetSiblingIndex(index);
                 }
 
