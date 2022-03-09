@@ -60,6 +60,7 @@ public class TestAction : Action
     {
         base.EndAction();
         cloneRenderer.enabled = true;
+        ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.TEST_FINISHED);
     }
     public override void CancelAction()
     {

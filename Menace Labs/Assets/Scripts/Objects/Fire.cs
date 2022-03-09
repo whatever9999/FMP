@@ -6,6 +6,11 @@ public class Fire : MonoBehaviour
 
     private float timeInFire;
 
+    private void Awake()
+    {
+        ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.FIRE);
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (!ManagerHandler.instance.clone.IsOnFire() && other.tag.Equals("Clone"))

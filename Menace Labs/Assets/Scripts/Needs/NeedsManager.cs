@@ -38,7 +38,11 @@ public class NeedsManager : MonoBehaviour
 
     private bool isIll = false;
     private bool onFire = false;
-    public void SetIll(bool setTo) { isIll = setTo; }
+    public void SetIll(bool setTo) 
+    { 
+        isIll = setTo;
+        if (isIll) ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.ILLNESS);
+    }
     public bool IsIll() { return isIll; }
     public void SetOnFire(bool setTo) { onFire = setTo; }
     public bool IsOnFire() { return onFire; }

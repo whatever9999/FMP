@@ -24323,6 +24323,11 @@ MonoBehaviour:
   notificationPrefab: {fileID: 4077953948785764154, guid: d4f699b287850c64d97f6153a130a86e, type: 3}
   notificationDatas:
   - {fileID: 11400000, guid: ffd52bdf84261ce49bee356d5db5b514, type: 2}
+  - {fileID: 11400000, guid: f8844282d94ff0a44888a75efa28aa84, type: 2}
+  - {fileID: 11400000, guid: b13e178129eec0c4ea6243455f859718, type: 2}
+  - {fileID: 11400000, guid: dbaac16c6eecce04886cba01574b27dd, type: 2}
+  - {fileID: 11400000, guid: 3a291e54baf5bbb4eb8902a19c3c8eca, type: 2}
+  - {fileID: 11400000, guid: d9fbd145c0a149b4da0849550753ec72, type: 2}
   maxNotifications: 3
 --- !u!114 &1910374258
 MonoBehaviour:

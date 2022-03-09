@@ -7,6 +7,12 @@ public class NotificationManager : MonoBehaviour
     public enum NotificationType
     {
         TEST,
+        ILLNESS,
+        AGE_UP,
+        FOOD_DELIVERY,
+        FIRE,
+        TEST_FINISHED,
+        FOOD_SUPPLY_SORTED,
         NUM_NOTIFICATION_TYPES,
     }
 

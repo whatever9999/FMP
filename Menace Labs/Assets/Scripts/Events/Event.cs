@@ -189,6 +189,7 @@ public class FoodDeliveryEvent : HundredPercentEvent
 {
     protected override void TriggerEvent()
     {
+        ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.FOOD_DELIVERY);
         ManagerHandler.instance.FoodM.ModifyFoodAmount(foodAmount);
     }
 
@@ -200,6 +201,7 @@ public class DayStartEvent : HundredPercentEvent
 {
     protected override void TriggerEvent()
     {
+        ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.AGE_UP);
         // Age the clone
         ManagerHandler.instance.AgeM.ModifyCloneAge(1);
         // Set ambience
