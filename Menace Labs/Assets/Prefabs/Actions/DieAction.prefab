@@ -147,9 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cancellable: 0
-  actionType: 5
+  actionType: 4
   animationType: 7
   soundEffect: 7
+  loopSound: 0
 --- !u!1001 &5385811765743165071
 PrefabInstance:
   m_ObjectHideFlags: 0

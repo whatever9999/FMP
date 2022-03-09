@@ -152,6 +152,12 @@ public class ActionManager : MonoBehaviour
                     // Add to end if index is -1
                     button.transform.SetAsLastSibling();
                 }
+                // If the current action is still cancelling actions have to be added to index 1 but if there isn't a current action it can go to 0
+                else if (index == 1)
+                {
+                    if (!currentAction) index = 0;
+
+                }
                 else
                 {
                     button.transform.SetSiblingIndex(index);
@@ -218,10 +224,7 @@ public class ActionManager : MonoBehaviour
                         break;
                     case ActionType.TEST:
                         CancelAllActions();
-                        // If the current action is still cancelling the move to needs to be added at index 1
-                        int addMoveIndex = 0;
-                        if (currentAction) addMoveIndex = 1;
-                        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE_TO_USE, addMoveIndex, testRequiredLocation);
+                        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE_TO_USE, 1, testRequiredLocation);
                         break;
                     case ActionType.REACT:
                         CancelAllActions();
