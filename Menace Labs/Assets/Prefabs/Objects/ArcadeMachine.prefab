@@ -146,7 +146,7 @@ MonoBehaviour:
   effects:
   - needType: 4
     skillType: 8
-    value: 1
+    value: 3
   - needType: 8
     skillType: 3
     value: 1
@@ -168,6 +168,12 @@ MonoBehaviour:
     requiredLevel: 20
   - need: 3
     requiredLevel: 20
+  triggerEvent: 12
+  despawnObject: 0
+  spawnObject: {fileID: 0}
+  giveObject: {fileID: 0}
+  affectsEnvironment: 0
+  usesFood: 0
   breakType: 1
   dirtType: 0
   alternateDirtVersion: {fileID: 0}

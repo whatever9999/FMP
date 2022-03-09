@@ -8,7 +8,7 @@ ModelImporter:
     second: Take 001
   - first:
       74: -203655887218126122
-    second: On_Fire
+    second: Fire
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -67,7 +67,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0.9
     - serializedVersion: 16
-      name: On_Fire
+      name: Fire
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0

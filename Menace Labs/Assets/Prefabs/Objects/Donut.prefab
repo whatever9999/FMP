@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3001173445835099639}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.8999376, y: 0.9495733, z: 8.536479}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -111,7 +111,7 @@ MonoBehaviour:
   effects:
   - needType: 0
     skillType: 8
-    value: 10
+    value: 20
   - needType: 2
     skillType: 8
     value: -1
@@ -122,17 +122,19 @@ MonoBehaviour:
   actionIcon: {fileID: 21300000, guid: d0945f07e3287854aa9175175067c8cf, type: 3}
   tooltip: Eating
   animationType: 8
+  censorType: 0
+  requiredNeeds: []
+  triggerEvent: 2
+  despawnObject: 1
+  spawnObject: {fileID: 0}
+  giveObject: {fileID: 0}
+  affectsEnvironment: 0
+  usesFood: 0
   breakType: 0
   dirtType: 0
   alternateDirtVersion: {fileID: 0}
   alternateBreakVersion: {fileID: 0}
   requiredLocation: {fileID: 0}
   faceTransformDirection: 1
-  useAnimationSetForTimeToUse: 1
-  timeToUse: 0
-  triggerEvent: 2
-  despawnObject: 0
-  spawnObject: {fileID: 0}
-  giveObject: {fileID: 0}
-  affectsEnvironment: 0
-  usesFood: 0
+  useAnimationSetForTimeToUse: 0
+  timeToUse: 10

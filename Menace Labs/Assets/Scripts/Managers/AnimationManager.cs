@@ -27,7 +27,7 @@ public class AnimationManager : MonoBehaviour
         USE_CAMERA,
         USE_PHONE,
         SIT,
-        ON_FIRE,
+        FIRE,
         PUT_OUT_FIRE,
         ELECTROCUTION,
         PASS_OUT,
@@ -91,7 +91,7 @@ public class AnimationManager : MonoBehaviour
         animations.Add(AnimationType.USE_CAMERA, useCameraAnimationSet);
         animations.Add(AnimationType.USE_PHONE, usePhoneAnimationSet);
         animations.Add(AnimationType.SIT, sitAnimationSet);
-        animations.Add(AnimationType.ON_FIRE, onFireanimationSet);
+        animations.Add(AnimationType.FIRE, onFireanimationSet);
         animations.Add(AnimationType.PUT_OUT_FIRE, putOutFireAnimationSet);
         animations.Add(AnimationType.ELECTROCUTION, electrocutionAnimationSet);
         animations.Add(AnimationType.PASS_OUT, passOutAnimationSet);
@@ -99,7 +99,7 @@ public class AnimationManager : MonoBehaviour
 
     public bool IsIdle()
     {
-        return animator.GetCurrentAnimatorClipInfo(0)[0].clip == idleAnimationSet[0];
+        return animator.GetCurrentAnimatorClipInfo(0)[0].clip == idleAnimationSet[0] || animator.GetCurrentAnimatorClipInfo(0)[0].clip == onFireanimationSet[0];
     }
 
     public void SetAnimation(AnimationType type, bool enable)
@@ -179,8 +179,8 @@ public class AnimationManager : MonoBehaviour
             case AnimationType.SIT:
                 animator.SetBool("Sit", enable);
                 break;
-            case AnimationType.ON_FIRE:
-                animator.SetBool("On_Fire", enable);
+            case AnimationType.FIRE:
+                animator.SetBool("Fire", enable);
                 break;
             case AnimationType.PUT_OUT_FIRE:
                 animator.SetBool("Put_Out_Fire", enable);

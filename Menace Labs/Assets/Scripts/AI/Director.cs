@@ -57,6 +57,15 @@ public class Director : MonoBehaviour
     public void SetChanceCard(ChanceCardData card) { chanceCard = card; }
     public ChanceCardData GetChanceCard() { return chanceCard; }
 
+    private int numberFiresPresent = 0;
+    public bool IsFirePresent() { return numberFiresPresent > 0; }
+    public void ModifyFire(int number) 
+    { 
+        numberFiresPresent += number;
+        // When fires are added/removed set the clone's base animations accordingly (fire panic for idle and run instead of walk)
+        ManagerHandler.instance.AnimationM.SetAnimation(AnimationManager.AnimationType.FIRE, numberFiresPresent > 0);
+    }
+
     private void Start()
     {
         PerformanceM = FindObjectOfType<PerformanceMetric>();

@@ -122,7 +122,7 @@ public class ActionManager : MonoBehaviour
                 }
             }
             // End the action if it's completed
-            else if (!currentAction.IsFinalising())
+            else if (!currentAction.IsEnding() && !currentAction.IsCancelling())
             {
                 EndAction(currentActions[0]);
             }
@@ -159,6 +159,8 @@ public class ActionManager : MonoBehaviour
 
                 // When the clone is on fire they can't use anything but the shower!
                 bool cloneOnFire = ManagerHandler.instance.clone.IsOnFire();
+                // And when there's a fire on the lot they can only put it out!
+                bool thereIsFire = ManagerHandler.instance.director.IsFirePresent();
                 // Ensure action data is set
                 switch (type)
                 {
@@ -198,7 +200,9 @@ public class ActionManager : MonoBehaviour
                         break;
                     case ActionType.OBJECT_USE:
                         {
-                            if (!cloneOnFire || (cloneOnFire && usedObject.name.Equals("Shower")))
+                            if ((!cloneOnFire && !thereIsFire) ||
+                                (cloneOnFire && usedObject.name.Contains("Shower")) ||
+                                (thereIsFire && !cloneOnFire && usedObject.name.Contains("Fire")))
                             {
                                 ObjectUseAction useAction = button.GetComponent<ObjectUseAction>();
                                 ConstantObject constantObject = usedObject.GetComponent<ConstantObject>();

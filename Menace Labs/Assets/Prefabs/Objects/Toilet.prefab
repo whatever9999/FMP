@@ -307,7 +307,7 @@ MonoBehaviour:
   effects:
   - needType: 2
     skillType: 8
-    value: 1
+    value: 4
   hoverColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
   startSound: 34
   useSound: 34

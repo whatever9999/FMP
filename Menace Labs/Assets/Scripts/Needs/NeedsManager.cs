@@ -28,8 +28,8 @@ public class NeedsManager : MonoBehaviour
 
     [SerializeField] private Need[] needs;
     [SerializeField] private int updateMultiplier = 1;
-    [SerializeField] private int fireMultiplier = 10;
-    [SerializeField] private int illMultiplier = 3;
+    [SerializeField] private int fireMultiplier = 3;
+    [SerializeField] private int illMultiplier = 2;
     [SerializeField] private float timeToUpdateNeed = 1.0f;
     [Tooltip("If the health metric is less than this value when the clone is electrocuted they have a chance of dying")]
     [SerializeField] private float electrocutionDeathCheck = 0.4f;
@@ -172,7 +172,15 @@ public class NeedsManager : MonoBehaviour
 
         if (low_fun_or_social)
         {
-            ManagerHandler.instance.EventM.SetDeathEventType(DeathData.DeathTypes.MADNESS);
+            // If the clone is on fire then they'll die a fire death
+            if (onFire)
+            {
+                ManagerHandler.instance.EventM.SetDeathEventType(DeathData.DeathTypes.FIRE);
+            }
+            else
+            {
+                ManagerHandler.instance.EventM.SetDeathEventType(DeathData.DeathTypes.MADNESS);
+            }
             ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.DIE, -1);
         }
     }

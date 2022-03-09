@@ -7,7 +7,8 @@ public abstract class Action : MonoBehaviour
         QUEUED,
         STARTED,
         COMPLETED,
-        FINALISING,
+        ENDING,
+        CANCELLING,
         FINALISED,
     }
 
@@ -29,7 +30,8 @@ public abstract class Action : MonoBehaviour
     protected Action_Status actionStatus = Action_Status.QUEUED;
     public bool HasStarted() { return actionStatus >= Action_Status.STARTED; }
     public bool HasCompleted() { return actionStatus >= Action_Status.COMPLETED; }
-    public bool IsFinalising() { return actionStatus >= Action_Status.FINALISING; }
+    public bool IsEnding() { return actionStatus == Action_Status.ENDING || actionStatus == Action_Status.FINALISED; }
+    public bool IsCancelling() { return actionStatus == Action_Status.CANCELLING || actionStatus == Action_Status.FINALISED; }
     public bool HasFinalised() { return actionStatus >= Action_Status.FINALISED; }
 
     protected virtual void Awake()
@@ -39,7 +41,7 @@ public abstract class Action : MonoBehaviour
 
     private void Update()
     {
-        if (actionStatus == Action_Status.FINALISING)
+        if (actionStatus == Action_Status.ENDING || actionStatus == Action_Status.CANCELLING)
         {
             // If we're back to the idle animation then the action has finished cancelling/ended
             if (ManagerHandler.instance.AnimationM.IsIdle()) actionStatus = Action_Status.FINALISED;
@@ -50,12 +52,12 @@ public abstract class Action : MonoBehaviour
     public abstract bool ContinueAction();
     public virtual void EndAction()
     {
-        actionStatus = Action_Status.FINALISING;
+        actionStatus = Action_Status.ENDING;
     }
     public virtual void CancelAction()
     {
         finalisingCross.SetActive(true);
-        actionStatus = Action_Status.FINALISING;
+        actionStatus = Action_Status.CANCELLING;
     }
 
     public void OnClick()

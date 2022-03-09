@@ -226,10 +226,15 @@ public class ConstantObject : MonoBehaviour
         else if (name.Contains("Puddle")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);
         else if (name.Equals("Fire")) ManagerHandler.instance.GoalM.ModifyFiresSurvived(1);
 
-        if (triggerEvent != EventManager.EventType.NUM_EVENT_TYPES) ManagerHandler.instance.EventM.CheckEventTrigger(triggerEvent);
+        bool eventTriggered = false;
+        if (triggerEvent != EventManager.EventType.NUM_EVENT_TYPES) eventTriggered = ManagerHandler.instance.EventM.CheckEventTrigger(triggerEvent);
         if (giveObject)
         {
-            ManagerHandler.instance.clone.GiveObject(giveObject);
+            // Don't give the clone an object if a fire was triggered before this
+            if (triggerEvent != EventManager.EventType.FIRE || (triggerEvent == EventManager.EventType.FIRE && !eventTriggered))
+            {
+                ManagerHandler.instance.clone.GiveObject(giveObject);
+            }
         }
         if (spawnObject)
         {
@@ -268,6 +273,12 @@ public class ConstantObject : MonoBehaviour
 
         // Update Goal Stats
         if (name.Equals("Jukebox")) ManagerHandler.instance.GoalM.ModifyHoursDancing(ManagerHandler.instance.TimeM.TimeSince(startedUsingTime)/60);
+
+        // If this object is in the clone's hand then cancelling means it needs to be destroyed
+        if (transform.parent == ManagerHandler.instance.clone.GetHand())
+        {
+            Destroy(gameObject);
+        }
 
         beingUsed = false;
         finished = true;

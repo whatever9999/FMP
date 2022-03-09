@@ -112,7 +112,7 @@ MonoBehaviour:
   effects:
   - needType: 0
     skillType: 8
-    value: 5
+    value: 10
   - needType: 2
     skillType: 8
     value: -1
@@ -123,6 +123,14 @@ MonoBehaviour:
   actionIcon: {fileID: 21300000, guid: d0945f07e3287854aa9175175067c8cf, type: 3}
   tooltip: Eating
   animationType: 8
+  censorType: 0
+  requiredNeeds: []
+  triggerEvent: 2
+  despawnObject: 1
+  spawnObject: {fileID: 0}
+  giveObject: {fileID: 0}
+  affectsEnvironment: 0
+  usesFood: 0
   breakType: 0
   dirtType: 0
   alternateDirtVersion: {fileID: 0}
@@ -131,9 +139,3 @@ MonoBehaviour:
   faceTransformDirection: 1
   useAnimationSetForTimeToUse: 0
   timeToUse: 5
-  triggerEvent: 2
-  despawnObject: 1
-  spawnObject: {fileID: 0}
-  giveObject: {fileID: 0}
-  affectsEnvironment: 0
-  usesFood: 0

@@ -14,6 +14,7 @@ public class Clone : MonoBehaviour
     [SerializeField] private GameObject lowerBodyCensor;
 
     [SerializeField] private Transform hand;
+    public Transform GetHand() { return hand; }
     [SerializeField] private ParticleSystem fireParticles;
     [SerializeField] private ParticleSystem smellParticles;
     [SerializeField] private float runSpeed;
@@ -106,7 +107,6 @@ public class Clone : MonoBehaviour
     public void SetOnFire(bool onFire)
     {
         ManagerHandler.instance.NeedsM.SetOnFire(onFire);
-        ManagerHandler.instance.AnimationM.SetAnimation(AnimationManager.AnimationType.ON_FIRE, onFire);
         if (onFire)
         {
             ManagerHandler.instance.ActionM.CancelAllActions();
