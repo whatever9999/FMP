@@ -95,20 +95,30 @@ public class Clone : MonoBehaviour
     }
 
     // Play 3D SFX from the clone
-    public void PlaySound(SoundManager.SoundName name)
+    public void PlaySound(SoundManager.SoundName name, bool loop)
     {
         AudioClip clip = SoundManager.instance.GetClip(name);
-        audioSource.PlayOneShot(clip);
+        audioSource.loop = loop;
+        audioSource.clip = clip;
+        audioSource.Play();
     }
     public void SetSoundLooping(bool loop)
     {
         audioSource.loop = loop;
     }
+    public void StopSound()
+    {
+        audioSource.Stop();
+    }
+    public bool IsPlayingSound()
+    {
+        return audioSource.isPlaying;
+    }
 
     public void Electrocute()
     {
         electricParticles.Play();
-        PlaySound(SoundManager.SoundName.ELECTROCUTION);
+        PlaySound(SoundManager.SoundName.ELECTROCUTION, false);
         ManagerHandler.instance.AnimationM.SetAnimation(AnimationManager.AnimationType.ELECTROCUTION, true);
         ManagerHandler.instance.NeedsM.Electrocute();
         ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.ELECTROCUTION);

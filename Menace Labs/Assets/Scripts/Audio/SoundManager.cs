@@ -160,6 +160,14 @@ public class SoundManager : MonoBehaviour
     {
         audioSource.PlayOneShot(GetClip(sound));
     }
+
+    public void PlayClipOnObject(SoundName sound, string objectName)
+    {
+        AudioSource objectAudioSource;
+        bool foundObject = GameObject.Find(objectName).TryGetComponent<AudioSource>(out objectAudioSource);
+
+        if (foundObject) objectAudioSource.PlayOneShot(GetClip(sound));
+    }
 }
 
 [System.Serializable]

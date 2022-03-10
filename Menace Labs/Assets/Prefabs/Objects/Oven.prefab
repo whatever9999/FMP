@@ -142,12 +142,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effects: []
   hoverColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
-  startSound: 17
+  startSound: 34
   useSound: 34
-  endSound: 17
+  endSound: 34
   actionIcon: {fileID: 21300000, guid: de1cc0422f9952e40b6ac983cbcf1680, type: 3}
   tooltip: Cook
   animationType: 10
+  censorType: 0
+  requiredNeeds: []
+  triggerEvent: 0
+  despawnObject: 0
+  spawnObject: {fileID: 0}
+  giveObject: {fileID: 3001173445835099639, guid: 1d33df3dc41e46f40a92ad3faf7ebb77, type: 3}
+  affectsEnvironment: 0
+  usesFood: 10
   breakType: 1
   dirtType: 1
   alternateDirtVersion: {fileID: 0}
@@ -156,12 +164,6 @@ MonoBehaviour:
   faceTransformDirection: 1
   useAnimationSetForTimeToUse: 1
   timeToUse: 0
-  triggerEvent: 0
-  despawnObject: 0
-  spawnObject: {fileID: 0}
-  giveObject: {fileID: 3001173445835099639, guid: 1d33df3dc41e46f40a92ad3faf7ebb77, type: 3}
-  affectsEnvironment: 0
-  usesFood: 10
 --- !u!1 &6074775515629142724
 GameObject:
   m_ObjectHideFlags: 0

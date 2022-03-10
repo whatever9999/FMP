@@ -1220,7 +1220,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.6
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1278,7 +1278,7 @@ MonoBehaviour:
   hand: {fileID: 8796819257680230597}
   fireParticles: {fileID: 625605216935395806}
   smellParticles: {fileID: 7114020996477377256}
-  electricParticles: {fileID: 0}
+  electricParticles: {fileID: 7001664845797933512}
   runSpeed: 10
 --- !u!195 &8792628829624405646
 NavMeshAgent:
@@ -2253,14 +2253,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c2d45330a7b1894ca1aacb0ebd30599, type: 3}
---- !u!198 &625605216935395806 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198879910538899236, guid: 7c2d45330a7b1894ca1aacb0ebd30599, type: 3}
-  m_PrefabInstance: {fileID: 750984690041695994}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &755495816201878154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4512300890362992, guid: 7c2d45330a7b1894ca1aacb0ebd30599, type: 3}
+  m_PrefabInstance: {fileID: 750984690041695994}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &625605216935395806 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198879910538899236, guid: 7c2d45330a7b1894ca1aacb0ebd30599, type: 3}
   m_PrefabInstance: {fileID: 750984690041695994}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6951922864472175146
@@ -2418,5 +2418,10 @@ PrefabInstance:
 --- !u!4 &7198483153901571596 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4183575970307780, guid: c445b201205907b4f90b242a07f4dbc9, type: 3}
+  m_PrefabInstance: {fileID: 7199279683848245448}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7001664845797933512 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198742971877052672, guid: c445b201205907b4f90b242a07f4dbc9, type: 3}
   m_PrefabInstance: {fileID: 7199279683848245448}
   m_PrefabAsset: {fileID: 0}

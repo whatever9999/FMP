@@ -24,10 +24,15 @@ public class ConstantObject : MonoBehaviour
     [SerializeField] protected Color hoverColor = new Color(0.9f, 0.9f, 0.9f, 1);
     
     [Header("SFX")]
-    [SerializeField] protected SoundManager.SoundName startSound = SoundManager.SoundName.NUM_SOUND_NAMES;
-    [SerializeField] protected SoundManager.SoundName useSound = SoundManager.SoundName.NUM_SOUND_NAMES;
-    [SerializeField] protected SoundManager.SoundName endSound = SoundManager.SoundName.NUM_SOUND_NAMES;
-    
+    [SerializeField] protected SoundManager.SoundName objectStartSound = SoundManager.SoundName.NUM_SOUND_NAMES;
+    [SerializeField] protected SoundManager.SoundName objectUseSound = SoundManager.SoundName.NUM_SOUND_NAMES;
+    [SerializeField] protected SoundManager.SoundName objectEndSound = SoundManager.SoundName.NUM_SOUND_NAMES;
+
+    [Space(5)]
+    [SerializeField] protected SoundManager.SoundName cloneStartSound = SoundManager.SoundName.NUM_SOUND_NAMES;
+    [SerializeField] protected SoundManager.SoundName cloneUseSound = SoundManager.SoundName.NUM_SOUND_NAMES;
+    [SerializeField] protected SoundManager.SoundName cloneEndSound = SoundManager.SoundName.NUM_SOUND_NAMES;
+
     [Header("Action Icon and Tooltip")]
     [SerializeField] protected Sprite actionIcon;
     [SerializeField] protected string tooltip;
@@ -149,11 +154,15 @@ public class ConstantObject : MonoBehaviour
         finished = false;
         startedUsingTime = ManagerHandler.instance.TimeM.GetCurrentTime();
 
-        if (audioSource && startSound != SoundManager.SoundName.NUM_SOUND_NAMES)
+        if (audioSource && objectStartSound != SoundManager.SoundName.NUM_SOUND_NAMES)
         {
-            audioSource.clip = SoundManager.instance.GetClip(startSound);
+            audioSource.clip = SoundManager.instance.GetClip(objectStartSound);
             audioSource.loop = false;
             audioSource.Play();
+        }
+        if (cloneStartSound != SoundManager.SoundName.NUM_SOUND_NAMES)
+        {
+            ManagerHandler.instance.clone.PlaySound(cloneStartSound, false);
         }
         if (particles) particles.Play();
 
@@ -179,11 +188,15 @@ public class ConstantObject : MonoBehaviour
             }
         }
 
-        if (audioSource && useSound != SoundManager.SoundName.NUM_SOUND_NAMES && !audioSource.isPlaying)
+        if (audioSource && objectUseSound != SoundManager.SoundName.NUM_SOUND_NAMES && !audioSource.isPlaying)
         {
-            audioSource.clip = SoundManager.instance.GetClip(useSound);
+            audioSource.clip = SoundManager.instance.GetClip(objectUseSound);
             audioSource.loop = true;
             audioSource.Play();
+        }
+        if (cloneUseSound != SoundManager.SoundName.NUM_SOUND_NAMES && !ManagerHandler.instance.clone.IsPlayingSound())
+        {
+            ManagerHandler.instance.clone.PlaySound(cloneUseSound, true);
         }
 
         if (particles && !particles.isPlaying) particles.Play();
@@ -216,14 +229,23 @@ public class ConstantObject : MonoBehaviour
         if (audioSource)
         {
             audioSource.loop = false;
-            if (endSound != SoundManager.SoundName.NUM_SOUND_NAMES)
+            if (objectEndSound != SoundManager.SoundName.NUM_SOUND_NAMES)
             {
-                audioSource.clip = SoundManager.instance.GetClip(endSound);
+                audioSource.clip = SoundManager.instance.GetClip(objectEndSound);
                 audioSource.Play();
             }
             else
             {
                 audioSource.Stop();
+            }
+
+            if (cloneEndSound != SoundManager.SoundName.NUM_SOUND_NAMES)
+            {
+                ManagerHandler.instance.clone.PlaySound(cloneEndSound, false);
+            }
+            else
+            {
+                ManagerHandler.instance.clone.StopSound();
             }
         }
         if (particles) particles.Stop();
@@ -265,14 +287,23 @@ public class ConstantObject : MonoBehaviour
         {
             audioSource.loop = false;
             // Only play the end use sound if the object use gets cancelled while it's being used
-            if (beingUsed && endSound != SoundManager.SoundName.NUM_SOUND_NAMES)
+            if (beingUsed && objectEndSound != SoundManager.SoundName.NUM_SOUND_NAMES)
             {
-                audioSource.clip = SoundManager.instance.GetClip(endSound);
+                audioSource.clip = SoundManager.instance.GetClip(objectEndSound);
                 audioSource.Play();
             }
             else
             {
                 audioSource.Stop();
+            }
+
+            if (cloneEndSound != SoundManager.SoundName.NUM_SOUND_NAMES)
+            {
+                ManagerHandler.instance.clone.PlaySound(cloneEndSound, false);
+            }
+            else
+            {
+                ManagerHandler.instance.clone.StopSound();
             }
         }
         // If we cancelled fixing or cleaning don't tidy particles or change to fixed/clean object

@@ -90,7 +90,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.3365117
+        functionName: PlaySFX
+        data: 
+        objectReferenceParameter: {fileID: 11400000, guid: ea75304402938d649b60f3c95278f431, type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

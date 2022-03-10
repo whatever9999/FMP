@@ -111,14 +111,17 @@ MonoBehaviour:
   effects:
   - needType: 0
     skillType: 8
-    value: 20
+    value: 15
   - needType: 2
     skillType: 8
     value: -1
   hoverColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
-  startSound: 34
-  useSound: 9
-  endSound: 34
+  objectStartSound: 34
+  objectUseSound: 34
+  objectEndSound: 34
+  cloneStartSound: 34
+  cloneUseSound: 9
+  cloneEndSound: 34
   actionIcon: {fileID: 21300000, guid: d0945f07e3287854aa9175175067c8cf, type: 3}
   tooltip: Eating
   animationType: 8
@@ -137,4 +140,4 @@ MonoBehaviour:
   requiredLocation: {fileID: 0}
   faceTransformDirection: 1
   useAnimationSetForTimeToUse: 0
-  timeToUse: 10
+  timeToUse: 15

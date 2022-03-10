@@ -154,9 +154,12 @@ MonoBehaviour:
     skillType: 8
     value: -1
   hoverColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
-  startSound: 34
-  useSound: 0
-  endSound: 34
+  objectStartSound: 34
+  objectUseSound: 0
+  objectEndSound: 34
+  cloneStartSound: 34
+  cloneUseSound: 34
+  cloneEndSound: 34
   actionIcon: {fileID: 21300000, guid: 65e20615aea39b047a5fded81848c38f, type: 3}
   tooltip: Play Games
   animationType: 12

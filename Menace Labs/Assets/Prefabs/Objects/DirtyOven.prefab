@@ -201,9 +201,12 @@ MonoBehaviour:
     skillType: 8
     value: -1
   hoverColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
-  startSound: 34
-  useSound: 33
-  endSound: 34
+  objectStartSound: 34
+  objectUseSound: 34
+  objectEndSound: 34
+  cloneStartSound: 34
+  cloneUseSound: 33
+  cloneEndSound: 34
   actionIcon: {fileID: 21300000, guid: b4a74f545d89892469b3a0e1fe78909f, type: 3}
   tooltip: Cleaning
   animationType: 5
@@ -215,6 +218,12 @@ MonoBehaviour:
     requiredLevel: 20
   - need: 4
     requiredLevel: 20
+  triggerEvent: 12
+  despawnObject: 0
+  spawnObject: {fileID: 0}
+  giveObject: {fileID: 0}
+  affectsEnvironment: 1
+  usesFood: 0
   breakType: 0
   dirtType: 2
   alternateDirtVersion: {fileID: 0}
@@ -223,12 +232,6 @@ MonoBehaviour:
   faceTransformDirection: 1
   useAnimationSetForTimeToUse: 1
   timeToUse: 0
-  triggerEvent: 12
-  despawnObject: 0
-  spawnObject: {fileID: 0}
-  giveObject: {fileID: 0}
-  affectsEnvironment: 1
-  usesFood: 0
 --- !u!1 &8377255249484301528
 GameObject:
   m_ObjectHideFlags: 0

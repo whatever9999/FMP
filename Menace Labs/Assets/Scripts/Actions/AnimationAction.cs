@@ -18,8 +18,7 @@ public class AnimationAction : Action
 
         if (soundEffect != SoundManager.SoundName.NUM_SOUND_NAMES)
         {
-            if (loopSound) ManagerHandler.instance.clone.SetSoundLooping(true);
-            ManagerHandler.instance.clone.PlaySound(soundEffect);
+            ManagerHandler.instance.clone.PlaySound(soundEffect, loopSound);
         }
 
         return true;

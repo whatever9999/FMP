@@ -221,4 +221,10 @@ public class AnimationManager : MonoBehaviour
         }
         return animation_length;
     }
+
+    public void PlaySFX(Object animationEvent)
+    {
+        AnimationEvent data = animationEvent as AnimationEvent;
+        ManagerHandler.instance.SoundM.PlayClipOnObject((SoundManager.SoundName)data.soundName, data.objectName);
+    }
 }

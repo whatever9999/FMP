@@ -117,9 +117,12 @@ MonoBehaviour:
     skillType: 8
     value: -1
   hoverColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
-  startSound: 34
-  useSound: 31
-  endSound: 34
+  objectStartSound: 34
+  objectUseSound: 31
+  objectEndSound: 34
+  cloneStartSound: 34
+  cloneUseSound: 34
+  cloneEndSound: 34
   actionIcon: {fileID: 21300000, guid: eda4bee9195ac814cb8a843526c50ec0, type: 3}
   tooltip: Program
   animationType: 16
@@ -131,6 +134,12 @@ MonoBehaviour:
     requiredLevel: 20
   - need: 0
     requiredLevel: 20
+  triggerEvent: 12
+  despawnObject: 0
+  spawnObject: {fileID: 0}
+  giveObject: {fileID: 0}
+  affectsEnvironment: 0
+  usesFood: 0
   breakType: 1
   dirtType: 0
   alternateDirtVersion: {fileID: 0}

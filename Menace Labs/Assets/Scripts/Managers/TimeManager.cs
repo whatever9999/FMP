@@ -31,7 +31,7 @@ public class TimeManager : MonoBehaviour
         DAY_START = 480, // 8am
         MID_AFTERNOON = 840, // 2pm
         NIGHT_START = 1080, // 6pm
-        MIDNIGHT = 1640,
+        MIDNIGHT = 1440,
     }
 
     private TimeSpeed previousSpeed;
@@ -84,9 +84,9 @@ public class TimeManager : MonoBehaviour
         }
 
         // Reset current time once 24h is reached
-        if (currentTime > (int)Times.MIDNIGHT)
+        if (currentTime >= (int)Times.MIDNIGHT)
         {
-            timerTimer = 0;
+            currentTime = 0;
         }
     }
 

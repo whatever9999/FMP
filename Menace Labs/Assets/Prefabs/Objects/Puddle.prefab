@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8162116129416593816}
   - component: {fileID: 833532494558638811}
   - component: {fileID: 4477997739121296498}
+  - component: {fileID: -3227176827881609091}
   m_Layer: 0
   m_Name: Puddle
   m_TagString: Untagged
@@ -117,9 +118,12 @@ MonoBehaviour:
     skillType: 8
     value: -1
   hoverColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
-  startSound: 34
-  useSound: 33
-  endSound: 34
+  objectStartSound: 34
+  objectUseSound: 33
+  objectEndSound: 34
+  cloneStartSound: 34
+  cloneUseSound: 34
+  cloneEndSound: 34
   actionIcon: {fileID: 21300000, guid: c238d2b8bbad9e74a815e51a57b7ba31, type: 3}
   tooltip: Cleaning
   animationType: 4
@@ -131,6 +135,12 @@ MonoBehaviour:
     requiredLevel: 20
   - need: 4
     requiredLevel: 20
+  triggerEvent: 12
+  despawnObject: 1
+  spawnObject: {fileID: 0}
+  giveObject: {fileID: 0}
+  affectsEnvironment: 1
+  usesFood: 0
   breakType: 0
   dirtType: 0
   alternateDirtVersion: {fileID: 0}
@@ -139,12 +149,102 @@ MonoBehaviour:
   faceTransformDirection: 0
   useAnimationSetForTimeToUse: 1
   timeToUse: 0
-  triggerEvent: 12
-  despawnObject: 1
-  spawnObject: {fileID: 0}
-  giveObject: {fileID: 0}
-  affectsEnvironment: 1
-  usesFood: 0
+--- !u!82 &-3227176827881609091
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8149075954431699148}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -4325157006476210440, guid: 1ce5f9b9f4267274584af8273e739852, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 431545a5a1eee8a4eaa6fd05d0685f50, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.6
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &254401281880761084
 PrefabInstance:
   m_ObjectHideFlags: 0
