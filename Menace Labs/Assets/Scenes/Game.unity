@@ -24820,6 +24820,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dbaac16c6eecce04886cba01574b27dd, type: 2}
   - {fileID: 11400000, guid: 3a291e54baf5bbb4eb8902a19c3c8eca, type: 2}
   - {fileID: 11400000, guid: d9fbd145c0a149b4da0849550753ec72, type: 2}
+  - {fileID: 11400000, guid: ca9145908c048c8458bb00692933a2bd, type: 2}
   maxNotifications: 3
 --- !u!114 &1910374258
 MonoBehaviour:

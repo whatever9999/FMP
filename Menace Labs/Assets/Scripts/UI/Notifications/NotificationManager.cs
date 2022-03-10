@@ -13,6 +13,7 @@ public class NotificationManager : MonoBehaviour
         FIRE,
         TEST_FINISHED,
         FOOD_SUPPLY_SORTED,
+        ELECTROCUTION,
         NUM_NOTIFICATION_TYPES,
     }
 

@@ -4,6 +4,8 @@ public class ManagerHandler : MonoBehaviour
 {
     public static ManagerHandler instance;
 
+    public CameraHandler camera;
+
     public Director director;
     public MenaceMetric MenaceMetric;
     public PerformanceMetric PerformanceMetric;

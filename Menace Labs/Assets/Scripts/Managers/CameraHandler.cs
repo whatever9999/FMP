@@ -23,6 +23,7 @@ public class CameraHandler : MonoBehaviour
     private float rotateX, rotateY, zoom, moveHorizontal, moveVertical;
 
     private bool jumpingToClone = false;
+    public void JumpToClone() { jumpingToClone = true; }
 
     private void Start()
     {

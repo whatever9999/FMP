@@ -20,6 +20,7 @@ public class Clone : MonoBehaviour
     public Transform GetHand() { return hand; }
     [SerializeField] private ParticleSystem fireParticles;
     [SerializeField] private ParticleSystem smellParticles;
+    [SerializeField] private ParticleSystem electricParticles;
     [SerializeField] private float runSpeed;
 
     private NavMeshAgent clone;
@@ -105,15 +106,19 @@ public class Clone : MonoBehaviour
 
     public void Electrocute()
     {
+        electricParticles.Play();
         PlaySound(SoundManager.SoundName.ELECTROCUTION);
         ManagerHandler.instance.AnimationM.SetAnimation(AnimationManager.AnimationType.ELECTROCUTION, true);
         ManagerHandler.instance.NeedsM.Electrocute();
+        ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.ELECTROCUTION);
+        ManagerHandler.instance.camera.JumpToClone();
     }
     public void SetOnFire(bool onFire)
     {
         ManagerHandler.instance.NeedsM.SetOnFire(onFire);
         if (onFire)
         {
+            ManagerHandler.instance.camera.JumpToClone();
             ManagerHandler.instance.ActionM.CancelAllActions();
             fireParticles.gameObject.SetActive(true);
             fireParticles.Play();
