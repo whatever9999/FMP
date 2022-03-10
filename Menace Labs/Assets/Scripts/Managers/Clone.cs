@@ -10,6 +10,9 @@ public class Clone : MonoBehaviour
         LOWER_BODY,
     }
 
+    [Tooltip("Any particle effects/objects on the clone that should disappear while testing")]
+    [SerializeField] private GameObject additions;
+
     [SerializeField] private GameObject fullBodyCensor;
     [SerializeField] private GameObject lowerBodyCensor;
 
@@ -21,6 +24,7 @@ public class Clone : MonoBehaviour
 
     private NavMeshAgent clone;
     private AudioSource audioSource;
+    private Renderer cloneRenderer;
     private float walkSpeed;
 
     private bool isSmelly = false;
@@ -33,6 +37,7 @@ public class Clone : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         clone = GetComponent<NavMeshAgent>();
+        cloneRenderer = GetComponentInChildren<Renderer>();
 
         walkSpeed = clone.speed;
     }
@@ -147,5 +152,11 @@ public class Clone : MonoBehaviour
                 lowerBodyCensor.SetActive(enable);
                 break;
         }
+    }
+
+    public void ToggleClone(bool visible)
+    {
+        cloneRenderer.enabled = visible;
+        additions.SetActive(visible);
     }
 }

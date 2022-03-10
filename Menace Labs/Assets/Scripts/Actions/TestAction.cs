@@ -8,7 +8,7 @@ public class TestAction : Action
     public void EndTest() { timeToTest = 0; }
 
     private Clone clone;
-    private Renderer cloneRenderer;
+    
 
     private int startTestTime;
     private bool testing = false;
@@ -20,7 +20,6 @@ public class TestAction : Action
         base.Awake();
 
         clone = FindObjectOfType<Clone>();
-        cloneRenderer = clone.GetComponentInChildren<Renderer>();
 
         ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.TEST);
     }
@@ -42,7 +41,7 @@ public class TestAction : Action
         // The testing timer runs while they're gone
         else if (testing)
         {
-            cloneRenderer.enabled = false;
+            clone.ToggleClone(false);
             int timeInTest = ManagerHandler.instance.TimeM.TimeSince(startTestTime);
 
             // After a moment of the clone being gone we trigger the test
@@ -59,7 +58,7 @@ public class TestAction : Action
     public override void EndAction()
     {
         base.EndAction();
-        cloneRenderer.enabled = true;
+        clone.ToggleClone(true);
         ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.TEST_FINISHED);
     }
     public override void CancelAction()
