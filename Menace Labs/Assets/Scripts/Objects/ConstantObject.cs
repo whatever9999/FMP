@@ -132,7 +132,11 @@ public class ConstantObject : MonoBehaviour
         // Ensure the clone's needs are good enough to use the object
         for (int i = 0; i < requiredNeeds.Length; i++)
         {
-            if (!requiredNeeds[i].AtRequiredLevel()) return false;
+            if (!requiredNeeds[i].AtRequiredLevel())
+            {
+                ManagerHandler.instance.NeedsM.FlashRequiredNeed(requiredNeeds[i].GetNeedType());
+                return false;
+            }
         }
 
         // If the clone should face the same direction as the transform to use the object make sure they're rotated
@@ -168,7 +172,11 @@ public class ConstantObject : MonoBehaviour
         // Ensure the clone's needs are good enough to use the object
         for (int i = 0; i < requiredNeeds.Length; i++)
         {
-            if (!requiredNeeds[i].AtRequiredLevel()) return false;
+            if (!requiredNeeds[i].AtRequiredLevel())
+            {
+                ManagerHandler.instance.NeedsM.FlashRequiredNeed(requiredNeeds[i].GetNeedType());
+                return false;
+            }
         }
 
         if (audioSource && useSound != SoundManager.SoundName.NUM_SOUND_NAMES && !audioSource.isPlaying)
@@ -367,6 +375,7 @@ public struct RequiredNeed
     [SerializeField] private NeedsManager.NeedType need;
     [SerializeField] private NeedsManager.NeedLevel requiredLevel;
 
+    public NeedsManager.NeedType GetNeedType() { return need; }
     public bool AtRequiredLevel()
     {
         return ManagerHandler.instance.NeedsM.GetNeedValue(need) >= (float)requiredLevel;

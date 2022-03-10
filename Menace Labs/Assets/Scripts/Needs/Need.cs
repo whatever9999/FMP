@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class Need : MonoBehaviour
 {
@@ -83,6 +84,18 @@ public class Need : MonoBehaviour
     {
         needSlider.value = currentNeedValue;
         needFill.color = ManagerHandler.instance.NeedsM.GetNeedColor(currentNeedValue);
+    }
+
+    public IEnumerator Flash(Color color)
+    {
+        Color originalColor = needFill.color;
+        for (int i = 0; i < 5; i++)
+        {
+            needFill.color = color;
+            yield return new WaitForSecondsRealtime(0.3f);
+            needFill.color = originalColor;
+            yield return new WaitForSecondsRealtime(0.3f);
+        }
     }
 
     // If need goes below a need trigger value then trigger the event

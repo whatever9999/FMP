@@ -37,6 +37,8 @@ public class NeedsManager : MonoBehaviour
     [SerializeField] private int madnessDeathCheck = 5;
     private float updateNeedTimer;
 
+    [SerializeField] private Color needFlash;
+
     private bool isIll = false;
     private bool onFire = false;
     public void SetIll(bool setTo) 
@@ -224,6 +226,18 @@ public class NeedsManager : MonoBehaviour
         else if (is_smelly)
         {
             ManagerHandler.instance.clone.SetSmelly(false);
+        }
+    }
+
+    public void FlashRequiredNeed(NeedType type)
+    {
+        for (int i = 0; i < needs.Length; i++)
+        {
+            if (needs[i].GetNeedType() == type)
+            {
+                StartCoroutine(needs[i].Flash(needFlash));
+                break;
+            }
         }
     }
 }

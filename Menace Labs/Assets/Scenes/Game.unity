@@ -8989,6 +8989,7 @@ MonoBehaviour:
   timeToUpdateNeed: 1
   electrocutionDeathCheck: 0.4
   madnessDeathCheck: 20
+  needFlash: {r: 0, g: 0.8392157, b: 0, a: 0.49803922}
 --- !u!1001 &711314764
 PrefabInstance:
   m_ObjectHideFlags: 0

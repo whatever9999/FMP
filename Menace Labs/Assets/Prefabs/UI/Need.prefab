@@ -218,6 +218,8 @@ MonoBehaviour:
   needType: 0
   needModifier: 0.5
   needFill: {fileID: 7859319283575270962}
+  needTriggers: []
+  needBarImage: {fileID: 7859319283575270962}
 --- !u!1 &7859319283278396416
 GameObject:
   m_ObjectHideFlags: 0
