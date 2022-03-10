@@ -19,6 +19,8 @@ public class Need : MonoBehaviour
     private void Start()
     {
         needSlider = GetComponent<Slider>();
+
+        UpdateUI();
     }
 
     public void UpdateNeed(int amount)
