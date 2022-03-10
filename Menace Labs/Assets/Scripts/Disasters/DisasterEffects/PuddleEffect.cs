@@ -17,7 +17,7 @@ public class PuddleEffect : DisasterEffect
             NavMeshHit hit;
             NavMesh.SamplePosition(Vector3.zero + (Random.insideUnitSphere * RANGE), out hit, RANGE, NavMesh.AllAreas);
 
-            Instantiate(puddlePrefab, hit.position, Quaternion.identity);
+            Instantiate(puddlePrefab, hit.position, puddlePrefab.transform.rotation);
         }
     }
 }
