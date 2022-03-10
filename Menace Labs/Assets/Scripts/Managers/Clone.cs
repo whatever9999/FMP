@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class Clone : MonoBehaviour
 {
@@ -163,5 +164,15 @@ public class Clone : MonoBehaviour
     {
         cloneRenderer.enabled = visible;
         additions.SetActive(visible);
+    }
+
+    public void ToggleAgent(bool enabled) 
+    { 
+        clone.enabled = enabled; 
+    }
+    public IEnumerator EnableAgent(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        clone.enabled = true;
     }
 }

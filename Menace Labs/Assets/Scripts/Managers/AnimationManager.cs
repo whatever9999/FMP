@@ -104,6 +104,21 @@ public class AnimationManager : MonoBehaviour
 
     public void SetAnimation(AnimationType type, bool enable)
     {
+        // Turn off the nav mesh agent for animations that require a root motion change
+        bool requiresRootMotion = type == AnimationType.EATING || type == AnimationType.SLEEP || type == AnimationType.TYPE || type == AnimationType.SIT;
+        if (requiresRootMotion && !enable)
+        {
+            AnimationClip[] animationSet;
+            bool gotSet = animations.TryGetValue(type, out animationSet);
+
+            // The delay is the length of the final animation clip in the set
+            if (gotSet)
+            {
+                StartCoroutine(ManagerHandler.instance.clone.EnableAgent(animationSet[animationSet.Length - 1].length));
+            }
+        }
+        else ManagerHandler.instance.clone.ToggleAgent(!requiresRootMotion);
+
         switch (type)
         {
             case AnimationType.IDLE:
