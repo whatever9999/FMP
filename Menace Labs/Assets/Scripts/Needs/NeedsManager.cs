@@ -218,6 +218,7 @@ public class NeedsManager : MonoBehaviour
             GetNeedValue(NeedType.COMFORT) >= (int)NeedLevel.HIGH   )
         {
             SetIll(false);
+            ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.ILLNESS_RECOVERY);
         }
     }
 

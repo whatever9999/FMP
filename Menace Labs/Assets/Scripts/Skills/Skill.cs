@@ -31,6 +31,7 @@ public class Skill : MonoBehaviour
                 // If this is the last skill point we won't make any more progress on it so just increase the skill and update the UI
                 if (currentSkillLevel == SkillManager.MAX_SKILL_LEVEL - 1)
                 {
+                    ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.MAX_SKILL);
                     currentSkillLevel++;
                     currentNotchProgress = 0;
                     skillSlider.value = currentSkillLevel;

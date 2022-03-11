@@ -16,6 +16,8 @@ public class NotificationManager : MonoBehaviour
         ELECTROCUTION,
         CLONE_ON_FIRE,
         THERE_IS_FIRE,
+        ILLNESS_RECOVERY,
+        MAX_SKILL,
         NUM_NOTIFICATION_TYPES,
     }
 
