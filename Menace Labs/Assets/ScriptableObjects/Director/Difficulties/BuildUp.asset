@@ -13,15 +13,5 @@ MonoBehaviour:
   m_Name: BuildUp
   m_EditorClassIdentifier: 
   difficultyType: 1
-  menaceBounds: {x: 0.6, y: 1}
+  menaceBounds: {x: 0.35, y: 1}
   timeBounds: {x: 0.1, y: 0.1}
-  goalInsistencies:
-  - type: 0
-    baseValue: 40
-    increaseValue: 0.002
-  - type: 1
-    baseValue: 20
-    increaseValue: 0.001
-  - type: 2
-    baseValue: 20
-    increaseValue: 0.001
