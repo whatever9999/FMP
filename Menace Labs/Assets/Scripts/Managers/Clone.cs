@@ -60,7 +60,7 @@ public class Clone : MonoBehaviour
             audioSource.pitch = Time.timeScale;
         }
 
-        if (!ManagerHandler.instance.UIM.PauseMenuOpen() && Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.MOVE, -1);
         }

@@ -144,7 +144,7 @@ public class ActionManager : MonoBehaviour
     public void AddAction(ActionType type, int index, GameObject usedObject = null)
     {
         // Don't add an action if we're over the max actions unless it's a move before use action or if it's already in the bar
-        if (type == ActionType.MOVE_TO_USE || (currentActions.Count < maxNumActions && !AlreadyGotAction(usedObject)))
+        if (!ManagerHandler.instance.UIM.PauseMenuOpen() && (type == ActionType.MOVE_TO_USE || (currentActions.Count < maxNumActions && !AlreadyGotAction(usedObject))))
         {
             bool addAction = true;
             GameObject action;

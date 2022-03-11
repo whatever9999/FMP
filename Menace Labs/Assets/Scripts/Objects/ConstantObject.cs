@@ -395,7 +395,7 @@ public class ConstantObject : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (!ManagerHandler.instance.UIM.PauseMenuOpen() && !ManagerHandler.instance.UIM.IsMouseOverUI())
+        if (!ManagerHandler.instance.UIM.IsMouseOverUI())
         {
             ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.OBJECT_USE, -1, gameObject);
         }
