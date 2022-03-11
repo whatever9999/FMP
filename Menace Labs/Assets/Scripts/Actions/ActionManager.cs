@@ -189,14 +189,7 @@ public class ActionManager : MonoBehaviour
                         break;
                     case ActionType.DIE:
                         // Make sure we're not already dying
-                        for (int i = 0; i < currentActions.Count; i++)
-                        {
-                            Action checkAction = currentActions[i].GetComponent<Action>();
-                            if (checkAction.GetActionType() == ActionType.DIE)
-                            {
-                                addAction = false;
-                            }
-                        }
+                        if (IsPlanning(ActionType.DIE)) addAction = false;
                         
                         if (addAction)
                         {
@@ -239,14 +232,7 @@ public class ActionManager : MonoBehaviour
                         break;
                     case ActionType.PASS_OUT:
                         // Make sure we're not already passed out
-                        for (int i = 0; i < currentActions.Count; i++)
-                        {
-                            Action checkAction = currentActions[i].GetComponent<Action>();
-                            if (checkAction.GetActionType() == ActionType.PASS_OUT)
-                            {
-                                addAction = false;
-                            }
-                        }
+                        if (IsPlanning(ActionType.PASS_OUT)) addAction = false;
 
                         if (addAction) CancelAllActions();
                         break;
@@ -460,5 +446,31 @@ public class ActionManager : MonoBehaviour
                 cloneDying = true;
             }
         }
+    }
+
+    public bool IsCurrently(ActionType doingAction)
+    {
+        return (currentAction.GetActionType() == doingAction);
+    }
+    public bool IsPlanning(ActionType toDoAction)
+    {
+        for (int i = 0; i < currentActions.Count; i++)
+        {
+            Action checkAction = currentActions[i].GetComponent<Action>();
+            if (checkAction.GetActionType() == toDoAction)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    public bool IsSleeping()
+    {
+        ObjectUseAction objectUseAction = currentAction as ObjectUseAction;
+        if (objectUseAction)
+        {
+            if (objectUseAction.GetUsedObject().name == "Bed") return true;
+        }
+        return false;
     }
 }

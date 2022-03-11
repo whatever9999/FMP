@@ -4,6 +4,10 @@ using TMPro;
 
 public class TimeManager : MonoBehaviour
 {
+    [SerializeField] private float playSpeed = 1.0f;
+    [SerializeField] private float FFSpeed = 3.0f;
+    [SerializeField] private float superSpeed = 8.0f;
+
     [SerializeField] private float speedySoundPitch = 1.5f;
     public float GetSpeedySoundPitch() { return speedySoundPitch; }
 
@@ -69,6 +73,27 @@ public class TimeManager : MonoBehaviour
 
     private void Update()
     {
+        // Double speed is super speed when the clone is sleeping/testing
+        if (currentSpeed == TimeSpeed.FAST_FORWARD)
+        {
+            if (ManagerHandler.instance.ActionM.GetCurrentAction())
+            {
+                ActionManager.ActionType currentAction = ManagerHandler.instance.ActionM.GetCurrentAction().GetActionType();
+                if (currentAction == ActionManager.ActionType.TEST || currentAction == ActionManager.ActionType.PASS_OUT || ManagerHandler.instance.ActionM.IsSleeping())
+                {
+                    Time.timeScale = superSpeed;
+                }
+                else
+                {
+                    Time.timeScale = FFSpeed;
+                }
+            }
+            else
+            {
+                Time.timeScale = FFSpeed;
+            }
+        }
+
         CheckHotkeys();
 
         timerTimer += Time.deltaTime;
@@ -172,10 +197,10 @@ public class TimeManager : MonoBehaviour
                     Time.timeScale = 0.0f;
                     break;
                 case TimeSpeed.PLAY:
-                    Time.timeScale = 1.0f;
+                    Time.timeScale = playSpeed;
                     break;
                 case TimeSpeed.FAST_FORWARD:
-                    Time.timeScale = 3.0f;
+                    Time.timeScale = FFSpeed;
                     break;
             }
 
