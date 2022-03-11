@@ -21,7 +21,7 @@ public class ConstantObject : MonoBehaviour
     public List<ObjectEffect> GetObjectEffects() { return effects; }
     
     [Header("Hover Colour")]
-    [SerializeField] protected Color hoverColor = new Color(0.9f, 0.9f, 0.9f, 1);
+    [SerializeField] protected Color hoverColour = new Color(0.8f, 0.8f, 0.8f, 1);
     
     [Header("SFX")]
     [SerializeField] protected SoundManager.SoundName objectStartSound = SoundManager.SoundName.NUM_SOUND_NAMES;
@@ -80,7 +80,7 @@ public class ConstantObject : MonoBehaviour
     public bool IsFinished() { return finished; }
     public bool AffectsEnvironment() { return affectsEnvironment; }
 
-    protected Renderer materialRenderer;
+    protected Renderer[] materialRenderers;
     protected AudioSource audioSource;
     protected ParticleSystem particles;
 
@@ -99,7 +99,7 @@ public class ConstantObject : MonoBehaviour
 
     protected void Start()
     {
-        materialRenderer = GetComponentInChildren<Renderer>();
+        materialRenderers = GetComponentsInChildren<Renderer>();
         // If the object doesn't have an audio source add one (things like fires should loop and play on awake so they'll have a source already)
         if (!TryGetComponent<AudioSource>(out audioSource))
         {
@@ -377,12 +377,12 @@ public class ConstantObject : MonoBehaviour
     {
         if (!ManagerHandler.instance.UIM.PauseMenuOpen())
         {
-            if (materialRenderer.material.color != hoverColor && !ManagerHandler.instance.UIM.IsMouseOverUI())
+            if (!IsColor(hoverColour) && !ManagerHandler.instance.UIM.IsMouseOverUI())
             {
-                if (materialRenderer) materialRenderer.material.color = hoverColor;
-                else Debug.LogError("Failed to get object renderer!");
+                ChangeColor(hoverColour);
+                
             }
-            else if (materialRenderer.material.color == hoverColor && ManagerHandler.instance.UIM.IsMouseOverUI())
+            else if (IsColor(hoverColour) && ManagerHandler.instance.UIM.IsMouseOverUI())
             {
                 OnMouseExit();
             }
@@ -390,8 +390,7 @@ public class ConstantObject : MonoBehaviour
     }
     private void OnMouseExit()
     {
-        if (materialRenderer) materialRenderer.material.color = Color.white;
-        else Debug.LogError("Failed to get object renderer!");
+        ChangeColor(Color.white);
     }
     private void OnMouseDown()
     {
@@ -399,6 +398,24 @@ public class ConstantObject : MonoBehaviour
         {
             ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.OBJECT_USE, -1, gameObject);
         }
+    }
+
+    private void ChangeColor(Color newColour)
+    {
+        for (int i = 0; i < materialRenderers.Length; i++)
+        {
+            // Make sure we're not trying to change the colour of PFX (which don't have this property)
+            if (materialRenderers[i].material.HasProperty("_Color"))
+            {
+                // Ensure alpha stays the same
+                newColour.a = materialRenderers[i].material.color.a;
+                materialRenderers[i].material.color = newColour;
+            }
+        }
+    }
+    private bool IsColor(Color compareColor)
+    {
+        return (materialRenderers[0].material.color == compareColor);
     }
 }
 
