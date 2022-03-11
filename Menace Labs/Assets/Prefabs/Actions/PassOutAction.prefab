@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cancellable: 0
-  actionType: 9
+  actionType: 8
   animationType: 25
   soundEffect: 11
   loopSound: 0
   passOutLength: 60
   sleepModifier: 0.2
+  timeToCheckSleepEffect: 1
 --- !u!1 &6639563596457131253
 GameObject:
   m_ObjectHideFlags: 0
