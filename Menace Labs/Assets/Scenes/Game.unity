@@ -13631,6 +13631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxFoodAmount: 50
+  startFoodAmount: 20
   foodText: {fileID: 1087646406}
 --- !u!1 &1087646404
 GameObject:
