@@ -56,6 +56,12 @@ public class ActionManager : MonoBehaviour
     [SerializeField] private int timeToTriggerBoredom = 60;
     private int boredomTimer;
 
+    [Header("Clone Put Out Self (fire) Action UI")]
+    [SerializeField] private Sprite fireSprite;
+    [SerializeField] private string fireTooltip;
+    public Sprite GetFireSprite() { return fireSprite; }
+    public string GetFireTooltip() { return fireTooltip; }
+
     private void Start()
     {
         // Add actions to the dictionary

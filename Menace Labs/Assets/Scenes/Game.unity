@@ -8616,6 +8616,8 @@ MonoBehaviour:
   passOutActionPrefab: {fileID: 6598331852240999911, guid: e5c9f55a70b51644593ae01f7b519a88, type: 3}
   testRequiredLocation: {fileID: 1874185379}
   timeToTriggerBoredom: 60
+  fireSprite: {fileID: 21300000, guid: 14dbc16e10b97a048b2367b7d00dc07a, type: 3}
+  fireTooltip: Put Out Self
 --- !u!1001 &681229137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21999,6 +22001,7 @@ MonoBehaviour:
   jumpToCloneRotateSpeed: 2
   moveClamp: {x: 20, y: 20, z: 20}
   floorClamp: 1
+  shiftSpeedUp: 2
 --- !u!20 &1687258584
 Camera:
   m_ObjectHideFlags: 0
@@ -26406,7 +26409,7 @@ MonoBehaviour:
   fireEvent:
     chanceDecrease: 0.5
     skill: 1
-    chance: 10
+    chance: 100
     firePrefab: {fileID: 9163544962705911990, guid: fcd987be413e37140bfbf734b2d5aa54, type: 3}
   electrocutionEvent:
     chanceDecrease: 0.5

@@ -20,8 +20,17 @@ public class ObjectUseAction : Action
     private ConstantObject usedObject;
     public void SetObject(ConstantObject setTo)
     {
-        actionImage.sprite = setTo.GetActionIcon();
-        tooltipText.text = setTo.GetTooltip();
+        if (ManagerHandler.instance.clone.IsOnFire())
+        {
+            actionImage.sprite = ManagerHandler.instance.ActionM.GetFireSprite();
+            tooltipText.text = ManagerHandler.instance.ActionM.GetFireTooltip();
+        }
+        else
+        {
+            actionImage.sprite = setTo.GetActionIcon();
+            tooltipText.text = setTo.GetTooltip();
+        }
+        
         usedObject = setTo;
 
         // Identify what type of object this is

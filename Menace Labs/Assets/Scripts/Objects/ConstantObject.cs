@@ -169,7 +169,7 @@ public class ConstantObject : MonoBehaviour
         ManagerHandler.instance.clone.ToggleCensor(censorType, true);
 
         // If the clone is on fire and this is the shower put them out
-        if (name.Equals("Shower")) ManagerHandler.instance.clone.SetOnFire(false);
+        if (name.Contains("Shower")) ManagerHandler.instance.clone.SetOnFire(false);
 
         return true;
     }
