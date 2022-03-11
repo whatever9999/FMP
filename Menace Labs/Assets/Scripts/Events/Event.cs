@@ -203,7 +203,7 @@ public class DayStartEvent : HundredPercentEvent
     {
         ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.AGE_UP);
         // Age the clone
-        ManagerHandler.instance.AgeM.ModifyCloneAge(1);
+        ManagerHandler.instance.AgeM.ModifyCloneAge(-1);
         // Set ambience
         ManagerHandler.instance.SoundM.ChangeAmbienceTrack(SoundManager.AmbienceName.DAY);
     }
