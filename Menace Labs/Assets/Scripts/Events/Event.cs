@@ -170,7 +170,7 @@ public class DeathEvent : HundredPercentEvent
     {
         ManagerHandler.instance.SoundM.PlayClip(SoundManager.SoundName.DEATH);
         ManagerHandler.instance.AnimationM.SetAnimation(AnimationManager.AnimationType.DIE, true);
-        ManagerHandler.instance.PopupM.ShowDeath(deathType);
+        ManagerHandler.instance.PopupM.SetDeathType(deathType);
     }
 }
 

@@ -118,12 +118,15 @@ public class PopUpManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI deathDescriptionText;
     [SerializeField] private DeathData[] deathDatas;
 
-    public void ShowDeath(DeathData.DeathTypes death)
+    private DeathData.DeathTypes deathType;
+    public void SetDeathType(DeathData.DeathTypes setTo) { deathType = setTo; }
+
+    public void ShowDeath()
     {
         DeathData thisDeath = null;
         for (int i = 0; i < deathDatas.Length; i++)
         {
-            if (deathDatas[i].type == death)
+            if (deathDatas[i].type == deathType)
             {
                 thisDeath = deathDatas[i];
             }
@@ -139,7 +142,7 @@ public class PopUpManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Failed to find death of type: " + death);
+            Debug.LogError("Failed to find death of type: " + deathType);
         }
     }
 

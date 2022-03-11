@@ -185,4 +185,9 @@ public class Clone : MonoBehaviour
         yield return new WaitForSeconds(delay);
         clone.enabled = true;
     }
+
+    public void DeathPopup()
+    {
+        ManagerHandler.instance.PopupM.ShowDeath();
+    }
 }
