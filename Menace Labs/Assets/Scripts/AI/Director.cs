@@ -61,6 +61,9 @@ public class Director : MonoBehaviour
     public bool IsFirePresent() { return numberFiresPresent > 0; }
     public void ModifyFire(int number) 
     { 
+        // For the first fire added send a notification to the player
+        if (numberFiresPresent == 0 && number > 0) ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.FIRE);
+
         numberFiresPresent += number;
         // When fires are added/removed set the clone's base animations accordingly (fire panic for idle and run instead of walk)
         ManagerHandler.instance.AnimationM.SetAnimation(AnimationManager.AnimationType.FIRE, numberFiresPresent > 0);
@@ -242,8 +245,8 @@ public class Director : MonoBehaviour
     {
         ManagerHandler.instance.EventM.ModifyEventOccurrence(EventManager.EventType.BREAKING, 3);
         ManagerHandler.instance.EventM.ModifyEventOccurrence(EventManager.EventType.DIRTYING, 3);
-        ManagerHandler.instance.EventM.ModifyEventChance(EventManager.EventType.ELECTROCUTION, 20);
-        ManagerHandler.instance.EventM.ModifyEventChance(EventManager.EventType.FIRE, 30);
+        ManagerHandler.instance.EventM.ModifyEventChance(EventManager.EventType.ELECTROCUTION, 10);
+        ManagerHandler.instance.EventM.ModifyEventChance(EventManager.EventType.FIRE, 10);
     }
 
     // Insistency values (Between 0 and 1)

@@ -8,7 +8,6 @@ public class Fire : MonoBehaviour
 
     private void Awake()
     {
-        ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.FIRE);
         ManagerHandler.instance.ActionM.CancelAllActions();
 
         ManagerHandler.instance.director.ModifyFire(1);
