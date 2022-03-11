@@ -1352,7 +1352,7 @@ MonoBehaviour:
   sleepAnimationSet:
   - {fileID: -203655887218126122, guid: 26027cc1e6e8f654a8cd9a32df43e1d3, type: 3}
   - {fileID: -203655887218126122, guid: 3e53b28b8fee01d4dbe7df80d533f126, type: 3}
-  - {fileID: -203655887218126122, guid: b4729b94acc13214eba0d2ac2279f05f, type: 3}
+  - {fileID: -203655887218126122, guid: 440a57b16591b68419175324eb345b55, type: 3}
   - {fileID: -203655887218126122, guid: 3e53b28b8fee01d4dbe7df80d533f126, type: 3}
   - {fileID: -203655887218126122, guid: 9a93db91f8e15294a84ed306d97ff351, type: 3}
   typeAnimationSet:

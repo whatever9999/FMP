@@ -14831,7 +14831,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1102, y: 31.4}
+  m_AnchoredPosition: {x: 1102, y: 31.400024}
   m_SizeDelta: {x: 268, y: 106}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1168791668
@@ -16907,7 +16907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ead437d953f4daa41b7857cc82cb9d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notchSizes: 0a0000000a0000000a0000001400000014000000140000001e0000001e0000001e00000028000000
+  notchSizes: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000
   notchMultipliers:
   - 1
   - 0.95
@@ -28933,7 +28933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1475481765845185993, guid: e43e6ad9e54dce54ca164ac5dd0efa1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.71
       objectReference: {fileID: 0}
     - target: {fileID: 1475481765845185993, guid: e43e6ad9e54dce54ca164ac5dd0efa1b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28966,6 +28966,14 @@ PrefabInstance:
     - target: {fileID: 1475481765845185993, guid: e43e6ad9e54dce54ca164ac5dd0efa1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298204959985931385, guid: e43e6ad9e54dce54ca164ac5dd0efa1b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.185
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298204959985931385, guid: e43e6ad9e54dce54ca164ac5dd0efa1b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.094
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e43e6ad9e54dce54ca164ac5dd0efa1b, type: 3}

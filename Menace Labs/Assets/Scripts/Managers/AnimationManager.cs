@@ -65,6 +65,8 @@ public class AnimationManager : MonoBehaviour
 
     private Dictionary<AnimationType, AnimationClip[]> animations = new Dictionary<AnimationType, AnimationClip[]>();
 
+    private bool enableAgent = false;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -97,6 +99,15 @@ public class AnimationManager : MonoBehaviour
         animations.Add(AnimationType.PASS_OUT, passOutAnimationSet);
     }
 
+    private void Update()
+    {
+        if (enableAgent && IsIdle())
+        {
+            ManagerHandler.instance.clone.ToggleAgent(true);
+            enableAgent = false;
+        }
+    }
+
     public bool IsIdle()
     {
         return animator.GetCurrentAnimatorClipInfo(0)[0].clip == idleAnimationSet[0] || animator.GetCurrentAnimatorClipInfo(0)[0].clip == onFireanimationSet[0];
@@ -106,16 +117,10 @@ public class AnimationManager : MonoBehaviour
     {
         // Turn off the nav mesh agent for animations that require a root motion change
         bool requiresRootMotion = type == AnimationType.EATING || type == AnimationType.SLEEP || type == AnimationType.TYPE || type == AnimationType.SIT;
+        // When disabling the animation set make sure to turn the agent back on once the clone is idle
         if (requiresRootMotion && !enable)
         {
-            AnimationClip[] animationSet;
-            bool gotSet = animations.TryGetValue(type, out animationSet);
-
-            // The delay is the length of the final animation clip in the set
-            if (gotSet)
-            {
-                StartCoroutine(ManagerHandler.instance.clone.EnableAgent(animationSet[animationSet.Length - 1].length));
-            }
+            enableAgent = true;
         }
         else ManagerHandler.instance.clone.ToggleAgent(!requiresRootMotion);
 
