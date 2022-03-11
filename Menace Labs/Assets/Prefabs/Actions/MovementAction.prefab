@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cancellable: 1
-  actionType: 2
+  actionType: 1
   animationType: 1
   soundEffect: 28
   loopSound: 1

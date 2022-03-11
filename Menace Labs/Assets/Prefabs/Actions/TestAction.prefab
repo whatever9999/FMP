@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cancellable: 0
-  actionType: 4
+  actionType: 3
   animationType: 0
   soundEffect: 34
   loopSound: 0

@@ -172,6 +172,8 @@ public class ActionManager : MonoBehaviour
                 {
                     case ActionType.MOVE:
                         addAction = CreateMoveAction(button);
+
+                        if (addAction) CancelAdditionalActions();
                         break;
                     case ActionType.MOVE_TO_USE:
                         {
@@ -185,6 +187,8 @@ public class ActionManager : MonoBehaviour
                                 // Special Action Movement
                                 addAction = CreateMoveToUseAction(button, usedObject.transform.position);
                             }
+
+                            if (addAction) CancelAdditionalActions();
                         }
                         break;
                     case ActionType.DIE:
@@ -400,6 +404,28 @@ public class ActionManager : MonoBehaviour
         }
         // Cancel the current action
         if (currentAction) CancelAction(currentAction.gameObject);
+    }
+    // Cancel basic MOVE, react, bored actions etc for when another action is executed
+    public void CancelAdditionalActions()
+    {
+        // Cancel all actions that haven't started yet
+        for (int i = 1; i < currentActions.Count; i++)
+        {
+            ActionType checkAction = currentActions[currentActions.Count - 1].GetComponent<Action>().GetActionType();
+            if (checkAction == ActionType.MOVE || checkAction == ActionType.REACT || checkAction == ActionType.BOREDOM)
+            {
+                CancelAction(currentActions[currentActions.Count - 1]);
+            }
+        }
+        // Cancel the current action
+        if (currentAction)
+        {
+            ActionType checkAction = currentAction.GetActionType();
+            if (checkAction == ActionType.MOVE || checkAction == ActionType.REACT || checkAction == ActionType.BOREDOM)
+            {
+                CancelAction(currentAction.gameObject);
+            }
+        }
     }
 
     public void ModifyTestTime(float amount)
