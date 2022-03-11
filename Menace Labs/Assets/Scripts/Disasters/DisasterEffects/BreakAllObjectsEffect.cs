@@ -5,6 +5,8 @@ public class BreakAllObjectsEffect : DisasterEffect
 {
     public override void TriggerEffect()
     {
+        base.TriggerEffect();
+
         ConstantObject[] objects = FindObjectsOfType<ConstantObject>();
         for (int i = 0; i < objects.Length; i++)
         {

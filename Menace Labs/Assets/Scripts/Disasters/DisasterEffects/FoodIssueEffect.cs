@@ -7,6 +7,8 @@ public class FoodIssueEffect : DisasterEffect
 
     public override void TriggerEffect()
     {
+        base.TriggerEffect();
+
         ManagerHandler.instance.FoodM.SetSupplyIssueTimer(issueTimer);
     }
 }

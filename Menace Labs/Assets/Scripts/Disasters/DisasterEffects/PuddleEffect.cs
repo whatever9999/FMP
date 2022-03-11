@@ -11,6 +11,8 @@ public class PuddleEffect : DisasterEffect
 
     public override void TriggerEffect()
     {
+        base.TriggerEffect();
+
         for (int i = 0; i < number; i++)
         {
             // Get a random position on the navmesh to spawn a puddle

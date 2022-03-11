@@ -7,6 +7,8 @@ public class BreakObjectEffect : DisasterEffect
 
     public override void TriggerEffect()
     {
+        base.TriggerEffect();
+
         int brokenObjects = 0;
         ConstantObject[] objects = FindObjectsOfType<ConstantObject>();
         while (brokenObjects < number)
