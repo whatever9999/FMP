@@ -13246,6 +13246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1795099238c27f04887e40df6490b66f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playSpeed: 1
+  FFSpeed: 3
+  superSpeed: 8
   speedySoundPitch: 1.5
   timeTriggers:
   - time: 480
@@ -13627,7 +13630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11914a0361d78274a865dc4e8e54c9ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFoodAmount: 100
+  maxFoodAmount: 50
   foodText: {fileID: 1087646406}
 --- !u!1 &1087646404
 GameObject:

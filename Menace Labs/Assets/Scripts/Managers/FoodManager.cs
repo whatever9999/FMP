@@ -3,7 +3,8 @@ using TMPro;
 
 public class FoodManager : MonoBehaviour
 {
-    [SerializeField] private int maxFoodAmount = 100;
+    [SerializeField] private int maxFoodAmount = 50;
+    [SerializeField] private int startFoodAmount = 20;
 
     [SerializeField] private TextMeshProUGUI foodText;
 
@@ -15,7 +16,7 @@ public class FoodManager : MonoBehaviour
 
     private void Start()
     {
-        foodAmount = maxFoodAmount;
+        foodAmount = startFoodAmount;
         UpdateUI();
     }
 

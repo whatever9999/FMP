@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Food Contamination Incident
   description: The food supplier for the facility has been bribing the authorities
-    to get unchecked food past the border. All food supplies will have to be thrown
-    out until the next delivery.
+    to get unchecked food past the border. Food supplies will be disposed of and
+    you will be informed when the issue is resolved.
   disasterEffect: {fileID: 11400000, guid: 84bfdcfeb758ab541b5b4aa5433ba53c, type: 2}
   representationPrefab: {fileID: 0}
   soundEffect: 30
