@@ -17,6 +17,8 @@ public class CameraHandler : MonoBehaviour
     [SerializeField] private Vector3 moveClamp;
     [SerializeField] private float floorClamp = 1.0f;
 
+    [SerializeField] private float shiftSpeedUp = 2.0f;
+
     private static string mouseXString = "Mouse X";
     private static string mouseYString = "Mouse Y";
 
@@ -38,6 +40,8 @@ public class CameraHandler : MonoBehaviour
         zoom = 0.0f;
         moveHorizontal = 0.0f;
         moveVertical = 0.0f;
+
+        float shiftMultiplier = Input.GetKey(KeyCode.LeftShift) ? shiftSpeedUp : 1.0f;
 
         // Rotate camera on middle mouse
         if (Input.GetMouseButton(2))
@@ -92,32 +96,32 @@ public class CameraHandler : MonoBehaviour
         // WSAD
         if (Input.GetKey(KeyCode.W))
         {
-            moveVertical += moveSpeed;
+            moveVertical += moveSpeed * shiftMultiplier;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            moveVertical -= moveSpeed;
+            moveVertical -= moveSpeed * shiftMultiplier;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            moveHorizontal -= moveSpeed;
+            moveHorizontal -= moveSpeed * shiftMultiplier;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            moveHorizontal += moveSpeed;
+            moveHorizontal += moveSpeed * shiftMultiplier;
         }
 
         // Middle mouse scroll zooms
-        zoom += (Input.mouseScrollDelta.y * zoomSpeed);
+        zoom += (Input.mouseScrollDelta.y * zoomSpeed * shiftMultiplier);
 
         // Q and E rotate the camera
         if (Input.GetKey(KeyCode.Q))
         {
-            rotateX -= rotateSpeed;
+            rotateX -= rotateSpeed * shiftMultiplier;
         }
         if (Input.GetKey(KeyCode.E))
         {
-            rotateX += rotateSpeed;
+            rotateX += rotateSpeed * shiftMultiplier;
         }
 
         // Jump to the clone if spacebar is pressed
