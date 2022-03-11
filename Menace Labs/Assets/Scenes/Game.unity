@@ -18191,7 +18191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e41e5a2ca4ce604fb56f3d4a0cf3603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
+  camera: {fileID: 1687258583}
   director: {fileID: 1451886739}
   MenaceMetric: {fileID: 1451886736}
   PerformanceMetric: {fileID: 1451886738}
