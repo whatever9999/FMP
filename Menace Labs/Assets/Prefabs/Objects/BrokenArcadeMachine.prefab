@@ -150,8 +150,8 @@ MonoBehaviour:
   alternateBreakVersion: {fileID: 0}
   requiredLocation: {fileID: 7120367060758204854}
   faceTransformDirection: 1
-  useAnimationSetForTimeToUse: 1
-  timeToUse: 0
+  useAnimationSetForTimeToUse: 0
+  timeToUse: 20
 --- !u!1 &1239875516560111843
 GameObject:
   m_ObjectHideFlags: 0

@@ -79,8 +79,8 @@ MonoBehaviour:
   alternateBreakVersion: {fileID: 0}
   requiredLocation: {fileID: 6098376232108232235}
   faceTransformDirection: 0
-  useAnimationSetForTimeToUse: 1
-  timeToUse: 0
+  useAnimationSetForTimeToUse: 0
+  timeToUse: 20
 --- !u!1001 &4314594686704919167
 PrefabInstance:
   m_ObjectHideFlags: 0
