@@ -405,13 +405,7 @@ MonoBehaviour:
   tooltip: Fixing
   animationType: 9
   censorType: 0
-  requiredNeeds:
-  - need: 1
-    requiredLevel: 20
-  - need: 3
-    requiredLevel: 20
-  - need: 4
-    requiredLevel: 20
+  requiredNeeds: []
   triggerEvent: 1
   despawnObject: 0
   spawnObject: {fileID: 0}
