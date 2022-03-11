@@ -17,6 +17,17 @@ public class SkillManager : MonoBehaviour
          NONE,
     }
 
+    [SerializeField] private GameObject skillCapsule;
+    [SerializeField] private Transform skillFill;
+    private float skillFillStartYScale;
+    public void ToggleSkillCapsule(bool enable) 
+    {
+        // Immediately disable but show when skill starts increasing so it has the correct scale
+        showSkillCapsule = enable;
+        if (!enable) skillCapsule.SetActive(false); 
+    }
+    private bool showSkillCapsule = false;
+
     [SerializeField] private int[] notchSizes;
     [SerializeField] private float[] notchMultipliers;
     public float GetNotchSize(int notch)
@@ -30,6 +41,11 @@ public class SkillManager : MonoBehaviour
 
     [SerializeField] private Skill[] skills;
 
+    private void Start()
+    {
+        skillFillStartYScale = skillFill.localScale.y;
+    }
+
     public void ProgressSkill(SkillType skillType, float amount)
     {
         for (int i = 0; i < skills.Length; i++)
@@ -37,6 +53,9 @@ public class SkillManager : MonoBehaviour
             if (skills[i].GetSkillType() == skillType)
             {
                 skills[i].ProgressSkill(amount);
+
+                UpdateSkillCapsule(skills[i].GetNotchProgress(), skills[i].GetSkillLevel());
+                if (showSkillCapsule) skillCapsule.SetActive(true);
             }
         }
     }
@@ -63,5 +82,14 @@ public class SkillManager : MonoBehaviour
 
         Debug.LogError("Couldn't find skill of type " + skillType);
         return 0;
+    }
+
+    public void UpdateSkillCapsule(float progress, int level)
+    {
+        float notchPercentage = progress / notchSizes[level];
+
+        Vector3 newScale = skillFill.localScale;
+        newScale.y = skillFillStartYScale * notchPercentage;
+        skillFill.localScale = newScale;
     }
 }

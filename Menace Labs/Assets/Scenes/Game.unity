@@ -13098,6 +13098,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 995510554655303689, guid: dfd4cb57c9cab28478cf62cd3fe87230, type: 3}
   m_PrefabInstance: {fileID: 991070217457771758}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1019417546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8545837734998689408, guid: faedd4ed504aacf409cefa0a82643f68, type: 3}
+  m_PrefabInstance: {fileID: 8792628830203594987}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1019965293
 GameObject:
   m_ObjectHideFlags: 0
@@ -13425,6 +13430,11 @@ Transform:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3607896443767178794, guid: f7f804c2e85bd174c969cf6c9951b11b, type: 3}
   m_PrefabInstance: {fileID: 3607896442798799029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1062696142 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7234622172473783856, guid: faedd4ed504aacf409cefa0a82643f68, type: 3}
+  m_PrefabInstance: {fileID: 8792628830203594987}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1070875974
 PrefabInstance:
@@ -16913,6 +16923,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ead437d953f4daa41b7857cc82cb9d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillCapsule: {fileID: 1019417546}
+  skillFill: {fileID: 1062696142}
   notchSizes: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000
   notchMultipliers:
   - 1

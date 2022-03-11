@@ -19,7 +19,8 @@ public class ConstantObject : MonoBehaviour
     [Header("Need and Skill Effects")]
     [SerializeField] private List<ObjectEffect> effects;
     public List<ObjectEffect> GetObjectEffects() { return effects; }
-    
+    private bool affectsSkill = false;
+
     [Header("Hover Colour")]
     [SerializeField] protected Color hoverColour = new Color(0.8f, 0.8f, 0.8f, 1);
     
@@ -110,6 +111,16 @@ public class ConstantObject : MonoBehaviour
             audioSource.spatialBlend = 0.8f;
         }
         particles = GetComponentInChildren<ParticleSystem>();
+
+        // Identify if this object has any effect on skill
+        for (int i = 0; i < effects.Count; i++)
+        {
+            if (effects[i].GetSkillType() != SkillManager.SkillType.NONE)
+            {
+                affectsSkill = true;
+                break;
+            }
+        }
     }
 
     protected virtual void Update()
@@ -167,6 +178,9 @@ public class ConstantObject : MonoBehaviour
         if (particles) particles.Play();
 
         ManagerHandler.instance.clone.ToggleCensor(censorType, true);
+
+        // If this object affects a skill show the skill bar
+        if (affectsSkill) ManagerHandler.instance.SkillM.ToggleSkillCapsule(true);
 
         // If the clone is on fire and this is the shower put them out
         if (name.Contains("Shower")) ManagerHandler.instance.clone.SetOnFire(false);
@@ -278,6 +292,8 @@ public class ConstantObject : MonoBehaviour
         }
         if (despawnObject) Destroy(gameObject);
 
+        if (affectsSkill) ManagerHandler.instance.SkillM.ToggleSkillCapsule(false);
+
         finished = true;
         beingUsed = false;
     }
@@ -324,6 +340,8 @@ public class ConstantObject : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (affectsSkill) ManagerHandler.instance.SkillM.ToggleSkillCapsule(false);
 
         beingUsed = false;
         finished = true;

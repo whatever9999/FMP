@@ -12,6 +12,7 @@ public class Skill : MonoBehaviour
 
     public SkillManager.SkillType GetSkillType() { return skillType; }
     public int GetSkillLevel() { return currentSkillLevel; }
+    public float GetNotchProgress() { return currentNotchProgress; }
 
     private void Start()
     {
