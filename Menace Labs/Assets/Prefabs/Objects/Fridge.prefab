@@ -113,11 +113,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96bcfb371a66a49458b36560cb1765fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effects: []
+  effects:
+  - needType: 8
+    skillType: 1
+    value: 1
   hoverColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
-  startSound: 34
-  useSound: 34
-  endSound: 34
+  objectStartSound: 34
+  objectUseSound: 34
+  objectEndSound: 34
+  cloneStartSound: 34
+  cloneUseSound: 34
+  cloneEndSound: 34
   actionIcon: {fileID: 21300000, guid: 5075a7c52f26e214082acefe38f45701, type: 3}
   tooltip: Get Food
   animationType: 6

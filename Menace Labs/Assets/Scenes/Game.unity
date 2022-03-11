@@ -26400,12 +26400,12 @@ MonoBehaviour:
   fireEvent:
     chanceDecrease: 0.5
     skill: 1
-    chance: 30
+    chance: 10
     firePrefab: {fileID: 9163544962705911990, guid: fcd987be413e37140bfbf734b2d5aa54, type: 3}
   electrocutionEvent:
     chanceDecrease: 0.5
     skill: 4
-    chance: 20
+    chance: 10
   rubbishEvent:
     rubbishPrefab: {fileID: 7824179415104108314, guid: 988bb86c908cae44fb1b016aebb7922d, type: 3}
   puddleEvent:
