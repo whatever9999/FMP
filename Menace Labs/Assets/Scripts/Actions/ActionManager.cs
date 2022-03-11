@@ -217,6 +217,14 @@ public class ActionManager : MonoBehaviour
                             }
                             else
                             {
+                                if (cloneOnFire)
+                                {
+                                    ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.CLONE_ON_FIRE);
+                                }
+                                else if (thereIsFire)
+                                {
+                                    ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.THERE_IS_FIRE);
+                                }
                                 SoundManager.instance.PlayClip(SoundManager.SoundName.FAILURE);
                                 addAction = false;
                             }    
