@@ -51,7 +51,7 @@ public class NeedsManager : MonoBehaviour
     public void SetOnFire(bool setTo) { onFire = setTo; }
     public bool IsOnFire() { return onFire; }
 
-    private void Update()
+    private void FixedUpdate()
     {
         updateNeedTimer += Time.deltaTime;
 
