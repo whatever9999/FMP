@@ -112,7 +112,7 @@ MonoBehaviour:
   effects:
   - needType: 3
     skillType: 8
-    value: 0.3
+    value: 1
   - needType: 1
     skillType: 8
     value: 1

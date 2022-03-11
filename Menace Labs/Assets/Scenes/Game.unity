@@ -15509,7 +15509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 0.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needTriggers.Array.size
@@ -24827,6 +24827,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3a291e54baf5bbb4eb8902a19c3c8eca, type: 2}
   - {fileID: 11400000, guid: d9fbd145c0a149b4da0849550753ec72, type: 2}
   - {fileID: 11400000, guid: ca9145908c048c8458bb00692933a2bd, type: 2}
+  - {fileID: 11400000, guid: da66f37821d3d1d4c91de943b55ce4fc, type: 2}
+  - {fileID: 11400000, guid: daaeb562a09c04342b90c84a3a1b2163, type: 2}
   maxNotifications: 3
 --- !u!114 &1910374258
 MonoBehaviour:
@@ -30587,7 +30589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needTriggers.Array.size
