@@ -93,4 +93,9 @@ public class UIManager : MonoBehaviour
     #endregion // Setup
 
     public bool PauseMenuOpen() { return pauseMenu.activeInHierarchy; }
+
+    public bool IsMouseOverUI()
+    {
+        return UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+    }
 }

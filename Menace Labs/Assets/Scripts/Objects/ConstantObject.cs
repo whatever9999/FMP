@@ -373,10 +373,20 @@ public class ConstantObject : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void OnMouseEnter()
+    private void OnMouseOver()
     {
-        if (materialRenderer) materialRenderer.material.color = hoverColor;
-        else Debug.LogError("Failed to get object renderer!");
+        if (!ManagerHandler.instance.UIM.PauseMenuOpen())
+        {
+            if (materialRenderer.material.color != hoverColor && !ManagerHandler.instance.UIM.IsMouseOverUI())
+            {
+                if (materialRenderer) materialRenderer.material.color = hoverColor;
+                else Debug.LogError("Failed to get object renderer!");
+            }
+            else if (materialRenderer.material.color == hoverColor && ManagerHandler.instance.UIM.IsMouseOverUI())
+            {
+                OnMouseExit();
+            }
+        }
     }
     private void OnMouseExit()
     {
@@ -385,7 +395,10 @@ public class ConstantObject : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.OBJECT_USE, -1, gameObject);
+        if (!ManagerHandler.instance.UIM.PauseMenuOpen() && !ManagerHandler.instance.UIM.IsMouseOverUI())
+        {
+            ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.OBJECT_USE, -1, gameObject);
+        }
     }
 }
 
