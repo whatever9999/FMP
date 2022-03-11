@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Flood
   m_EditorClassIdentifier: 
   title: Flood
-  description: "There is a flood.\r"
+  description: A blockage in the lab's drainage pipes has led to minor flooding in
+    all areas. Please be reminded that messages in drainage pipes are not permitted
+    and all of the lab's sewerage requirements are handled on site.
   disasterEffect: {fileID: 11400000, guid: e431850321ad6e541991ae19c0de72e1, type: 2}
   representationPrefab: {fileID: 0}
   soundEffect: 14

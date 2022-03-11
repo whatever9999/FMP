@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Earthquake
   m_EditorClassIdentifier: 
   title: Earthquake
-  description: "There is an earthquake.\r"
+  description: We regret to inform that the lab's fracking tests have gone slightly
+    awry and caused a minor earthquake.
   disasterEffect: {fileID: 11400000, guid: 3d26905b4dc5631429955977bb8d161d, type: 2}
   representationPrefab: {fileID: 0}
   soundEffect: 8

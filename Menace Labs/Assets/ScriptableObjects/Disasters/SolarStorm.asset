@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: SolarStorm
   m_EditorClassIdentifier: 
   title: Solar Storm
-  description: "There is a solar storm.\r"
+  description: The Menace In Space Operation (MISO) have indicated to the lab that
+    solar flares are headed towards the facility imminently.
   disasterEffect: {fileID: 11400000, guid: af9f779351799df4db4140690305252d, type: 2}
   representationPrefab: {fileID: 0}
   soundEffect: 13
