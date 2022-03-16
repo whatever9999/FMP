@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9119351764127586093}
   - component: {fileID: 3733856186199230721}
+  - component: {fileID: -1612064716065902146}
   m_Layer: 0
   m_Name: CloneRiot
   m_TagString: Untagged
@@ -46,7 +47,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -128,6 +129,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-1612064716065902146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8838142678906875783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676b22bf6062e2a4fb7c04d41f4e8a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeCamera: 1
+  lifetime: 10
 --- !u!1001 &3840775779292790816
 PrefabInstance:
   m_ObjectHideFlags: 0

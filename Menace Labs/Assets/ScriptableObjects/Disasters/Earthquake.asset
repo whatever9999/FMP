@@ -16,5 +16,5 @@ MonoBehaviour:
   description: We regret to inform that the lab's fracking tests have gone slightly
     awry and caused a minor earthquake.
   disasterEffect: {fileID: 11400000, guid: 3d26905b4dc5631429955977bb8d161d, type: 2}
-  representationPrefab: {fileID: 0}
+  representationPrefab: {fileID: 3646363112244616704, guid: 3648ddfed5177884baf6e1bc520c6584, type: 3}
   soundEffect: 8

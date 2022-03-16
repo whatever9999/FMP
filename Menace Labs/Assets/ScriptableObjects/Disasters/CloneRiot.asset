@@ -18,5 +18,5 @@ MonoBehaviour:
     will be taken care of but unfortunately their descruction has resulted in some
     breakages throughout the site.\r"
   disasterEffect: {fileID: 11400000, guid: 87aec193b9ce1c04886183a7100ad60a, type: 2}
-  representationPrefab: {fileID: 0}
+  representationPrefab: {fileID: 8838142678906875783, guid: d8698ee461603264d8d56e49a4be8374, type: 3}
   soundEffect: 22

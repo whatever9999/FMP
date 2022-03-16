@@ -16,5 +16,5 @@ MonoBehaviour:
   description: "An illness is going around. Staying well rested, full and clean should
     help recovery but this will be harder while ill.\r"
   disasterEffect: {fileID: 11400000, guid: c779f62554feef9489d9f07e008dd664, type: 2}
-  representationPrefab: {fileID: 0}
+  representationPrefab: {fileID: 5518757279815349835, guid: d769292e4e05f8f4a859dc1f5d4edb0c, type: 3}
   soundEffect: 6

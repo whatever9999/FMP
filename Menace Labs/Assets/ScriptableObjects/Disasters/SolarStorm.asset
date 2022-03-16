@@ -16,5 +16,5 @@ MonoBehaviour:
   description: The Menace In Space Operation (MISO) have indicated to the lab that
     solar flares are headed towards the facility imminently.
   disasterEffect: {fileID: 11400000, guid: af9f779351799df4db4140690305252d, type: 2}
-  representationPrefab: {fileID: 0}
+  representationPrefab: {fileID: 246160891245680599, guid: a65490a7fd3720647b631ae2a938b2ab, type: 3}
   soundEffect: 13

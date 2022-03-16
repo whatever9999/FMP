@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7801595121299400576}
   - component: {fileID: 3295944090703228249}
+  - component: {fileID: -882615206284467872}
   m_Layer: 0
   m_Name: FoodContamination
   m_TagString: Untagged
@@ -127,3 +128,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-882615206284467872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7835130539174954833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676b22bf6062e2a4fb7c04d41f4e8a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeCamera: 0
+  lifetime: 10

@@ -17,5 +17,5 @@ MonoBehaviour:
     all areas. Please be reminded that messages in drainage pipes are not permitted
     and all of the lab's sewerage requirements are handled on site.
   disasterEffect: {fileID: 11400000, guid: e431850321ad6e541991ae19c0de72e1, type: 2}
-  representationPrefab: {fileID: 0}
+  representationPrefab: {fileID: 2767966100444679642, guid: 4d6091788ae3bc54bbd5756b85494c92, type: 3}
   soundEffect: 14

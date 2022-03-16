@@ -37,8 +37,6 @@ public class CameraHandler : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
-
-        ShakeCamera();
     }
 
     public void ShakeCamera()

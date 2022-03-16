@@ -17,5 +17,5 @@ MonoBehaviour:
     to get unchecked food past the border. Food supplies will be disposed of and
     you will be informed when the issue is resolved.
   disasterEffect: {fileID: 11400000, guid: 84bfdcfeb758ab541b5b4aa5433ba53c, type: 2}
-  representationPrefab: {fileID: 0}
+  representationPrefab: {fileID: 7835130539174954833, guid: 6f855df8feb3d6147931e2fa650ebca9, type: 3}
   soundEffect: 30
