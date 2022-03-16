@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Action : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public abstract class Action : MonoBehaviour
 
     // UI that appears when the action is cancelling
     private GameObject finalisingCross;
+    private Image background;
 
     public void SetCancellable(bool setTo) { cancellable = setTo; }
     public ActionManager.ActionType GetActionType() { return actionType; }
@@ -37,6 +39,7 @@ public abstract class Action : MonoBehaviour
     protected virtual void Awake()
     {
         finalisingCross = transform.Find("FinalisingCross").gameObject;
+        background = GetComponent<Image>();
     }
 
     private void Update()
@@ -58,6 +61,11 @@ public abstract class Action : MonoBehaviour
     {
         finalisingCross.SetActive(true);
         actionStatus = Action_Status.CANCELLING;
+    }
+
+    public void SetColour(Color color)
+    {
+        background.color = color;
     }
 
     public void OnClick()

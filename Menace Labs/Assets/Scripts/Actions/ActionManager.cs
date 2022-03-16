@@ -62,6 +62,10 @@ public class ActionManager : MonoBehaviour
     public Sprite GetFireSprite() { return fireSprite; }
     public string GetFireTooltip() { return fireTooltip; }
 
+    [Header("Current Action Aesthetics")]
+    [SerializeField] private Color currentActionColor = Color.gray;
+    [SerializeField] private Vector3 currentActionScale = new Vector3(1.1f, 1.1f, 1.1f);
+
     private void Start()
     {
         // Add actions to the dictionary
@@ -114,6 +118,8 @@ public class ActionManager : MonoBehaviour
                 }
                 else
                 {
+                    currentAction.transform.localScale = currentActionScale;
+                    currentAction.SetColour(currentActionColor);
                     cloneAnimationManager.SetAnimation(currentAction.GetAnimationType(), true);
                 }
             }
