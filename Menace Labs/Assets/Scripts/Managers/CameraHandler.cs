@@ -19,6 +19,12 @@ public class CameraHandler : MonoBehaviour
 
     [SerializeField] private float shiftSpeedUp = 2.0f;
 
+    [SerializeField] private float shakeDuration = 1.0f;
+    [SerializeField] private float shakeAmount = 0.7f;
+    [SerializeField] private float decreaseFactor = 1.0f;
+    private Vector3 startShakePos;
+    private bool shakingCamera = false;
+
     private static string mouseXString = "Mouse X";
     private static string mouseYString = "Mouse Y";
 
@@ -27,9 +33,18 @@ public class CameraHandler : MonoBehaviour
     private bool jumpingToClone = false;
     public void JumpToClone() { jumpingToClone = true; }
 
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
+
+        ShakeCamera();
+    }
+
+    public void ShakeCamera()
+    {
+        startShakePos = transform.position;
+        shakingCamera = true;
     }
 
     private void CheckInput()
@@ -139,7 +154,23 @@ public class CameraHandler : MonoBehaviour
             CheckInput();
 
             bool moved = (rotateX != 0.0f) || (rotateY != 0.0f) || (zoom != 0.0f) || (moveHorizontal != 0.0f) || (moveVertical != 0.0f);
-            if (jumpingToClone)
+            // For disasters such as earthquake
+            if (shakingCamera)
+            {
+                if (shakeDuration > 0)
+                {
+                    transform.localPosition = startShakePos + Random.insideUnitSphere * shakeAmount;
+
+                    shakeDuration -= Time.deltaTime * decreaseFactor;
+                }
+                else
+                {
+                    shakeDuration = 0f;
+                    transform.localPosition = startShakePos;
+                    shakingCamera = false;
+                }
+            }
+            else if (jumpingToClone)
             {
                 jumpingToClone = false;
 
