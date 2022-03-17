@@ -8599,7 +8599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cloneAnimationManager: {fileID: 1035716198}
-  maxNumActions: 4
+  maxNumActions: 8
   clickableLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -28828,7 +28828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1331690115058275497, guid: 43d0558008369e3429e4b419a49d2a33, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1331690115058275497, guid: 43d0558008369e3429e4b419a49d2a33, type: 3}
       propertyPath: m_AnchorMax.x
