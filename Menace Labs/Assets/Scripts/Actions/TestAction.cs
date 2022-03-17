@@ -64,5 +64,7 @@ public class TestAction : Action
     public override void CancelAction()
     {
         base.CancelAction();
+        clone.ToggleClone(true);
+        ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.TEST_FINISHED);
     }
 }

@@ -23,7 +23,7 @@ public class TimeManager : MonoBehaviour
 
     [SerializeField] TimeTrigger[] timeTriggers;
 
-    private int lastCheckedTime;
+    private int lastCheckedTime = (int)Times.DAY_START + 1;
 
     public enum TimeSpeed
     {

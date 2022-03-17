@@ -151,7 +151,7 @@ MonoBehaviour:
   animationType: 0
   soundEffect: 34
   loopSound: 0
-  timeToTest: 30
+  timeToTest: 120
   timeToTriggerChanceCard: 5
 --- !u!1001 &3807659797519048928
 PrefabInstance:
