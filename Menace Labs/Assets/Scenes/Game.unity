@@ -481,9 +481,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (61)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -559,9 +567,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1172432883027670, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_04 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_NavMeshLayer
@@ -924,9 +940,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (68)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -1147,9 +1171,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -2113,9 +2145,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -2360,9 +2400,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (53)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -2438,9 +2486,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -2516,9 +2572,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1172432883027670, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_04 (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_NavMeshLayer
@@ -2730,9 +2794,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -3292,9 +3364,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (58)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -3780,9 +3860,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -4620,9 +4708,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -4703,6 +4799,10 @@ PrefabInstance:
       value: SM_Bld_Wall_Blank_Door_01 (5)
       objectReference: {fileID: 0}
     - target: {fileID: 1027186024948094, guid: 8d5b18d3c97796d4081b7a4609d951c8, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027186024948094, guid: 8d5b18d3c97796d4081b7a4609d951c8, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -4768,9 +4868,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (71)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -5417,9 +5525,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1172432883027670, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_04 (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_NavMeshLayer
@@ -5905,9 +6021,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -6268,9 +6392,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (65)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -6556,9 +6688,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -7468,9 +7608,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (55)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -7546,9 +7694,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -7720,9 +7876,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (70)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -8207,6 +8371,10 @@ PrefabInstance:
       value: SM_Bld_Wall_Blank_Door_01 (8)
       objectReference: {fileID: 0}
     - target: {fileID: 1027186024948094, guid: 8d5b18d3c97796d4081b7a4609d951c8, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027186024948094, guid: 8d5b18d3c97796d4081b7a4609d951c8, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -8412,9 +8580,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (64)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -8627,9 +8803,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (63)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -9073,6 +9257,10 @@ PrefabInstance:
     - target: {fileID: 1027186024948094, guid: 8d5b18d3c97796d4081b7a4609d951c8, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Door_01 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027186024948094, guid: 8d5b18d3c97796d4081b7a4609d951c8, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1027186024948094, guid: 8d5b18d3c97796d4081b7a4609d951c8, type: 3}
       propertyPath: m_NavMeshLayer
@@ -10070,9 +10258,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -11185,9 +11381,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -11725,9 +11929,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1172432883027670, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_04 (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_NavMeshLayer
@@ -12779,9 +12991,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1172432883027670, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_04 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_NavMeshLayer
@@ -12923,9 +13143,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -14382,9 +14610,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1172432883027670, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_04 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_NavMeshLayer
@@ -15143,9 +15379,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1172432883027670, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_04 (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_NavMeshLayer
@@ -15217,9 +15461,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (51)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -16078,6 +16330,10 @@ PrefabInstance:
       value: SM_Bld_Wall_Blank_Door_01 (7)
       objectReference: {fileID: 0}
     - target: {fileID: 1027186024948094, guid: 8d5b18d3c97796d4081b7a4609d951c8, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027186024948094, guid: 8d5b18d3c97796d4081b7a4609d951c8, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -16641,9 +16897,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -16789,9 +17053,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -16986,9 +17258,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -17476,9 +17756,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1172432883027670, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_04 (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_NavMeshLayer
@@ -17776,9 +18064,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (66)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -17924,9 +18220,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (62)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -18550,9 +18854,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (67)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -18913,9 +19225,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1172432883027670, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_04 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_NavMeshLayer
@@ -19060,6 +19380,10 @@ PrefabInstance:
     - target: {fileID: 1027186024948094, guid: 8d5b18d3c97796d4081b7a4609d951c8, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Door_01 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027186024948094, guid: 8d5b18d3c97796d4081b7a4609d951c8, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1027186024948094, guid: 8d5b18d3c97796d4081b7a4609d951c8, type: 3}
       propertyPath: m_NavMeshLayer
@@ -19704,9 +20028,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (60)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -21082,9 +21414,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -21644,9 +21984,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (69)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -22532,9 +22880,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1172432883027670, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_04 (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_NavMeshLayer
@@ -22959,7 +23315,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1773702838}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23044,9 +23400,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1172432883027670, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_04 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_NavMeshLayer
@@ -23505,9 +23869,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1301008098915066, guid: abb9e5d837b6c094bb99549998536c5f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353276860617656, guid: abb9e5d837b6c094bb99549998536c5f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1745959215244736, guid: abb9e5d837b6c094bb99549998536c5f, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Glass_Door_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745959215244736, guid: abb9e5d837b6c094bb99549998536c5f, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1745959215244736, guid: abb9e5d837b6c094bb99549998536c5f, type: 3}
       propertyPath: m_NavMeshLayer
@@ -23516,6 +23892,10 @@ PrefabInstance:
     - target: {fileID: 1745959215244736, guid: abb9e5d837b6c094bb99549998536c5f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1907030696198232, guid: abb9e5d837b6c094bb99549998536c5f, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4947769340349978, guid: abb9e5d837b6c094bb99549998536c5f, type: 3}
       propertyPath: m_RootOrder
@@ -23951,9 +24331,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1172432883027670, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_04 (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_NavMeshLayer
@@ -24095,9 +24483,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -24413,9 +24809,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1172432883027670, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_04 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_NavMeshLayer
@@ -26356,6 +26760,10 @@ PrefabInstance:
       value: SM_Bld_Wall_Blank_Door_01 (6)
       objectReference: {fileID: 0}
     - target: {fileID: 1027186024948094, guid: 8d5b18d3c97796d4081b7a4609d951c8, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027186024948094, guid: 8d5b18d3c97796d4081b7a4609d951c8, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -26485,9 +26893,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -27113,9 +27529,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1172432883027670, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_04 (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1429140218592200, guid: 0cf649b093efdac4cb0969d41883271d, type: 3}
       propertyPath: m_NavMeshLayer
@@ -28081,9 +28505,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
@@ -28409,9 +28841,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773702838}
     m_Modifications:
+    - target: {fileID: 1048531059284596, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Wall_Blank_Window_03 (59)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1946982827557456, guid: d5f2d670c74d82f4aaa8fd24b3861511, type: 3}
       propertyPath: m_NavMeshLayer
