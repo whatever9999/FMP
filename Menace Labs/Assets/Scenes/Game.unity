@@ -13904,7 +13904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxFoodAmount: 50
-  startFoodAmount: 20
+  startFoodAmount: 5
   foodText: {fileID: 1087646406}
 --- !u!1 &1087646404
 GameObject:
@@ -22390,7 +22390,7 @@ MonoBehaviour:
   moveSpeed: 12
   rotateSpeed: 0.5
   edgeScrollSize: 10
-  jumpToCloneSpeed: 3
+  jumpToCloneSpeed: 10
   jumpToCloneRotateSpeed: 2
   moveClamp: {x: 20, y: 20, z: 20}
   floorClamp: 1
