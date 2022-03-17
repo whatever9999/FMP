@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goalType: 1
   goalName: Conqueror of Cuisine
-  goal: Make 100 meals
-  description: "The clone must use the oven to successfully cook a meal 100 times.\r"
+  goal: Make 30 meals
+  description: "The clone must use the oven to successfully cook a meal 30 times.\r"
   story: "Cuisine prowess is a valuable and interesting asset for society. The lab
     wants to monitor your clone's ability to become a champion cook.\r"
   goalIcon: {fileID: 21300000, guid: fc1ec0103a9051d4d8f305dbfe985b44, type: 3}

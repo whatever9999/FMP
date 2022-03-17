@@ -2392,7 +2392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goalIconImage: {fileID: 1283840896}
   goalDatas:
-  - {fileID: 11400000, guid: 948dc13d0dc292041a54ad4fd5517c5e, type: 2}
+  - {fileID: 11400000, guid: 692f7c405cd21bb459e5de64620408b1, type: 2}
 --- !u!1001 &162363161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13904,7 +13904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxFoodAmount: 50
-  startFoodAmount: 5
+  startFoodAmount: 20
   foodText: {fileID: 1087646406}
 --- !u!1 &1087646404
 GameObject:
@@ -17230,18 +17230,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillCapsule: {fileID: 1019417546}
   skillFill: {fileID: 1062696142}
-  notchSizes: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000
+  notchSizes: 08000000080000000800000008000000080000000800000008000000080000000800000008000000
   notchMultipliers:
   - 1
+  - 0.98
   - 0.95
   - 0.9
   - 0.85
   - 0.8
   - 0.75
   - 0.7
+  - 0.65
   - 0.6
-  - 0.5
-  - 0.4
   skills:
   - {fileID: 3607896442798799030}
   - {fileID: 2005470597}
@@ -26436,7 +26436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
@@ -26868,7 +26868,7 @@ MonoBehaviour:
   fireEvent:
     chanceDecrease: 0.5
     skill: 1
-    chance: 10
+    chance: 20
     firePrefab: {fileID: 9163544962705911990, guid: fcd987be413e37140bfbf734b2d5aa54, type: 3}
   electrocutionEvent:
     chanceDecrease: 0.5
@@ -26881,7 +26881,7 @@ MonoBehaviour:
   bladderFailureEvent:
     puddlePrefab: {fileID: 8149075954431699148, guid: e036f5ca8bc8ec8458ab35de6d57a847, type: 3}
   breakingEvent:
-    occurence: 3
+    occurence: 4
   dirtyingEvent:
     occurence: 3
   foodDeliveryEvent:

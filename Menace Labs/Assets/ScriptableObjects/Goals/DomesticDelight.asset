@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goalType: 4
   goalName: Domestic Delight
-  goal: Max cleaning, cooking and handiness and clean 100 times
+  goal: Max cleaning, cooking and handiness and clean 50 times
   description: "The clone must get the required skills to level 10 and clean dirty
-    objects, pick up rubbish or mop 100 times.\r"
+    objects, pick up rubbish or mop 50 times.\r"
   story: "No one likes menial chores. Monitoring the state of the clone as its every
     day is focused on them will provide an opportunity to work out how to make them
     more enjoyable.\r"

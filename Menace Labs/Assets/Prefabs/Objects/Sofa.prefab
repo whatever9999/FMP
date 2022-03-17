@@ -194,14 +194,25 @@ MonoBehaviour:
   effects:
   - needType: 1
     skillType: 8
-    value: 2
-  hoverColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
-  startSound: 27
-  useSound: 34
-  endSound: 27
+    value: 3
+  hoverColour: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  objectStartSound: 34
+  objectUseSound: 34
+  objectEndSound: 34
+  cloneStartSound: 34
+  cloneUseSound: 34
+  cloneEndSound: 34
   actionIcon: {fileID: 21300000, guid: fcea7851b9da50a4a83cd92655521fd5, type: 3}
   tooltip: Sit
   animationType: 21
+  censorType: 0
+  requiredNeeds: []
+  triggerEvent: 12
+  despawnObject: 0
+  spawnObject: {fileID: 0}
+  giveObject: {fileID: 0}
+  affectsEnvironment: 0
+  usesFood: 0
   breakType: 0
   dirtType: 0
   alternateDirtVersion: {fileID: 0}

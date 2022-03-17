@@ -284,7 +284,7 @@ public class ConstantObject : MonoBehaviour
         else if (name.Contains("Dirty")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);
         else if (name.Contains("Rubbish")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);
         else if (name.Contains("Puddle")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);
-        else if (name.Equals("Fire")) ManagerHandler.instance.GoalM.ModifyFiresSurvived(1);
+        else if (name.Contains("Fire")) ManagerHandler.instance.GoalM.ModifyFiresSurvived(1);
 
         if (affectsSkill) ManagerHandler.instance.SkillM.ToggleSkillCapsule(false);
 
@@ -343,7 +343,7 @@ public class ConstantObject : MonoBehaviour
         ManagerHandler.instance.clone.ToggleCensor(censorType, false);
 
         // Update Goal Stats
-        if (name.Equals("Jukebox")) ManagerHandler.instance.GoalM.ModifyHoursDancing(ManagerHandler.instance.TimeM.TimeSince(startedUsingTime)/60);
+        if (name.Equals("Jukebox")) ManagerHandler.instance.GoalM.ModifyHoursDancing(ManagerHandler.instance.TimeM.TimeSince(startedUsingTime)/60.0f);
 
         if (affectsSkill) ManagerHandler.instance.SkillM.ToggleSkillCapsule(false);
 

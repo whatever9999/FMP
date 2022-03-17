@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goalType: 3
   goalName: Footloose Fiend
-  goal: Dance for 100 hours
-  description: "The clone must dance for 100 in-game hours.\r"
-  story: "The lab questions what dancing for 100 hours will do to a clone's psyche?\r"
+  goal: Dance for 50 hours
+  description: "The clone must dance for 50 in-game hours.\r"
+  story: "The lab questions what dancing for 50 hours will do to a clone's psyche?\r"
   goalIcon: {fileID: 21300000, guid: fd7e19d39650ca44587cc274fb861d9e, type: 3}
