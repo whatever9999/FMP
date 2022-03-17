@@ -1,5 +1,5 @@
 // Uncomment for debug prints concerning the menace metric
- #define DEBUG_MENACE
+//#define DEBUG_MENACE
 
 using System.Collections.Generic;
 using UnityEngine;

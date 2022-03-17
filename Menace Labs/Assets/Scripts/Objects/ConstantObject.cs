@@ -286,6 +286,8 @@ public class ConstantObject : MonoBehaviour
         else if (name.Contains("Puddle")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);
         else if (name.Equals("Fire")) ManagerHandler.instance.GoalM.ModifyFiresSurvived(1);
 
+        if (affectsSkill) ManagerHandler.instance.SkillM.ToggleSkillCapsule(false);
+
         bool eventTriggered = false;
         if (triggerEvent != EventManager.EventType.NUM_EVENT_TYPES) eventTriggered = ManagerHandler.instance.EventM.CheckEventTrigger(triggerEvent);
         if (giveObject)
@@ -301,8 +303,6 @@ public class ConstantObject : MonoBehaviour
             ManagerHandler.instance.clone.SpawnObject(spawnObject);
         }
         if (despawnObject) Destroy(gameObject);
-
-        if (affectsSkill) ManagerHandler.instance.SkillM.ToggleSkillCapsule(false);
 
         finished = true;
         beingUsed = false;
@@ -345,13 +345,13 @@ public class ConstantObject : MonoBehaviour
         // Update Goal Stats
         if (name.Equals("Jukebox")) ManagerHandler.instance.GoalM.ModifyHoursDancing(ManagerHandler.instance.TimeM.TimeSince(startedUsingTime)/60);
 
+        if (affectsSkill) ManagerHandler.instance.SkillM.ToggleSkillCapsule(false);
+
         // If this object is in the clone's hand then cancelling means it needs to be destroyed
         if (transform.parent == ManagerHandler.instance.clone.GetHand())
         {
             Destroy(gameObject);
         }
-
-        if (affectsSkill) ManagerHandler.instance.SkillM.ToggleSkillCapsule(false);
 
         beingUsed = false;
         finished = true;

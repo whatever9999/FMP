@@ -60,13 +60,19 @@ public class NeedsManager : MonoBehaviour
 
         // If we're currently using an object don't touch needs that it affects
         List<NeedType> needsAffectedByObject = new List<NeedType>();
-        if (ManagerHandler.instance.ActionM.GetCurrentAction() && ManagerHandler.instance.ActionM.GetCurrentAction().GetActionType() == ActionManager.ActionType.OBJECT_USE)
+        
+        if (ManagerHandler.instance.ActionM.GetCurrentAction())
         {
-            // Extract the needs affected by this object
-            List<ObjectEffect> effects = (ManagerHandler.instance.ActionM.GetCurrentAction() as ObjectUseAction).GetUsedObject().GetObjectEffects();
-            for (int i = 0; i < effects.Count; i++)
+            ObjectUseAction usingObjectAction = ManagerHandler.instance.ActionM.GetCurrentAction() as ObjectUseAction;
+
+            if (usingObjectAction && usingObjectAction.GetUsedObject())
             {
-                needsAffectedByObject.Add(effects[i].GetNeedType());
+                // Extract the needs affected by this object
+                List<ObjectEffect> effects = usingObjectAction.GetUsedObject().GetObjectEffects();
+                for (int i = 0; i < effects.Count; i++)
+                {
+                    needsAffectedByObject.Add(effects[i].GetNeedType());
+                }
             }
         }
 

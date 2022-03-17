@@ -300,7 +300,7 @@ public class ActionManager : MonoBehaviour
             for (int i = 0; i < currentActions.Count; i++)
             {
                 ObjectUseAction action;
-                if (currentActions[i].TryGetComponent<ObjectUseAction>(out action))
+                if (currentActions[i].TryGetComponent<ObjectUseAction>(out action) && action.GetUsedObject())
                 {
                     return (usedObject == action.GetUsedObject().gameObject);
                 }
@@ -510,7 +510,7 @@ public class ActionManager : MonoBehaviour
     public bool IsSleeping()
     {
         ObjectUseAction objectUseAction = currentAction as ObjectUseAction;
-        if (objectUseAction)
+        if (objectUseAction && objectUseAction.GetUsedObject())
         {
             if (objectUseAction.GetUsedObject().name == "Bed") return true;
         }
