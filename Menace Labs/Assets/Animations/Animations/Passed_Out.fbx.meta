@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 63e18bdd71c47fa4bbdb4b82aec715f8
+guid: f7db9cb29234dd343b0ef4f387c65c30
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
@@ -8,7 +8,7 @@ ModelImporter:
     second: Take 001
   - first:
       74: -203655887218126122
-    second: Pass_Out
+    second: Passed_Out
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -67,10 +67,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0.9
     - serializedVersion: 16
-      name: Pass_Out
+      name: Passed_Out
       takeName: mixamo.com
       internalID: 0
-      firstFrame: 0
+      firstFrame: 132
       lastFrame: 136
       wrapMode: 0
       orientationOffsetY: 0
@@ -82,7 +82,7 @@ ModelImporter:
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0

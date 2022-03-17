@@ -8987,6 +8987,7 @@ MonoBehaviour:
   updateMultiplier: 1
   fireMultiplier: 3
   illMultiplier: 2
+  sleepModifierPassedOut: 0.4
   timeToUpdateNeed: 1
   electrocutionDeathCheck: 0.4
   electrocutionModifier: 10

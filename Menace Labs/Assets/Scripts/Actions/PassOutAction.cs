@@ -3,15 +3,17 @@ using UnityEngine;
 public class PassOutAction : AnimationAction
 {
     [SerializeField] private int passOutLength = 60;
-    [SerializeField] private float sleepModifier = 2.0f;
-    [SerializeField] private float timeToCheckSleepEffect = 1.0f;
 
     private int startPassedOut;
-    private float sleepEffectTimer;
 
     protected override void Awake()
     {
         base.Awake();
+    }
+
+    protected override void Update()
+    {
+        base.Update();
     }
 
     public override bool StartAction()
@@ -19,6 +21,7 @@ public class PassOutAction : AnimationAction
         base.StartAction();
 
         startPassedOut = ManagerHandler.instance.TimeM.GetCurrentTime();
+        ManagerHandler.instance.NeedsM.SetPassedOut(true);
 
         actionStatus = Action_Status.STARTED;
         return true;
@@ -26,14 +29,6 @@ public class PassOutAction : AnimationAction
     public override bool ContinueAction()
     {
         int timePassedOut = ManagerHandler.instance.TimeM.TimeSince(startPassedOut);
-
-        // Increase sleep while passed out
-        sleepEffectTimer += Time.deltaTime;
-        if (sleepEffectTimer >= timeToCheckSleepEffect)
-        {
-            ManagerHandler.instance.NeedsM.ModifyNeed(NeedsManager.NeedType.SLEEP, sleepModifier);
-            sleepEffectTimer = 0.0f;
-        }
 
         // After a moment of the clone being gone we trigger the test
         if (timePassedOut >= passOutLength)
@@ -44,10 +39,12 @@ public class PassOutAction : AnimationAction
     }
     public override void EndAction()
     {
+        ManagerHandler.instance.NeedsM.SetPassedOut(false);
         base.EndAction();
     }
     public override void CancelAction()
     {
+        ManagerHandler.instance.NeedsM.SetPassedOut(false);
         base.CancelAction();
     }
 }

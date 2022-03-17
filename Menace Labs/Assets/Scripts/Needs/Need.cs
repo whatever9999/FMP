@@ -106,18 +106,26 @@ public class Need : MonoBehaviour
             // If we weren't above the trigger value before but are now then call the trigger
             if (previousNeedValue > (float)needTriggers[i].needLevel && currentNeedValue <= (float)needTriggers[i].needLevel)
             {
-                // Set the death type before adding the death action (which will check the event trigger)
-                if (needTriggers[i].eventType == EventManager.EventType.DEATH)
+                switch (needTriggers[i].eventType)
                 {
-                    // If we're on fire then this is a fire death, otherwise it's a need related death e.g. starvation
-                    if (ManagerHandler.instance.clone.IsOnFire()) ManagerHandler.instance.EventM.SetDeathEventType(DeathData.DeathTypes.FIRE);
-                    else ManagerHandler.instance.EventM.SetDeathEventType(DeathData.DeathTypes.STARVATION);
+                    case EventManager.EventType.DEATH:
+                        // Set the death type before adding the death action (which will check the event trigger)
+                        // If we're on fire then this is a fire death, otherwise it's a need related death e.g. starvation
+                        if (ManagerHandler.instance.clone.IsOnFire()) ManagerHandler.instance.EventM.SetDeathEventType(DeathData.DeathTypes.FIRE);
+                        else ManagerHandler.instance.EventM.SetDeathEventType(DeathData.DeathTypes.STARVATION);
 
-                    ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.DIE, -1);
-                }
-                else
-                {
-                    ManagerHandler.instance.EventM.CheckEventTrigger(needTriggers[i].eventType);
+                        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.DIE, -1);
+                        break;
+                    case EventManager.EventType.PASS_OUT:
+                        // Only check as long as we're not already passed out
+                        if (!ManagerHandler.instance.ActionM.IsCurrently(ActionManager.ActionType.PASS_OUT))
+                        {
+                            ManagerHandler.instance.EventM.CheckEventTrigger(needTriggers[i].eventType);
+                        }
+                        break;
+                    default:
+                        ManagerHandler.instance.EventM.CheckEventTrigger(needTriggers[i].eventType);
+                        break;
                 }
             }
         }

@@ -79,7 +79,7 @@ public class TimeManager : MonoBehaviour
             if (ManagerHandler.instance.ActionM.GetCurrentAction())
             {
                 ActionManager.ActionType currentAction = ManagerHandler.instance.ActionM.GetCurrentAction().GetActionType();
-                if (currentAction == ActionManager.ActionType.TEST || currentAction == ActionManager.ActionType.PASS_OUT || ManagerHandler.instance.ActionM.IsSleeping())
+                if (currentAction == ActionManager.ActionType.TEST || ManagerHandler.instance.ActionM.IsSleeping())
                 {
                     Time.timeScale = superSpeed;
                 }

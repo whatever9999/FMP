@@ -42,7 +42,7 @@ public abstract class Action : MonoBehaviour
         background = GetComponent<Image>();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (actionStatus == Action_Status.ENDING || actionStatus == Action_Status.CANCELLING)
         {

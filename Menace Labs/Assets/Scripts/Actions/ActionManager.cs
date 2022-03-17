@@ -492,6 +492,7 @@ public class ActionManager : MonoBehaviour
 
     public bool IsCurrently(ActionType doingAction)
     {
+        if (!currentAction) return false;
         return (currentAction.GetActionType() == doingAction);
     }
     public bool IsPlanning(ActionType toDoAction)

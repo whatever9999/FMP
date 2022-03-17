@@ -116,7 +116,7 @@ public class AnimationManager : MonoBehaviour
     public void SetAnimation(AnimationType type, bool enable)
     {
         // Turn off the nav mesh agent for animations that require a root motion change
-        bool requiresRootMotion = type == AnimationType.EATING || type == AnimationType.SLEEP || type == AnimationType.TYPE || type == AnimationType.SIT;
+        bool requiresRootMotion = type == AnimationType.EATING || type == AnimationType.SLEEP || type == AnimationType.TYPE || type == AnimationType.SIT || type == AnimationType.PASS_OUT;
         // When disabling the animation set make sure to turn the agent back on once the clone is idle
         if (requiresRootMotion && !enable)
         {

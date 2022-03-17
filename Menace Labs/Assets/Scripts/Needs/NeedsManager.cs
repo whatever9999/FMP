@@ -30,6 +30,7 @@ public class NeedsManager : MonoBehaviour
     [SerializeField] private int updateMultiplier = 1;
     [SerializeField] private int fireMultiplier = 3;
     [SerializeField] private int illMultiplier = 2;
+    [SerializeField] private float sleepModifierPassedOut = 0.2f;
     [SerializeField] private float timeToUpdateNeed = 1.0f;
     [Tooltip("If the health metric is less than this value when the clone is electrocuted they have a chance of dying")]
     [SerializeField] private float electrocutionDeathCheck = 0.4f;
@@ -42,6 +43,7 @@ public class NeedsManager : MonoBehaviour
 
     private bool isIll = false;
     private bool onFire = false;
+    private bool passedOut = false;
     public void SetIll(bool setTo) 
     { 
         isIll = setTo;
@@ -50,6 +52,7 @@ public class NeedsManager : MonoBehaviour
     public bool IsIll() { return isIll; }
     public void SetOnFire(bool setTo) { onFire = setTo; }
     public bool IsOnFire() { return onFire; }
+    public void SetPassedOut(bool setTo) { passedOut = setTo; }
 
     private void FixedUpdate()
     {
@@ -72,8 +75,12 @@ public class NeedsManager : MonoBehaviour
         {
             for (int i = 0; i < needs.Length; i++)
             {
+                if (needs[i].GetNeedType() == NeedType.SLEEP && passedOut)
+                {
+                    needs[i].ModifyNeed(sleepModifierPassedOut);
+                }
                 // Only update the need if the current object in use doesn't affect it
-                if (!needsAffectedByObject.Contains(needs[i].GetNeedType()))
+                else if (!needsAffectedByObject.Contains(needs[i].GetNeedType()))
                 {
                     // If on fire all needs are decreased faster
                     if (onFire) needs[i].UpdateNeed(fireMultiplier);
