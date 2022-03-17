@@ -155,6 +155,16 @@ public class ConstantObject : MonoBehaviour
             }
         }
 
+        // If there isn't enough food for this object to be used cancel the action
+        if (usesFood > 0 && !ManagerHandler.instance.FoodM.GotEnoughFood(usesFood))
+        {
+            return false;
+        }
+        else if (usesFood > 0)
+        {
+            ManagerHandler.instance.FoodM.ModifyFoodAmount(-usesFood);
+        }
+
         // If the clone should face the same direction as the transform to use the object make sure they're rotated
         if (faceTransformDirection)
         {
