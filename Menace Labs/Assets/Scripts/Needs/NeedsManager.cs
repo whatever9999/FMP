@@ -207,7 +207,7 @@ public class NeedsManager : MonoBehaviour
     {
         for (int i = 0; i < needs.Length; i++)
         {
-            ModifyNeed(needs[i].GetNeedType(), electrocutionModifier);
+            ModifyNeed(needs[i].GetNeedType(), -electrocutionModifier);
         }
 
         if (GetHealthMetric() < electrocutionDeathCheck)
