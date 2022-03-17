@@ -35,6 +35,7 @@ public class AgeManager : MonoBehaviour
     {
         if (cloneAge <= 0)
         {
+            ManagerHandler.instance.EventM.SetDeathEventType(DeathData.DeathTypes.OLD_AGE);
             ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.DIE, 1);
         }
     }
