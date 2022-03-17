@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Relax
   m_EditorClassIdentifier: 
   difficultyType: 0
-  menaceBounds: {x: 0, y: 0.1}
+  menaceBounds: {x: 0, y: 0.2}
   timeBounds: {x: 30, y: 120}
