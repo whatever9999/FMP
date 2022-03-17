@@ -137,10 +137,10 @@ public class CameraHandler : MonoBehaviour
             rotateX += rotateSpeed * shiftMultiplier;
         }
 
-        // Jump to the clone if spacebar is pressed
-        if (Input.GetKey(KeyCode.Space))
+        // Jump to the clone if spacebar is pressed (will be cancelled if other keys are pressed)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            jumpingToClone = true;
+            jumpingToClone = !jumpingToClone;
         }
     }
 
@@ -152,6 +152,9 @@ public class CameraHandler : MonoBehaviour
             CheckInput();
 
             bool moved = (rotateX != 0.0f) || (rotateY != 0.0f) || (zoom != 0.0f) || (moveHorizontal != 0.0f) || (moveVertical != 0.0f);
+            // Stop following the clone if we get movement input
+            if (moved) jumpingToClone = false;
+
             // For disasters such as earthquake
             if (shakingCamera)
             {
@@ -170,8 +173,6 @@ public class CameraHandler : MonoBehaviour
             }
             else if (jumpingToClone)
             {
-                jumpingToClone = false;
-
                 // Rotation
                 float step = jumpToCloneRotateSpeed * Time.unscaledDeltaTime;
                 Vector3 targetDir = ManagerHandler.instance.clone.transform.position - transform.position;
@@ -179,17 +180,14 @@ public class CameraHandler : MonoBehaviour
                 Quaternion targetRotation = Quaternion.LookRotation(newDir);
                 if (Quaternion.Angle(transform.rotation, targetRotation) > 0.01f)
                 {
-                    jumpingToClone = true;
                     transform.rotation = targetRotation;
                 }
 
                 // Position
                 if (Vector3.Distance(transform.position, jumpToClonePos.position) >= 5f)
                 {
-                    jumpingToClone = true;
-
                     step = jumpToCloneSpeed * Time.fixedDeltaTime;
-                    Vector3 newPosition = Vector3.Lerp(transform.position, jumpToClonePos.position, step);
+                    Vector3 newPosition = Vector3.MoveTowards(transform.position, jumpToClonePos.position, step);
                     transform.position = newPosition;
                 }
             }
