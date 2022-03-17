@@ -23,6 +23,8 @@ public class TimeManager : MonoBehaviour
 
     [SerializeField] TimeTrigger[] timeTriggers;
 
+    private int lastCheckedTime;
+
     public enum TimeSpeed
     {
         PAUSE,
@@ -154,18 +156,21 @@ public class TimeManager : MonoBehaviour
         List<EventManager.EventType> eventsToCheck = new List<EventManager.EventType>();
 
         // If the current time aligns with any significant times then we'll be checking those events
-        switch(currentTime)
+        // Since time can go up in increments greater than 1 we have to track the last checked time to make sure we haven't gone past a trigger
+        if (lastCheckedTime < (int)Times.DAY_START && currentTime >= (int)Times.DAY_START)
         {
-            case (int)Times.DAY_START:
-                eventsToCheck = morningStartTriggers;
-                break;
-            case (int)Times.MID_AFTERNOON:
-                eventsToCheck = midAfternoonTriggers;
-                break;
-            case (int)Times.NIGHT_START:
-                eventsToCheck = eveningStartTriggers;
-                break;
+            eventsToCheck = morningStartTriggers;
         }
+        else if (lastCheckedTime < (int)Times.MID_AFTERNOON && currentTime >= (int)Times.MID_AFTERNOON)
+        {
+            eventsToCheck = midAfternoonTriggers;
+        }
+        else if (lastCheckedTime < (int)Times.NIGHT_START && currentTime >= (int)Times.NIGHT_START)
+        {
+            eventsToCheck = eveningStartTriggers;
+        }
+
+        lastCheckedTime = currentTime;
 
         // Check the events we have a list of
         for (int i = 0; i < eventsToCheck.Count; i++)
