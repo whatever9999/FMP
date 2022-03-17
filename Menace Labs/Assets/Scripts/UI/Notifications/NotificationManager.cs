@@ -18,6 +18,7 @@ public class NotificationManager : MonoBehaviour
         THERE_IS_FIRE,
         ILLNESS_RECOVERY,
         MAX_SKILL,
+        MAX_ACTIONS,
         NUM_NOTIFICATION_TYPES,
     }
 
