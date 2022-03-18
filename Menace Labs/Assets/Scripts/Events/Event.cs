@@ -189,8 +189,11 @@ public class FoodDeliveryEvent : HundredPercentEvent
 {
     protected override void TriggerEvent()
     {
-        ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.FOOD_DELIVERY);
-        ManagerHandler.instance.FoodM.ModifyFoodAmount(foodAmount);
+        if (!ManagerHandler.instance.FoodM.IsSupplyIssue())
+        {
+            ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.FOOD_DELIVERY);
+            ManagerHandler.instance.FoodM.ModifyFoodAmount(foodAmount);
+        }
     }
 
     [SerializeField] private int foodAmount;

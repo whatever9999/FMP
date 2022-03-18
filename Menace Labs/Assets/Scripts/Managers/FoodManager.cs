@@ -13,6 +13,7 @@ public class FoodManager : MonoBehaviour
     private float supplyIssueTimer;
     private int startSupplyIssue;
     bool supplyIssue = false;
+    public bool IsSupplyIssue() { return supplyIssue; }
 
     private void Start()
     {
