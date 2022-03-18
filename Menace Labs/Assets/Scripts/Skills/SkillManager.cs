@@ -54,8 +54,15 @@ public class SkillManager : MonoBehaviour
             {
                 skills[i].ProgressSkill(amount);
 
-                UpdateSkillCapsule(skills[i].GetNotchProgress(), skills[i].GetSkillLevel());
-                if (showSkillCapsule) skillCapsule.SetActive(true);
+                if (skills[i].GetSkillLevel() == SkillManager.MAX_SKILL_LEVEL)
+                {
+                    skillCapsule.SetActive(false);
+                }
+                else
+                {
+                    UpdateSkillCapsule(skills[i].GetNotchProgress(), skills[i].GetSkillLevel());
+                    if (showSkillCapsule) skillCapsule.SetActive(true);
+                }
             }
         }
     }
