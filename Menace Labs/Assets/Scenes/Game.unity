@@ -2392,7 +2392,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goalIconImage: {fileID: 1283840896}
   goalDatas:
+  - {fileID: 11400000, guid: b3decfe124f9aa744b2631faa251be95, type: 2}
   - {fileID: 11400000, guid: 692f7c405cd21bb459e5de64620408b1, type: 2}
+  - {fileID: 11400000, guid: 99762d041ee55e24eb9b89e5a8feb083, type: 2}
+  - {fileID: 11400000, guid: 273c192fca058ca41aee992d8d55cb26, type: 2}
+  - {fileID: 11400000, guid: 948dc13d0dc292041a54ad4fd5517c5e, type: 2}
 --- !u!1001 &162363161
 PrefabInstance:
   m_ObjectHideFlags: 0
