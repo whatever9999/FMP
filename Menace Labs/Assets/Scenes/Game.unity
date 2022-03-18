@@ -31244,6 +31244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clone
       objectReference: {fileID: 0}
+    - target: {fileID: 8792628829624405646, guid: faedd4ed504aacf409cefa0a82643f68, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8792628829624405647, guid: faedd4ed504aacf409cefa0a82643f68, type: 3}
       propertyPath: disasterTest
       value: 
