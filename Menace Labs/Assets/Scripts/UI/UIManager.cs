@@ -13,17 +13,30 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI goalGoalText;
     [SerializeField] private TextMeshProUGUI goalDescriptionText;
     [SerializeField] private TextMeshProUGUI goalStoryText;
+    [SerializeField] private TextMeshProUGUI goalAchievementText;
 
     [SerializeField] private TextMeshProUGUI ageTooltipText;
+
+    private float goalUpdateOccurence = 1.0f;
+    private float goalUpdateTimer;
 
     void Start()
     {
         SetCloneName();
         SetAgeTooltip(ManagerHandler.instance.AgeM.GetCloneAge());
+        UpdateGoal(ManagerHandler.instance.GoalM.GetGoal());
     }
 
     private void Update()
     {
+        // Update the goal tooltip
+        goalUpdateTimer += Time.deltaTime;
+        if (goalUpdateTimer > goalUpdateOccurence)
+        {
+            goalUpdateTimer = 0;
+            UpdateGoal(ManagerHandler.instance.GoalM.GetGoal());
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             // Handle the settings menu before the pause menu
@@ -97,5 +110,10 @@ public class UIManager : MonoBehaviour
     public bool IsMouseOverUI()
     {
         return UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+    }
+
+    public void UpdateGoal(GoalData goal)
+    {
+        goalAchievementText.text = goal.GetGoalAchievement();
     }
 }

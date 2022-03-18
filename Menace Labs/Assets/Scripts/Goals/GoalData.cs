@@ -50,6 +50,44 @@ public class GoalData : ScriptableObject
         return goalComplete;
     }
 
+    public string GetGoalAchievement()
+    {
+        string goalAchievement = "";
+        switch (goalType)
+        {
+            case GoalManager.GoalType.MEDIOCRE_MASTER:
+                {
+                    int maxSkills = 0;
+                    for (int i = 0; i < (int)SkillManager.SkillType.NONE; i++)
+                    {
+                        if (ManagerHandler.instance.SkillM.GetSkillLevel((SkillManager.SkillType)i) == SkillManager.MAX_SKILL_LEVEL) maxSkills++;
+                    }
+                    goalAchievement += "Max Skills: " + maxSkills + "/" + (int)SkillManager.SkillType.NONE;
+                }
+                break;
+            case GoalManager.GoalType.CONQUEROR_OF_CUISINE:
+                goalAchievement += "Meals Made: " + ManagerHandler.instance.GoalM.GetMealsMade() + "/30";
+                break;
+            case GoalManager.GoalType.FAMOUS_FIREFIGHTER:
+                goalAchievement += "Fires Survived: " + ManagerHandler.instance.GoalM.GetFiresSurvived() + "/5";
+                break;
+            case GoalManager.GoalType.FOOTLOOSE_FIEND:
+                goalAchievement += "Hours Danced: " + ManagerHandler.instance.GoalM.GetHoursDancing() + "/50";
+                break;
+            case GoalManager.GoalType.DOMESTIC_DELIGHT:
+                {
+                    goalAchievement += "Times Cleaned: " + ManagerHandler.instance.GoalM.GetTimesCleaned() + "/50";
+                    int maxSkills = 0;
+                    if (ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.COOKING) == SkillManager.MAX_SKILL_LEVEL) maxSkills++;
+                    if (ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.CLEANING) == SkillManager.MAX_SKILL_LEVEL) maxSkills++;
+                    if (ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.HANDINESS) == SkillManager.MAX_SKILL_LEVEL) maxSkills++;
+                    goalAchievement += "\nMax Skills: " + maxSkills + "/3";
+                }
+                break;
+        }
+        return goalAchievement;
+    }
+
     public float GetGoalMetric()
     {
         float goalMetric = 0.0f;

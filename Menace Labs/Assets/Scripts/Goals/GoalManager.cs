@@ -35,6 +35,7 @@ public class GoalManager : MonoBehaviour
     }
 
     private GoalData goal;
+    public GoalData GetGoal() { return goal; }
 
     private void Awake()
     {
