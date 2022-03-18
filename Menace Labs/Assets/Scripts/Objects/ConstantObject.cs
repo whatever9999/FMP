@@ -145,13 +145,17 @@ public class ConstantObject : MonoBehaviour
         // If the game object is disabled but we're trying to use it then it's likely that it's broken so cancel the action
         if (!gameObject.activeInHierarchy) return false;
 
-        // Ensure the clone's needs are good enough to use the object
-        for (int i = 0; i < requiredNeeds.Length; i++)
+        // Don't need broken/dirty shower required needs if on fire
+        if (!ManagerHandler.instance.clone.IsOnFire())
         {
-            if (!requiredNeeds[i].AtRequiredLevel())
+            // Ensure the clone's needs are good enough to use the object
+            for (int i = 0; i < requiredNeeds.Length; i++)
             {
-                ManagerHandler.instance.NeedsM.FlashRequiredNeed(requiredNeeds[i].GetNeedType());
-                return false;
+                if (!requiredNeeds[i].AtRequiredLevel())
+                {
+                    ManagerHandler.instance.NeedsM.FlashRequiredNeed(requiredNeeds[i].GetNeedType());
+                    return false;
+                }
             }
         }
 
@@ -203,13 +207,17 @@ public class ConstantObject : MonoBehaviour
         // If the game object is disabled but we're trying to use it then it's likely that it's broken so cancel the action
         if (!gameObject.activeInHierarchy) return false;
 
-        // Ensure the clone's needs are good enough to use the object
-        for (int i = 0; i < requiredNeeds.Length; i++)
+        // Don't need broken/dirty shower required needs if on fire
+        if (!ManagerHandler.instance.clone.IsOnFire())
         {
-            if (!requiredNeeds[i].AtRequiredLevel())
+            // Ensure the clone's needs are good enough to use the object
+            for (int i = 0; i < requiredNeeds.Length; i++)
             {
-                ManagerHandler.instance.NeedsM.FlashRequiredNeed(requiredNeeds[i].GetNeedType());
-                return false;
+                if (!requiredNeeds[i].AtRequiredLevel())
+                {
+                    ManagerHandler.instance.NeedsM.FlashRequiredNeed(requiredNeeds[i].GetNeedType());
+                    return false;
+                }
             }
         }
 
