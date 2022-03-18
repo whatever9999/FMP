@@ -34,7 +34,7 @@ public class GoalData : ScriptableObject
                 break;
             case GoalManager.GoalType.FOOTLOOSE_FIEND:
                 // Danced 100 hours
-                if (ManagerHandler.instance.GoalM.GetHoursDancing() < 50) goalComplete = false;
+                if (ManagerHandler.instance.GoalM.GetHoursDancing() < 30) goalComplete = false;
                 break;
             case GoalManager.GoalType.DOMESTIC_DELIGHT:
                 // Cleaning, cooking and handiness must be maxed and must have cleaned 100 times
@@ -72,7 +72,7 @@ public class GoalData : ScriptableObject
                 goalAchievement += "Fires Survived: " + ManagerHandler.instance.GoalM.GetFiresSurvived() + "/5";
                 break;
             case GoalManager.GoalType.FOOTLOOSE_FIEND:
-                goalAchievement += "Hours Danced: " + ManagerHandler.instance.GoalM.GetHoursDancing() + "/50";
+                goalAchievement += "Hours Danced: " + ManagerHandler.instance.GoalM.GetHoursDancing() + "/30";
                 break;
             case GoalManager.GoalType.DOMESTIC_DELIGHT:
                 {
@@ -103,13 +103,13 @@ public class GoalData : ScriptableObject
                 goalMetric /= (int)SkillManager.SkillType.NONE * SkillManager.MAX_SKILL_LEVEL;
                 break;
             case GoalManager.GoalType.CONQUEROR_OF_CUISINE:
-                goalMetric = ManagerHandler.instance.GoalM.GetMealsMade() / (float)100;
+                goalMetric = ManagerHandler.instance.GoalM.GetMealsMade() / (float)30;
                 break;
             case GoalManager.GoalType.FAMOUS_FIREFIGHTER:
                 goalMetric = ManagerHandler.instance.GoalM.GetFiresSurvived() / (float)5;
                 break;
             case GoalManager.GoalType.FOOTLOOSE_FIEND:
-                goalMetric = ManagerHandler.instance.GoalM.GetHoursDancing() / (float)100;
+                goalMetric = ManagerHandler.instance.GoalM.GetHoursDancing() / (float)30;
                 break;
             case GoalManager.GoalType.DOMESTIC_DELIGHT:
                 // Add normalised skills
@@ -117,7 +117,7 @@ public class GoalData : ScriptableObject
                 goalMetric += ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.CLEANING) / (float)SkillManager.MAX_SKILL_LEVEL;
                 goalMetric += ManagerHandler.instance.SkillM.GetSkillLevel(SkillManager.SkillType.HANDINESS) / (float)SkillManager.MAX_SKILL_LEVEL;
                 // Add nromalised times cleaned
-                goalMetric = ManagerHandler.instance.GoalM.GetTimesCleaned() / (float)100;
+                goalMetric = ManagerHandler.instance.GoalM.GetTimesCleaned() / (float)50;
                 // Each element has a weighting of 1/4
                 goalMetric /= 4;
                 break;
