@@ -444,7 +444,12 @@ public class ConstantObject : MonoBehaviour
     }
     private bool IsColor(Color compareColor)
     {
-        return (materialRenderers[0].material.color == compareColor);
+        // Make sure we're not trying to change the colour of PFX (which don't have this property)
+        if (materialRenderers[0].material.HasProperty("_Color"))
+        {
+            return (materialRenderers[0].material.color == compareColor);
+        }
+        return false;
     }
 }
 
