@@ -19,6 +19,7 @@ public class NotificationManager : MonoBehaviour
         ILLNESS_RECOVERY,
         MAX_SKILL,
         MAX_ACTIONS,
+        NO_FOOD,
         NUM_NOTIFICATION_TYPES,
     }
 

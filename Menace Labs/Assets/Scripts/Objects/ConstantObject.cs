@@ -158,6 +158,7 @@ public class ConstantObject : MonoBehaviour
         // If there isn't enough food for this object to be used cancel the action
         if (usesFood > 0 && !ManagerHandler.instance.FoodM.GotEnoughFood(usesFood))
         {
+            ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.NO_FOOD);
             return false;
         }
         else if (usesFood > 0)
