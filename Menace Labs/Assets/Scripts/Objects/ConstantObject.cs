@@ -288,8 +288,7 @@ public class ConstantObject : MonoBehaviour
         ManagerHandler.instance.clone.ToggleCensor(censorType, false);
 
         // Update Goal Stats
-        if (name.Equals("Fridge")) ManagerHandler.instance.GoalM.ModifyMealsMade(1);
-        else if (name.Equals("Oven")) ManagerHandler.instance.GoalM.ModifyMealsMade(1);
+        if (name.Equals("Oven")) ManagerHandler.instance.GoalM.ModifyMealsMade(1);
         else if (name.Contains("Dirty")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);
         else if (name.Contains("Rubbish")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);
         else if (name.Contains("Puddle")) ManagerHandler.instance.GoalM.ModifyTimesCleaned(1);

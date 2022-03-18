@@ -26,7 +26,7 @@ public class GoalData : ScriptableObject
                 break;
             case GoalManager.GoalType.CONQUEROR_OF_CUISINE:
                 // Made 100 meals
-                if (ManagerHandler.instance.GoalM.GetMealsMade() < 30) goalComplete = false;
+                if (ManagerHandler.instance.GoalM.GetMealsMade() < 10) goalComplete = false;
                 break;
             case GoalManager.GoalType.FAMOUS_FIREFIGHTER:
                 // Survived 5 fires
@@ -66,7 +66,7 @@ public class GoalData : ScriptableObject
                 }
                 break;
             case GoalManager.GoalType.CONQUEROR_OF_CUISINE:
-                goalAchievement += "Meals Made: " + ManagerHandler.instance.GoalM.GetMealsMade() + "/30";
+                goalAchievement += "Meals Made: " + ManagerHandler.instance.GoalM.GetMealsMade() + "/10";
                 break;
             case GoalManager.GoalType.FAMOUS_FIREFIGHTER:
                 goalAchievement += "Fires Survived: " + ManagerHandler.instance.GoalM.GetFiresSurvived() + "/5";
@@ -103,7 +103,7 @@ public class GoalData : ScriptableObject
                 goalMetric /= (int)SkillManager.SkillType.NONE * SkillManager.MAX_SKILL_LEVEL;
                 break;
             case GoalManager.GoalType.CONQUEROR_OF_CUISINE:
-                goalMetric = ManagerHandler.instance.GoalM.GetMealsMade() / (float)30;
+                goalMetric = ManagerHandler.instance.GoalM.GetMealsMade() / (float)10;
                 break;
             case GoalManager.GoalType.FAMOUS_FIREFIGHTER:
                 goalMetric = ManagerHandler.instance.GoalM.GetFiresSurvived() / (float)5;
