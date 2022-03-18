@@ -27,7 +27,7 @@ public class FoodManager : MonoBehaviour
         if (supplyIssue && timeSinceSupplyIssue >= supplyIssueTimer)
         {
             ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.FOOD_SUPPLY_SORTED);
-            SetFoodAmount(10);
+            ModifyFoodAmount(10);
             supplyIssue = false;
         }
     }
