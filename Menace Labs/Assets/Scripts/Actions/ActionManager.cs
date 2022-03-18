@@ -286,10 +286,6 @@ public class ActionManager : MonoBehaviour
                 Debug.LogError("Failed to get action of type " + type);
             }
         }
-        else if (currentActions.Count > maxNumActions)
-        {
-            ManagerHandler.instance.NotificationM.AddNotification(NotificationManager.NotificationType.MAX_ACTIONS);
-        }
     }
     // Only checking for object use since other actions aren't added by player
     public bool AlreadyGotAction(GameObject usedObject)
