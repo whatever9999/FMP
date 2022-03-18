@@ -30240,6 +30240,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3690268591356168729, guid: 836ae57b6f7e0d247a2aee6f8025997b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690268591356168729, guid: 836ae57b6f7e0d247a2aee6f8025997b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690268591356168729, guid: 836ae57b6f7e0d247a2aee6f8025997b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690268591356168729, guid: 836ae57b6f7e0d247a2aee6f8025997b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690268591356168729, guid: 836ae57b6f7e0d247a2aee6f8025997b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 8825105082325959210, guid: 836ae57b6f7e0d247a2aee6f8025997b, type: 3}
       propertyPath: alternateDirtVersion
       value: 
@@ -30922,6 +30942,26 @@ PrefabInstance:
       propertyPath: alternateBreakVersion
       value: 
       objectReference: {fileID: 1398008947075162}
+    - target: {fileID: 6503243109371354652, guid: 62d997d9fe2d0854ea445f3649ad1d2c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503243109371354652, guid: 62d997d9fe2d0854ea445f3649ad1d2c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503243109371354652, guid: 62d997d9fe2d0854ea445f3649ad1d2c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503243109371354652, guid: 62d997d9fe2d0854ea445f3649ad1d2c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503243109371354652, guid: 62d997d9fe2d0854ea445f3649ad1d2c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 8124820921599457488, guid: 62d997d9fe2d0854ea445f3649ad1d2c, type: 3}
       propertyPath: m_Name
       value: BrokenToilet
