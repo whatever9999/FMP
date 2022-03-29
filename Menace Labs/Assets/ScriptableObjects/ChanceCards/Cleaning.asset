@@ -46,13 +46,13 @@ MonoBehaviour:
     checkValue: 5
     checkIfLower: 0
     modifyValue: 20
-  B_SuccessDescription: "As the clone picks up the fruit the scary guard comes over
-    to help them. This slight bit of human interaction exhilerates the clone and
-    they enjoy the remaining time spent on the staring competition with their new
-    friend. [Social maxed out]\r"
+  B_SuccessDescription: "Your clone tactfully and dutifully manages to collect all
+    of the feathers, then mops up the gooey mess of treacle they were stuck to. [+1
+    cleaning skill point]\r"
   B_SuccessEffects:
-  - {fileID: 11400000, guid: 7712e7205a2d0f74380f90e465520254, type: 2}
-  B_FailureDescription: "The fruit is rotten and more of it ends up on the clone
-    than on the floor but the scientists look pleased at this. [Reduced hygiene]\r"
+  - {fileID: 11400000, guid: 20fde1d55df727c40b77253c18797be4, type: 2}
+  B_FailureDescription: Each time the clone picks up a feather it panics at the stickiness
+    and rubs its hands on its clothes. In the end the room is clean but the clone
+    is not. [Reduced hygiene]
   B_FailureEffects:
   - {fileID: 11400000, guid: c612849ed2c305b4b8ef30d3d790212a, type: 2}
