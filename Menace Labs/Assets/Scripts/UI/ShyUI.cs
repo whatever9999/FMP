@@ -1,12 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShyUI : MonoBehaviour
 {
     [SerializeField] private Transform visiblePos;
     [SerializeField] private Transform hiddenPos;
-
-    [SerializeField] private GameObject upArrowButton;
-    [SerializeField] private GameObject downArrowButton;
 
     [SerializeField] private float moveSpeed = 2.0f;
 
@@ -14,8 +12,6 @@ public class ShyUI : MonoBehaviour
     public void ToggleUI() 
     { 
         showUI = !showUI;
-        upArrowButton.SetActive(!showUI);
-        downArrowButton.SetActive(showUI);
     }
 
     private void Update()
