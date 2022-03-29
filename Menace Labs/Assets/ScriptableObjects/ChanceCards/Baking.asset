@@ -56,7 +56,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a901f70436e6e1849befd34f82bd6a2a, type: 2}
   B_FailureDescription: "The guard takes a bite of one of the salty cupcakes before
     he leaves. Spitting it out onto the floor, he throws the tray at the clone in
-    a fit of rage and makes it redo them under constant supervision. [+2h to test
+    a fit of rage and makes it redo them under constant supervision. [+1h to test
     time]\r"
   B_FailureEffects:
-  - {fileID: 11400000, guid: 77c5979f53173ae42a09acc8b84e6ca7, type: 2}
+  - {fileID: 11400000, guid: 466b365ddcbf72f4b900a4ca8484af22, type: 2}

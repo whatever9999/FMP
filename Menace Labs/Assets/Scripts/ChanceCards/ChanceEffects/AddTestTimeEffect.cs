@@ -7,6 +7,6 @@ public class AddTestTimeEffect : ChanceEffect
 
     public override void TriggerEffect()
     {
-        ManagerHandler.instance.ActionM.ModifyTestTime(timeToAdd);
+        ManagerHandler.instance.ActionM.ModifyTestTime(timeToAdd * 60);
     }
 }

@@ -34,9 +34,9 @@ MonoBehaviour:
   A_FailureDescription: "As your clone swallows the red pill it is disappointed to
     see its new friends shake their head in disapproval. This was a test\u2026it
     did not go well and as punishment the clone must clean the dreaded chamber #1
-    before heading back to its quarters. [+2h to test time] "
+    before heading back to its quarters. [+1h to test time] "
   A_FailureEffects:
-  - {fileID: 11400000, guid: 77c5979f53173ae42a09acc8b84e6ca7, type: 2}
+  - {fileID: 11400000, guid: 466b365ddcbf72f4b900a4ca8484af22, type: 2}
   B_ButtonText: Blue
   B_Chance: 80
   B_SuccessModifier:

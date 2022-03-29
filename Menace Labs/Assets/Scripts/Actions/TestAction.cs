@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TestAction : Action
 {
-    [SerializeField] private float timeToTest = 30.0f;
+    [SerializeField] private float timeToTest = 10.0f;
     [SerializeField] private float timeToTriggerChanceCard = 5.0f;
     public void ModifyTestTime(float amount) { timeToTest += amount; }
     public void EndTest() { timeToTest = 0; }

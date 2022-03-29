@@ -36,9 +36,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 79d6b02b1cd555f4584ed731bb10f47d, type: 2}
   A_FailureDescription: "Your clone can only get through the burgers by taking its
     time. The board scientists monitoring it breathe sighs of relief when the final
-    bite is taken. [+4h test time]\r"
+    bite is taken. [+2h test time]\r"
   A_FailureEffects:
-  - {fileID: 11400000, guid: 2aded1f1d1d149147b803dcd94f2d62a, type: 2}
+  - {fileID: 11400000, guid: 77c5979f53173ae42a09acc8b84e6ca7, type: 2}
   B_ButtonText: Beer
   B_Chance: 10
   B_SuccessModifier:
@@ -54,6 +54,6 @@ MonoBehaviour:
   B_SuccessEffects:
   - {fileID: 11400000, guid: 5630cc649102a924583c9bb55efe3e6e, type: 2}
   B_FailureDescription: "The clone has passed out 3 beers in. The scientists groan
-    realising that this will be a very long test. [+4h test time]\r"
+    realising that this will be a very long test. [+2h test time]\r"
   B_FailureEffects:
-  - {fileID: 11400000, guid: 2aded1f1d1d149147b803dcd94f2d62a, type: 2}
+  - {fileID: 11400000, guid: 77c5979f53173ae42a09acc8b84e6ca7, type: 2}
