@@ -70,6 +70,16 @@ public class FireEvent : ChanceEvent
 
     [SerializeField] private GameObject firePrefab;
 }
+[System.Serializable]
+public class FireGoalFireEvent : OccurrenceEvent
+{
+    protected override void TriggerEvent()
+    {
+        ManagerHandler.instance.clone.SpawnObject(firePrefab);
+    }
+
+    [SerializeField] private GameObject firePrefab;
+}
 
 [System.Serializable]
 public class ElectrocutionEvent : ChanceEvent

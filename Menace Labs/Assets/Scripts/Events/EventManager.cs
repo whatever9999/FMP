@@ -21,6 +21,7 @@ public class EventManager : MonoBehaviour
     }
 
     [SerializeField] private FireEvent fireEvent;
+    [SerializeField] private FireGoalFireEvent fireGoalFireEvent;
     [SerializeField] private ElectrocutionEvent electrocutionEvent;
     [SerializeField] private RubbishEvent rubbishEvent;
     [SerializeField] private PuddleEvent puddleEvent;
@@ -38,7 +39,15 @@ public class EventManager : MonoBehaviour
     private void Awake()
     {
         // Populate the events dictionary with the different event types
-        events.Add(EventType.FIRE, fireEvent);
+        // If we have the firefighter goal use an occurrence instead of a chance event for fire so they're more common
+        if (ManagerHandler.instance.GoalM.GetGoal().goalType == GoalManager.GoalType.FAMOUS_FIREFIGHTER)
+        {
+            events.Add(EventType.FIRE, fireGoalFireEvent);
+        }
+        else
+        {
+            events.Add(EventType.FIRE, fireEvent);
+        }
         events.Add(EventType.ELECTROCUTION, electrocutionEvent);
         events.Add(EventType.RUBBISH, rubbishEvent);
         events.Add(EventType.PUDDLE, puddleEvent);
