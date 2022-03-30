@@ -363,7 +363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 329.02002, y: 312}
+  m_AnchoredPosition: {x: 329.02002, y: 348.0666}
   m_SizeDelta: {x: 451.041, y: 103.7253}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &166944901
@@ -540,8 +540,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 428, y: -276}
-  m_SizeDelta: {x: 750.667, y: 425.683}
+  m_AnchoredPosition: {x: 329.02, y: -225}
+  m_SizeDelta: {x: 595.54, y: 337.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &271351339
 MonoBehaviour:
@@ -1650,7 +1650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 329.02002, y: 545.07135}
+  m_AnchoredPosition: {x: 329.02002, y: 581.13794}
   m_SizeDelta: {x: 451.041, y: 103.7253}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &905944114
@@ -1852,7 +1852,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 329.02002, y: 77.93344}
+  m_AnchoredPosition: {x: 329.02002, y: 114}
   m_SizeDelta: {x: 451.041, y: 103.7253}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1054505187
@@ -2359,7 +2359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 329.02002, y: 194.92343}
+  m_AnchoredPosition: {x: 329.02002, y: 230.99002}
   m_SizeDelta: {x: 451.041, y: 103.7253}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1419462842
@@ -2738,7 +2738,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 329.02002, y: 429.9332}
+  m_AnchoredPosition: {x: 329.02002, y: 465.99976}
   m_SizeDelta: {x: 451.041, y: 103.7253}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1559598439
