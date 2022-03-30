@@ -17,6 +17,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI ageTooltipText;
 
+    [SerializeField] private ObjectTooltip objectTooltip;
+
     private float goalUpdateOccurence = 1.0f;
     private float goalUpdateTimer;
 
@@ -109,11 +111,27 @@ public class UIManager : MonoBehaviour
 
     public bool IsMouseOverUI()
     {
-        return UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+        if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+        {
+            Ray ray;
+
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, Mathf.Infinity, 1 << 6))
+            {
+                return false;
+            }
+            return true;
+        }
+        return false;
     }
 
     public void UpdateGoal(GoalData goal)
     {
         goalAchievementText.text = goal.GetGoalAchievement();
+    }
+
+    public void SetObjectTooltip(ConstantObject objectData)
+    {
+        objectTooltip.SetupTooltip(objectData);
     }
 }

@@ -419,6 +419,7 @@ public class ConstantObject : MonoBehaviour
             if (!IsColor(hoverColour) && !ManagerHandler.instance.UIM.IsMouseOverUI())
             {
                 ChangeColor(hoverColour);
+                ShowTooltip(true);
                 
             }
             else if (IsColor(hoverColour) && ManagerHandler.instance.UIM.IsMouseOverUI())
@@ -430,6 +431,7 @@ public class ConstantObject : MonoBehaviour
     private void OnMouseExit()
     {
         ChangeColor(Color.white);
+        ShowTooltip(false);
     }
     private void OnMouseDown()
     {
@@ -437,6 +439,11 @@ public class ConstantObject : MonoBehaviour
         {
             ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.OBJECT_USE, -1, gameObject);
         }
+    }
+
+    private void ShowTooltip(bool show)
+    {
+        ManagerHandler.instance.UIM.SetObjectTooltip(show ? this : null);
     }
 
     private void ChangeColor(Color newColour)
