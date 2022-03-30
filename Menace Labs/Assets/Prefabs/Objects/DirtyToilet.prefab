@@ -393,6 +393,7 @@ MonoBehaviour:
   alternateBreakVersion: {fileID: 0}
   requiredLocation: {fileID: 3690268591356168729}
   faceTransformDirection: 1
+  stopParticlesOnCancel: 0
   useAnimationSetForTimeToUse: 1
   timeToUse: 0
 --- !u!1 &8682826512751862504

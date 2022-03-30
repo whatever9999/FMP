@@ -77,6 +77,9 @@ public class ConstantObject : MonoBehaviour
     public Transform GetRequiredLocation() { return requiredLocation; }
     [SerializeField] protected bool faceTransformDirection;
 
+    [Header("PFX")]
+    [SerializeField] private bool stopParticlesOnCancel = true;
+
     protected bool finished;
     public bool IsFinished() { return finished; }
     public bool AffectsEnvironment() { return affectsEnvironment; }
@@ -341,7 +344,7 @@ public class ConstantObject : MonoBehaviour
             }
         }
         // If we cancelled fixing or cleaning don't tidy particles or change to fixed/clean object
-        if (breakType != BreakType.BROKEN && dirtType != DirtType.DIRTY)
+        if (beingUsed && stopParticlesOnCancel)
         {
             if (particles) particles.Stop();
 
