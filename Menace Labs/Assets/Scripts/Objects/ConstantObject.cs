@@ -157,6 +157,7 @@ public class ConstantObject : MonoBehaviour
                 if (!requiredNeeds[i].AtRequiredLevel())
                 {
                     ManagerHandler.instance.NeedsM.FlashRequiredNeed(requiredNeeds[i].GetNeedType());
+                    ManagerHandler.instance.thoughtTooltip.SetupTooltip(requiredNeeds[i].GetNeedType());
                     return false;
                 }
             }
@@ -219,6 +220,7 @@ public class ConstantObject : MonoBehaviour
                 if (!requiredNeeds[i].AtRequiredLevel())
                 {
                     ManagerHandler.instance.NeedsM.FlashRequiredNeed(requiredNeeds[i].GetNeedType());
+                    ManagerHandler.instance.thoughtTooltip.SetupTooltip(requiredNeeds[i].GetNeedType());
                     return false;
                 }
             }

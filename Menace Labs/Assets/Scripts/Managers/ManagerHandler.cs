@@ -12,6 +12,8 @@ public class ManagerHandler : MonoBehaviour
 
     public Clone clone;
 
+    public ThoughtTooltip thoughtTooltip;
+
     public ActionManager ActionM;
     public AgeManager AgeM;
     public AnimationManager AnimationM;

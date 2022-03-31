@@ -13,7 +13,6 @@ public class ObjectTooltip : MonoBehaviour
     private Dictionary<NeedsManager.NeedType, Image> needSymbols = new Dictionary<NeedsManager.NeedType, Image>();
     private Dictionary<SkillManager.SkillType, Image> skillSymbols = new Dictionary<SkillManager.SkillType, Image>();
 
-    // Start is called before the first frame update
     void Start()
     {
         needSymbols.Add(NeedsManager.NeedType.HUNGER, transform.Find("HungerSymbol").GetComponent<Image>());
