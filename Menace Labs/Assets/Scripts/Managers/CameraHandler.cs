@@ -3,6 +3,7 @@ using UnityEngine;
 public class CameraHandler : MonoBehaviour
 {
     [SerializeField] private Transform jumpToClonePos;
+    [SerializeField] private Transform rotateAroundPos;
 
     [SerializeField] private float lookSpeed = 10.0f;
     [SerializeField] private float zoomSpeed = 8.0f;
@@ -32,6 +33,8 @@ public class CameraHandler : MonoBehaviour
 
     private bool jumpingToClone = false;
     public void JumpToClone() { jumpingToClone = true; }
+
+    private bool rotateAround = false;
 
 
     private void Start()
@@ -194,21 +197,41 @@ public class CameraHandler : MonoBehaviour
             else if (moved)
             {
                 // ROTATE
-                float rotationX = transform.localEulerAngles.x;
-                float newRotationY = transform.localEulerAngles.y + rotateX;
-
-                // Clamp
-                float newRotationX = (rotationX - rotateY);
-                if (rotationX <= 90.0f && newRotationX >= 0.0f)
+                if (rotateAround)
                 {
-                    newRotationX = Mathf.Clamp(newRotationX, 0.0f, 90.0f);
-                }
-                if (rotationX >= 270.0f)
-                {
-                    newRotationX = Mathf.Clamp(newRotationX, 270.0f, 360.0f);
-                }
+                    transform.RotateAround(rotateAroundPos.position, Vector3.up, rotateX);
 
-                transform.localRotation = Quaternion.Euler(newRotationX, newRotationY, transform.localEulerAngles.z);
+                    float rotationX = transform.localEulerAngles.x;
+                    // Clamp
+                    float newRotationX = (rotationX - rotateY);
+                    if (rotationX <= 90.0f && newRotationX >= 0.0f)
+                    {
+                        newRotationX = Mathf.Clamp(newRotationX, 0.0f, 90.0f);
+                    }
+                    if (rotationX >= 270.0f)
+                    {
+                        newRotationX = Mathf.Clamp(newRotationX, 270.0f, 360.0f);
+                    }
+                    transform.localRotation = Quaternion.Euler(newRotationX, transform.localEulerAngles.y, transform.localEulerAngles.z);
+                }
+                else
+                {
+                    float rotationX = transform.localEulerAngles.x;
+                    float newRotationY = transform.localEulerAngles.y + rotateX;
+
+                    // Clamp
+                    float newRotationX = (rotationX - rotateY);
+                    if (rotationX <= 90.0f && newRotationX >= 0.0f)
+                    {
+                        newRotationX = Mathf.Clamp(newRotationX, 0.0f, 90.0f);
+                    }
+                    if (rotationX >= 270.0f)
+                    {
+                        newRotationX = Mathf.Clamp(newRotationX, 270.0f, 360.0f);
+                    }
+
+                    transform.localRotation = Quaternion.Euler(newRotationX, newRotationY, transform.localEulerAngles.z);
+                }
 
                 // ZOOM
                 transform.position += transform.forward * Time.unscaledDeltaTime * zoom;
