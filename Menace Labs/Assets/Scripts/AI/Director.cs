@@ -80,7 +80,9 @@ public class Director : MonoBehaviour
     {
         // Update timers
         // Only do so if the clone isn't away testing or dying Oo And there isn't a fire
-        if (!ManagerHandler.instance.ActionM.IsCloneTesting() && !ManagerHandler.instance.ActionM.IsCloneDying() && !IsFirePresent())
+        // Also making sure clone isn't super hungry to help with balance
+        bool hungryClone = ManagerHandler.instance.NeedsM.GetNeedValue(NeedsManager.NeedType.HUNGER) < (int)NeedsManager.NeedLevel.VERY_LOW;
+        if (!hungryClone && !ManagerHandler.instance.ActionM.IsCloneTesting() && !ManagerHandler.instance.ActionM.IsCloneDying() && !IsFirePresent())
         {
             // We only update the menace timer if we're in the correct menace range
             currentDirectorTimer += Time.deltaTime;
