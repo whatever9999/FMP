@@ -15,4 +15,9 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void PanelButton(GameObject panel)
+    {
+        panel.SetActive(!panel.activeInHierarchy);
+    }
 }
