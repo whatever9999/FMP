@@ -111,18 +111,7 @@ public class UIManager : MonoBehaviour
 
     public bool IsMouseOverUI()
     {
-        if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
-        {
-            Ray ray;
-
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, Mathf.Infinity, 1 << 6))
-            {
-                return false;
-            }
-            return true;
-        }
-        return false;
+        return UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
     }
 
     public void UpdateGoal(GoalData goal)
