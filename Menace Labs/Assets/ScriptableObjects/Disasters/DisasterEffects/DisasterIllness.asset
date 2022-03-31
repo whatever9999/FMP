@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: DisasterIllness
   m_EditorClassIdentifier: 
   effectType: 3
+  react: 0

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: FoodIssue
   m_EditorClassIdentifier: 
   effectType: 6
+  react: 0
   issueTimer: 120

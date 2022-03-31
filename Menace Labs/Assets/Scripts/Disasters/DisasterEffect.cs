@@ -14,9 +14,11 @@ public abstract class DisasterEffect : ScriptableObject
     }
 
     public DisasterEffectType effectType;
+    public bool react = true;
+
     // TriggerEffect implementations should call base to ensure clone reacts
     public virtual void TriggerEffect()
     {
-        ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.REACT, 1);
+        if (react) ManagerHandler.instance.ActionM.AddAction(ActionManager.ActionType.REACT, 1);
     }
 }
