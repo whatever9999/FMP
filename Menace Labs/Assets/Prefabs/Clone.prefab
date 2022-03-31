@@ -1500,7 +1500,7 @@ MonoBehaviour:
   fireParticles: {fileID: 625605216935395806}
   smellParticles: {fileID: 7114020996477377256}
   electricParticles: {fileID: 7001664845797933512}
-  runSpeed: 6
+  runSpeed: 4
 --- !u!195 &8792628829624405646
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1511,7 +1511,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.4
-  m_Speed: 2.5
+  m_Speed: 1.5
   m_Acceleration: 2
   avoidancePriority: 50
   m_AngularSpeed: 500

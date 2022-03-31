@@ -221,6 +221,7 @@ public class TimeManager : MonoBehaviour
 
             currentSpeed = speed;
             ManagerHandler.instance.UIM.SelectTimeButton(currentSpeed);
+            ManagerHandler.instance.clone.UpdateSpeed();
 
             ManagerHandler.instance.PerformanceMetric.IncrementPerformanceAttribute(PerformanceMetric.PerformanceData.SPEED_CHANGES);
         }

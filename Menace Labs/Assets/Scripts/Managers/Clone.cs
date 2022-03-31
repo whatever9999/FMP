@@ -30,6 +30,8 @@ public class Clone : MonoBehaviour
     private float walkSpeed;
 
     private bool isSmelly = false;
+    private bool running = false;
+    private void ToggleRunning(bool run) { running = run; UpdateSpeed(); }
 
     public bool IsSmelly() { return isSmelly; }
     public bool IsOnFire() { return ManagerHandler.instance.NeedsM.IsOnFire(); }
@@ -133,13 +135,13 @@ public class Clone : MonoBehaviour
             ManagerHandler.instance.ActionM.CancelAllActions();
             fireParticles.gameObject.SetActive(true);
             fireParticles.Play();
-            clone.speed = runSpeed;
+            ToggleRunning(true);
         }
         else
         {
             fireParticles.gameObject.SetActive(false);
             fireParticles.Stop();
-            clone.speed = walkSpeed;
+            ToggleRunning(false);
         }
     }
     public void SetSmelly(bool smelly)
@@ -189,5 +191,18 @@ public class Clone : MonoBehaviour
     public void DeathPopup()
     {
         ManagerHandler.instance.PopupM.ShowDeath();
+    }
+
+    public void UpdateSpeed()
+    {
+        TimeManager.TimeSpeed timeSpeed = ManagerHandler.instance.TimeM.GetSpeed();
+        if (running)
+        {
+            clone.speed = (float)timeSpeed * runSpeed;
+        }
+        else
+        {
+            clone.speed = (float)timeSpeed * walkSpeed;
+        }
     }
 }
