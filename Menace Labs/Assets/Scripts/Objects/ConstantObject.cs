@@ -243,21 +243,18 @@ public class ConstantObject : MonoBehaviour
         int timeSinceCheckedEffects = ManagerHandler.instance.TimeM.GetCurrentTime() - lastCheckedEffectsTime;
         if (timeSinceCheckedEffects >= timeToCheckEffects)
         {
-            // Update effects according to time scale so a game second will be tripled if at 3x speed
-            for (int j = 0; j < timeSinceCheckedEffects; j++)
+            // Update effects according to time scale so multiply values by time that passed since last check
+            for (int i = 0; i < effects.Count; i++)
             {
-                for (int i = 0; i < effects.Count; i++)
+                // If the effect is on a need then modify the need
+                if (effects[i].GetNeedType() != NeedsManager.NeedType.NONE)
                 {
-                    // If the effect is on a need then modify the need
-                    if (effects[i].GetNeedType() != NeedsManager.NeedType.NONE)
-                    {
-                        ManagerHandler.instance.NeedsM.ModifyNeed(effects[i].GetNeedType(), effects[i].GetValue());
-                    }
-                    // If the effect is on a skill then progress the skill
-                    if (effects[i].GetSkillType() != SkillManager.SkillType.NONE)
-                    {
-                        ManagerHandler.instance.SkillM.ProgressSkill(effects[i].GetSkillType(), effects[i].GetValue());
-                    }
+                    ManagerHandler.instance.NeedsM.ModifyNeed(effects[i].GetNeedType(), effects[i].GetValue() * timeSinceCheckedEffects);
+                }
+                // If the effect is on a skill then progress the skill
+                if (effects[i].GetSkillType() != SkillManager.SkillType.NONE)
+                {
+                    ManagerHandler.instance.SkillM.ProgressSkill(effects[i].GetSkillType(), effects[i].GetValue() * timeSinceCheckedEffects);
                 }
             }
 

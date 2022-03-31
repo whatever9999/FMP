@@ -31,13 +31,13 @@ public class NeedsManager : MonoBehaviour
     [SerializeField] private int fireMultiplier = 3;
     [SerializeField] private int illMultiplier = 2;
     [SerializeField] private float sleepModifierPassedOut = 0.2f;
-    [SerializeField] private float timeToUpdateNeed = 1.0f;
+    [SerializeField] private int timeToUpdateNeed = 1;
     [Tooltip("If the health metric is less than this value when the clone is electrocuted they have a chance of dying")]
     [SerializeField] private float electrocutionDeathCheck = 0.4f;
     [SerializeField] private float electrocutionModifier = 10;
     [Tooltip("If fun or social are below this value the clone has a chance of going mad each update")]
     [SerializeField] private int madnessDeathCheck = 5;
-    private float updateNeedTimer;
+    private int lastCheckedNeedsTime;
 
     [SerializeField] private Color needFlash;
 
@@ -54,9 +54,14 @@ public class NeedsManager : MonoBehaviour
     public bool IsOnFire() { return onFire; }
     public void SetPassedOut(bool setTo) { passedOut = setTo; }
 
+    private void Start()
+    {
+        lastCheckedNeedsTime = ManagerHandler.instance.TimeM.GetCurrentTime();
+    }
+
     private void FixedUpdate()
     {
-        updateNeedTimer += Time.deltaTime;
+        int timeSinceLastCheckedNeeds = ManagerHandler.instance.TimeM.GetCurrentTime() - lastCheckedNeedsTime;
 
         // If we're currently using an object don't touch needs that it affects
         List<NeedType> needsAffectedByObject = new List<NeedType>();
@@ -77,30 +82,31 @@ public class NeedsManager : MonoBehaviour
         }
 
         // Update needs every timeToUpdateNeed seconds
-        if (updateNeedTimer > timeToUpdateNeed)
+        if (timeSinceLastCheckedNeeds >= timeToUpdateNeed)
         {
+            // Update effects according to time scale so multiply values by time that passed since last check
             for (int i = 0; i < needs.Length; i++)
             {
                 if (needs[i].GetNeedType() == NeedType.SLEEP && passedOut)
                 {
-                    needs[i].ModifyNeed(sleepModifierPassedOut);
+                    needs[i].ModifyNeed(sleepModifierPassedOut * timeSinceLastCheckedNeeds);
                 }
                 // Only update the need if the current object in use doesn't affect it
                 else if (!needsAffectedByObject.Contains(needs[i].GetNeedType()))
                 {
                     // If on fire all needs are decreased faster
-                    if (onFire) needs[i].UpdateNeed(fireMultiplier);
+                    if (onFire) needs[i].UpdateNeed(fireMultiplier * timeSinceLastCheckedNeeds);
                     // If ill sleep, bladder and hygiene needs decrease faster
                     else if (isIll && (needs[i].GetNeedType() == NeedType.SLEEP || needs[i].GetNeedType() == NeedType.BLADDER || needs[i].GetNeedType() == NeedType.HYGIENE))
                     {
-                        needs[i].UpdateNeed(illMultiplier);
+                        needs[i].UpdateNeed(illMultiplier * timeSinceLastCheckedNeeds);
                     }
                     // Otherwise, needs decrease at a normal rate
-                    else needs[i].UpdateNeed(updateMultiplier);
+                    else needs[i].UpdateNeed(updateMultiplier * timeSinceLastCheckedNeeds);
                 }
             }
 
-            updateNeedTimer = 0;
+            lastCheckedNeedsTime = ManagerHandler.instance.TimeM.GetCurrentTime();
 
             MadnessCheck();
 
