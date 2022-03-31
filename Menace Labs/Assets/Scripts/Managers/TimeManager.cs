@@ -5,7 +5,8 @@ using TMPro;
 public class TimeManager : MonoBehaviour
 {
     [SerializeField] private float playSpeed = 1.0f;
-    [SerializeField] private float FFSpeed = 3.0f;
+    [SerializeField] private float FFSpeed = 2.0f;
+    [SerializeField] private float SFFSpeed = 3.0f;
     [SerializeField] private float superSpeed = 8.0f;
 
     [SerializeField] private float speedySoundPitch = 1.5f;
@@ -30,6 +31,7 @@ public class TimeManager : MonoBehaviour
         PAUSE,
         PLAY,
         FAST_FORWARD,
+        SUPER_FAST_FORWARD,
         NUM_TIME_SPEEDS,
     }
     public enum Times
@@ -76,7 +78,7 @@ public class TimeManager : MonoBehaviour
     private void Update()
     {
         // Double speed is super speed when the clone is sleeping/testing
-        if (currentSpeed == TimeSpeed.FAST_FORWARD)
+        if (currentSpeed == TimeSpeed.SUPER_FAST_FORWARD)
         {
             if (ManagerHandler.instance.ActionM.GetCurrentAction())
             {
@@ -87,12 +89,12 @@ public class TimeManager : MonoBehaviour
                 }
                 else
                 {
-                    Time.timeScale = FFSpeed;
+                    Time.timeScale = SFFSpeed;
                 }
             }
             else
             {
-                Time.timeScale = FFSpeed;
+                Time.timeScale = SFFSpeed;
             }
         }
 
@@ -149,6 +151,10 @@ public class TimeManager : MonoBehaviour
         {
             SetTimeSpeed(TimeSpeed.FAST_FORWARD);
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SetTimeSpeed(TimeSpeed.SUPER_FAST_FORWARD);
+        }
     }
 
     private void CheckTriggers()
@@ -182,9 +188,10 @@ public class TimeManager : MonoBehaviour
     // Provide function using integers for buttons to use
     public void SetTimeSpeed(int speed)
     {
-        TimeSpeed newSpeed = TimeSpeed.FAST_FORWARD;
+        TimeSpeed newSpeed = TimeSpeed.SUPER_FAST_FORWARD;
         if (speed == 0) newSpeed = TimeSpeed.PAUSE;
         else if (speed == 1) newSpeed = TimeSpeed.PLAY;
+        else if (speed == 2) newSpeed = TimeSpeed.FAST_FORWARD;
 
         SetTimeSpeed(newSpeed);
     }
@@ -206,6 +213,9 @@ public class TimeManager : MonoBehaviour
                     break;
                 case TimeSpeed.FAST_FORWARD:
                     Time.timeScale = FFSpeed;
+                    break;
+                case TimeSpeed.SUPER_FAST_FORWARD:
+                    Time.timeScale = SFFSpeed;
                     break;
             }
 
