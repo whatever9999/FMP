@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class UIManager : MonoBehaviour
         SetCloneName();
         SetAgeTooltip(ManagerHandler.instance.AgeM.GetCloneAge());
         UpdateGoal(ManagerHandler.instance.GoalM.GetGoal());
+        SelectTimeButton(TimeManager.TimeSpeed.PLAY);
     }
 
     private void Update()
@@ -123,4 +125,24 @@ public class UIManager : MonoBehaviour
     {
         objectTooltip.SetupTooltip(objectData);
     }
+
+    #region Time Buttons
+    [SerializeField] private Image pauseButton;
+    [SerializeField] private Image playButton;
+    [SerializeField] private Image FFButton;
+    [SerializeField] private Image SFFButton;
+
+    public void SelectTimeButton(TimeManager.TimeSpeed time)
+    {
+        pauseButton.color = Color.white;
+        playButton.color = Color.white;
+        FFButton.color = Color.white;
+        SFFButton.color = Color.white;
+
+        if (time == TimeManager.TimeSpeed.PAUSE) pauseButton.color = Color.grey;
+        if (time == TimeManager.TimeSpeed.PLAY) playButton.color = Color.grey;
+        if (time == TimeManager.TimeSpeed.FAST_FORWARD) FFButton.color = Color.grey;
+        if (time == TimeManager.TimeSpeed.SUPER_FAST_FORWARD) SFFButton.color = Color.grey;
+    }
+    #endregion // Time Buttons
 }
