@@ -91,8 +91,8 @@ public class ConstantObject : MonoBehaviour
     protected int startedUsingTime;
     protected bool beingUsed;
 
-    private float timeToCheckEffects = 1.0f;
-    private float effectsTimer;
+    private int timeToCheckEffects = 1;
+    private int lastCheckedEffectsTime;
 
     private void Awake()
     {
@@ -183,6 +183,7 @@ public class ConstantObject : MonoBehaviour
         beingUsed = true;
         finished = false;
         startedUsingTime = ManagerHandler.instance.TimeM.GetCurrentTime();
+        lastCheckedEffectsTime = startedUsingTime;
 
         if (audioSource && objectStartSound != SoundManager.SoundName.NUM_SOUND_NAMES)
         {
@@ -239,24 +240,28 @@ public class ConstantObject : MonoBehaviour
 
         if (particles && !particles.isPlaying) particles.Play();
 
-        effectsTimer += Time.deltaTime;
-        if (effectsTimer >= timeToCheckEffects)
+        int timeSinceCheckedEffects = ManagerHandler.instance.TimeM.GetCurrentTime() - lastCheckedEffectsTime;
+        if (timeSinceCheckedEffects >= timeToCheckEffects)
         {
-            for (int i = 0; i < effects.Count; i++)
+            // Update effects according to time scale so a game second will be tripled if at 3x speed
+            for (int j = 0; j < timeSinceCheckedEffects; j++)
             {
-                // If the effect is on a need then modify the need
-                if (effects[i].GetNeedType() != NeedsManager.NeedType.NONE)
+                for (int i = 0; i < effects.Count; i++)
                 {
-                    ManagerHandler.instance.NeedsM.ModifyNeed(effects[i].GetNeedType(), effects[i].GetValue());
-                }
-                // If the effect is on a skill then progress the skill
-                if (effects[i].GetSkillType() != SkillManager.SkillType.NONE)
-                {
-                    ManagerHandler.instance.SkillM.ProgressSkill(effects[i].GetSkillType(), effects[i].GetValue());
+                    // If the effect is on a need then modify the need
+                    if (effects[i].GetNeedType() != NeedsManager.NeedType.NONE)
+                    {
+                        ManagerHandler.instance.NeedsM.ModifyNeed(effects[i].GetNeedType(), effects[i].GetValue());
+                    }
+                    // If the effect is on a skill then progress the skill
+                    if (effects[i].GetSkillType() != SkillManager.SkillType.NONE)
+                    {
+                        ManagerHandler.instance.SkillM.ProgressSkill(effects[i].GetSkillType(), effects[i].GetValue());
+                    }
                 }
             }
 
-            effectsTimer = 0.0f;
+            lastCheckedEffectsTime = ManagerHandler.instance.TimeM.GetCurrentTime();
         }
 
         return true;
