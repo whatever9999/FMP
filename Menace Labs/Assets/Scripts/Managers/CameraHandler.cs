@@ -36,6 +36,59 @@ public class CameraHandler : MonoBehaviour
 
     private bool rotateAround = false;
 
+    #region Controls
+    public enum KeyTypes
+    {
+        ROTATE,
+        MOVE,
+        UP,
+        DOWN,
+        LEFT,
+        RIGHT,
+        ROTATE_LEFT,
+        ROTATE_RIGHT,
+        JUMP_TO_CLONE,
+        NUM_KEYS,
+    }
+
+    public KeyCode GetKey(KeyTypes key)
+    {
+        switch (key)
+        {
+            case KeyTypes.ROTATE:
+                return rotateKey;
+            case KeyTypes.MOVE:
+                return moveKey;
+            case KeyTypes.UP:
+                return upKey;
+            case KeyTypes.DOWN:
+                return downKey;
+            case KeyTypes.LEFT:
+                return leftKey;
+            case KeyTypes.RIGHT:
+                return rightKey;
+            case KeyTypes.ROTATE_LEFT:
+                return rotateLeftKey;
+            case KeyTypes.ROTATE_RIGHT:
+                return rotateRightKey;
+            case KeyTypes.JUMP_TO_CLONE:
+                return jumpToCloneKey;
+        }
+        Debug.LogError("Didn't find key of type: " + key);
+        return KeyCode.None;
+    }
+
+    KeyCode rotateKey = KeyCode.Mouse2;
+    KeyCode moveKey = KeyCode.Mouse1;
+    KeyCode upKey = KeyCode.W;
+    KeyCode downKey = KeyCode.S;
+    KeyCode leftKey = KeyCode.A;
+    KeyCode rightKey = KeyCode.D;
+    KeyCode rotateLeftKey = KeyCode.Q;
+    KeyCode rotateRightKey = KeyCode.E;
+    KeyCode jumpToCloneKey = KeyCode.Space;
+    #endregion // Controls
+
 
     private void Start()
     {
@@ -60,35 +113,18 @@ public class CameraHandler : MonoBehaviour
         float shiftMultiplier = Input.GetKey(KeyCode.LeftShift) ? shiftSpeedUp : 1.0f;
 
         // Rotate camera on middle mouse
-        if (Input.GetMouseButton(2))
+        if (Input.GetKey(rotateKey))
         {
             rotateX = Input.GetAxis(mouseXString) * lookSpeed;
             rotateY = Input.GetAxis(mouseYString) * lookSpeed;
-        }
-        // Don't move cursor until middle click is released
-        if (Input.GetMouseButtonDown(2))
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else if (Input.GetMouseButtonUp(2))
-        {
-            Cursor.lockState = CursorLockMode.Confined;
-        }
 
+
+        }
         // Move camera on right click
-        if (Input.GetMouseButton(1))
+        if (Input.GetKey(moveKey))
         {
             moveHorizontal = Input.GetAxis(mouseXString) * moveSpeed;
             moveVertical = Input.GetAxis(mouseYString) * moveSpeed;
-        }
-        // Don't move cursor until right click is released
-        if (Input.GetMouseButtonDown(1))
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else if (Input.GetMouseButtonUp(1))
-        {
-            Cursor.lockState = CursorLockMode.Confined;
         }
 
         // Edge Scrolling
@@ -110,19 +146,19 @@ public class CameraHandler : MonoBehaviour
         }
 
         // WSAD
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(upKey))
         {
             moveVertical += moveSpeed * shiftMultiplier;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(downKey))
         {
             moveVertical -= moveSpeed * shiftMultiplier;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(leftKey))
         {
             moveHorizontal -= moveSpeed * shiftMultiplier;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(rightKey))
         {
             moveHorizontal += moveSpeed * shiftMultiplier;
         }
@@ -131,17 +167,17 @@ public class CameraHandler : MonoBehaviour
         zoom += (Input.mouseScrollDelta.y * zoomSpeed * shiftMultiplier);
 
         // Q and E rotate the camera
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(rotateLeftKey))
         {
             rotateX -= rotateSpeed * shiftMultiplier;
         }
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(rotateRightKey))
         {
             rotateX += rotateSpeed * shiftMultiplier;
         }
 
         // Jump to the clone if spacebar is pressed (will be cancelled if other keys are pressed)
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(jumpToCloneKey))
         {
             jumpingToClone = !jumpingToClone;
         }
