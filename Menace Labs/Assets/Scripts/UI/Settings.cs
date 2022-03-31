@@ -77,4 +77,15 @@ public class Settings : MonoBehaviour
             audioMixer.SetFloat("MusicVolume", volume);
         }
     }
+
+    // If SFX are at 0 don't play the sound boing
+    public void PlaySoundBoing(AudioSource slider)
+    {
+        float sfxVolume;
+        audioMixer.GetFloat("SFXVolume", out sfxVolume);
+        if (sfxVolume != -80)
+        {
+            slider.Play();
+        }
+    }
 }
