@@ -23173,7 +23173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26577e17f60326d44aa9067ba4e259c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cloneMeshHandler: {fileID: 8792628830203594989}
+  audioMixer: {fileID: 24100000, guid: 1ce5f9b9f4267274584af8273e739852, type: 2}
 --- !u!1001 &1576748634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35444,17 +35444,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2067082230179935061, guid: faedd4ed504aacf409cefa0a82643f68, type: 3}
   m_PrefabInstance: {fileID: 8792628830203594987}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8792628830203594989 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 168750815614594393, guid: faedd4ed504aacf409cefa0a82643f68, type: 3}
-  m_PrefabInstance: {fileID: 8792628830203594987}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de85922cab8f1f24887f959e5e22ac96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8884996777617096863
 PrefabInstance:
   m_ObjectHideFlags: 0

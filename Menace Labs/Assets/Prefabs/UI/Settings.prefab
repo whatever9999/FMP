@@ -3454,7 +3454,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1331690115058275498}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
-        m_MethodName: SetMusicVolume
+        m_MethodName: SetMasterVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

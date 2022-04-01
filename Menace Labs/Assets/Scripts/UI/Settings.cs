@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Settings : MonoBehaviour
 {
-    public AudioMixer audioMixer;
+    [SerializeField] private AudioMixer audioMixer;
 
     [SerializeField] Slider masterSlider;
     [SerializeField] Slider SFXSlider;
@@ -17,17 +17,10 @@ public class Settings : MonoBehaviour
     private void Start()
     {
         // Sound
-        float masterVolume, sfxVolume, ambienceVolume, musicVolume;
-
-        audioMixer.GetFloat("MasterVolume", out masterVolume);
-        audioMixer.GetFloat("SFXVolume", out sfxVolume);
-        audioMixer.GetFloat("AmbienceVolume", out ambienceVolume);
-        audioMixer.GetFloat("MusicVolume", out musicVolume);
-
-        masterSlider.value = masterVolume;
-        SFXSlider.value = sfxVolume;
-        ambienceSlider.value = ambienceVolume;
-        musicSlider.value = musicVolume;
+        masterSlider.value = SaveManager.instance.GetSave().masterVolume;
+        SFXSlider.value = SaveManager.instance.GetSave().SFXVolume;
+        ambienceSlider.value = SaveManager.instance.GetSave().ambienceVolume;
+        musicSlider.value = SaveManager.instance.GetSave().musicVolume;
 
         // UI
         objectTooltipToggle.SetIsOnWithoutNotify(SaveManager.instance.GetSave().enableObjectTooltips);
@@ -38,12 +31,10 @@ public class Settings : MonoBehaviour
     {
         if (volume == masterSlider.minValue)
         {
-            audioMixer.SetFloat("MasterVolume", -80);
+            volume = -80;
         }
-        else
-        {
-            audioMixer.SetFloat("MasterVolume", volume);
-        }
+        audioMixer.SetFloat("MasterVolume", volume);
+        SaveManager.instance.SetSoundVolume(SaveManager.SoundTypes.MASTER, volume);
     }
 
     public void SetSFXVolume(float volume)
@@ -51,12 +42,10 @@ public class Settings : MonoBehaviour
         // The min value is about -40 since we want the slider to have a better range - once it reaches this we need to mute it though
         if (volume == SFXSlider.minValue)
         {
-            audioMixer.SetFloat("SFXVolume", -80);
+            volume = -80;
         }
-        else
-        {
-            audioMixer.SetFloat("SFXVolume", volume);
-        }
+        audioMixer.SetFloat("SFXVolume", volume);
+        SaveManager.instance.SetSoundVolume(SaveManager.SoundTypes.SFX, volume);
     }
 
     public void SetAmbienceVolume(float volume)
@@ -64,12 +53,10 @@ public class Settings : MonoBehaviour
         // The min value is about -40 since we want the slider to have a better range - once it reaches this we need to mute it though
         if (volume == ambienceSlider.minValue)
         {
-            audioMixer.SetFloat("AmbienceVolume", -80);
+            volume = -80;
         }
-        else
-        {
-            audioMixer.SetFloat("AmbienceVolume", volume);
-        }
+        audioMixer.SetFloat("AmbienceVolume", volume);
+        SaveManager.instance.SetSoundVolume(SaveManager.SoundTypes.AMBIENCE, volume);
     }
 
     public void SetMusicVolume(float volume)
@@ -77,12 +64,10 @@ public class Settings : MonoBehaviour
         // The min value is about -40 since we want the slider to have a better range - once it reaches this we need to mute it though
         if (volume == musicSlider.minValue)
         {
-            audioMixer.SetFloat("MusicVolume", -80);
+            volume = -80;
         }
-        else
-        {
-            audioMixer.SetFloat("MusicVolume", volume);
-        }
+        audioMixer.SetFloat("MusicVolume", volume);
+        SaveManager.instance.SetSoundVolume(SaveManager.SoundTypes.MUSIC, volume);
     }
 
     // If SFX are at 0 don't play the sound boing
