@@ -44,47 +44,61 @@ public class ObjectTooltip : MonoBehaviour
 
     public void SetupTooltip(ConstantObject objectData)
     {
-        onObject = objectData;
-
-        if (objectData)
+        // Only show tooltips if they're not enabled
+        bool tooltipsEnabled = SaveManager.instance.GetSave().enableObjectTooltips;
+        if (tooltipsEnabled)
         {
-            // Enable the symbols concerning the needs/skills this object affects
-            List<ObjectEffect> effects = objectData.GetObjectEffects();
-            for (int i = 0; i < effects.Count; i++)
-            {
-                bool positiveEffect = effects[i].GetValue() > 0;
+            onObject = objectData;
 
-                NeedsManager.NeedType needType = effects[i].GetNeedType();
-                if (needType != NeedsManager.NeedType.NONE)
+            if (objectData)
+            {
+                // Enable the symbols concerning the needs/skills this object affects
+                List<ObjectEffect> effects = objectData.GetObjectEffects();
+                for (int i = 0; i < effects.Count; i++)
                 {
-                    needSymbols[needType].color = positiveEffect ? positiveEffectColor : negativeEffectColor;
-                    needSymbols[needType].gameObject.SetActive(true);
+                    bool positiveEffect = effects[i].GetValue() > 0;
+
+                    NeedsManager.NeedType needType = effects[i].GetNeedType();
+                    if (needType != NeedsManager.NeedType.NONE)
+                    {
+                        needSymbols[needType].color = positiveEffect ? positiveEffectColor : negativeEffectColor;
+                        needSymbols[needType].gameObject.SetActive(true);
+                    }
+
+                    SkillManager.SkillType skillType = effects[i].GetSkillType();
+                    if (effects[i].GetSkillType() != SkillManager.SkillType.NONE)
+                    {
+                        skillSymbols[skillType].color = positiveEffect ? positiveEffectColor : negativeEffectColor;
+                        skillSymbols[effects[i].GetSkillType()].gameObject.SetActive(true);
+                    }
                 }
 
-                SkillManager.SkillType skillType = effects[i].GetSkillType();
-                if (effects[i].GetSkillType() != SkillManager.SkillType.NONE)
-                {
-                    skillSymbols[skillType].color = positiveEffect ? positiveEffectColor : negativeEffectColor;
-                    skillSymbols[effects[i].GetSkillType()].gameObject.SetActive(true);
-                }
+                gameObject.SetActive(true);
             }
-
-            gameObject.SetActive(true);
+            else
+            {
+                DisableTooltip();
+            }
         }
-        else
+        // If tooltips are disabled make sure the tooltip is disabled if active
+        else if (!tooltipsEnabled && gameObject.activeSelf)
         {
-            // Disable all symbols as we have no object
-            for (SkillManager.SkillType i = 0; (int)i < skillSymbols.Count; i++)
-            {
-                skillSymbols[i].gameObject.SetActive(false);
-            }
-            for (NeedsManager.NeedType i = 0; (int)i < needSymbols.Count; i++)
-            {
-                needSymbols[i].gameObject.SetActive(false);
-            }
-
-            gameObject.SetActive(false);
+            DisableTooltip();
         }
-       
+    }
+
+    private void DisableTooltip()
+    {
+        // Disable all symbols as we have no object
+        for (SkillManager.SkillType i = 0; (int)i < skillSymbols.Count; i++)
+        {
+            skillSymbols[i].gameObject.SetActive(false);
+        }
+        for (NeedsManager.NeedType i = 0; (int)i < needSymbols.Count; i++)
+        {
+            needSymbols[i].gameObject.SetActive(false);
+        }
+
+        gameObject.SetActive(false);
     }
 }

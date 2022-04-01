@@ -11,6 +11,11 @@ public class CloneMeshHandler : MonoBehaviour
         meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
     }
 
+    private void Start()
+    {
+        SetChosenClone(SaveManager.instance.GetSave().chosenClone);
+    }
+
     public int GetChosenClone() 
     { 
         return currentMesh;
@@ -26,6 +31,6 @@ public class CloneMeshHandler : MonoBehaviour
         if (currentMesh == meshes.Length - 1) currentMesh = -1;
         meshRenderer.sharedMesh = meshes[++currentMesh];
 
-        SaveManager.instance.SaveGame();
+        SaveManager.instance.SetChosenClone(currentMesh);
     }
 }

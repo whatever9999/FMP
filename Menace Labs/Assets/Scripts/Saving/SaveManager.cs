@@ -8,28 +8,21 @@ public class SaveManager : MonoBehaviour
 
     [SerializeField] private CloneMeshHandler cloneMeshHandler;
 
+    private Save loadedSave;
+    public Save GetSave() { return loadedSave; }
+
     private void Awake()
     {
         instance = this;
-    }
-
-    private void Start()
-    {
-        cloneMeshHandler = GameObject.FindObjectOfType<CloneMeshHandler>();
 
         LoadGame();
     }
 
     public void SaveGame()
     {
-        // CREATE DATA
-        Save save = new Save();
-        save.chosenClone = cloneMeshHandler.GetChosenClone();
-
-        // SAVE FILE
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
-        bf.Serialize(file, save);
+        bf.Serialize(file, loadedSave);
         file.Close();
     }
     public void LoadGame()
@@ -38,10 +31,23 @@ public class SaveManager : MonoBehaviour
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
-            Save save = (Save)bf.Deserialize(file);
+            loadedSave = (Save)bf.Deserialize(file);
             file.Close();
-
-            cloneMeshHandler.SetChosenClone(save.chosenClone);
         }
+        else
+        {
+            loadedSave = new Save();
+        }
+    }
+
+    public void SetChosenClone(int chosenClone)
+    {
+        loadedSave.chosenClone = chosenClone;
+        SaveGame();
+    }
+    public void EnableObjectTooltips(bool enable)
+    {
+        loadedSave.enableObjectTooltips = enable;
+        SaveGame();
     }
 }

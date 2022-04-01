@@ -11,9 +11,12 @@ public class Settings : MonoBehaviour
     [SerializeField] Slider ambienceSlider;
     [SerializeField] Slider musicSlider;
 
+    [SerializeField] Toggle objectTooltipToggle;
+
     // Ensure the UI matches the current settings
     private void Start()
     {
+        // Sound
         float masterVolume, sfxVolume, ambienceVolume, musicVolume;
 
         audioMixer.GetFloat("MasterVolume", out masterVolume);
@@ -25,8 +28,12 @@ public class Settings : MonoBehaviour
         SFXSlider.value = sfxVolume;
         ambienceSlider.value = ambienceVolume;
         musicSlider.value = musicVolume;
+
+        // UI
+        objectTooltipToggle.SetIsOnWithoutNotify(SaveManager.instance.GetSave().enableObjectTooltips);
     }
 
+    #region Sound
     public void SetMasterVolume(float volume)
     {
         if (volume == masterSlider.minValue)
@@ -88,4 +95,12 @@ public class Settings : MonoBehaviour
             slider.Play();
         }
     }
+    #endregion //Sound
+
+    #region UI
+    public void SetObjectTooltips()
+    {
+        SaveManager.instance.EnableObjectTooltips(objectTooltipToggle.isOn);
+    }
+    #endregion //UI
 }
