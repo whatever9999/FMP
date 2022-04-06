@@ -9,6 +9,7 @@ public class ObjectTooltip : MonoBehaviour
     [SerializeField] private Color negativeEffectColor = Color.red;
 
     private ConstantObject onObject;
+    private Transform objectTooltipPos;
 
     private Dictionary<NeedsManager.NeedType, Image> needSymbols = new Dictionary<NeedsManager.NeedType, Image>();
     private Dictionary<SkillManager.SkillType, Image> skillSymbols = new Dictionary<SkillManager.SkillType, Image>();
@@ -39,7 +40,7 @@ public class ObjectTooltip : MonoBehaviour
     void Update()
     {
         // Track the object
-        if (onObject) transform.position = Camera.main.WorldToScreenPoint(onObject.transform.position);
+        if (onObject) transform.position = Camera.main.WorldToScreenPoint(objectTooltipPos.position);
     }
 
     public void SetupTooltip(ConstantObject objectData)
@@ -49,6 +50,7 @@ public class ObjectTooltip : MonoBehaviour
         if (tooltipsEnabled)
         {
             onObject = objectData;
+            if (onObject) objectTooltipPos = onObject.transform.Find("TooltipLocation");
 
             if (objectData)
             {
