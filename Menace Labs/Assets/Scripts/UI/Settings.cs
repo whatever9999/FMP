@@ -11,19 +11,22 @@ public class Settings : MonoBehaviour
     [SerializeField] Slider ambienceSlider;
     [SerializeField] Slider musicSlider;
 
+    [SerializeField] Slider mouseRotateSpeedSlider;
+    [SerializeField] Slider keyboardRotateSpeedSlider;
+    [SerializeField] Slider zoomSpeedSlider;
+    [SerializeField] Slider moveSpeedSlider;
+    [SerializeField] Slider edgeScrollSizeSlider;
+    [SerializeField] Slider jumpToCloneMoveSpeedSlider;
+    [SerializeField] Slider jumpToCloneRotateSpeedSlider;
+
     [SerializeField] Toggle objectTooltipToggle;
 
     // Ensure the UI matches the current settings
     private void Start()
     {
-        // Sound
-        masterSlider.value = SaveManager.instance.GetSave().masterVolume;
-        SFXSlider.value = SaveManager.instance.GetSave().SFXVolume;
-        ambienceSlider.value = SaveManager.instance.GetSave().ambienceVolume;
-        musicSlider.value = SaveManager.instance.GetSave().musicVolume;
-
-        // UI
-        objectTooltipToggle.SetIsOnWithoutNotify(SaveManager.instance.GetSave().enableObjectTooltips);
+        UpdateSoundUI();
+        UpdateCameraUI();
+        UpdateCameraUI();
     }
 
     #region Sound
@@ -88,4 +91,75 @@ public class Settings : MonoBehaviour
         SaveManager.instance.EnableObjectTooltips(objectTooltipToggle.isOn);
     }
     #endregion //UI
+
+    #region Camera
+    public void SetMouseRotateSpeed(float value)
+    {
+        SaveManager.instance.SetCameraValue(SaveManager.CameraValueTypes.MOUSE_ROTATE_SPEED, value);
+    }
+    public void SetKeyboardRotateSpeed(float value)
+    {
+        SaveManager.instance.SetCameraValue(SaveManager.CameraValueTypes.KEYBOARD_ROTATE_SPEED, value);
+    }
+    public void SetZoomSpeed(float value)
+    {
+        SaveManager.instance.SetCameraValue(SaveManager.CameraValueTypes.ZOOM_SPEED, value);
+    }
+    public void SetMoveSpeed(float value)
+    {
+        SaveManager.instance.SetCameraValue(SaveManager.CameraValueTypes.MOVE_SPEED, value);
+    }
+    public void SetEdgeScrollSize(float value)
+    {
+        SaveManager.instance.SetCameraValue(SaveManager.CameraValueTypes.EDGE_SCROLL_SIZE, value);
+    }
+    public void SetJTCMoveSpeed(float value)
+    {
+        SaveManager.instance.SetCameraValue(SaveManager.CameraValueTypes.JUMP_TO_CLONE_MOVE_SPEED, value);
+    }
+    public void SetJTCRotateSpeed(float value)
+    {
+        SaveManager.instance.SetCameraValue(SaveManager.CameraValueTypes.JUMP_TO_CLONE_ROTATE_SPEED, value);
+    }
+    #endregion // Camera
+
+    #region Reset
+    public void ResetCamera()
+    {
+        SaveManager.instance.Reset(SaveManager.SettingsTypes.CAMERA);
+        UpdateCameraUI();
+    }
+    public void ResetUI()
+    {
+        SaveManager.instance.Reset(SaveManager.SettingsTypes.UI);
+        UpdateUIUI();
+    }
+    public void ResetSound()
+    {
+        SaveManager.instance.Reset(SaveManager.SettingsTypes.SOUND);
+        UpdateSoundUI();
+    }
+
+    public void UpdateSoundUI()
+    {
+        masterSlider.value = SaveManager.instance.GetSave().masterVolume;
+        SFXSlider.value = SaveManager.instance.GetSave().SFXVolume;
+        ambienceSlider.value = SaveManager.instance.GetSave().ambienceVolume;
+        musicSlider.value = SaveManager.instance.GetSave().musicVolume;
+    }
+    public void UpdateUIUI()
+    {
+        objectTooltipToggle.SetIsOnWithoutNotify(SaveManager.instance.GetSave().enableObjectTooltips);
+    }
+    public void UpdateCameraUI()
+    {
+        mouseRotateSpeedSlider.value = SaveManager.instance.GetSave().mouseRotateSpeed;
+        keyboardRotateSpeedSlider.value = SaveManager.instance.GetSave().keyboardRotateSpeed;
+        zoomSpeedSlider.value = SaveManager.instance.GetSave().zoomSpeed;
+        moveSpeedSlider.value = SaveManager.instance.GetSave().moveSpeed;
+        edgeScrollSizeSlider.value = SaveManager.instance.GetSave().edgeScrollSize;
+        jumpToCloneMoveSpeedSlider.value = SaveManager.instance.GetSave().jumpToCloneMoveSpeed;
+        jumpToCloneRotateSpeedSlider.value = SaveManager.instance.GetSave().jumpToCloneRotateSpeed;
+    }
+    #endregion // Reset
 }

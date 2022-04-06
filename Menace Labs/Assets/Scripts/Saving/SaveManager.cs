@@ -84,4 +84,65 @@ public class SaveManager : MonoBehaviour
         }
         SaveGame();
     }
+
+    public enum CameraValueTypes
+    {
+        MOUSE_ROTATE_SPEED,
+        KEYBOARD_ROTATE_SPEED,
+        ZOOM_SPEED,
+        MOVE_SPEED,
+        EDGE_SCROLL_SIZE,
+        JUMP_TO_CLONE_MOVE_SPEED,
+        JUMP_TO_CLONE_ROTATE_SPEED,
+    }
+    public void SetCameraValue(CameraValueTypes type, float value)
+    {
+        switch (type)
+        {
+            case CameraValueTypes.MOUSE_ROTATE_SPEED:
+                loadedSave.mouseRotateSpeed = value;
+                break;
+            case CameraValueTypes.KEYBOARD_ROTATE_SPEED:
+                loadedSave.keyboardRotateSpeed = value;
+                break;
+            case CameraValueTypes.ZOOM_SPEED:
+                loadedSave.zoomSpeed = value;
+                break;
+            case CameraValueTypes.MOVE_SPEED:
+                loadedSave.moveSpeed = value;
+                break;
+            case CameraValueTypes.EDGE_SCROLL_SIZE:
+                loadedSave.edgeScrollSize = value;
+                break;
+            case CameraValueTypes.JUMP_TO_CLONE_MOVE_SPEED:
+                loadedSave.jumpToCloneMoveSpeed = value;
+                break;
+            case CameraValueTypes.JUMP_TO_CLONE_ROTATE_SPEED:
+                loadedSave.jumpToCloneRotateSpeed = value;
+                break;
+        }
+        SaveGame();
+    }
+
+    public enum SettingsTypes
+    {
+        UI,
+        SOUND,
+        CAMERA,
+    }
+    public void Reset(SettingsTypes settingsType)
+    {
+        switch (settingsType)
+        {
+            case SettingsTypes.UI:
+                loadedSave.ResetUI();
+                break;
+            case SettingsTypes.SOUND:
+                loadedSave.ResetSound();
+                break;
+            case SettingsTypes.CAMERA:
+                loadedSave.ResetCamera();
+                break;
+        }
+    }
 }

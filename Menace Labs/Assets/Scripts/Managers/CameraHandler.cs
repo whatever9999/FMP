@@ -5,16 +5,6 @@ public class CameraHandler : MonoBehaviour
     [SerializeField] private Transform jumpToClonePos;
     [SerializeField] private Transform rotateAroundPos;
 
-    [SerializeField] private float lookSpeed = 10.0f;
-    [SerializeField] private float zoomSpeed = 8.0f;
-    [SerializeField] private float moveSpeed = 1.0f;
-    [SerializeField] private float rotateSpeed = 0.5f;
-
-    [SerializeField] private float edgeScrollSize = 10.0f;
-    
-    [SerializeField] private float jumpToCloneSpeed = 10.0f;
-    [SerializeField] private float jumpToCloneRotateSpeed = 2.0f;
-
     [SerializeField] private Vector3 moveClamp;
     [SerializeField] private float floorClamp = 1.0f;
 
@@ -110,13 +100,20 @@ public class CameraHandler : MonoBehaviour
         moveHorizontal = 0.0f;
         moveVertical = 0.0f;
 
+        // Get modifiable values
+        float mouseRotateSpeed = SaveManager.instance.GetSave().mouseRotateSpeed;
+        float keyboardRotateSpeed = SaveManager.instance.GetSave().keyboardRotateSpeed;
+        float zoomSpeed = SaveManager.instance.GetSave().zoomSpeed;
+        float moveSpeed = SaveManager.instance.GetSave().moveSpeed;
+        float edgeScrollSize = SaveManager.instance.GetSave().edgeScrollSize;
+
         float shiftMultiplier = Input.GetKey(KeyCode.LeftShift) ? shiftSpeedUp : 1.0f;
 
         // Rotate camera on middle mouse
         if (Input.GetKey(rotateKey))
         {
-            rotateX = Input.GetAxis(mouseXString) * lookSpeed;
-            rotateY = Input.GetAxis(mouseYString) * lookSpeed;
+            rotateX = Input.GetAxis(mouseXString) * mouseRotateSpeed;
+            rotateY = Input.GetAxis(mouseYString) * mouseRotateSpeed;
 
 
         }
@@ -169,11 +166,11 @@ public class CameraHandler : MonoBehaviour
         // Q and E rotate the camera
         if (Input.GetKey(rotateLeftKey))
         {
-            rotateX -= rotateSpeed * shiftMultiplier;
+            rotateX -= keyboardRotateSpeed * shiftMultiplier;
         }
         if (Input.GetKey(rotateRightKey))
         {
-            rotateX += rotateSpeed * shiftMultiplier;
+            rotateX += keyboardRotateSpeed * shiftMultiplier;
         }
 
         // Jump to the clone if spacebar is pressed (will be cancelled if other keys are pressed)
@@ -189,6 +186,10 @@ public class CameraHandler : MonoBehaviour
         if (!ManagerHandler.instance.UIM.PauseMenuOpen())
         {
             CheckInput();
+
+            // Get modifiable values
+            float jumpToCloneMoveSpeed = SaveManager.instance.GetSave().jumpToCloneMoveSpeed;
+            float jumpToCloneRotateSpeed = SaveManager.instance.GetSave().jumpToCloneRotateSpeed;
 
             bool moved = (rotateX != 0.0f) || (rotateY != 0.0f) || (zoom != 0.0f) || (moveHorizontal != 0.0f) || (moveVertical != 0.0f);
             // Stop following the clone if we get movement input
@@ -225,7 +226,7 @@ public class CameraHandler : MonoBehaviour
                 // Position
                 if (Vector3.Distance(transform.position, jumpToClonePos.position) >= 5f)
                 {
-                    step = jumpToCloneSpeed * Time.fixedDeltaTime;
+                    step = jumpToCloneMoveSpeed * Time.fixedDeltaTime;
                     Vector3 newPosition = Vector3.MoveTowards(transform.position, jumpToClonePos.position, step);
                     transform.position = newPosition;
                 }
