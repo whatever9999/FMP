@@ -148,6 +148,7 @@ public class SaveManager : MonoBehaviour
                 loadedSave.ResetControls();
                 break;
         }
+        SaveGame();
     }
 
     public void SetControl(CameraHandler.KeyTypes keyType, KeyCode keyCode)
