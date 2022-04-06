@@ -3,6 +3,9 @@ using UnityEngine;
 [System.Serializable]
 public class Save
 {
+    // Gameplay
+    public Director.DifficultyLevel difficulty = Director.DifficultyLevel.MEDIUM;
+
     // Clone
     public int chosenClone = 0;
 
@@ -81,5 +84,9 @@ public class Save
         doubleSpeedShortcutKey = KeyCode.Alpha2;
         tripleSpeedShortcutKey = KeyCode.Alpha3;
         pauseSpeedShortcutKey = KeyCode.P;
+    }
+    public void ResetGameplay()
+    {
+        difficulty = Director.DifficultyLevel.MEDIUM;
     }
 }

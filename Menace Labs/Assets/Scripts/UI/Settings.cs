@@ -35,6 +35,8 @@ public class Settings : MonoBehaviour
     [SerializeField] TextMeshProUGUI tripleSpeedKeyText;
     [SerializeField] TextMeshProUGUI pauseSpeedKeyText;
 
+    [SerializeField] TMP_Dropdown difficultyDropdown;
+
     [SerializeField] Toggle objectTooltipToggle;
 
     // Ensure the UI matches the current settings
@@ -44,6 +46,7 @@ public class Settings : MonoBehaviour
         UpdateCameraUI();
         UpdateUIUI();
         UpdateControlsUI();
+        UpdateGameplayUI();
     }
 
     private CameraHandler.KeyTypes settingControl = CameraHandler.KeyTypes.NUM_KEYS;
@@ -206,6 +209,13 @@ public class Settings : MonoBehaviour
     }
     #endregion // Controls
 
+    #region Gameplay
+    public void SetDifficulty(int difficulty)
+    {
+        SaveManager.instance.SetDifficulty((Director.DifficultyLevel)difficulty);
+    }
+    #endregion // Gameplay
+
     #region Reset
     public void ResetCamera()
     {
@@ -226,6 +236,10 @@ public class Settings : MonoBehaviour
     {
         SaveManager.instance.Reset(SaveManager.SettingsTypes.CONTROLS);
         UpdateControlsUI();
+    }
+    public void ResetGameplay()
+    {
+        SaveManager.instance.Reset(SaveManager.SettingsTypes.GAMEPLAY);
     }
 
     public void UpdateSoundUI()
@@ -265,6 +279,10 @@ public class Settings : MonoBehaviour
         doubleSpeedKeyText.text = SaveManager.instance.GetSave().doubleSpeedShortcutKey.ToString();
         tripleSpeedKeyText.text = SaveManager.instance.GetSave().tripleSpeedShortcutKey.ToString();
         pauseSpeedKeyText.text = SaveManager.instance.GetSave().pauseSpeedShortcutKey.ToString();
+    }
+    public void UpdateGameplayUI()
+    {
+        difficultyDropdown.SetValueWithoutNotify((int)SaveManager.instance.GetSave().difficulty);
     }
     #endregion // Reset
 }

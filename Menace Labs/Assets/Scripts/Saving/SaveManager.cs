@@ -130,6 +130,7 @@ public class SaveManager : MonoBehaviour
         SOUND,
         CAMERA,
         CONTROLS,
+        GAMEPLAY,
     }
     public void Reset(SettingsTypes settingsType)
     {
@@ -146,6 +147,9 @@ public class SaveManager : MonoBehaviour
                 break;
             case SettingsTypes.CONTROLS:
                 loadedSave.ResetControls();
+                break;
+            case SettingsTypes.GAMEPLAY:
+                loadedSave.ResetGameplay();
                 break;
         }
         SaveGame();
@@ -198,6 +202,12 @@ public class SaveManager : MonoBehaviour
                 loadedSave.pauseSpeedShortcutKey = keyCode;
                 break;
         }
+        SaveGame();
+    }
+
+    public void SetDifficulty(Director.DifficultyLevel level)
+    {
+        loadedSave.difficulty = level;
         SaveGame();
     }
 }

@@ -6,6 +6,13 @@ using System.Collections.Generic;
 
 public class Director : MonoBehaviour
 {
+    public enum DifficultyLevel
+    {
+        LOW,
+        MEDIUM,
+        HIGH,
+    }
+
     public enum DirectorGoalType
     {
         DECREASE_NEED_HUNGER,
@@ -41,8 +48,10 @@ public class Director : MonoBehaviour
     [SerializeField] private DifficultyData relaxDifficultyData;
     [SerializeField] private DifficultyData buildUpDifficultyData;
 
-    [Tooltip("How often the director checks for an action")]
-    [SerializeField] private float directorTimer = 60;
+    [Header("Difficulty Level")]
+    [SerializeField] private float lowDifficultyDirectorTimer = 360;
+    [SerializeField] private float mediumDifficultyDirectorTimer = 180;
+    [SerializeField] private float highDifficultyDirectorTimer = 60;
     private float currentDirectorTimer;
     private float menaceTimer;
     private float currentMenaceTimer;
@@ -97,6 +106,7 @@ public class Director : MonoBehaviour
                 currentMenaceTimer = 0;
             }
 
+            float directorTimer = GetDirectorTimer();
             // If it's time for the director to carry our an action they should do so (unless we're relaxing)
             if (currentDirectorTimer >= directorTimer && currentDifficulty != relaxDifficultyData)
             {
@@ -299,5 +309,20 @@ public class Director : MonoBehaviour
                 return madnessNeeds / 300;
         }
         return 0;
+    }
+
+    private float GetDirectorTimer()
+    {
+        switch (SaveManager.instance.GetSave().difficulty)
+        {
+            case DifficultyLevel.LOW:
+                return lowDifficultyDirectorTimer;
+            case DifficultyLevel.MEDIUM:
+                return mediumDifficultyDirectorTimer;
+            case DifficultyLevel.HIGH:
+                return highDifficultyDirectorTimer;
+        }
+        Debug.LogError("Couldn't find time for set difficulty");
+        return 1000;
     }
 }
