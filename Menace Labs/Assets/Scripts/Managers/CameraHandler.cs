@@ -38,6 +38,13 @@ public class CameraHandler : MonoBehaviour
         ROTATE_LEFT,
         ROTATE_RIGHT,
         JUMP_TO_CLONE,
+        SPEED_CAMERA,
+        TOGGLE_UI,
+        PAUSE_MENU,
+        PLAY_SPEED,
+        DOUBLE_SPEED,
+        TRIPLE_SPEED,
+        PAUSE_SPEED,
         NUM_KEYS,
     }
 
@@ -50,33 +57,42 @@ public class CameraHandler : MonoBehaviour
             case KeyTypes.MOVE:
                 return moveKey;
             case KeyTypes.UP:
-                return upKey;
+                return SaveManager.instance.GetSave().upKey;
             case KeyTypes.DOWN:
-                return downKey;
+                return SaveManager.instance.GetSave().downKey;
             case KeyTypes.LEFT:
-                return leftKey;
+                return SaveManager.instance.GetSave().leftKey;
             case KeyTypes.RIGHT:
-                return rightKey;
+                return SaveManager.instance.GetSave().rightKey;
             case KeyTypes.ROTATE_LEFT:
-                return rotateLeftKey;
+                return SaveManager.instance.GetSave().rotateLeftKey;
             case KeyTypes.ROTATE_RIGHT:
-                return rotateRightKey;
+                return SaveManager.instance.GetSave().rotateRightKey;
             case KeyTypes.JUMP_TO_CLONE:
-                return jumpToCloneKey;
+                return SaveManager.instance.GetSave().jumpToCloneKey;
+            case KeyTypes.SPEED_CAMERA:
+                return SaveManager.instance.GetSave().speedCameraKey;
+            case KeyTypes.TOGGLE_UI:
+                return SaveManager.instance.GetSave().toggleUIKey;
+            case KeyTypes.PAUSE_MENU:
+                return SaveManager.instance.GetSave().pauseMenuKey;
+            case KeyTypes.PLAY_SPEED:
+                return SaveManager.instance.GetSave().playSpeedShortcutKey;
+            case KeyTypes.DOUBLE_SPEED:
+                return SaveManager.instance.GetSave().doubleSpeedShortcutKey;
+            case KeyTypes.TRIPLE_SPEED:
+                return SaveManager.instance.GetSave().tripleSpeedShortcutKey;
+            case KeyTypes.PAUSE_SPEED:
+                return SaveManager.instance.GetSave().pauseSpeedShortcutKey;
         }
         Debug.LogError("Didn't find key of type: " + key);
         return KeyCode.None;
     }
 
+    // Mouse Keys
     KeyCode rotateKey = KeyCode.Mouse2;
     KeyCode moveKey = KeyCode.Mouse1;
-    KeyCode upKey = KeyCode.W;
-    KeyCode downKey = KeyCode.S;
-    KeyCode leftKey = KeyCode.A;
-    KeyCode rightKey = KeyCode.D;
-    KeyCode rotateLeftKey = KeyCode.Q;
-    KeyCode rotateRightKey = KeyCode.E;
-    KeyCode jumpToCloneKey = KeyCode.Space;
+
     #endregion // Controls
 
 
@@ -107,7 +123,7 @@ public class CameraHandler : MonoBehaviour
         float moveSpeed = SaveManager.instance.GetSave().moveSpeed;
         float edgeScrollSize = SaveManager.instance.GetSave().edgeScrollSize;
 
-        float shiftMultiplier = Input.GetKey(KeyCode.LeftShift) ? shiftSpeedUp : 1.0f;
+        float shiftMultiplier = Input.GetKey(GetKey(KeyTypes.SPEED_CAMERA)) ? shiftSpeedUp : 1.0f;
 
         // Rotate camera on middle mouse
         if (Input.GetKey(rotateKey))
@@ -143,19 +159,19 @@ public class CameraHandler : MonoBehaviour
         }
 
         // WSAD
-        if (Input.GetKey(upKey))
+        if (Input.GetKey(GetKey(KeyTypes.UP)))
         {
             moveVertical += moveSpeed * shiftMultiplier;
         }
-        if (Input.GetKey(downKey))
+        if (Input.GetKey(GetKey(KeyTypes.DOWN)))
         {
             moveVertical -= moveSpeed * shiftMultiplier;
         }
-        if (Input.GetKey(leftKey))
+        if (Input.GetKey(GetKey(KeyTypes.LEFT)))
         {
             moveHorizontal -= moveSpeed * shiftMultiplier;
         }
-        if (Input.GetKey(rightKey))
+        if (Input.GetKey(GetKey(KeyTypes.RIGHT)))
         {
             moveHorizontal += moveSpeed * shiftMultiplier;
         }
@@ -164,17 +180,17 @@ public class CameraHandler : MonoBehaviour
         zoom += (Input.mouseScrollDelta.y * zoomSpeed * shiftMultiplier);
 
         // Q and E rotate the camera
-        if (Input.GetKey(rotateLeftKey))
+        if (Input.GetKey(GetKey(KeyTypes.ROTATE_LEFT)))
         {
             rotateX -= keyboardRotateSpeed * shiftMultiplier;
         }
-        if (Input.GetKey(rotateRightKey))
+        if (Input.GetKey(GetKey(KeyTypes.ROTATE_RIGHT)))
         {
             rotateX += keyboardRotateSpeed * shiftMultiplier;
         }
 
         // Jump to the clone if spacebar is pressed (will be cancelled if other keys are pressed)
-        if (Input.GetKeyDown(jumpToCloneKey))
+        if (Input.GetKeyDown(GetKey(KeyTypes.JUMP_TO_CLONE)))
         {
             jumpingToClone = !jumpingToClone;
         }

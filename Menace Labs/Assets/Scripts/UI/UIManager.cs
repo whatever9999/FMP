@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour
             UpdateGoal(ManagerHandler.instance.GoalM.GetGoal());
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(ManagerHandler.instance.camera.GetKey(CameraHandler.KeyTypes.PAUSE_MENU)))
         {
             // Handle the settings menu before the pause menu
             if (settingsMenu.activeSelf)

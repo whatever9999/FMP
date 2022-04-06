@@ -139,19 +139,19 @@ public class TimeManager : MonoBehaviour
     // p = pause, 1 = play, 2 = FF
     private void CheckHotkeys()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        if(Input.GetKeyDown(ManagerHandler.instance.camera.GetKey(CameraHandler.KeyTypes.PAUSE_SPEED)))
         {
             SetTimeSpeed(TimeSpeed.PAUSE);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        else if (Input.GetKeyDown(ManagerHandler.instance.camera.GetKey(CameraHandler.KeyTypes.PLAY_SPEED)))
         {
             SetTimeSpeed(TimeSpeed.PLAY);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(ManagerHandler.instance.camera.GetKey(CameraHandler.KeyTypes.DOUBLE_SPEED)))
         {
             SetTimeSpeed(TimeSpeed.FAST_FORWARD);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(ManagerHandler.instance.camera.GetKey(CameraHandler.KeyTypes.TRIPLE_SPEED)))
         {
             SetTimeSpeed(TimeSpeed.SUPER_FAST_FORWARD);
         }

@@ -16,7 +16,7 @@ public class ShyUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(ManagerHandler.instance.camera.GetKey(CameraHandler.KeyTypes.TOGGLE_UI)))
         {
             ToggleUI();
         }

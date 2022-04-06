@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 
 public class Settings : MonoBehaviour
 {
@@ -19,6 +20,21 @@ public class Settings : MonoBehaviour
     [SerializeField] Slider jumpToCloneMoveSpeedSlider;
     [SerializeField] Slider jumpToCloneRotateSpeedSlider;
 
+    [SerializeField] TextMeshProUGUI upKeyText;
+    [SerializeField] TextMeshProUGUI downKeyText;
+    [SerializeField] TextMeshProUGUI leftKeyText;
+    [SerializeField] TextMeshProUGUI rightKeyText;
+    [SerializeField] TextMeshProUGUI rotateLeftKeyText;
+    [SerializeField] TextMeshProUGUI rotateRightKeyText;
+    [SerializeField] TextMeshProUGUI jumpToCloneKeyText;
+    [SerializeField] TextMeshProUGUI speedCameraKeyText;
+    [SerializeField] TextMeshProUGUI toggleUIKeyText;
+    [SerializeField] TextMeshProUGUI pauseMenuKeyText;
+    [SerializeField] TextMeshProUGUI playSpeedKeyText;
+    [SerializeField] TextMeshProUGUI doubleSpeedKeyText;
+    [SerializeField] TextMeshProUGUI tripleSpeedKeyText;
+    [SerializeField] TextMeshProUGUI pauseSpeedKeyText;
+
     [SerializeField] Toggle objectTooltipToggle;
 
     // Ensure the UI matches the current settings
@@ -26,7 +42,62 @@ public class Settings : MonoBehaviour
     {
         UpdateSoundUI();
         UpdateCameraUI();
-        UpdateCameraUI();
+        UpdateUIUI();
+        UpdateControlsUI();
+    }
+
+    private CameraHandler.KeyTypes settingControl = CameraHandler.KeyTypes.NUM_KEYS;
+    private Image settingControlButton;
+    private void Update()
+    {
+        if (settingControl != CameraHandler.KeyTypes.NUM_KEYS)
+        {
+            foreach (KeyCode code in System.Enum.GetValues(typeof(KeyCode)))
+            {
+                if (Input.GetKey(code) && CodeIsValid(code))
+                {
+                    SaveManager.instance.SetControl(settingControl, code);
+                    settingControl = CameraHandler.KeyTypes.NUM_KEYS;
+                    settingControlButton.color = Color.white;
+                    UpdateControlsUI();
+                }
+            }
+        }
+    }
+    private bool CodeIsValid(KeyCode code)
+    {
+        // If this code is already applied then it isn't valid
+        if (SaveManager.instance.GetSave().upKey == code) return false;
+        if (SaveManager.instance.GetSave().downKey == code) return false;
+        if (SaveManager.instance.GetSave().leftKey == code) return false;
+        if (SaveManager.instance.GetSave().rightKey == code) return false;
+        if (SaveManager.instance.GetSave().rotateLeftKey == code) return false;
+        if (SaveManager.instance.GetSave().rotateRightKey == code) return false;
+        if (SaveManager.instance.GetSave().jumpToCloneKey == code) return false;
+        if (SaveManager.instance.GetSave().speedCameraKey == code) return false;
+        if (SaveManager.instance.GetSave().toggleUIKey == code) return false;
+        if (SaveManager.instance.GetSave().pauseMenuKey == code) return false;
+        if (SaveManager.instance.GetSave().playSpeedShortcutKey == code) return false;
+        if (SaveManager.instance.GetSave().doubleSpeedShortcutKey == code) return false;
+        if (SaveManager.instance.GetSave().tripleSpeedShortcutKey == code) return false;
+        if (SaveManager.instance.GetSave().pauseSpeedShortcutKey == code) return false;
+
+        // If the code is an already used mouse button then it isn't valid
+        if (KeyCode.Mouse0 == code) return false;
+        if (KeyCode.Mouse1 == code) return false;
+        if (KeyCode.Mouse2 == code) return false;
+
+        return true;
+    }
+
+    private void OnDisable()
+    {
+        DisableControlPanel();
+    }
+    public void DisableControlPanel()
+    {
+        settingControl = CameraHandler.KeyTypes.NUM_KEYS;
+        if (settingControlButton) settingControlButton.color = Color.white;
     }
 
     #region Sound
@@ -123,6 +194,18 @@ public class Settings : MonoBehaviour
     }
     #endregion // Camera
 
+    #region Controls
+    public void SetControlKey(int keyType)
+    {
+        settingControl = (CameraHandler.KeyTypes)keyType;
+    }
+    public void SetControlButton(Image button)
+    {
+        settingControlButton = button;
+        settingControlButton.color = Color.grey;
+    }
+    #endregion // Controls
+
     #region Reset
     public void ResetCamera()
     {
@@ -138,6 +221,11 @@ public class Settings : MonoBehaviour
     {
         SaveManager.instance.Reset(SaveManager.SettingsTypes.SOUND);
         UpdateSoundUI();
+    }
+    public void ResetControls()
+    {
+        SaveManager.instance.Reset(SaveManager.SettingsTypes.CONTROLS);
+        UpdateControlsUI();
     }
 
     public void UpdateSoundUI()
@@ -160,6 +248,23 @@ public class Settings : MonoBehaviour
         edgeScrollSizeSlider.value = SaveManager.instance.GetSave().edgeScrollSize;
         jumpToCloneMoveSpeedSlider.value = SaveManager.instance.GetSave().jumpToCloneMoveSpeed;
         jumpToCloneRotateSpeedSlider.value = SaveManager.instance.GetSave().jumpToCloneRotateSpeed;
+    }
+    public void UpdateControlsUI()
+    {
+        upKeyText.text = SaveManager.instance.GetSave().upKey.ToString();
+        downKeyText.text = SaveManager.instance.GetSave().downKey.ToString();
+        leftKeyText.text = SaveManager.instance.GetSave().leftKey.ToString();
+        rightKeyText.text = SaveManager.instance.GetSave().rightKey.ToString();
+        rotateLeftKeyText.text = SaveManager.instance.GetSave().rotateLeftKey.ToString();
+        rotateRightKeyText.text = SaveManager.instance.GetSave().rotateRightKey.ToString();
+        jumpToCloneKeyText.text = SaveManager.instance.GetSave().jumpToCloneKey.ToString();
+        speedCameraKeyText.text = SaveManager.instance.GetSave().speedCameraKey.ToString();
+        toggleUIKeyText.text = SaveManager.instance.GetSave().toggleUIKey.ToString();
+        pauseMenuKeyText.text = SaveManager.instance.GetSave().pauseMenuKey.ToString();
+        playSpeedKeyText.text = SaveManager.instance.GetSave().playSpeedShortcutKey.ToString();
+        doubleSpeedKeyText.text = SaveManager.instance.GetSave().doubleSpeedShortcutKey.ToString();
+        tripleSpeedKeyText.text = SaveManager.instance.GetSave().tripleSpeedShortcutKey.ToString();
+        pauseSpeedKeyText.text = SaveManager.instance.GetSave().pauseSpeedShortcutKey.ToString();
     }
     #endregion // Reset
 }

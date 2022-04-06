@@ -129,6 +129,7 @@ public class SaveManager : MonoBehaviour
         UI,
         SOUND,
         CAMERA,
+        CONTROLS,
     }
     public void Reset(SettingsTypes settingsType)
     {
@@ -143,6 +144,59 @@ public class SaveManager : MonoBehaviour
             case SettingsTypes.CAMERA:
                 loadedSave.ResetCamera();
                 break;
+            case SettingsTypes.CONTROLS:
+                loadedSave.ResetControls();
+                break;
         }
+    }
+
+    public void SetControl(CameraHandler.KeyTypes keyType, KeyCode keyCode)
+    {
+        switch (keyType)
+        {
+            case CameraHandler.KeyTypes.UP:
+                loadedSave.upKey = keyCode;
+                break;
+            case CameraHandler.KeyTypes.DOWN:
+                loadedSave.downKey = keyCode;
+                break;
+            case CameraHandler.KeyTypes.LEFT:
+                loadedSave.leftKey = keyCode;
+                break;
+            case CameraHandler.KeyTypes.RIGHT:
+                loadedSave.rightKey = keyCode;
+                break;
+            case CameraHandler.KeyTypes.ROTATE_LEFT:
+                loadedSave.rotateLeftKey = keyCode;
+                break;
+            case CameraHandler.KeyTypes.ROTATE_RIGHT:
+                loadedSave.rotateRightKey = keyCode;
+                break;
+            case CameraHandler.KeyTypes.JUMP_TO_CLONE:
+                loadedSave.jumpToCloneKey = keyCode;
+                break;
+            case CameraHandler.KeyTypes.SPEED_CAMERA:
+                loadedSave.speedCameraKey = keyCode;
+                break;
+            case CameraHandler.KeyTypes.TOGGLE_UI:
+                loadedSave.toggleUIKey = keyCode;
+                break;
+            case CameraHandler.KeyTypes.PAUSE_MENU:
+                loadedSave.pauseMenuKey = keyCode;
+                break;
+            case CameraHandler.KeyTypes.PLAY_SPEED:
+                loadedSave.playSpeedShortcutKey = keyCode;
+                break;
+            case CameraHandler.KeyTypes.DOUBLE_SPEED:
+                loadedSave.doubleSpeedShortcutKey = keyCode;
+                break;
+            case CameraHandler.KeyTypes.TRIPLE_SPEED:
+                loadedSave.tripleSpeedShortcutKey = keyCode;
+                break;
+            case CameraHandler.KeyTypes.PAUSE_SPEED:
+                loadedSave.pauseSpeedShortcutKey = keyCode;
+                break;
+        }
+        SaveGame();
     }
 }
