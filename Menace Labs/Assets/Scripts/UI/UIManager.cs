@@ -91,7 +91,7 @@ public class UIManager : MonoBehaviour
     #region Setup
     private void SetCloneName()
     {
-        nameText.text = "Clone #" + Random.Range(0, 9999).ToString();
+        nameText.text = "Clone #" + SaveManager.instance.GetSave().cloneID;
     }
 
     // Take in goal info to add to tooltip

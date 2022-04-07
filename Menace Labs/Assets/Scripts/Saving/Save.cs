@@ -8,6 +8,9 @@ public class Save
 
     // Clone
     public int chosenClone = 0;
+    public int cloneID = 0;
+    public int clonesKilled = 0;
+    public int clonesFreed = 0;
 
     // UI
     public bool enableObjectTooltips = true;

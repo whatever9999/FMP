@@ -95,6 +95,7 @@ public class PopUpManager : MonoBehaviour
     public GameObject winGamePanel;
     public void ShowWinGame()
     {
+        SaveManager.instance.IncrementCloneValue(SaveManager.CloneValues.FREED_CLONES);
         winGamePanel.SetActive(true);
         ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
     }
@@ -149,6 +150,7 @@ public class PopUpManager : MonoBehaviour
     public IEnumerator PopupTimer()
     {
         // Cut off a little of the animation time so the clone is still on the floor when the popup shows
+        SaveManager.instance.IncrementCloneValue(SaveManager.CloneValues.KILLED_CLONES);
         yield return new WaitForSeconds(ManagerHandler.instance.AnimationM.GetAnimationLength(AnimationManager.AnimationType.DIE) - 0.1f);
         deathPanel.SetActive(true);
         ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);

@@ -44,6 +44,8 @@ public class Clone : MonoBehaviour
         cloneRenderer = GetComponentInChildren<Renderer>();
 
         walkSpeed = clone.speed;
+
+        SaveManager.instance.IncrementCloneValue(SaveManager.CloneValues.ID);
     }
 
     private void Update()

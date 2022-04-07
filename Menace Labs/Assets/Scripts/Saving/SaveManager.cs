@@ -210,4 +210,27 @@ public class SaveManager : MonoBehaviour
         loadedSave.difficulty = level;
         SaveGame();
     }
+
+    public enum CloneValues
+    {
+        ID,
+        FREED_CLONES,
+        KILLED_CLONES,
+    }
+    public void IncrementCloneValue(CloneValues value)
+    {
+        switch (value)
+        {
+            case CloneValues.ID:
+                loadedSave.cloneID++;
+                break;
+            case CloneValues.FREED_CLONES:
+                loadedSave.clonesFreed++;
+                break;
+            case CloneValues.KILLED_CLONES:
+                loadedSave.clonesKilled++;
+                break;
+        }
+        SaveGame();
+    }
 }
