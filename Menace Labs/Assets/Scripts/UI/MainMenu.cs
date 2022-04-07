@@ -5,6 +5,7 @@ using TMPro;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScreen;
+    [SerializeField] private TextMeshProUGUI startButtonText;
     [SerializeField] private TextMeshProUGUI statsUI;
 
     private void Start()
@@ -14,7 +15,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartButton()
     {
-        loadingScreen.SetActive(true);
+        startButtonText.text = "Start...";
         SceneManager.LoadScene(1);
     }
 

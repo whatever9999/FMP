@@ -95,9 +95,13 @@ public class PopUpManager : MonoBehaviour
     public GameObject winGamePanel;
     public void ShowWinGame()
     {
-        SaveManager.instance.IncrementCloneValue(SaveManager.CloneValues.FREED_CLONES);
-        winGamePanel.SetActive(true);
-        ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
+        // If the win game panel is already open don't need to do these things again
+        if (!winGamePanel.activeInHierarchy)
+        {
+            SaveManager.instance.IncrementCloneValue(SaveManager.CloneValues.FREED_CLONES);
+            winGamePanel.SetActive(true);
+            ManagerHandler.instance.TimeM.SetTimeSpeed(TimeManager.TimeSpeed.PAUSE);
+        }
     }
     #endregion // Chance Card
 

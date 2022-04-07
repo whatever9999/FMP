@@ -1238,6 +1238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 1705284406}
+  startButtonText: {fileID: 1541997144}
   statsUI: {fileID: 1292028505}
 --- !u!82 &695435088
 AudioSource:

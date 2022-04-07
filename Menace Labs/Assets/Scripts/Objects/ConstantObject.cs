@@ -149,7 +149,7 @@ public class ConstantObject : MonoBehaviour
     public virtual bool StartUsing()
     {
         // If the game object is disabled but we're trying to use it then it's likely that it's broken so cancel the action
-        if (!gameObject.activeInHierarchy) return false;
+        if (!gameObject || !gameObject.activeInHierarchy) return false;
 
         // Don't need broken/dirty shower required needs if on fire
         if (!ManagerHandler.instance.clone.IsOnFire())
