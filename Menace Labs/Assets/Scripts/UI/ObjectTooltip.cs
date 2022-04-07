@@ -40,7 +40,7 @@ public class ObjectTooltip : MonoBehaviour
     void Update()
     {
         // Track the object
-        if (onObject) transform.position = Camera.main.WorldToScreenPoint(objectTooltipPos.position);
+        if (onObject && objectTooltipPos) transform.position = Camera.main.WorldToScreenPoint(objectTooltipPos.position);
     }
 
     public void SetupTooltip(ConstantObject objectData)

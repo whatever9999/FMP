@@ -93,10 +93,13 @@ public class SkillManager : MonoBehaviour
 
     public void UpdateSkillCapsule(float progress, int level)
     {
-        float notchPercentage = progress / notchSizes[level];
+        if (level < MAX_SKILL_LEVEL)
+        {
+            float notchPercentage = progress / notchSizes[level];
 
-        Vector3 newScale = skillFill.localScale;
-        newScale.y = skillFillStartYScale * notchPercentage;
-        skillFill.localScale = newScale;
+            Vector3 newScale = skillFill.localScale;
+            newScale.y = skillFillStartYScale * notchPercentage;
+            skillFill.localScale = newScale;
+        }
     }
 }

@@ -48,7 +48,13 @@ public class Skill : MonoBehaviour
     }
     public void ModifySkill(int notches)
     {
-        currentSkillLevel += notches;
+        int newSkillLevel = currentSkillLevel + notches;
+
+        // Clamp
+        if (newSkillLevel < 0) newSkillLevel = 0;
+        else if (newSkillLevel > SkillManager.MAX_SKILL_LEVEL) newSkillLevel = SkillManager.MAX_SKILL_LEVEL;
+
+        currentSkillLevel = newSkillLevel;
         skillSlider.value = currentSkillLevel;
     }
 }
