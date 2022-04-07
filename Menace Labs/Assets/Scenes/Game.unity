@@ -566,7 +566,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 0.1
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 8284028316622835609, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: m_Sprite
@@ -899,7 +899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 0.15
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needTriggers.Array.size
@@ -8506,7 +8506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 0.1
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 8284028316622835609, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: m_Sprite
@@ -18028,7 +18028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 0.25
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needTriggers.Array.size
@@ -19685,11 +19685,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillCapsule: {fileID: 1019417546}
   skillFill: {fileID: 1062696142}
-  notchSizes: 08000000080000000800000008000000080000000800000008000000080000000800000008000000
+  notchSizes: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000
   notchMultipliers:
   - 1
-  - 0.98
-  - 0.95
   - 0.9
   - 0.85
   - 0.8
@@ -19697,6 +19695,8 @@ MonoBehaviour:
   - 0.7
   - 0.65
   - 0.6
+  - 0.55
+  - 0.5
   skills:
   - {fileID: 3607896442798799030}
   - {fileID: 2005470597}
@@ -21531,7 +21531,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 61bbff4e4ee1e034b9ec2dac278bddb2, type: 2}
   relaxDifficultyData: {fileID: 11400000, guid: f25ddab81afb2844baf06c3fdfac822f, type: 2}
   buildUpDifficultyData: {fileID: 11400000, guid: 987bb6c19fc4ffe4b849b2b91bee6c91, type: 2}
-  directorTimer: 120
+  lowDifficultyDirectorTimer: 360
+  mediumDifficultyDirectorTimer: 180
+  highDifficultyDirectorTimer: 60
 --- !u!1001 &1456329542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22432,7 +22434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 0.1
+      value: 0.075
       objectReference: {fileID: 0}
     - target: {fileID: 8284028316622835609, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: m_Sprite
@@ -25254,13 +25256,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpToClonePos: {fileID: 2106180787}
   rotateAroundPos: {fileID: 2017364361}
-  lookSpeed: 10
-  zoomSpeed: 20
-  moveSpeed: 12
-  rotateSpeed: 0.5
-  edgeScrollSize: 10
-  jumpToCloneSpeed: 10
-  jumpToCloneRotateSpeed: 2
   moveClamp: {x: 20, y: 20, z: 20}
   floorClamp: 1
   shiftSpeedUp: 2
@@ -30210,7 +30205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 0.3
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 8284028316622835609, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: m_Sprite
@@ -35274,7 +35269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needModifier
-      value: 0.25
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 8198982833923142252, guid: 1280c1c19d672dd47b5cc8d5fe872b29, type: 3}
       propertyPath: needTriggers.Array.size
@@ -35388,6 +35383,10 @@ PrefabInstance:
     - target: {fileID: 8791586081014409047, guid: faedd4ed504aacf409cefa0a82643f68, type: 3}
       propertyPath: m_Name
       value: Clone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792628829624405646, guid: faedd4ed504aacf409cefa0a82643f68, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8792628829624405647, guid: faedd4ed504aacf409cefa0a82643f68, type: 3}
       propertyPath: disasterTest

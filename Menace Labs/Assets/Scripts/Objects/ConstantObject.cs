@@ -242,7 +242,7 @@ public class ConstantObject : MonoBehaviour
 
         if (particles && !particles.isPlaying) particles.Play();
 
-        int timeSinceCheckedEffects = ManagerHandler.instance.TimeM.GetCurrentTime() - lastCheckedEffectsTime;
+        int timeSinceCheckedEffects = ManagerHandler.instance.TimeM.TimeSince(lastCheckedEffectsTime);
         if (timeSinceCheckedEffects >= timeToCheckEffects)
         {
             // Update effects according to time scale so multiply values by time that passed since last check

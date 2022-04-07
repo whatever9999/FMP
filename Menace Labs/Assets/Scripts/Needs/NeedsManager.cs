@@ -61,7 +61,7 @@ public class NeedsManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        int timeSinceLastCheckedNeeds = ManagerHandler.instance.TimeM.GetCurrentTime() - lastCheckedNeedsTime;
+        int timeSinceLastCheckedNeeds = ManagerHandler.instance.TimeM.TimeSince(lastCheckedNeedsTime);
 
         // If we're currently using an object don't touch needs that it affects
         List<NeedType> needsAffectedByObject = new List<NeedType>();

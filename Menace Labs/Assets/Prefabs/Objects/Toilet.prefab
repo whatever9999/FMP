@@ -338,7 +338,7 @@ MonoBehaviour:
   effects:
   - needType: 2
     skillType: 8
-    value: 8
+    value: 4
   hoverColour: {r: 0.8, g: 0.8, b: 0.8, a: 1}
   objectStartSound: 34
   objectUseSound: 34
@@ -352,6 +352,7 @@ MonoBehaviour:
   censorType: 2
   requiredNeeds: []
   triggerEvent: 12
+  eventSpawnPos: {fileID: 0}
   despawnObject: 0
   spawnObject: {fileID: 0}
   giveObject: {fileID: 0}

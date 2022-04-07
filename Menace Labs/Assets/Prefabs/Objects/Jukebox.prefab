@@ -48,10 +48,10 @@ MonoBehaviour:
     value: 1
   - needType: 4
     skillType: 8
-    value: 2
+    value: 1
   - needType: 6
     skillType: 8
-    value: -1
+    value: -0.5
   hoverColour: {r: 0.8, g: 0.8, b: 0.8, a: 1}
   objectStartSound: 16
   objectUseSound: 0
@@ -73,6 +73,7 @@ MonoBehaviour:
   - need: 6
     requiredLevel: 0
   triggerEvent: 12
+  eventSpawnPos: {fileID: 0}
   despawnObject: 0
   spawnObject: {fileID: 0}
   giveObject: {fileID: 0}
