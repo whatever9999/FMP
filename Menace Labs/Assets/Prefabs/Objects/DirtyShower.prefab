@@ -54,6 +54,7 @@ MonoBehaviour:
   - need: 4
     requiredLevel: 20
   triggerEvent: 12
+  eventSpawnPos: {fileID: 0}
   despawnObject: 0
   spawnObject: {fileID: 0}
   giveObject: {fileID: 0}

@@ -52,6 +52,8 @@ public class ConstantObject : MonoBehaviour
 
     [Header("Results")]
     [SerializeField] protected EventManager.EventType triggerEvent = EventManager.EventType.NUM_EVENT_TYPES;
+    [Tooltip("Tell puddles where to spawn")]
+    [SerializeField] protected Transform eventSpawnPos;
     [SerializeField] protected bool despawnObject = false;
     [Tooltip("This object will be spawned at the feet of the clone")]
     [SerializeField] protected GameObject spawnObject;
@@ -304,7 +306,11 @@ public class ConstantObject : MonoBehaviour
         if (affectsSkill) ManagerHandler.instance.SkillM.ToggleSkillCapsule(false);
 
         bool eventTriggered = false;
-        if (triggerEvent != EventManager.EventType.NUM_EVENT_TYPES) eventTriggered = ManagerHandler.instance.EventM.CheckEventTrigger(triggerEvent);
+        if (triggerEvent != EventManager.EventType.NUM_EVENT_TYPES)
+        {
+            if (triggerEvent == EventManager.EventType.PUDDLE) ManagerHandler.instance.EventM.SetPuddleSpawnPos(eventSpawnPos.position);
+            eventTriggered = ManagerHandler.instance.EventM.CheckEventTrigger(triggerEvent);
+        }
         if (giveObject)
         {
             // Don't give the clone an object if a fire was triggered before this

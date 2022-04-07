@@ -86,6 +86,11 @@ public class EventManager : MonoBehaviour
         breakingEvent.SetBreakableObject(breakableObject);
     }
 
+    public void SetPuddleSpawnPos(Vector3 pos)
+    {
+        puddleEvent.SetSpawnPos(pos);
+    }
+
     public void ModifyEventChance(EventType eventType, float newChance)
     {
         switch (eventType)

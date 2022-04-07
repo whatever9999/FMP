@@ -95,6 +95,12 @@ public class Clone : MonoBehaviour
         GameObject instantiated = Instantiate(gameObject);
         instantiated.transform.position = spawnPos;
     }
+    // Spawn an object
+    public void SpawnObject(GameObject gameObject, Vector3 spawnPos)
+    {
+        GameObject instantiated = Instantiate(gameObject);
+        instantiated.transform.position = spawnPos;
+    }
 
     // Play 3D SFX from the clone
     public void PlaySound(SoundManager.SoundName name, bool loop)

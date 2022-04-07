@@ -106,10 +106,13 @@ public class PuddleEvent : HundredPercentEvent
 {
     protected override void TriggerEvent()
     {
-        ManagerHandler.instance.clone.SpawnObject(puddlePrefab);
+        
+        ManagerHandler.instance.clone.SpawnObject(puddlePrefab, spawnPos);
     }
 
     [SerializeField] private GameObject puddlePrefab;
+    private Vector3 spawnPos;
+    public void SetSpawnPos(Vector3 pos) { spawnPos = pos; }
 }
 [System.Serializable]
 public class BladderFailureEvent : HundredPercentEvent
