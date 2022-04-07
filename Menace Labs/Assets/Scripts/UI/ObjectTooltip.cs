@@ -54,6 +54,9 @@ public class ObjectTooltip : MonoBehaviour
 
             if (objectData)
             {
+                // Clear the tooltip first
+                DisableTooltip();
+
                 // Enable the symbols concerning the needs/skills this object affects
                 List<ObjectEffect> effects = objectData.GetObjectEffects();
                 for (int i = 0; i < effects.Count; i++)
