@@ -240,6 +240,7 @@ public class Settings : MonoBehaviour
     public void ResetGameplay()
     {
         SaveManager.instance.Reset(SaveManager.SettingsTypes.GAMEPLAY);
+        UpdateGameplayUI();
     }
 
     public void UpdateSoundUI()
