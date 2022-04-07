@@ -91,6 +91,7 @@ public class ConstantObject : MonoBehaviour
     protected ParticleSystem particles;
 
     protected int startedUsingTime;
+    protected int lastAddedTime;
     protected bool beingUsed;
 
     private int timeToCheckEffects = 1;
@@ -185,6 +186,7 @@ public class ConstantObject : MonoBehaviour
         beingUsed = true;
         finished = false;
         startedUsingTime = ManagerHandler.instance.TimeM.GetCurrentTime();
+        lastAddedTime = startedUsingTime;
         lastCheckedEffectsTime = startedUsingTime;
 
         if (audioSource && objectStartSound != SoundManager.SoundName.NUM_SOUND_NAMES)
@@ -261,6 +263,13 @@ public class ConstantObject : MonoBehaviour
             }
 
             lastCheckedEffectsTime = ManagerHandler.instance.TimeM.GetCurrentTime();
+        }
+
+        // Update Goal Stats
+        if (name.Equals("Jukebox"))
+        {
+            ManagerHandler.instance.GoalM.ModifyHoursDancing(ManagerHandler.instance.TimeM.TimeSince(lastAddedTime) / 60.0f);
+            lastAddedTime = ManagerHandler.instance.TimeM.GetCurrentTime();
         }
 
         return true;
@@ -362,9 +371,6 @@ public class ConstantObject : MonoBehaviour
         }
 
         ManagerHandler.instance.clone.ToggleCensor(censorType, false);
-
-        // Update Goal Stats
-        if (name.Equals("Jukebox")) ManagerHandler.instance.GoalM.ModifyHoursDancing(ManagerHandler.instance.TimeM.TimeSince(startedUsingTime)/60.0f);
 
         if (affectsSkill) ManagerHandler.instance.SkillM.ToggleSkillCapsule(false);
 

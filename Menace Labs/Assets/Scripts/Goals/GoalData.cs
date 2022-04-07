@@ -72,7 +72,7 @@ public class GoalData : ScriptableObject
                 goalAchievement += "Fires Survived: " + ManagerHandler.instance.GoalM.GetFiresSurvived() + "/5";
                 break;
             case GoalManager.GoalType.FOOTLOOSE_FIEND:
-                goalAchievement += "Hours Danced: " + ManagerHandler.instance.GoalM.GetHoursDancing() + "/30";
+                goalAchievement += "Hours Danced: " + ManagerHandler.instance.GoalM.GetHoursDancing().ToString("0.00") + "/30";
                 break;
             case GoalManager.GoalType.DOMESTIC_DELIGHT:
                 {
