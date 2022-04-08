@@ -24,8 +24,6 @@ public class CameraHandler : MonoBehaviour
     private bool jumpingToClone = false;
     public void JumpToClone() { jumpingToClone = true; }
 
-    private bool rotateAround = false;
-
     #region Controls
     public enum KeyTypes
     {
@@ -250,7 +248,7 @@ public class CameraHandler : MonoBehaviour
             else if (moved)
             {
                 // ROTATE
-                if (rotateAround)
+                if (SaveManager.instance.GetSave().pivotAroundCentre)
                 {
                     transform.RotateAround(rotateAroundPos.position, Vector3.up, rotateX);
 

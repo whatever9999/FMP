@@ -65,6 +65,11 @@ public class SaveManager : MonoBehaviour
         loadedSave.enableObjectTooltips = enable;
         SaveGame();
     }
+    public void EnablePivotAroundCentre(bool enable)
+    {
+        loadedSave.pivotAroundCentre = enable;
+        SaveGame();
+    }
     public void SetSoundVolume(SoundTypes soundType, float volume)
     {
         switch (soundType)

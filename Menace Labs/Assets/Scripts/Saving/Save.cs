@@ -14,6 +14,7 @@ public class Save
 
     // UI
     public bool enableObjectTooltips = true;
+    public bool pivotAroundCentre = true;
 
     // Sound
     public float masterVolume = 0;
@@ -52,6 +53,7 @@ public class Save
     }
     public void ResetUI()
     {
+        pivotAroundCentre = true;
         enableObjectTooltips = true;
     }
     public void ResetSound()

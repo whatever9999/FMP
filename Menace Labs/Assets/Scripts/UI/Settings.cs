@@ -38,6 +38,7 @@ public class Settings : MonoBehaviour
     [SerializeField] TMP_Dropdown difficultyDropdown;
 
     [SerializeField] Toggle objectTooltipToggle;
+    [SerializeField] Toggle centrePivotToggle;
 
     // Ensure the UI matches the current settings
     private void Start()
@@ -164,6 +165,10 @@ public class Settings : MonoBehaviour
     {
         SaveManager.instance.EnableObjectTooltips(objectTooltipToggle.isOn);
     }
+    public void SetCentrePivot(bool enable)
+    {
+        SaveManager.instance.EnablePivotAroundCentre(enable);
+    }
     #endregion //UI
 
     #region Camera
@@ -252,6 +257,7 @@ public class Settings : MonoBehaviour
     }
     public void UpdateUIUI()
     {
+        centrePivotToggle.SetIsOnWithoutNotify(SaveManager.instance.GetSave().pivotAroundCentre);
         objectTooltipToggle.SetIsOnWithoutNotify(SaveManager.instance.GetSave().enableObjectTooltips);
     }
     public void UpdateCameraUI()
