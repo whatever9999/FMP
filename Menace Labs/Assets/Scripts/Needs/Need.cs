@@ -5,6 +5,7 @@ using System.Collections;
 public class Need : MonoBehaviour
 {
     [SerializeField] private NeedsManager.NeedType needType;
+    [SerializeField] private float startNeedValue = 100.0f;
     [SerializeField] private float needModifier = 0.5f;
     [SerializeField] private Image needFill;
     [SerializeField] private NeedTrigger[] needTriggers;
@@ -21,6 +22,7 @@ public class Need : MonoBehaviour
     {
         needSlider = GetComponent<Slider>();
 
+        currentNeedValue = startNeedValue;
         UpdateUI();
     }
 
