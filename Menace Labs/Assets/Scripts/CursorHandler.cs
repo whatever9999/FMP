@@ -18,7 +18,7 @@ public class CursorHandler : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(camera.GetKey(CameraHandler.KeyTypes.ROTATE)))
+        if (Input.GetKey(camera.GetKey(CameraHandler.KeyTypes.ROTATE)) || Input.GetKey(camera.GetKey(CameraHandler.KeyTypes.TOGGLE_MOUSE_ROTATE)))
         {
             Cursor.SetCursor(rotateCursor, Vector2.zero, CursorMode.Auto);
         }

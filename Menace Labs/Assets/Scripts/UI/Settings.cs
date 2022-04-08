@@ -34,6 +34,7 @@ public class Settings : MonoBehaviour
     [SerializeField] TextMeshProUGUI doubleSpeedKeyText;
     [SerializeField] TextMeshProUGUI tripleSpeedKeyText;
     [SerializeField] TextMeshProUGUI pauseSpeedKeyText;
+    [SerializeField] TextMeshProUGUI toggleMouseRotateKeyText;
 
     [SerializeField] TMP_Dropdown difficultyDropdown;
 
@@ -85,6 +86,7 @@ public class Settings : MonoBehaviour
         if (SaveManager.instance.GetSave().doubleSpeedShortcutKey == code) return false;
         if (SaveManager.instance.GetSave().tripleSpeedShortcutKey == code) return false;
         if (SaveManager.instance.GetSave().pauseSpeedShortcutKey == code) return false;
+        if (SaveManager.instance.GetSave().toggleMouseRotate == code) return false;
 
         // If the code is an already used mouse button then it isn't valid
         if (KeyCode.Mouse0 == code) return false;
@@ -286,6 +288,7 @@ public class Settings : MonoBehaviour
         doubleSpeedKeyText.text = SaveManager.instance.GetSave().doubleSpeedShortcutKey.ToString();
         tripleSpeedKeyText.text = SaveManager.instance.GetSave().tripleSpeedShortcutKey.ToString();
         pauseSpeedKeyText.text = SaveManager.instance.GetSave().pauseSpeedShortcutKey.ToString();
+        toggleMouseRotateKeyText.text = SaveManager.instance.GetSave().toggleMouseRotate.ToString();
     }
     public void UpdateGameplayUI()
     {

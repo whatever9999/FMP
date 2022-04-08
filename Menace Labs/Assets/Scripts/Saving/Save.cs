@@ -46,6 +46,7 @@ public class Save
     public KeyCode doubleSpeedShortcutKey = KeyCode.Alpha2;
     public KeyCode tripleSpeedShortcutKey = KeyCode.Alpha3;
     public KeyCode pauseSpeedShortcutKey = KeyCode.P;
+    public KeyCode toggleMouseRotate = KeyCode.LeftAlt;
 
     public void ResetClone()
     {
@@ -89,6 +90,7 @@ public class Save
         doubleSpeedShortcutKey = KeyCode.Alpha2;
         tripleSpeedShortcutKey = KeyCode.Alpha3;
         pauseSpeedShortcutKey = KeyCode.P;
+        toggleMouseRotate = KeyCode.LeftAlt;
     }
     public void ResetGameplay()
     {

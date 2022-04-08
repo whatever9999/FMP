@@ -43,6 +43,7 @@ public class CameraHandler : MonoBehaviour
         DOUBLE_SPEED,
         TRIPLE_SPEED,
         PAUSE_SPEED,
+        TOGGLE_MOUSE_ROTATE,
         NUM_KEYS,
     }
 
@@ -82,6 +83,8 @@ public class CameraHandler : MonoBehaviour
                 return SaveManager.instance.GetSave().tripleSpeedShortcutKey;
             case KeyTypes.PAUSE_SPEED:
                 return SaveManager.instance.GetSave().pauseSpeedShortcutKey;
+            case KeyTypes.TOGGLE_MOUSE_ROTATE:
+                return SaveManager.instance.GetSave().toggleMouseRotate;
         }
         Debug.LogError("Didn't find key of type: " + key);
         return KeyCode.None;
@@ -123,13 +126,11 @@ public class CameraHandler : MonoBehaviour
 
         float shiftMultiplier = Input.GetKey(GetKey(KeyTypes.SPEED_CAMERA)) ? shiftSpeedUp : 1.0f;
 
-        // Rotate camera on middle mouse
-        if (Input.GetKey(rotateKey))
+        // Rotate camera on middle mouse or if alt is held
+        if (Input.GetKey(rotateKey) || Input.GetKey(GetKey(KeyTypes.TOGGLE_MOUSE_ROTATE)))
         {
             rotateX = Input.GetAxis(mouseXString) * mouseRotateSpeed;
             rotateY = Input.GetAxis(mouseYString) * mouseRotateSpeed;
-
-
         }
         // Move camera on right click
         if (Input.GetKey(moveKey))

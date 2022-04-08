@@ -206,6 +206,9 @@ public class SaveManager : MonoBehaviour
             case CameraHandler.KeyTypes.PAUSE_SPEED:
                 loadedSave.pauseSpeedShortcutKey = keyCode;
                 break;
+            case CameraHandler.KeyTypes.TOGGLE_MOUSE_ROTATE:
+                loadedSave.toggleMouseRotate = keyCode;
+                break;
         }
         SaveGame();
     }
@@ -241,6 +244,8 @@ public class SaveManager : MonoBehaviour
                 return loadedSave.tripleSpeedShortcutKey;
             case CameraHandler.KeyTypes.PAUSE_SPEED:
                 return loadedSave.pauseSpeedShortcutKey;
+            case CameraHandler.KeyTypes.TOGGLE_MOUSE_ROTATE:
+                return loadedSave.toggleMouseRotate;
         }
         return KeyCode.None;
     }
