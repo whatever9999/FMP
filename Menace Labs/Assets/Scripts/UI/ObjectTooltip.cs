@@ -41,6 +41,7 @@ public class ObjectTooltip : MonoBehaviour
     {
         // Track the object
         if (onObject && objectTooltipPos) transform.position = Camera.main.WorldToScreenPoint(objectTooltipPos.position);
+        else if (gameObject.activeInHierarchy) DisableTooltip();
     }
 
     public void SetupTooltip(ConstantObject objectData)
