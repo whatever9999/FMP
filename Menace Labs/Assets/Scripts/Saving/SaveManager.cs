@@ -204,6 +204,41 @@ public class SaveManager : MonoBehaviour
         }
         SaveGame();
     }
+    public KeyCode GetControl(CameraHandler.KeyTypes keyType)
+    {
+        switch (keyType)
+        {
+            case CameraHandler.KeyTypes.UP:
+                return loadedSave.upKey;
+            case CameraHandler.KeyTypes.DOWN:
+                return loadedSave.downKey;
+            case CameraHandler.KeyTypes.LEFT:
+                return loadedSave.leftKey;
+            case CameraHandler.KeyTypes.RIGHT:
+                return loadedSave.rightKey;
+            case CameraHandler.KeyTypes.ROTATE_LEFT:
+                return loadedSave.rotateLeftKey;
+            case CameraHandler.KeyTypes.ROTATE_RIGHT:
+                return loadedSave.rotateRightKey;
+            case CameraHandler.KeyTypes.JUMP_TO_CLONE:
+                return loadedSave.jumpToCloneKey;
+            case CameraHandler.KeyTypes.SPEED_CAMERA:
+                return loadedSave.speedCameraKey;
+            case CameraHandler.KeyTypes.TOGGLE_UI:
+                return loadedSave.toggleUIKey;
+            case CameraHandler.KeyTypes.PAUSE_MENU:
+                return loadedSave.pauseMenuKey;
+            case CameraHandler.KeyTypes.PLAY_SPEED:
+                return loadedSave.playSpeedShortcutKey;
+            case CameraHandler.KeyTypes.DOUBLE_SPEED:
+                return loadedSave.doubleSpeedShortcutKey;
+            case CameraHandler.KeyTypes.TRIPLE_SPEED:
+                return loadedSave.tripleSpeedShortcutKey;
+            case CameraHandler.KeyTypes.PAUSE_SPEED:
+                return loadedSave.pauseSpeedShortcutKey;
+        }
+        return KeyCode.None;
+    }
 
     public void SetDifficulty(Director.DifficultyLevel level)
     {
