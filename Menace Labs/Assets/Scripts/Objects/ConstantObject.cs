@@ -375,7 +375,7 @@ public class ConstantObject : MonoBehaviour
         if (affectsSkill) ManagerHandler.instance.SkillM.ToggleSkillCapsule(false);
 
         // If this object is in the clone's hand then cancelling means it needs to be destroyed
-        if (transform && transform.parent == ManagerHandler.instance.clone.GetHand())
+        if (transform.parent == ManagerHandler.instance.clone.GetHand())
         {
             Destroy(gameObject);
         }

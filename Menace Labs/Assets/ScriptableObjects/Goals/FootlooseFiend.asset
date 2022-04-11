@@ -17,4 +17,4 @@ MonoBehaviour:
   goal: Dance for 30 hours
   description: "The clone must dance for 30 in-game hours.\r"
   story: "The lab questions what dancing for 30 hours will do to a clone's psyche?\r"
-  goalIcon: {fileID: 21300000, guid: fd7e19d39650ca44587cc274fb861d9e, type: 3}
+  goalIcon: {fileID: 21300000, guid: b607a482a89f141458faccd9422db2e1, type: 3}

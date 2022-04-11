@@ -53,11 +53,11 @@ public class ChanceCardData : ScriptableObject
         // Return if the choice succeeded or failed
         if (rand < chance)
         {
-            ManagerHandler.instance.SoundM.PlayClip(SoundManager.SoundName.FAILURE);
+            ManagerHandler.instance.SoundM.PlayClip(SoundManager.SoundName.SUCCESS);
             ManagerHandler.instance.MenaceMetric.ResetTimer(MenaceMetric.MenaceData.TIME_SINCE_CHANCE_CARD_SUCCESS);
             return true;
         }
-        ManagerHandler.instance.SoundM.PlayClip(SoundManager.SoundName.SUCCESS);
+        ManagerHandler.instance.SoundM.PlayClip(SoundManager.SoundName.FAILURE);
         ManagerHandler.instance.MenaceMetric.ResetTimer(MenaceMetric.MenaceData.TIME_SINCE_CHANCE_CARD_FAILURE);
         return false;
     }

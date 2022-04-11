@@ -1,25 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &9173625476133095110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6598331852240999911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1100064be24d1d748937c90554c04f48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cancellable: 0
-  actionType: 8
-  animationType: 25
-  soundEffect: 11
-  loopSound: 0
-  passOutLength: 60
-  sleepModifier: 10
-  timeToCheckSleepEffect: 1
 --- !u!1 &6639563596457131253
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,6 +134,24 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &9173625476133095110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6598331852240999911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1100064be24d1d748937c90554c04f48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cancellable: 0
+  actionType: 8
+  animationType: 25
+  soundEffect: 11
+  loopSound: 0
+  passOutLength: 60
 --- !u!1001 &6987772795891102191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -284,7 +282,7 @@ PrefabInstance:
     - target: {fileID: 5822655619577591289, guid: 3caf1d537ea731942931fc3438d23bc6, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e02eef47f43f70d4e835c0098562f3d0, type: 3}
+      objectReference: {fileID: 21300000, guid: 40c14e1b2e6c8eb41a9afe41a29a7779, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3caf1d537ea731942931fc3438d23bc6, type: 3}
 --- !u!1 &6598331852240999911 stripped

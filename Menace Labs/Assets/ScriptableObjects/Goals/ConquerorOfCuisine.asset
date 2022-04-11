@@ -18,4 +18,4 @@ MonoBehaviour:
   description: "The clone must use the oven to successfully cook a meal 10 times.\r"
   story: "Cuisine prowess is a valuable and interesting asset for society. The lab
     wants to monitor your clone's ability to become a champion cook.\r"
-  goalIcon: {fileID: 21300000, guid: fc1ec0103a9051d4d8f305dbfe985b44, type: 3}
+  goalIcon: {fileID: 21300000, guid: 7d09eb62af2f46d448526c4f99fe09ed, type: 3}
