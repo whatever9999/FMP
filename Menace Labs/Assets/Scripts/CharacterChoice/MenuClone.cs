@@ -17,14 +17,22 @@ public class MenuClone : MonoBehaviour
 
     private void OnMouseDown()
     {
-        meshHandler.ChangeCharacter();
+        if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+        {
+            meshHandler.ChangeCharacter();
+        }
     }
     private void OnMouseOver()
     {
-        if (!IsColor(hoverColour))
+        bool mouseOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+        if (!IsColor(hoverColour) && !mouseOverUI)
         {
             ChangeColor(hoverColour);
 
+        }
+        else if (IsColor(hoverColour) && mouseOverUI)
+        {
+            ChangeColor(Color.white);
         }
     }
     private void OnMouseExit()
