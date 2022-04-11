@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 198628060487912908}
   - component: {fileID: 199039939312086078}
   m_Layer: 0
-  m_Name: FX_Sparks_01
+  m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
