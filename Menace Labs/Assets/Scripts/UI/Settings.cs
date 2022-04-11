@@ -211,6 +211,10 @@ public class Settings : MonoBehaviour
     }
     public void SetControlButton(Image button)
     {
+        if (settingControlButton)
+        {
+            settingControlButton.color = Color.white;
+        }
         settingControlButton = button;
         settingControlButton.color = Color.grey;
     }
