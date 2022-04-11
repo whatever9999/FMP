@@ -53,11 +53,13 @@ public class ObjectUseAction : Action
     public override void EndAction()
     {
         base.EndAction();
-        usedObject.FinishUsing();
+        // If the object has been despawned then it will be null
+        if (usedObject) usedObject.FinishUsing();
     }
     public override void CancelAction()
     {
         base.CancelAction();
-        usedObject.CancelUsing();
+        // If the object has been despawned then it will be null
+        if (usedObject) usedObject.CancelUsing();
     }
 }
