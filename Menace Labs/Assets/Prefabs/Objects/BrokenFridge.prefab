@@ -314,8 +314,8 @@ GameObject:
   - component: {fileID: 6016654154725560994}
   - component: {fileID: 5987790655994646414}
   - component: {fileID: 5997996940997478354}
-  - component: {fileID: 6020661889034216040}
   - component: {fileID: 2211065223672727418}
+  - component: {fileID: 7651552962607992814}
   m_Layer: 0
   m_Name: BrokenFridge
   m_TagString: Untagged
@@ -392,20 +392,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6020661889034216040
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6011675192798787640}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43578180367198534, guid: 81b65da37d64dd34eaa3d20a71d67984, type: 2}
 --- !u!114 &2211065223672727418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,6 +439,19 @@ MonoBehaviour:
   stopParticlesOnCancel: 0
   useAnimationSetForTimeToUse: 0
   timeToUse: 20
+--- !u!65 &7651552962607992814
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6011675192798787640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.25, y: 1.9580405, z: 0.6000018}
+  m_Center: {x: -0.0000009536743, y: 0.97902024, z: 0.00000017881393}
 --- !u!1001 &6543642414618708026
 PrefabInstance:
   m_ObjectHideFlags: 0

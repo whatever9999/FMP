@@ -86,6 +86,19 @@ MonoBehaviour:
   requiredLocation: {fileID: 8770227783114588409}
   faceTransformDirection: 0
   stopParticlesOnCancel: 1
+--- !u!65 &4903143215675406281
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992576962337702883}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1801538, y: 1.6280305, z: 0.7927557}
+  m_Center: {x: 0.009301752, y: 0.81401527, z: 0.035929263}
 --- !u!1 &4499260330206098704
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +184,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64849406715264956, guid: 932917b0c56e5f542a36b8f28bd5d51c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 932917b0c56e5f542a36b8f28bd5d51c, type: 3}
 --- !u!1 &992576962337702883 stripped
 GameObject:
